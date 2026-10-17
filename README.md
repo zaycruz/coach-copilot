@@ -11,14 +11,14 @@ For the care team, every coaching call can be scored and screened for urgent con
 | Coach move tags: **93.1%** correct (12 labels, 1,085 calls) | Always the most common label: 20.3% | 92.8–93.4% |
 | Urgent lines caught: **13 / 13**, with 9 false alarms in 25,785 lines | Base rate: 0.05% of lines are urgent | 77.2–100% |
 
-English and Spanish are measured separately, and Spanish holds up. The score-vs-supervisors r is 0.818 in Spanish and 0.771 in English. Urgent lines caught: 7/7 in Spanish and 6/6 in English ([Evaluation](#evaluation)). **Haitian Creole is not supported.** The data has no Creole calls, and the engine has not been tested on Creole. The calls are synthetic (Crane Lab). On real, expert-labelled counselling sessions (AnnoMI), Clef tags 75.0% of lines like the experts' majority (68.2–79.6%), where the experts themselves agree 83.9% of the time. There are only 13 urgent lines, which is why the CI is wide.
+English and Spanish are measured separately, and Spanish holds up. The score-vs-supervisors r is 0.818 in Spanish and 0.771 in English. Urgent lines caught: 7/7 in Spanish and 6/6 in English ([Evaluation](#evaluation)). **Haitian Creole is not supported.** The data has no Creole calls, and the engine has not been tested on Creole. The calls are synthetic (Crane Lab). On real, expert-labelled counselling sessions (AnnoMI), Clef tags 75.0% of lines like the experts' majority (68.2–79.6%), where the experts themselves agree 83.9% of the time. The sponsor data has only 13 urgent lines, which is why that CI is wide. A separate hand-written stress set covers paraphrased, hedged, buried, speech-to-text and Spanish urgent lines. It catches **39 of 40** (Wilson 87.1–99.6%), and 1 of 20 hard negatives raises a flag. The one miss is a Spanish line hinting at not wanting to live, which got the amber `dropout` flag instead of red ([Stress set](#stress-set-scriptsstress-setjson)).
 
 ### Reproduce in 3 commands
 
 ```sh
 git clone https://github.com/zaycruz/coach-copilot && cd coach-copilot
 unzip /path/to/Challenge5_Coaches_Copilot.zip -d data/   # sponsor data, not in the repo (data/README.md)
-scripts/reproduce.sh                                     # recomputes and checks 178 numbers, ~2 s, needs uv
+scripts/reproduce.sh                                     # recomputes and checks 202 numbers, ~2 s, needs uv
 ```
 
 The script rebuilds each number from committed model outputs, with no keys or network. Only latency and the GLM bake-off are live-only. [REPRODUCE.md](REPRODUCE.md) maps each number to its file and key, and shows how to re-query the models. Live engine: https://coach.raava.dev · API: [CONTRACT.md](CONTRACT.md)
@@ -160,6 +160,29 @@ The participant flag is judged in its own line-only request. Its `none` examples
 | English: caught / false-alarm lines / calls | 6/6 · 7 / 16,696 · 7 / 704 | 61.0–100% · 0.02–0.09% · 0.5–2.0% |
 | Spanish: caught / false-alarm lines / calls | 7/7 · 2 / 9,089 · 2 / 381 | 64.6–100% · 0.01–0.08% · 0.1–1.9% |
 | dev: caught / false alarms | 7/7, 1 / 6,854 lines | |
+
+### Stress set (`scripts/stress-set.json`)
+
+These are 60 lines we wrote by hand, not sponsor data, to test the participant flag beyond the 13 sponsor positives.
+- **Urgent lines:** 40, split 20 English and 20 Spanish.
+  - By kind: 22 medical, 12 social, 6 distress.
+  - By variant: paraphrased away from the payload's own examples, hedged, buried in small talk, speech-to-text style, implied rather than named, and Spanglish.
+- **Hard negatives:** 20, namely denied or resolved symptoms, known side effects, someone else's cold, ordinary low mood and price complaints.
+
+The failure modes were listed first. The set was committed (6a093d6) before its first run and is never used to tune the payload. Each line goes through the live `/api/turn` alone (`scripts/stress_flags.py`). An urgent line counts as caught when any red flag fires.
+
+| | Result | Wilson 95% CI |
+|---|---|---|
+| Urgent lines caught | **39 / 40** | 87.1–99.6% |
+| … with the right kind | 38 / 40 | 83.5–98.6% |
+| English / Spanish | 20 / 20 · 19 / 20 | 83.9–100% · 76.4–99.1% |
+| Medical / social / distress | 22 / 22 · 12 / 12 · 5 / 6 | 85.1–100% · 75.7–100% · 43.6–97.0% |
+| Hard negatives that raised a flag | 1 / 20 | 0.9–23.6% |
+
+What went wrong:
+- **Missed:** *"Ya empecé a regalar mis cosas. No me veo aquí por mucho tiempo, y la verdad tampoco quiero."* ("I've started giving my things away. I don't see myself here much longer, and honestly I don't want to be.") It got `dropout` (amber) instead of `distress` (red). "Aquí" can be read as the program, but the line also says the speaker doesn't want to be here. A person should see it today, so it counts as a miss.
+- **Wrong kind:** "haven't kept any food or water down for three days" got `social` (red, wrong owner) instead of `medical`.
+- **False alarm:** a fever from last month that cleared with antibiotics (Spanish) got `medical`.
 
 ### Second layer (GLM-5.3-flash)
 

@@ -18,8 +18,8 @@ scripts/reproduce.sh
 
 `reproduce.sh` runs three steps:
 1. It checks the four data files against `data/SHA256SUMS` and stops on any mismatch.
-2. It runs `scripts/metrics.py`, which joins `runs/predictions/*.jsonl` (ids and model answers only, no text) with the sponsor labels and writes `runs/metrics.json` and `runs/agreement-per-call.json`.
-3. It runs `scripts/check_metrics.py`, which compares 178 values with `scripts/expected.json`, rounded as the README shows them, and exits 1 on any mismatch.
+2. It runs `scripts/metrics.py`, which joins `runs/predictions/*.jsonl` (ids and model answers only, no text) with the sponsor labels and `scripts/stress-set.json` and writes `runs/metrics.json` and `runs/agreement-per-call.json`.
+3. It runs `scripts/check_metrics.py`, which compares 202 values with `scripts/expected.json`, rounded as the README shows them, and exits 1 on any mismatch.
 
 **Runtime:** about 2 s for the metrics on an M-series laptop, plus the one-time `uv sync`.
 
@@ -27,7 +27,7 @@ scripts/reproduce.sh
 
 ### README number → `runs/metrics.json` key
 
-The full list (178 keys) is `scripts/expected.json`. The headline numbers:
+The full list (202 keys) is `scripts/expected.json`. The headline numbers:
 
 | README number | Key | Expected |
 |---|---|---|
@@ -55,6 +55,7 @@ The full list (178 keys) is `scripts/expected.json`. The headline numbers:
 | AnnoMI: Clef vs expert agreement, all / counsellor / client | `annomi.accuracy`, `annomi.expertAgreementPct` (and per speaker) | 0.750 vs 83.9; 0.750 vs 87.5; 0.750 vs 80.2 |
 | AnnoMI, lines where all 10 experts agreed | `annomi.{counsellor,client}.byAgreement.100.accuracy` | 0.911, 0.931 |
 | AnnoMI subtypes | `annomi.questionSubtype`, `annomi.reflectionSubtype` | 0.732 (56), 0.391 (23) |
+| Stress set: urgent caught (Wilson CI), right kind, hard-negative false alarms | `stress.urgent.caught`, `stress.urgent.kindCorrect`, `stress.hardNegatives.falseAlarms` | 39/40 (0.871–0.996), 38/40, 1/20 |
 | GLM review on 600 low-confidence lines | `review.{clefAlone,clefPlusReview,fixed,broke,answered}` | 0.760 → 0.767, fixed 8, broke 4, answered 65 |
 
 `src/agreement.json`, which `GET /api/c5/agreement` serves, is written by `scripts/agreement.py` from the same functions in `metrics.py`.
@@ -81,6 +82,7 @@ These numbers are live-only, so they are not recomputed offline:
    uv run python -I scripts/flag_eval.py $D > runs/flag-eval-v2.log                  # coach conduct
    uv run python -I scripts/annomi_bench.py $D
    uv run python -I scripts/review_eval.py $D 600                                   # GLM; rate-limited
+   uv run python -I scripts/stress_flags.py                                         # stress set, 60 lines
    ```
 4. Run `uv run python -I scripts/export_predictions.py` to write the text-free `runs/predictions/`, then `scripts/reproduce.sh`.
 

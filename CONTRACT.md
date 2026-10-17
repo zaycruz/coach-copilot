@@ -12,7 +12,7 @@ The console (Patient 360) is the user-facing app. This Worker is the engine: Cle
 |---|---|---|
 | 400 | `{"error": "line must be {speaker: coach|participant, text}"}` | bad `line` (speaker must be `coach` or `participant`; text 1–1,000 chars) |
 | 404 | `{"error": "call not found", "callId": "CALL99999"}` | unknown `callId` / `survivorId` |
-| 429 | `{"error":"rate_limited"}`, header `retry-after: 20` | Workers AI per-minute quota spent (error 3021). Not retried by the Worker. Keep the Clef tag and skip the review or cue. |
+| 429 | `{"error":"rate_limited"}`, header `retry-after: 20` | Workers AI per-minute quota spent (error 3021). `/api/turn` is not retried. `/api/review` and `/api/cue` back off and retry twice (~2 s, then ~5 s) first. Keep the Clef tag and skip the review or cue. |
 | 502 | `{"error":"…"}` | upstream model error after one retry |
 
 Workers AI quotas are per account and model, shared by every caller of this Worker (coach.raava.dev, Patient 360, batch scripts).
@@ -114,17 +114,22 @@ Coach line after that flag, not routed:
 
 ## `POST /api/review`: second opinion on an unsure tag (async, ~2–4 s)
 
+Answers are cached for 7 days by model and prompt. A repeat returns at once with `"cached": true` and `"ms": 0`.
+
 Body: `line`, `previous` and `probabilities` from `/api/turn`. GLM picks among Clef's top 4 coach labels (all 3 participant labels). `label` is `null` when it gives no valid answer; keep Clef's tag then. On 600 validation lines below 0.3 confidence the review moves accuracy by under one point (see README), so it is optional.
 
 ```json
 {
   "ms": "…",
   "label": "affirm",
-  "reason": "Praises the participant's effort despite the sore knees."
+  "reason": "The coach praises the participant's effort and persistence ('kept going even with sore knees'), which is direct praise of an achievement, not merely a paraphrase of what the participant said.",
+  "cached": false
 }
 ```
 
 ## `POST /api/cue`: one coaching cue (async, ~2–5 s)
+
+Cached like `/api/review`: the same trigger and lines return the stored cue with `"cached": true`.
 
 Body: `trigger` (why, max 300 chars) and `recent` (up to 8 lines, with `tag`/`flag` when known). `cue` is English; `say` is in the call's language, detected from the participant's words. Either may be `null` on a model miss.
 
@@ -152,8 +157,9 @@ Body: `trigger` (why, max 300 chars) and `recent` (up to 8 lines, with `tag`/`fl
 ```json
 {
   "ms": "…",
-  "cue": "Pause the coaching agenda and acknowledge the fever concern directly, encourage them to contact their care team promptly, without diagnosing. Then hand autonomy back with an open question about their next step.",
-  "say": "A fever while you're on chemo sounds like something your care team should know about right away — have you been able to reach them yet?"
+  "cue": "Shift out of the coaching flow: acknowledge the fever, and without diagnosing, encourage them to contact their oncology care team now — this is a safety priority over the walking topic. Then invite them to decide next step.",
+  "say": "Thanks for telling me — a fever during chemo is something your care team will want to hear about right away. What's the quickest way you can reach them today?",
+  "cached": false
 }
 ```
 
@@ -552,14 +558,17 @@ A held-out safety call, already run through the live engine by `scripts/preplay.
 From `scripts/agreement.py`, on the supervisor-rated validation calls.
 - `correlations[]`: Pearson and Spearman with bootstrap 95% CIs, for each pair: app vs supervisor A, app vs B, app vs the mean, A vs B, human-label score vs the mean.
 - `supervisorIcc`: ICC(2,1) for A vs B.
+- `likeForLike`: r(app, A) − r(B, A) and r(app, B) − r(A, B), with paired-bootstrap CIs. Each supervisor is compared with the other supervisor, not with the smoother mean.
+- `crossFittedIcc`: ICC(2,1) of the app score, mapped to 1–5 by a line fitted on the other folds, against A and against B, next to A vs B.
+- `byLanguage`: the same correlations for English and Spanish calls.
 - `mae`: the app score mapped to 1–5, then the mean absolute difference from each supervisor.
-- `flags`: recall, false alarms per line and per call, and coach-conduct agreement, each `{k, n, rate, ci95}` (Wilson).
+- `flags`: recall, false alarms per line and per call, and coach-conduct agreement, each `{k, n, rate, ci95}` (Wilson), plus `byLanguage`.
 - `perCall[]`: one row per call, `{callId, appScore, labelScore, supervisorA, supervisorB}`.
 
 ```json
 {
   "about": "Coach score vs two supervisors on held-out (validation) rated calls. Synthetic data, Crane Lab.",
-  "method": "How well does the app's coach score track the two supervisors? And flag recall / false alarms with Wilson CIs.\n\nCalls: the supervisor-rated calls in the validation split (held out; never used for tuning). The app score is the\nMITI-style score (scripts/score.py) over Clef's tags (runs/predictions/tags-validation.jsonl), no GLM review.\nFor reference, the same score over the human line labels shows what the score formula itself can reach.\nCorrelations get a percentile bootstrap 95% CI over calls (2,000 resamples, seed 7); A vs B also gets ICC(2,1).",
+  "method": "How well does the app's coach score track the two supervisors? And flag recall / false alarms with Wilson CIs.\n\nCalls: the supervisor-rated calls in the validation split (held out; never used for tuning). The app score is the\nMITI-style score (scripts/score.py) over Clef's tags (runs/predictions/tags-validation.jsonl), no GLM review.\nFor reference, the same score over the human line labels shows what the score formula itself can reach.\nCorrelations get a percentile bootstrap 95% CI over calls (2,000 resamples, seed 7); A vs B also gets ICC(2,1).\nLike-for-like: each supervisor is compared with the app and with the other supervisor (paired bootstrap of the\ndifference in r), and the app score, mapped to 1-5 with cross-fitting, gets ICC(2,1) against each supervisor.",
   "calls": 477,
   "correlations": [
     {
@@ -623,6 +632,167 @@ From `scripts/agreement.py`, on the supervisor-rated validation calls.
     "maeVsB": 0.597,
     "maeAvsB": 0.61
   },
+  "likeForLike": {
+    "note": "r(app, A) - r(B, A) and r(app, B) - r(A, B); 95% CI from a paired bootstrap over calls (2,000 resamples, seed 7)",
+    "appVsA_minus_BvsA": {
+      "diff": 0.059,
+      "ci95": [
+        0.013,
+        0.106
+      ]
+    },
+    "appVsB_minus_AvsB": {
+      "diff": 0.009,
+      "ci95": [
+        -0.032,
+        0.056
+      ]
+    }
+  },
+  "crossFittedIcc": {
+    "note": "app score mapped to 1-5 by least squares fitted on the other folds (5-fold, seed 7); ICC(2,1) with bootstrap CI",
+    "appVsA": {
+      "icc21": 0.705,
+      "ci95": [
+        0.658,
+        0.743
+      ]
+    },
+    "appVsB": {
+      "icc21": 0.656,
+      "ci95": [
+        0.608,
+        0.7
+      ]
+    },
+    "AvsB": {
+      "icc21": 0.666,
+      "ci95": [
+        0.613,
+        0.712
+      ]
+    }
+  },
+  "byLanguage": {
+    "English": {
+      "calls": 312,
+      "appVsMean": {
+        "pair": "app vs mean",
+        "n": 312,
+        "pearson": 0.771,
+        "pearsonCi95": [
+          0.723,
+          0.815
+        ],
+        "spearman": 0.77,
+        "spearmanCi95": [
+          0.71,
+          0.818
+        ]
+      },
+      "appVsA": {
+        "pair": "app vs A",
+        "n": 312,
+        "pearson": 0.724,
+        "pearsonCi95": [
+          0.67,
+          0.775
+        ],
+        "spearman": 0.71,
+        "spearmanCi95": [
+          0.644,
+          0.766
+        ]
+      },
+      "appVsB": {
+        "pair": "app vs B",
+        "n": 312,
+        "pearson": 0.68,
+        "pearsonCi95": [
+          0.62,
+          0.735
+        ],
+        "spearman": 0.68,
+        "spearmanCi95": [
+          0.613,
+          0.738
+        ]
+      },
+      "AvsB": {
+        "pair": "A vs B",
+        "n": 312,
+        "pearson": 0.657,
+        "pearsonCi95": [
+          0.581,
+          0.72
+        ],
+        "spearman": 0.618,
+        "spearmanCi95": [
+          0.537,
+          0.691
+        ]
+      }
+    },
+    "Spanish": {
+      "calls": 165,
+      "appVsMean": {
+        "pair": "app vs mean",
+        "n": 165,
+        "pearson": 0.818,
+        "pearsonCi95": [
+          0.772,
+          0.858
+        ],
+        "spearman": 0.826,
+        "spearmanCi95": [
+          0.776,
+          0.865
+        ]
+      },
+      "appVsA": {
+        "pair": "app vs A",
+        "n": 165,
+        "pearson": 0.797,
+        "pearsonCi95": [
+          0.743,
+          0.846
+        ],
+        "spearman": 0.821,
+        "spearmanCi95": [
+          0.77,
+          0.861
+        ]
+      },
+      "appVsB": {
+        "pair": "app vs B",
+        "n": 165,
+        "pearson": 0.733,
+        "pearsonCi95": [
+          0.673,
+          0.785
+        ],
+        "spearman": 0.739,
+        "spearmanCi95": [
+          0.665,
+          0.797
+        ]
+      },
+      "AvsB": {
+        "pair": "A vs B",
+        "n": 165,
+        "pearson": 0.746,
+        "pearsonCi95": [
+          0.679,
+          0.806
+        ],
+        "spearman": 0.751,
+        "spearmanCi95": [
+          0.675,
+          0.813
+        ]
+      }
+    }
+  },
   "flags": {
     "recall": {
       "k": 13,
@@ -659,6 +829,66 @@ From `scripts/agreement.py`, on the supervisor-rated validation calls.
         0.6756,
         1
       ]
+    },
+    "byLanguage": {
+      "English": {
+        "caught": {
+          "k": 6,
+          "n": 6,
+          "rate": 1,
+          "ci95": [
+            0.6097,
+            1
+          ]
+        },
+        "falseAlarmLines": {
+          "k": 7,
+          "n": 16696,
+          "rate": 0.0004,
+          "ci95": [
+            0.0002,
+            0.0009
+          ]
+        },
+        "falseAlarmCalls": {
+          "k": 7,
+          "n": 704,
+          "rate": 0.0099,
+          "ci95": [
+            0.0048,
+            0.0204
+          ]
+        }
+      },
+      "Spanish": {
+        "caught": {
+          "k": 7,
+          "n": 7,
+          "rate": 1,
+          "ci95": [
+            0.6457,
+            1
+          ]
+        },
+        "falseAlarmLines": {
+          "k": 2,
+          "n": 9089,
+          "rate": 0.0002,
+          "ci95": [
+            0.0001,
+            0.0008
+          ]
+        },
+        "falseAlarmCalls": {
+          "k": 2,
+          "n": 381,
+          "rate": 0.0052,
+          "ci95": [
+            0.0014,
+            0.0189
+          ]
+        }
+      }
     },
     "source": "validation split participant lines; coach conduct = calls supervisors rated for safety_issue_handled"
   },
