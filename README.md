@@ -176,7 +176,13 @@ Each line goes alone through the live `/api/turn` (`scripts/stress_flags.py`). A
 | v4, `stress-set-v4.json`, EN/ES/HT, 162 + 72, previous definition (Worker ec884907) | separate agent from a brief, committed (e86bb99) before its first run, after the new definition was frozen | 118/162 (65.5–79.1%) | 25/54 (33.7–59.4%) | 20/72 |
 | **v4, current definition** | same set, held out | **139/162 (79.6–90.3%)** | **44/54 (69.2–89.6%)** | **37/72** |
 
-The new definition was written and checked on v1–v3 and dev only, which are spent for it. v4 and the validation split were run once, after it was frozen. On v1–v3 it gave distress 6/6, 52/54 and 44/54 (offline, `scripts/flag_revalidate.py`).
+**Order of events.** The new definition (flag-question hash `f9319e93`) was written from v1–v3 misses and standard suicide warning-sign lists, and checked on v1–v3 only. There it gave distress 6/6, 52/54 and 44/54 (offline, `scripts/flag_revalidate.py`). No v4 line had been seen at that point. Then:
+- v4 was committed (e86bb99, 18:24:20Z).
+- A Worker preview with `f9319e93` was uploaded at 18:27:55Z (Cloudflare version 5977ff19, message "distress warning signs f9319e93").
+- Only then was v4 run, twice and at the same time (18:30Z): on production with the old definition (118/162, distress 25/54) and on that preview with the new one (139/162, 44/54).
+- Dev and validation were run after that, with the same frozen definition.
+
+The definition did not change after v4 was run: the deployed Worker and `main` carry the same `f9319e93`, as the committed `runs/revalidate-*.log` files also show. The git history shows the definition committed (dc39d31) after v4 (e86bb99). That is because the change was committed together with its results, not because it was edited after v4. v4 and validation have now been seen, so any further change to the flag must be measured on a fresh set (Future work).
 
 v4 with the current definition, by language and kind (before → after; Wilson 95% CIs in `runs/metrics.json` `stressV4`, `stressV4Before`):
 
