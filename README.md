@@ -274,6 +274,13 @@ The field-level contract, with real responses, is in [`CONTRACT.md`](CONTRACT.md
 
 The flag kind (medical, social…) on each `needs_human` line is Clef's answer to the line-only flag question, stored in `public/demo-calls.json`. The console's adapter guessed it from keywords; the answers are the same on all 9 lines.
 
+## Future work
+
+- **Fewer false alarms from the suicide-risk fix. This needs a fresh validation set.** Most of the 244 validation false alarms are plain goal and motivation lines. "I need to get my sugar down" alone is 116 of them, followed by "I don't want to end up like my dad" and similar. Adding such lines to the flag's `none` examples would likely cut them. But validation and v4 have now been seen, so any number from that change would be post hoc. It has to be measured on a new, untouched validation set and a new independent stress set, with a stated operating point (calls with a false alarm).
+- **Cue usefulness.** An MI-trained supervisor rates a sample of cues (useful / ignorable / interrupting), reported per cue type, with a quieter cue budget.
+- **Haitian Creole.** A small labelled Creole call set, to validate tags and scores, not only the safety flag.
+- **Clinician-written stress sets.** The independent sets were written by a separate LLM agent, not by clinicians.
+
 ## Sources
 
 - AnnoMI: Wu Z, et al. *Creation, Analysis and Evaluation of AnnoMI, a Dataset of Expert-Annotated Counselling Dialogues.* Future Internet, 2023.
