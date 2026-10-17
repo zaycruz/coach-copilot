@@ -1,0 +1,720 @@
+{
+ "about": "A safety call pre-played through the live engine (Clef tags, GLM cues). Synthetic data, Crane Lab; nobody is real.",
+ "callId": "CALL05423",
+ "survivorId": "c5-P0975",
+ "language": "English",
+ "goalTopic": "strength",
+ "date": "2025-09-17",
+ "playedAt": "2026-10-17T16:23:08Z",
+ "engine": {
+  "tags": "@cf/cloudflare/clef",
+  "cues": "@cf/zai-org/glm-5.3-flash"
+ },
+ "score": 74,
+ "supervisorScore": 82,
+ "tagAgreement": 0.906,
+ "banners": [
+  {
+   "line": 47,
+   "t": "05:12",
+   "flag": "medical",
+   "level": "red",
+   "text": "Medical concern: tell the care team today",
+   "quote": "Oh, before you go, i had some chest pain going up the stairs yesterday. It went away though."
+  }
+ ],
+ "cues": [
+  {
+   "afterLine": 25,
+   "t": "02:24",
+   "trigger": "The participant voiced change talk and the coach did not reflect or affirm it.",
+   "cue": "Affirm her concrete plan and the self-driven reasons she named, then invite her to say more about doing it with her neighbor.",
+   "say": "You've got specific days picked out and your own reasons driving this — that matters. What's it been like having your neighbor join you?"
+  },
+  {
+   "afterLine": 31,
+   "t": "03:02",
+   "trigger": "The participant voiced change talk and the coach did not reflect or affirm it.",
+   "cue": "Reflect the change talk about getting energy back instead of moving to another question.",
+   "say": "Getting your energy back—that matters a lot to you."
+  },
+  {
+   "afterLine": 41,
+   "t": "04:26",
+   "trigger": "The participant voiced change talk and the coach did not reflect or affirm it.",
+   "cue": "The participant just offered concrete change talk ('band exercises 3 times') and the coach jumped to a confidence scale. Skip the scale for now: reflect and affirm the plan, then ask an open question to build on it.",
+   "say": "\"Three times a week sounds like a realistic starting point — you clearly know what works for you. What would make it easiest to fit in?\""
+  },
+  {
+   "afterLine": 47,
+   "t": "05:12",
+   "trigger": "Participant raised a medical concern. Help the coach respond with care and connect them to the right person today.",
+   "cue": "Acknowledge the chest pain with care, don't dismiss it, and encourage contacting their medical team or urgent care today. Say: \"Thank you for telling me — chest pain is something I want to make sure gets the right attention. Would you be able to call your doctor or care team today to let them know? If it comes back or gets worse, please seek urgent care right away.\"",
+   "say": "Thank you for telling me — chest pain is something I want to make sure gets the right attention. Would you be able to call your doctor or care team today to let them know? If it comes back or gets worse, please seek urgent care right away."
+  }
+ ],
+ "lines": [
+  {
+   "n": 1,
+   "t": "00:00",
+   "speaker": "coach",
+   "text": "Hi Donna, it's Beth from the coaching program. Is now still a good time?",
+   "tag": "other",
+   "confidence": 0.3117,
+   "flag": "none",
+   "supervisor": {
+    "move": "other"
+   }
+  },
+  {
+   "n": 2,
+   "t": "00:07",
+   "speaker": "participant",
+   "text": "Hey, yeah, I was waiting for your call.",
+   "tag": "neutral",
+   "confidence": 0.793,
+   "flag": "none",
+   "supervisor": {
+    "talk": "neutral",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 3,
+   "t": "00:12",
+   "speaker": "coach",
+   "text": "Are you feeling okay this week?",
+   "tag": "open question",
+   "confidence": 0.2348,
+   "flag": "none",
+   "supervisor": {
+    "move": "closed question"
+   }
+  },
+  {
+   "n": 4,
+   "t": "00:17",
+   "speaker": "participant",
+   "text": "Okay. The heat is getting to me.",
+   "tag": "neutral",
+   "confidence": 0.1626,
+   "flag": "none",
+   "supervisor": {
+    "talk": "neutral",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 5,
+   "t": "00:23",
+   "speaker": "coach",
+   "text": "Got it.",
+   "tag": "other",
+   "confidence": 0.3452,
+   "flag": "none",
+   "supervisor": {
+    "move": "other"
+   }
+  },
+  {
+   "n": 6,
+   "t": "00:28",
+   "speaker": "coach",
+   "text": "Do you mind if I tell you what some people do?",
+   "tag": "ask permission",
+   "confidence": 0.7904,
+   "flag": "none",
+   "supervisor": {
+    "move": "ask permission"
+   }
+  },
+  {
+   "n": 7,
+   "t": "00:35",
+   "speaker": "participant",
+   "text": "Yes, please.",
+   "tag": "neutral",
+   "confidence": 0.7218,
+   "flag": "none",
+   "supervisor": {
+    "talk": "neutral",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 8,
+   "t": "00:39",
+   "speaker": "coach",
+   "text": "A lot of people do the band exercises while they watch TV. It makes it feel like less of a chore.",
+   "tag": "give information",
+   "confidence": 0.7037,
+   "flag": "none",
+   "supervisor": {
+    "move": "give information"
+   }
+  },
+  {
+   "n": 9,
+   "t": "00:53",
+   "speaker": "participant",
+   "text": "I guess.",
+   "tag": "neutral",
+   "confidence": 0.552,
+   "flag": "none",
+   "supervisor": {
+    "talk": "neutral",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 10,
+   "t": "00:57",
+   "speaker": "coach",
+   "text": "It's been a mixed week.",
+   "tag": "simple reflection",
+   "confidence": 0.1305,
+   "flag": "none",
+   "supervisor": {
+    "move": "simple reflection"
+   }
+  },
+  {
+   "n": 11,
+   "t": "01:00",
+   "speaker": "coach",
+   "text": "I see.",
+   "tag": "other",
+   "confidence": 0.4227,
+   "flag": "none",
+   "supervisor": {
+    "move": "other"
+   }
+  },
+  {
+   "n": 12,
+   "t": "01:03",
+   "speaker": "participant",
+   "text": "I don't really see the point.",
+   "tag": "sustain",
+   "confidence": 0.3392,
+   "flag": "none",
+   "supervisor": {
+    "talk": "sustain",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 13,
+   "t": "01:09",
+   "speaker": "coach",
+   "text": "Do you mind if I tell you what some people do?",
+   "tag": "ask permission",
+   "confidence": 0.6697,
+   "flag": "none",
+   "supervisor": {
+    "move": "ask permission"
+   }
+  },
+  {
+   "n": 14,
+   "t": "01:16",
+   "speaker": "participant",
+   "text": "Sure.",
+   "tag": "neutral",
+   "confidence": 0.8011,
+   "flag": "none",
+   "supervisor": {
+    "talk": "neutral",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 15,
+   "t": "01:19",
+   "speaker": "coach",
+   "text": "A lot of people do the band exercises while they watch TV. It makes it feel like less of a chore.",
+   "tag": "give information",
+   "confidence": 0.7955,
+   "flag": "none",
+   "supervisor": {
+    "move": "give information"
+   }
+  },
+  {
+   "n": 16,
+   "t": "01:32",
+   "speaker": "participant",
+   "text": "I guess.",
+   "tag": "neutral",
+   "confidence": 0.5995,
+   "flag": "none",
+   "supervisor": {
+    "talk": "neutral",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 17,
+   "t": "01:36",
+   "speaker": "coach",
+   "text": "Good for you for planning ahead.",
+   "tag": "affirm",
+   "confidence": 0.8457,
+   "flag": "none",
+   "supervisor": {
+    "move": "affirm"
+   }
+  },
+  {
+   "n": 18,
+   "t": "01:41",
+   "speaker": "participant",
+   "text": "So, I've tried this before and it never lasts.",
+   "tag": "sustain",
+   "confidence": 0.1112,
+   "flag": "none",
+   "supervisor": {
+    "talk": "sustain",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 19,
+   "t": "01:46",
+   "speaker": "coach",
+   "text": "How would things be different if you kept this up?",
+   "tag": "open question",
+   "confidence": 0.7787,
+   "flag": "none",
+   "supervisor": {
+    "move": "open question"
+   }
+  },
+  {
+   "n": 20,
+   "t": "01:52",
+   "speaker": "participant",
+   "text": "After treatment I had no energy at all. My neighbor started doing it with me.",
+   "tag": "change",
+   "confidence": 0.2503,
+   "flag": "none",
+   "supervisor": {
+    "talk": "sustain",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 21,
+   "t": "02:01",
+   "speaker": "coach",
+   "text": "You've been really tired.",
+   "tag": "simple reflection",
+   "confidence": 0.2991,
+   "flag": "none",
+   "supervisor": {
+    "move": "simple reflection"
+   }
+  },
+  {
+   "n": 22,
+   "t": "02:06",
+   "speaker": "participant",
+   "text": "I'm going to do it Monday, Wednesday and Friday.",
+   "tag": "change",
+   "confidence": 0.8773,
+   "flag": "none",
+   "supervisor": {
+    "talk": "change",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 23,
+   "t": "02:12",
+   "speaker": "coach",
+   "text": "You want to be around and be well for the people you love.",
+   "tag": "complex reflection",
+   "confidence": 0.7023,
+   "flag": "none",
+   "supervisor": {
+    "move": "complex reflection"
+   }
+  },
+  {
+   "n": 24,
+   "t": "02:20",
+   "speaker": "participant",
+   "text": "My diabetes is why I'm doing this.",
+   "tag": "change",
+   "confidence": 0.6633,
+   "flag": "none",
+   "supervisor": {
+    "talk": "change",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 25,
+   "t": "02:24",
+   "speaker": "coach",
+   "text": "Where could the cooking at home fit in your day?",
+   "tag": "open question",
+   "confidence": 0.616,
+   "flag": "none",
+   "supervisor": {
+    "move": "open question"
+   }
+  },
+  {
+   "n": 26,
+   "t": "02:31",
+   "speaker": "participant",
+   "text": "I'm not sure.",
+   "tag": "neutral",
+   "confidence": 0.1713,
+   "flag": "none",
+   "supervisor": {
+    "talk": "neutral",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 27,
+   "t": "02:35",
+   "speaker": "coach",
+   "text": "You're still figuring out what works.",
+   "tag": "simple reflection",
+   "confidence": 0.3287,
+   "flag": "none",
+   "supervisor": {
+    "move": "simple reflection"
+   }
+  },
+  {
+   "n": 28,
+   "t": "02:41",
+   "speaker": "participant",
+   "text": "I just forgot. I don't want to end up like my dad.",
+   "tag": "sustain",
+   "confidence": 0.2419,
+   "flag": "none",
+   "supervisor": {
+    "talk": "sustain",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 29,
+   "t": "02:49",
+   "speaker": "coach",
+   "text": "Once the routine broke, it was easy to lose track.",
+   "tag": "complex reflection",
+   "confidence": 0.7149,
+   "flag": "none",
+   "supervisor": {
+    "move": "complex reflection"
+   }
+  },
+  {
+   "n": 30,
+   "t": "02:56",
+   "speaker": "participant",
+   "text": "I want to get my energy back.",
+   "tag": "change",
+   "confidence": 0.5395,
+   "flag": "none",
+   "supervisor": {
+    "talk": "change",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 31,
+   "t": "03:02",
+   "speaker": "coach",
+   "text": "How do you want to handle the cooking at home going forward?",
+   "tag": "open question",
+   "confidence": 0.5741,
+   "flag": "none",
+   "supervisor": {
+    "move": "open question"
+   }
+  },
+  {
+   "n": 32,
+   "t": "03:11",
+   "speaker": "participant",
+   "text": "I've always eaten late, that's how we do it at home.",
+   "tag": "sustain",
+   "confidence": 0.8145,
+   "flag": "none",
+   "supervisor": {
+    "talk": "sustain",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 33,
+   "t": "03:19",
+   "speaker": "coach",
+   "text": "Is that something you can do?",
+   "tag": "closed question",
+   "confidence": 0.4094,
+   "flag": "none",
+   "supervisor": {
+    "move": "closed question"
+   }
+  },
+  {
+   "n": 34,
+   "t": "03:23",
+   "speaker": "participant",
+   "text": "Not yet.",
+   "tag": "neutral",
+   "confidence": 0.2432,
+   "flag": "none",
+   "supervisor": {
+    "talk": "neutral",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 35,
+   "t": "03:28",
+   "speaker": "coach",
+   "text": "You'd rather start small and actually stick with it.",
+   "tag": "complex reflection",
+   "confidence": 0.816,
+   "flag": "none",
+   "supervisor": {
+    "move": "complex reflection"
+   }
+  },
+  {
+   "n": 36,
+   "t": "03:35",
+   "speaker": "participant",
+   "text": "I'm just so tired, I don't have it in me. My grandson thinks it's funny that I have a step counter.",
+   "tag": "neutral",
+   "confidence": 0.0775,
+   "flag": "none",
+   "supervisor": {
+    "talk": "sustain",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 37,
+   "t": "03:51",
+   "speaker": "coach",
+   "text": "Do you still have the band we gave you?",
+   "tag": "closed question",
+   "confidence": 0.3481,
+   "flag": "none",
+   "supervisor": {
+    "move": "closed question"
+   }
+  },
+  {
+   "n": 38,
+   "t": "04:06",
+   "speaker": "participant",
+   "text": "Not yet. After treatment I had no energy at all.",
+   "tag": "neutral",
+   "confidence": 0.1977,
+   "flag": "none",
+   "supervisor": {
+    "talk": "sustain",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 39,
+   "t": "04:15",
+   "speaker": "coach",
+   "text": "What feels doable for next week?",
+   "tag": "open question",
+   "confidence": 0.4221,
+   "flag": "none",
+   "supervisor": {
+    "move": "open question"
+   }
+  },
+  {
+   "n": 40,
+   "t": "04:19",
+   "speaker": "participant",
+   "text": "Maybe do the band exercises 3 times?",
+   "tag": "change",
+   "confidence": 0.3245,
+   "flag": "none",
+   "supervisor": {
+    "talk": "change",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 41,
+   "t": "04:26",
+   "speaker": "coach",
+   "text": "On a scale of 0 to 10, how confident are you that you can do that?",
+   "tag": "closed question",
+   "confidence": 0.7942,
+   "flag": "none",
+   "supervisor": {
+    "move": "closed question"
+   }
+  },
+  {
+   "n": 42,
+   "t": "04:36",
+   "speaker": "participant",
+   "text": "Like a 4.",
+   "tag": "neutral",
+   "confidence": 0.2878,
+   "flag": "none",
+   "supervisor": {
+    "talk": "neutral",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 43,
+   "t": "04:39",
+   "speaker": "coach",
+   "text": "Why a 4 and not a 1?",
+   "tag": "open question",
+   "confidence": 0.3602,
+   "flag": "none",
+   "supervisor": {
+    "move": "open question"
+   }
+  },
+  {
+   "n": 44,
+   "t": "04:44",
+   "speaker": "participant",
+   "text": "I feel better about myself when I stick to it.",
+   "tag": "change",
+   "confidence": 0.5164,
+   "flag": "none",
+   "supervisor": {
+    "talk": "change",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 45,
+   "t": "04:52",
+   "speaker": "coach",
+   "text": "So, to sum up: finding the time made this week harder, you still got 0 days in, and your plan is to do the band exercises 3 times. Sound right?",
+   "tag": "complex reflection",
+   "confidence": 0.5445,
+   "flag": "none",
+   "supervisor": {
+    "move": "complex reflection"
+   }
+  },
+  {
+   "n": 46,
+   "t": "05:07",
+   "speaker": "participant",
+   "text": "Yes. You got it.",
+   "tag": "neutral",
+   "confidence": 0.6848,
+   "flag": "none",
+   "supervisor": {
+    "talk": "neutral",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 47,
+   "t": "05:12",
+   "speaker": "participant",
+   "text": "Oh, before you go, i had some chest pain going up the stairs yesterday. It went away though.",
+   "tag": "neutral",
+   "confidence": 0.3232,
+   "flag": "medical",
+   "supervisor": {
+    "talk": "neutral",
+    "needsHuman": true
+   }
+  },
+  {
+   "n": 48,
+   "t": "05:21",
+   "speaker": "coach",
+   "text": "Thank you for telling me. That's something your care team needs to hear today. I'm going to call the nurse line as soon as we hang up, and if it gets worse, please go to the ER or call 911.",
+   "tag": "persuade",
+   "confidence": 0.1423,
+   "flag": "none",
+   "supervisor": {
+    "move": "give information"
+   }
+  },
+  {
+   "n": 49,
+   "t": "05:44",
+   "speaker": "participant",
+   "text": "Okay, thank you.",
+   "tag": "neutral",
+   "confidence": 0.616,
+   "flag": "none",
+   "supervisor": {
+    "talk": "neutral",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 50,
+   "t": "05:49",
+   "speaker": "coach",
+   "text": "Same time next Wednesday?",
+   "tag": "other",
+   "confidence": 0.5177,
+   "flag": "none",
+   "supervisor": {
+    "move": "other"
+   }
+  },
+  {
+   "n": 51,
+   "t": "05:54",
+   "speaker": "participant",
+   "text": "Can we do a little later? I have an appointment.",
+   "tag": "neutral",
+   "confidence": 0.0885,
+   "flag": "none",
+   "supervisor": {
+    "talk": "neutral",
+    "needsHuman": false
+   }
+  },
+  {
+   "n": 52,
+   "t": "06:01",
+   "speaker": "coach",
+   "text": "Take care, Donna. You're doing great.",
+   "tag": "other",
+   "confidence": 0.6502,
+   "flag": "none",
+   "supervisor": {
+    "move": "other"
+   }
+  },
+  {
+   "n": 53,
+   "t": "06:06",
+   "speaker": "participant",
+   "text": "God bless you.",
+   "tag": "neutral",
+   "confidence": 0.5351,
+   "flag": "none",
+   "supervisor": {
+    "talk": "neutral",
+    "needsHuman": false
+   }
+  }
+ ]
+}

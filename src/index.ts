@@ -4,9 +4,11 @@
  *   POST /api/review  a low-confidence line -> GLM picks among Clef's top labels. Second layer.
  *   POST /api/cue     a triggered moment -> GLM writes one short coaching cue.
  *   POST /judge       raw Clef proxy for batch scripts (Bearer API_KEY).
+ *   GET  /api/c5/calls[/:id], /api/c5/survivors[/:id]   Patient 360 suite endpoints (src/c5.ts).
  * Both models run on Workers AI through the AI Gateway named by AI_GATEWAY_ID.
  */
 import P from "./payload.json";
+import { c5 } from "./c5";
 
 const CLEF = "@cf/cloudflare/clef";
 const CLEF_SELECTOR: Record<string, string> = {
@@ -76,14 +78,13 @@ function turnQuestions(line: Line, previous: Line[]) {
   };
 }
 
+/** Workers AI error 3021: the per-minute request quota is spent. Retrying at once only spends more of it. */
+const rateLimited = (err: unknown) => String(err).includes("3021");
+const retryOnce = <T>(call: () => Promise<T>) => call().catch((err) => (rateLimited(err) ? Promise.reject(err) : call()));
+
 /** One Clef judgment; a failed call is retried once, since an occasional upstream error should not drop a live tag. */
 async function clef(env: Env, model: string, state: unknown, questions: unknown) {
-  const call = () => env.AI.run(model, { model: CLEF_SELECTOR[model], state, questions }, gateway(env));
-  try {
-    return await call();
-  } catch {
-    return call();
-  }
+  return retryOnce(() => env.AI.run(model, { model: CLEF_SELECTOR[model], state, questions }, gateway(env)));
 }
 
 /** GLM chat completion with a JSON-schema answer; returns the parsed object or null. */
@@ -101,8 +102,8 @@ async function glm(env: Env, model: string, system: string, user: string, schema
     },
     gateway(env),
   );
-  // Retried once: upstream 502s dropped up to half the answers in the bake-off.
-  const raw = await call().catch(() => call());
+  // Retried once: upstream 502s dropped up to half the answers in the bake-off. Not on a rate limit.
+  const raw = await retryOnce(call);
   if (!isRecord(raw)) return null;
   const choice = Array.isArray(raw.choices) && isRecord(raw.choices[0]) ? raw.choices[0] : null;
   const text = choice && isRecord(choice.message) ? choice.message.content : raw.response;
@@ -221,6 +222,7 @@ export default {
     const { pathname } = new URL(req.url);
     try {
       if (pathname === "/api/health") return Response.json({ ok: true });
+      if (req.method === "GET" && pathname.startsWith("/api/c5/")) return await c5(env.ASSETS, new URL(req.url));
       if (req.method === "POST" && pathname === "/judge") return await judge(req, env);
       const route = ROUTES[pathname];
       if (route) {
@@ -231,6 +233,7 @@ export default {
       }
       return env.ASSETS.fetch(req);
     } catch (err) {
+      if (rateLimited(err)) return Response.json({ error: "rate_limited" }, { status: 429, headers: { "retry-after": "20" } });
       return Response.json({ error: String(err) }, { status: 502 });
     }
   },

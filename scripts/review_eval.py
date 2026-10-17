@@ -1,15 +1,16 @@
 """Does the GLM review earn its place? A fixed random sample of validation lines where Clef's confidence < 0.3,
 sent through the live /api/review exactly as the UI sends them. A review with no label keeps Clef's tag, as in the UI.
+Workers AI allows only so many GLM requests a minute (error 3021, a 429 from the Worker), so this runs on 2 threads
+and waits out a 429 instead of counting it as a miss.
 
 Usage: review_eval.py <data_dir> [n_lines]
 Clef tags come from runs/validation-clef-ctx2.jsonl. Writes runs/review-validation.jsonl.
 """
-import json, os, random, sys, time
+import json, os, random, sys, time, urllib.error, urllib.request
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 import pandas as pd
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from glm_bench import post
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 data, n = sys.argv[1], int(sys.argv[2]) if len(sys.argv) > 2 else 600
@@ -26,17 +27,34 @@ for r in sample:
 print(f"validation: {len(low)}/{len(rows)} lines below 0.3 ({len(low) / len(rows):.0%}); sample {len(sample)}")
 
 
+def post(path, body):
+    req = urllib.request.Request("https://coach.raava.dev" + path, json.dumps(body).encode(),
+                                 {"content-type": "application/json", "user-agent": "coach-copilot/0.1"})
+    for _ in range(6):
+        t = time.time()
+        try:
+            return json.load(urllib.request.urlopen(req, timeout=90)), time.time() - t
+        except urllib.error.HTTPError as err:
+            if err.code != 429:
+                return {"error": f"HTTP {err.code}"}, time.time() - t
+            time.sleep(int(err.headers.get("retry-after") or 20))
+        except Exception as err:
+            return {"error": str(err)}, time.time() - t
+    return {"error": "rate limited 6 times"}, 0.0
+
+
 def review(r):
     out, secs = post("/api/review", {"line": {"speaker": r["speaker"], "text": r["text"]}, "previous": r["previous"],
                                      "probabilities": r["probabilities"]})
-    return out.get("label"), secs
+    return out.get("label"), secs, None if out.get("label") else (out.get("error") or "no label")[:80]
 
 
-with ThreadPoolExecutor(8) as pool:
+with ThreadPoolExecutor(2) as pool:
     res = list(pool.map(review, sample))
 
 out = []
-for r, (label, secs) in zip(sample, res):
+print("failures:", dict(Counter(e for _, _, e in res if e).most_common(5)))
+for r, (label, secs, _) in zip(sample, res):
     final = label or r["pred"]
     out.append({"speaker": r["speaker"], "gold": r["gold"], "clef": r["pred"], "review": label, "final": final, "secs": secs})
 d = pd.DataFrame(out)

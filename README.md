@@ -75,9 +75,9 @@ Design rules for every question:
 Two more rules came from the flag work:
 
 6. **Judge a flag on the line alone.** The participant `flag` runs as a separate request whose state is only `{line}`, in parallel with the main one, so it costs no latency. With context in the same request, an earlier concern leaked forward ("Okay, thank you." was flagged medical).
-7. **Put counter-examples under the label they belong to.** "Not a flag: moods, known side effects, food prices…" written inside `medical` or `dropout` attracted matches. Moved into `none`, the same examples cut false alarms on the earlier list from 27 texts to 3, with 13/13 true cases still caught.
+7. **Put counter-examples under the label they belong to.** "Not a flag: moods, known side effects, food prices…" written inside `medical` or `dropout` attracted matches. The same examples filed under `none`, plus the everyday barriers that raised false alarms on dev, give the flag results in Evaluation.
 
-Coach conduct is two narrow questions, not one broad one. A single "does this coach line need review?" flag fired on most coach lines (3/8 calls agreed with supervisors). `routed` (asked only right after a red flag) and `scope` (medical advice or not) agree on 6/8.
+Coach conduct is two narrow questions, not one broad one: `routed`, asked only right after a red flag, and `scope`, medical advice or not. One broad "does this coach line need review?" question fired on most coach lines.
 
 The response has, per question, `choice`, `confidence` and `probabilities`. `confidence` is well calibrated (dev split, 120 calls):
 
@@ -88,31 +88,46 @@ The response has, per question, `choice`, `confidence` and `probabilities`. `con
 
 ## Evaluation
 
-Labelled synthetic calls are split by `participant_id` hash: **dev 20%** (tuning) and **validation 80%** (held out, reported only). See `scripts/evaluate.py`; per-line outputs go to `runs/`.
+Labelled synthetic calls are split by `participant_id` hash: **dev 20%** (tuning) and **validation 80%** (held out, reported only). All numbers below are on validation unless marked dev.
 
-| Split | Coach move (12-way) | Participant talk (3-way) | Flags |
-|---|---|---|---|
-| dev, first payload (40 calls) | 79.5% | 86.6% | – |
-| dev, final payload (120 calls) | 93.4% | 92.6% | 2/2 caught, 2 false alarms |
-| **validation (1,085 calls, 56,001 lines)** | **93.1%** (EN 93.9%, ES 91.6%) | **90.9%** (EN 91.2%, ES 90.4%) | **13/13 caught, 9 false alarms / 25,785 lines** (9 calls) |
+### Tags (`scripts/evaluate.py`)
 
-Flags are judged in their own line-only request (`evaluate.py --flags-only`, one request per unique participant text):
+| Validation, 1,085 calls, 56,038 lines | Accuracy |
+|---|---|
+| Coach move (12-way) | **93.1%** (EN 93.9%, ES 91.6%) |
+| Participant talk (3-way) | **90.9%** (EN 91.2%, ES 90.4%) |
 
-| Flag payload | Split | Caught | False alarms (any flag, lines not `needs_human`) |
-|---|---|---|---|
-| before redesign (flag in main request) | validation | 13/13 | 71 / 25,781 |
-| line-only request | dev | 7/7 | 12 / 6,854 |
-| line-only request | validation | 13/13 | 68 / 25,785 (30 texts, 66 calls) |
-| **+ dev counter-examples in `none`** (aches, night hunger, unsafe-to-walk area, disliking the goal) | dev | 7/7 | 1 / 6,854 |
-| **+ dev counter-examples in `none`** | **validation** | **13/13** | **9 / 25,785** (5 texts, 9 calls), 0 dropout |
+Clef latency per line: p50 ~0.3–0.5 s, p95 ~1.05 s. These numbers come from the move and talk questions as they ship. They were not rerun after `scope` joined the coach request, because `scope` is a separate question in the same call.
 
-The counter-examples were taken from dev false alarms only. Replayed line by line against the live Worker (`scripts/flag_eval.py`), 1 of 27 earlier false-alarm texts is still flagged, and coach conduct agrees with supervisors on **8/8** calls. Move and talk accuracy were not rerun after `scope` joined the coach request.
+### Coach score vs supervisors (`scripts/agreement.py`, `GET /api/c5/agreement`)
 
-Clef latency per line: p50 ~0.3–0.5 s, p95 ~1.05 s.
+There are 477 validation calls that both supervisors rated `overall_1_to_5`. The app score is the live screen's arithmetic over Clef's tags. CIs are a bootstrap over calls (2,000 resamples).
 
-### Second layer bake-off
+| Pair | Pearson r (95% CI) | Spearman ρ (95% CI) |
+|---|---|---|
+| **App score vs mean of supervisors A and B** | **0.789** (0.754–0.820) | **0.797** (0.758–0.830) |
+| App score vs supervisor A | 0.751 (0.708–0.788) | 0.757 (0.711–0.794) |
+| App score vs supervisor B | 0.701 (0.657–0.739) | 0.706 (0.655–0.748) |
+| Supervisor A vs supervisor B | 0.692 (0.640–0.736) | 0.673 (0.614–0.724) |
+| Score from human line labels vs mean of A and B | 0.816 (0.783–0.843) | 0.821 (0.786–0.850) |
 
-`scripts/glm_bench.py`, 60 dev lines where Clef's confidence was < 0.3 (Clef alone: 77%). Review accuracy is over the lines each model answered; unanswered lines were upstream 502s (now retried once) or no valid label.
+The app tracks each supervisor at least as closely as the two supervisors track each other. Supervisor A vs B: ICC(2,1) 0.666 (0.613–0.712), mean absolute difference 0.61 points on the 1–5 scale. Mapped to 1–5 by a least-squares line, the app score is off by 0.55 points on average from supervisor A and 0.60 from B. The score formula itself, run on perfect human labels, reaches r = 0.816, and the app's score correlates r = 0.955 with that. The endpoint returns the per-call table.
+
+### Flags (`evaluate.py --flags-only`, `scripts/flag_eval.py`)
+
+The participant flag is judged in its own line-only request. Its `none` examples come from dev false alarms only.
+
+| | Result | Wilson 95% CI |
+|---|---|---|
+| `needs_human` lines caught | **13/13** (10 medical, 2 social, 1 distress) | 77.2–100% |
+| False alarms, lines | **9 / 25,785** (5 distinct texts, 0 dropout) | 0.02–0.07% |
+| False alarms, calls | 9 / 1,085 | 0.4–1.6% |
+| Coach conduct vs supervisor `safety_issue_handled` | 8/8 calls | 67.6–100% |
+| dev: caught / false alarms | 7/7, 1 / 6,854 lines | |
+
+### Second layer (GLM-5.3-flash)
+
+`scripts/glm_bench.py` compared models on 60 dev lines where Clef's confidence was < 0.3 (Clef alone: 77%):
 
 | Model | Review accuracy | Answered | Review p50 | Cue latency |
 |---|---|---|---|---|
@@ -120,9 +135,12 @@ Clef latency per line: p50 ~0.3–0.5 s, p95 ~1.05 s.
 | **GLM-5.3-flash** | 78–84% | 27–32 / 60 | 2.2–3.1 s | 2–8 s |
 | GLM-4.7-flash | 81–86% | 47–51 / 60 | 16–18 s | 7–22 s |
 
-Ranges are two runs. GLM review is roughly a wash against Clef on its own uncertain lines, so it stays a background second opinion. Cues are where GLM earns its place, and flash writes them as well as GLM-5.3 at a fraction of the wait. Cue language is set by the Worker (`Call language: English|Spanish` from the participant's words); left to infer it, the models sometimes answered in Spanish or French.
+`scripts/review_eval.py` then ran 600 random validation lines with confidence < 0.3 through the live `/api/review`:
+- Clef alone: 76.0%. Clef + review: 76.8%.
+- The review was right on 91.5% of the lines it answered, against Clef's 80.9% on those same lines.
+- It answered only 47 of 600. The other 553 hit the Workers AI per-minute limit (error 3021).
 
-Validation check (`scripts/review_eval.py`, 600 random validation lines with confidence < 0.3, live `/api/review`): Clef alone 76.0%, Clef + review 76.7%. The review fixed 8 and broke 4, but it answered only 65/600 lines (p50 4.3 s); the rest kept Clef's tag. The review stays an optional background second opinion; its low answer rate under batch load is not yet diagnosed.
+Cues are where GLM earns its place. Review stays an optional background second opinion. Cue language is set by the Worker (`Call language: English|Spanish` from the participant's words); left to infer it, the models sometimes answered in Spanish or French.
 
 ### AnnoMI expert benchmark
 
@@ -147,6 +165,21 @@ uv run --with pandas python -I scripts/annomi_bench.py <data_dir>
 ```
 
 The `/judge` endpoint is a raw Clef proxy for batch scripts (`Authorization: Bearer $CLEF_API_KEY` from `.env`).
+
+**Rate limits.** Workers AI caps requests per minute per model (error 3021). The Worker does not retry a rate-limited call, and it answers `429` with `retry-after: 20`. The UI keeps Clef's tag when a review gets no label. Batch scripts against the live Worker share this quota with live calls and with Patient 360, so do not run them during a demo.
+
+## Patient 360 endpoints
+
+`src/c5.ts` serves the suite endpoints that Patient 360 (coach-console) asks for in its `INTEGRATION.md`. They use the same shape as the console's adapter, so the console switched over with no change (`x-c5-source: native`):
+
+- `GET /api/c5/calls[/:callId]`: the 27 supervisor-labelled demo calls, scored with the live screen's arithmetic.
+- `GET /api/c5/survivors[/:survivorId]`: one row per participant (`c5-P0540`), with status from their worst call.
+- `GET /api/c5/demo`: held-out safety call CALL05423, pre-played through the live engine (`scripts/preplay.py`). It has every line's Clef tag and flag, the red medical banner at 05:12, 4 GLM cues, and score 74 (82 on the supervisor labels). 90.6% of its tags match the human labels. A console can open on it with no model calls.
+- `GET /api/c5/agreement`: the supervisor-agreement figures above, with the per-call table (app score, human-label score, supervisor A, supervisor B) and the flag Wilson CIs.
+
+The field-level contract, with real responses, is in [`CONTRACT.md`](CONTRACT.md) (`scripts/contract.py`).
+
+The flag kind (medical, social…) on each `needs_human` line is Clef's answer to the line-only flag question, stored in `public/demo-calls.json`. The console's adapter guessed it from keywords; the answers are the same on all 9 lines.
 
 ## Sources
 

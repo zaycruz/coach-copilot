@@ -1,0 +1,265 @@
+{
+ "source": "Challenge5 synthetic_participants.csv and synthetic_coaches.csv (Crane Lab, made-up people)",
+ "participants": {
+  "P0002": {
+   "first_name": "María",
+   "age": "52",
+   "sex": "female",
+   "call_language": "English",
+   "cancer_type": "colorectal",
+   "program_focus": "movement"
+  },
+  "P0113": {
+   "first_name": "Denise",
+   "age": "50",
+   "sex": "female",
+   "call_language": "English",
+   "cancer_type": "thyroid",
+   "program_focus": "both"
+  },
+  "P0117": {
+   "first_name": "Yolanda",
+   "age": "57",
+   "sex": "female",
+   "call_language": "English",
+   "cancer_type": "colorectal",
+   "program_focus": "movement"
+  },
+  "P0268": {
+   "first_name": "Miguel",
+   "age": "48",
+   "sex": "male",
+   "call_language": "English",
+   "cancer_type": "kidney",
+   "program_focus": "both"
+  },
+  "P0276": {
+   "first_name": "Miguel",
+   "age": "67",
+   "sex": "male",
+   "call_language": "Spanish",
+   "cancer_type": "thyroid",
+   "program_focus": "both"
+  },
+  "P0286": {
+   "first_name": "Rosa",
+   "age": "69",
+   "sex": "female",
+   "call_language": "Spanish",
+   "cancer_type": "kidney",
+   "program_focus": "eating"
+  },
+  "P0301": {
+   "first_name": "Fabiola",
+   "age": "55",
+   "sex": "female",
+   "call_language": "English",
+   "cancer_type": "breast",
+   "program_focus": "movement"
+  },
+  "P0302": {
+   "first_name": "Héctor",
+   "age": "55",
+   "sex": "male",
+   "call_language": "English",
+   "cancer_type": "endometrial",
+   "program_focus": "both"
+  },
+  "P0304": {
+   "first_name": "Jorge",
+   "age": "65",
+   "sex": "male",
+   "call_language": "Spanish",
+   "cancer_type": "breast",
+   "program_focus": "eating"
+  },
+  "P0322": {
+   "first_name": "Chris",
+   "age": "42",
+   "sex": "male",
+   "call_language": "English",
+   "cancer_type": "breast",
+   "program_focus": "both"
+  },
+  "P0392": {
+   "first_name": "Barbara",
+   "age": "71",
+   "sex": "female",
+   "call_language": "English",
+   "cancer_type": "kidney",
+   "program_focus": "both"
+  },
+  "P0407": {
+   "first_name": "Osvaldo",
+   "age": "65",
+   "sex": "male",
+   "call_language": "Spanish",
+   "cancer_type": "endometrial",
+   "program_focus": "eating"
+  },
+  "P0419": {
+   "first_name": "Gary",
+   "age": "57",
+   "sex": "male",
+   "call_language": "English",
+   "cancer_type": "lymphoma",
+   "program_focus": "both"
+  },
+  "P0420": {
+   "first_name": "Michael",
+   "age": "59",
+   "sex": "male",
+   "call_language": "English",
+   "cancer_type": "prostate",
+   "program_focus": "movement"
+  },
+  "P0468": {
+   "first_name": "Marta",
+   "age": "61",
+   "sex": "female",
+   "call_language": "English",
+   "cancer_type": "kidney",
+   "program_focus": "eating"
+  },
+  "P0495": {
+   "first_name": "Barbara",
+   "age": "37",
+   "sex": "female",
+   "call_language": "English",
+   "cancer_type": "breast",
+   "program_focus": "eating"
+  },
+  "P0540": {
+   "first_name": "Rosa",
+   "age": "57",
+   "sex": "female",
+   "call_language": "English",
+   "cancer_type": "endometrial",
+   "program_focus": "eating"
+  },
+  "P0576": {
+   "first_name": "Linda",
+   "age": "60",
+   "sex": "female",
+   "call_language": "English",
+   "cancer_type": "endometrial",
+   "program_focus": "both"
+  },
+  "P0719": {
+   "first_name": "Sam",
+   "age": "54",
+   "sex": "male",
+   "call_language": "English",
+   "cancer_type": "lung",
+   "program_focus": "eating"
+  },
+  "P0760": {
+   "first_name": "Rosa",
+   "age": "64",
+   "sex": "female",
+   "call_language": "Spanish",
+   "cancer_type": "prostate",
+   "program_focus": "movement"
+  },
+  "P0789": {
+   "first_name": "Lourdes",
+   "age": "70",
+   "sex": "female",
+   "call_language": "English",
+   "cancer_type": "kidney",
+   "program_focus": "eating"
+  },
+  "P0820": {
+   "first_name": "Nadège",
+   "age": "56",
+   "sex": "female",
+   "call_language": "English",
+   "cancer_type": "lung",
+   "program_focus": "movement"
+  },
+  "P0861": {
+   "first_name": "Carmen",
+   "age": "51",
+   "sex": "female",
+   "call_language": "English",
+   "cancer_type": "prostate",
+   "program_focus": "eating"
+  },
+  "P0886": {
+   "first_name": "Jorge",
+   "age": "58",
+   "sex": "male",
+   "call_language": "English",
+   "cancer_type": "endometrial",
+   "program_focus": "movement"
+  },
+  "P0975": {
+   "first_name": "Donna",
+   "age": "65",
+   "sex": "female",
+   "call_language": "English",
+   "cancer_type": "colorectal",
+   "program_focus": "both"
+  },
+  "P0998": {
+   "first_name": "Karen",
+   "age": "58",
+   "sex": "female",
+   "call_language": "English",
+   "cancer_type": "breast",
+   "program_focus": "both"
+  }
+ },
+ "coaches": {
+  "C02": {
+   "name": "Marisol",
+   "role": "health coach",
+   "languages": "English, Spanish"
+  },
+  "C03": {
+   "name": "Kendra",
+   "role": "exercise coach",
+   "languages": "English"
+  },
+  "C04": {
+   "name": "Luis",
+   "role": "exercise coach",
+   "languages": "English, Spanish"
+  },
+  "C05": {
+   "name": "Rachel",
+   "role": "dietitian",
+   "languages": "English"
+  },
+  "C06": {
+   "name": "Daniela",
+   "role": "health coach",
+   "languages": "English, Spanish"
+  },
+  "C07": {
+   "name": "Marcus",
+   "role": "exercise coach",
+   "languages": "English"
+  },
+  "C08": {
+   "name": "Yolanda",
+   "role": "health coach",
+   "languages": "English, Spanish"
+  },
+  "C09": {
+   "name": "Jean",
+   "role": "health coach",
+   "languages": "English, Haitian Creole"
+  },
+  "C12": {
+   "name": "Jorge",
+   "role": "exercise coach",
+   "languages": "English, Spanish"
+  },
+  "C13": {
+   "name": "Beth",
+   "role": "dietitian",
+   "languages": "English"
+  }
+ }
+}
