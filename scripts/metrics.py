@@ -77,6 +77,26 @@ def load(data):
     return lines.merge(calls[["call_id", "language"]], on="call_id"), calls
 
 
+def labels(pred, gold):
+    """Cohen's kappa, per-label precision/recall/F1 and the confusion matrix (rows = human label, columns = model)."""
+    pred, gold = list(pred), list(gold)
+    names = sorted(set(gold) | set(pred))
+    n = len(gold)
+    cm = {g: {p: 0 for p in names} for g in names}
+    for g, p in zip(gold, pred):
+        cm[g][p] += 1
+    po = sum(cm[x][x] for x in names) / n
+    pe = sum(sum(cm[x].values()) * sum(cm[g][x] for g in names) for x in names) / n / n
+    per = {}
+    for x in names:
+        tp, gn, pn = cm[x][x], sum(cm[x].values()), sum(cm[g][x] for g in names)
+        pr, rc = (tp / pn if pn else None), (tp / gn if gn else None)
+        per[x] = {"support": gn, "precision": r4(pr) if pr is not None else None, "recall": r4(rc) if rc is not None else None,
+                  "f1": r4(2 * pr * rc / (pr + rc)) if pr and rc else 0.0}
+    return {"kappa": r4((po - pe) / (1 - pe)), "macroF1": r4(np.mean([v["f1"] for v in per.values() if v["support"]])),
+            "perLabel": per, "confusion": cm}
+
+
 def tags(lines, split):
     t = preds(f"tags-{split}.jsonl").merge(lines[["call_id", "line_number", "speaker", "gold", "language"]], on=["call_id", "line_number"])
     out = {"calls": int(t.call_id.nunique()), "lines": len(t), "noAnswer": int(t.pred.isna().sum())}
@@ -88,7 +108,9 @@ def tags(lines, split):
                   "accuracyCountingNoAnswerWrong": r4((g.pred == g.gold).mean()),
                   # Baseline: always answer the most common human label.
                   "majorityBaseline": {"label": a.gold.mode()[0], "accuracy": r4((a.gold == a.gold.mode()[0]).mean())},
-                  "byLanguage": {lang: r4((x.pred == x.gold).mean()) for lang, x in a.groupby("language")}}
+                  "byLanguage": {lang: r4((x.pred == x.gold).mean()) for lang, x in a.groupby("language")},
+                  "labels": labels(a.pred, a.gold),
+                  "kappaByLanguage": {lang: labels(x.pred, x.gold)["kappa"] for lang, x in a.groupby("language")}}
     a = t[t.pred.notna()]
     hi = a.confidence >= 0.3
     out["calibration"] = {"shareAtLeast0.3": r4(hi.mean()), "accuracyAtLeast0.3": r4((a[hi].pred == a[hi].gold).mean()),
@@ -191,6 +213,7 @@ def annomi(data):
         bands = pd.cut(g.expert_agreement_pct, [0, 70, 90, 100], labels=["<=70", "80-90", "100"])
         out[sp] = {"lines": len(g), "accuracy": r4(g.hit.mean()), "expertAgreementPct": round(float(g.expert_agreement_pct.mean()), 1),
                    "byAgreement": {str(b): {"lines": len(x), "accuracy": r4(x.hit.mean())} for b, x in g.groupby(bands, observed=True)}}
+    out["labels"] = {sp: labels(g.pred, g.gold) for sp, g in r.groupby("speaker")}
     out["clientChangeOrSustainReadAsNeutral"] = int((~coach & r.gold.isin(["change", "sustain"]) & (r.pred == "neutral")).sum())
     sub = r[coach & r.hit]
     sub = sub.assign(sg=np.where(sub.gold == "question", sub.question_type, np.where(sub.gold == "reflection", sub.reflection_type, None)),
