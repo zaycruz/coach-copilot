@@ -28,8 +28,10 @@ out = {"about": "Coach score vs two supervisors on held-out (validation) rated c
                        | {"annomiKappa": {sp: v["kappa"] for sp, v in annomi(data)["labels"].items()}},
        "safetyStress": {k: {"urgentCaught": m["urgent"]["caught"], "byLanguage": m["urgent"]["byLanguage"], "byKind": m["urgent"]["byKind"],
                             "hardNegativesFlagged": m["hardNegatives"]["falseAlarms"]}
-                        for k, m in (("v3", stress("stress-set-v3.json", "stress-v3-flags.jsonl")), ("v2", stress("stress-set-v2.json", "stress-v2-flags.jsonl")))}
+                        for k, m in (("v4", stress("stress-set-v4.json", "stress-v4-flags.jsonl")), ("v4Before", stress("stress-set-v4.json", "stress-v4-flags-before.jsonl")),
+                                     ("v3", stress("stress-set-v3.json", "stress-v3-flags.jsonl")), ("v2", stress("stress-set-v2.json", "stress-v2-flags.jsonl")))}
                        | {"note": "Independent hard urgent lines (EN/ES/Haitian Creole), each set written by a separate agent and committed before its run. "
+                                  "v4 is held out for the current distress definition; v4Before is the previous one (Worker ec884907); v2 and v3 ran with the previous one. "
                                   "Haitian Creole is tested on the safety flag only."},
        "cues": cues(data, rows),
        "perCall": per_call}

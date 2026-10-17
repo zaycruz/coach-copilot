@@ -277,21 +277,21 @@
    ]
   },
   "falseAlarmsPerLine": {
-   "k": 9,
+   "k": 244,
    "n": 25785,
-   "rate": 0.0003,
+   "rate": 0.0095,
    "ci95": [
-    0.0002,
-    0.0007
+    0.0084,
+    0.0107
    ]
   },
   "callsWithFalseAlarm": {
-   "k": 9,
+   "k": 228,
    "n": 1085,
-   "rate": 0.0083,
+   "rate": 0.2101,
    "ci95": [
-    0.0044,
-    0.0157
+    0.1869,
+    0.2354
    ]
   },
   "coachConductAgreement": {
@@ -315,21 +315,21 @@
      ]
     },
     "falseAlarmLines": {
-     "k": 7,
+     "k": 166,
      "n": 16696,
-     "rate": 0.0004,
+     "rate": 0.0099,
      "ci95": [
-      0.0002,
-      0.0009
+      0.0085,
+      0.0116
      ]
     },
     "falseAlarmCalls": {
-     "k": 7,
+     "k": 154,
      "n": 704,
-     "rate": 0.0099,
+     "rate": 0.2188,
      "ci95": [
-      0.0048,
-      0.0204
+      0.1898,
+      0.2508
      ]
     }
    },
@@ -344,21 +344,21 @@
      ]
     },
     "falseAlarmLines": {
-     "k": 2,
+     "k": 78,
      "n": 9089,
-     "rate": 0.0002,
+     "rate": 0.0086,
      "ci95": [
-      0.0001,
-      0.0008
+      0.0069,
+      0.0107
      ]
     },
     "falseAlarmCalls": {
-     "k": 2,
+     "k": 74,
      "n": 381,
-     "rate": 0.0052,
+     "rate": 0.1942,
      "ci95": [
-      0.0014,
-      0.0189
+      0.1576,
+      0.2369
      ]
     }
    }
@@ -396,6 +396,162 @@
   }
  },
  "safetyStress": {
+  "v4": {
+   "urgentCaught": {
+    "k": 139,
+    "n": 162,
+    "rate": 0.858,
+    "ci95": [
+     0.796,
+     0.9035
+    ]
+   },
+   "byLanguage": {
+    "English": {
+     "k": 50,
+     "n": 54,
+     "rate": 0.9259,
+     "ci95": [
+      0.8245,
+      0.9708
+     ]
+    },
+    "Haitian Creole": {
+     "k": 41,
+     "n": 54,
+     "rate": 0.7593,
+     "ci95": [
+      0.6305,
+      0.8536
+     ]
+    },
+    "Spanish": {
+     "k": 48,
+     "n": 54,
+     "rate": 0.8889,
+     "ci95": [
+      0.7781,
+      0.9481
+     ]
+    }
+   },
+   "byKind": {
+    "distress": {
+     "k": 44,
+     "n": 54,
+     "rate": 0.8148,
+     "ci95": [
+      0.6916,
+      0.8962
+     ]
+    },
+    "medical": {
+     "k": 46,
+     "n": 54,
+     "rate": 0.8519,
+     "ci95": [
+      0.734,
+      0.923
+     ]
+    },
+    "social": {
+     "k": 49,
+     "n": 54,
+     "rate": 0.9074,
+     "ci95": [
+      0.8009,
+      0.9598
+     ]
+    }
+   },
+   "hardNegativesFlagged": {
+    "k": 37,
+    "n": 72,
+    "rate": 0.5139,
+    "ci95": [
+     0.4007,
+     0.6257
+    ]
+   }
+  },
+  "v4Before": {
+   "urgentCaught": {
+    "k": 118,
+    "n": 162,
+    "rate": 0.7284,
+    "ci95": [
+     0.6552,
+     0.791
+    ]
+   },
+   "byLanguage": {
+    "English": {
+     "k": 45,
+     "n": 54,
+     "rate": 0.8333,
+     "ci95": [
+      0.7126,
+      0.9098
+     ]
+    },
+    "Haitian Creole": {
+     "k": 30,
+     "n": 54,
+     "rate": 0.5556,
+     "ci95": [
+      0.4238,
+      0.68
+     ]
+    },
+    "Spanish": {
+     "k": 43,
+     "n": 54,
+     "rate": 0.7963,
+     "ci95": [
+      0.671,
+      0.8823
+     ]
+    }
+   },
+   "byKind": {
+    "distress": {
+     "k": 25,
+     "n": 54,
+     "rate": 0.463,
+     "ci95": [
+      0.3369,
+      0.5939
+     ]
+    },
+    "medical": {
+     "k": 46,
+     "n": 54,
+     "rate": 0.8519,
+     "ci95": [
+      0.734,
+      0.923
+     ]
+    },
+    "social": {
+     "k": 47,
+     "n": 54,
+     "rate": 0.8704,
+     "ci95": [
+      0.7558,
+      0.9358
+     ]
+    }
+   },
+   "hardNegativesFlagged": {
+    "k": 20,
+    "n": 72,
+    "rate": 0.2778,
+    "ci95": [
+     0.1876,
+     0.3905
+    ]
+   }
+  },
   "v3": {
    "urgentCaught": {
     "k": 131,
@@ -552,24 +708,24 @@
     ]
    }
   },
-  "note": "Independent hard urgent lines (EN/ES/Haitian Creole), each set written by a separate agent and committed before its run. Haitian Creole is tested on the safety flag only."
+  "note": "Independent hard urgent lines (EN/ES/Haitian Creole), each set written by a separate agent and committed before its run. v4 is held out for the current distress definition; v4Before is the previous one (Worker ec884907); v2 and v3 ran with the previous one. Haitian Creole is tested on the safety flag only."
  },
  "cues": {
   "calls": 1085,
   "cuesPerCall": {
-   "mean": 4.6857,
+   "mean": 4.8074,
    "median": 5.0,
-   "p90": 6.0,
-   "coachingMean": 4.6654,
-   "perCoachLine": 0.1681
+   "p90": 7.0,
+   "coachingMean": 4.5705,
+   "perCoachLine": 0.1725
   },
   "precision": {
-   "k": 4758,
-   "n": 5062,
-   "rate": 0.9399,
+   "k": 4651,
+   "n": 4959,
+   "rate": 0.9379,
    "ci95": [
-    0.9331,
-    0.9462
+    0.9308,
+    0.9443
    ]
   },
   "recall": {
@@ -584,16 +740,16 @@
   "precisionByKind": {
    "confront": {
     "k": 143,
-    "n": 163,
-    "rate": 0.8773,
+    "n": 164,
+    "rate": 0.872,
     "ci95": [
-     0.8181,
-     0.9192
+     0.8122,
+     0.9147
     ]
    },
    "persuade": {
-    "k": 828,
-    "n": 831,
+    "k": 821,
+    "n": 824,
     "rate": 0.9964,
     "ci95": [
      0.9894,
@@ -601,39 +757,39 @@
     ]
    },
    "unreflected_change": {
-    "k": 3699,
-    "n": 3976,
-    "rate": 0.9303,
+    "k": 3601,
+    "n": 3881,
+    "rate": 0.9279,
     "ci95": [
-     0.922,
-     0.9378
+     0.9193,
+     0.9356
     ]
    },
    "four_questions": {
-    "k": 61,
-    "n": 63,
-    "rate": 0.9683,
+    "k": 60,
+    "n": 62,
+    "rate": 0.9677,
     "ci95": [
-     0.8914,
-     0.9913
+     0.8898,
+     0.9911
     ]
    },
    "three_closed": {
-    "k": 27,
-    "n": 29,
-    "rate": 0.931,
+    "k": 26,
+    "n": 28,
+    "rate": 0.9286,
     "ci95": [
-     0.7804,
-     0.9809
+     0.7735,
+     0.9802
     ]
    }
   },
   "vsSupervisor": {
    "calls": 477,
-   "spearmanCoachingCuesVsMeanScore": 0.3112,
+   "spearmanCoachingCuesVsMeanScore": 0.2805,
    "ci95": [
-    0.225,
-    0.388
+    0.196,
+    0.356
    ]
   }
  },

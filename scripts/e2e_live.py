@@ -51,6 +51,7 @@ turn("ES fever on chemo", {"speaker": "participant", "text": "Tengo fiebre desde
 turn("everyday ache", {"speaker": "participant", "text": "My back is acting up again, but I still did my walks."}, prev, "none")
 o = turn("ES passive ideation (red-flag rule)", {"speaker": "participant", "text": "Ya empecé a regalar mis cosas. No me veo aquí por mucho tiempo, y la verdad tampoco quiero."}, prev, "distress")
 check("rule: ES passive ideation hit ideation-es", o.get("rule") == "ideation-es", o)
+check("distress flag carries the protocol action", o.get("action") == "Use your suicide-risk screening protocol now.", o)
 turn("dislikes the goal", {"speaker": "participant", "text": "Water just doesn't do it for me."}, prev, "none")
 turn("coach moves on after the flag", {"speaker": "coach", "text": "Okay. So, about the walking goal."},
      [prev[0], {**fever, "flag": "medical"}], "missed_concern")
@@ -90,9 +91,9 @@ if status == 200:
           and live["flags"]["callsWithFalseAlarm"] == f["validation"]["falseAlarmCalls"] and live["flags"]["coachConductAgreement"] == f["coachConduct"],
           live["flags"])
     check("drift: cues and safety stress equal runs/metrics.json", live.get("cues") == repo["cues"]
-          and live.get("safetyStress", {}).get("v3", {}).get("urgentCaught") == repo["stressV3"]["urgent"]["caught"]
+          and live.get("safetyStress", {}).get("v4", {}).get("urgentCaught") == repo["stressV4"]["urgent"]["caught"]
           and live.get("tagAgreement", {}).get("move", {}).get("kappa") == repo["tags"]["validation"]["move"]["labels"]["kappa"],
-          {"cues": (live.get("cues") or {}).get("precision"), "v3": live.get("safetyStress", {}).get("v3", {}).get("urgentCaught")})
+          {"cues": (live.get("cues") or {}).get("precision"), "v4": live.get("safetyStress", {}).get("v4", {}).get("urgentCaught")})
     per_call = json.load(open(os.path.join(ROOT, "runs", "agreement-per-call.json")))["perCall"]
     check("drift: per-call table equal", live["perCall"] == per_call, {"liveRows": len(live["perCall"]), "repoRows": len(per_call)})
 

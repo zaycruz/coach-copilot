@@ -16,6 +16,7 @@ import RF from "./redflags.json";
 
 /** Model-free red flags: plain patterns over lowercased, accent-stripped text, so they hold when the model misses. */
 const RED_RULES = RF.rules.map((r) => ({ id: r.id, kind: r.kind, re: new RegExp(r.pattern) }));
+const DISTRESS_ACTION = "Use your suicide-risk screening protocol now.";
 const fold = (text: string) => text.toLowerCase().normalize("NFD").replace(/\p{M}/gu, "");
 const redRule = (text: string) => RED_RULES.find((r) => r.re.test(fold(text))) ?? null;
 
@@ -195,6 +196,8 @@ async function turn(env: Env, body: Record<string, unknown>) {
     probabilities: isRecord(tag) ? tag.probabilities : null,
     flag,
     ...(rule ? { rule: rule.id, modelFlag: choiceOf(answersOf(flagged).flag) } : {}),
+    // The flag misses some indirect suicide warning signs (README), so a distress flag hands over to the coach's protocol.
+    ...(flag === "distress" ? { action: DISTRESS_ACTION } : {}),
   });
 }
 

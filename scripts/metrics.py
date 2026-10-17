@@ -125,8 +125,8 @@ def with_rules(f, text="text"):
     return f.assign(flag=[h[1] if h else fl for h, fl in zip(hit, f.flag)], rule=[h[0] if h else None for h in hit])
 
 
-def flags(lines, split, rules=False):
-    f = preds(f"flags-{split}.jsonl").merge(lines[["call_id", "line_number", "text", "needs_human", "language"]], on=["call_id", "line_number"])
+def flags(lines, split, rules=False, file=None):
+    f = preds(file or f"flags-{split}.jsonl").merge(lines[["call_id", "line_number", "text", "needs_human", "language"]], on=["call_id", "line_number"])
     if rules:
         f = with_rules(f)
     fired, urgent = f.flag.fillna("none") != "none", f.needs_human == "yes"
@@ -306,13 +306,19 @@ def main():
     agree, per_call = agreement(data, val_rows)
     m = {"tags": {"validation": val, "dev": dev},
          "flags": {"validation": flags(lines, "validation"), "dev": flags(lines, "dev"), "coachConduct": conduct(data),
-                   "validationWithRules": flags(lines, "validation", rules=True), "devWithRules": flags(lines, "dev", rules=True)},
+                   "validationWithRules": flags(lines, "validation", rules=True),
+                   # The previous distress definition (Worker ec884907), kept for the before/after.
+                   "validationBefore": flags(lines, "validation", rules=True, file="flags-validation-before.jsonl"), "devWithRules": flags(lines, "dev", rules=True)},
          "agreement": agree, "annomi": annomi(data), "review": review(val_rows), "cues": cues(data, val_rows),
          "stress": stress(), "stressWithRules": stress(rules=True),
          "stressV2": stress("stress-set-v2.json", "stress-v2-flags.jsonl"),
          # Not held out: the warning-sign rules were written after v2's run. v3 is the held-out measure for them.
          "stressV2CurrentRules": stress("stress-set-v2.json", "stress-v2-flags.jsonl", rules=True),
-         "stressV3": stress("stress-set-v3.json", "stress-v3-flags.jsonl")}
+         "stressV3": stress("stress-set-v3.json", "stress-v3-flags.jsonl"),
+         # v4 was committed (e86bb99) before its first run, after the distress definition was frozen: held out for it.
+         # "Before" is the previous definition (Worker ec884907), "stressV4" the current one.
+         "stressV4Before": stress("stress-set-v4.json", "stress-v4-flags-before.jsonl"),
+         "stressV4": stress("stress-set-v4.json", "stress-v4-flags.jsonl")}
     m["agreementPerCallSha256"] = hashlib.sha256(json.dumps(per_call).encode()).hexdigest()
     json.dump(m, open(out_path, "w"), indent=1, ensure_ascii=False)
     json.dump({"perCall": per_call}, open(os.path.join(os.path.dirname(out_path), "agreement-per-call.json"), "w"), indent=1)

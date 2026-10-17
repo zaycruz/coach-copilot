@@ -9,19 +9,19 @@ For the care team, every coaching call can be scored and screened for urgent con
 |---|---|---|
 | Coach score vs each supervisor: **r = 0.751** (A), **0.701** (B), 477 calls | Supervisor B vs A: r = 0.692 | 0.708–0.788 (A), 0.657–0.739 (B) |
 | Coach move tags: **93.1%** correct (12 labels, 1,085 calls) | Always the most common label: 20.3% | 92.8–93.4% |
-| Urgent lines caught: **13 / 13**, with 9 false alarms in 25,785 lines | Base rate: 0.05% of lines are urgent | 77.2–100% |
-| Independent hard urgent lines (EN/ES/Haitian Creole): **131 / 162**; suicide warning signs only **28 / 54** | — | 74.1–86.2%; 38.9–64.6% |
+| Urgent lines caught: **13 / 13**, with 244 false alarms in 25,785 lines (9 before the suicide-risk fix) | Base rate: 0.05% of lines are urgent | 77.2–100%; false alarms 0.84–1.07% |
+| Independent hard urgent lines, held-out set v4 (EN/ES/Haitian Creole): **139 / 162**; suicide risk **44 / 54** (before the fix: 118 and 25) | — | 79.6–90.3%; 69.2–89.6% (before: 33.7–59.4%) |
 
-**Read this before relying on the red flag.** The sponsor data has only 13 urgent lines. Two independent sets of 162 hard urgent lines were written by a separate agent and committed before their runs. On those, the engine catches medical and social emergencies (52/54 and 51/54 on the latest set), but it **misses about half of indirect suicide warning signs**: giving a pet or ring away, letters "just in case", "I know how and when", testing extra sleeping pills, standing on a bridge. A model-free keyword screen now runs before the model and catches explicit ideation in English, Spanish and Creole, but patterns cannot cover warning signs this varied. Until the flag question itself covers warning signs and is re-validated, **the coach's own suicide screening protocol stays in charge**, and this flag is a backup ([Safety stress sets](#safety-stress-sets)).
+**Read this before relying on the red flag.** The sponsor data has only 13 urgent lines. So three independent sets of 162 hard urgent lines were written by a separate agent, each committed before its first run. The flag question's distress definition now names suicide warning signs (goodbyes and "in case" messages, giving things away, counting or saving pills, means, a plan, being a burden). On the held-out set v4 it catches **44 of 54** suicide-risk lines, against **25 of 54** before. The cost is false alarms: on the 25,785 real validation lines they rise from **9 to 244** (about one call in five). Most are medical (207). 116 of those are a single repeated line, "I need to get my sugar down". It still misses about 1 in 5 indirect warning signs. So every distress flag tells the coach **"Use your suicide-risk screening protocol now."** The coach's protocol stays in charge, and this flag is a backup ([Safety stress sets](#safety-stress-sets)).
 
-English and Spanish are measured separately, and Spanish holds up. The score-vs-supervisors r is 0.818 in Spanish and 0.771 in English. Urgent lines caught: 7/7 in Spanish and 6/6 in English. **Haitian Creole is tested only on the safety flag** (stress sets, 40/54 urgent lines caught on the latest set). The sponsor data has no Creole calls, so tags and scores are not validated in Creole. The calls are synthetic (Crane Lab). On real, expert-labelled counselling sessions (AnnoMI), Clef tags 75.0% of lines like the experts' majority (68.2–79.6%), where the experts themselves agree 83.9% of the time. It almost never recognises client *sustain* talk there (2 of 31).
+English and Spanish are measured separately, and Spanish holds up. The score-vs-supervisors r is 0.818 in Spanish and 0.771 in English. Urgent lines caught: 7/7 in Spanish and 6/6 in English. **Haitian Creole is tested only on the safety flag** (stress sets, 41/54 urgent lines caught on the latest set). The sponsor data has no Creole calls, so tags and scores are not validated in Creole. The calls are synthetic (Crane Lab). On real, expert-labelled counselling sessions (AnnoMI), Clef tags 75.0% of lines like the experts' majority (68.2–79.6%), where the experts themselves agree 83.9% of the time. It almost never recognises client *sustain* talk there (2 of 31).
 
 ### Reproduce in 3 commands
 
 ```sh
 git clone https://github.com/zaycruz/coach-copilot && cd coach-copilot
 unzip /path/to/Challenge5_Coaches_Copilot.zip -d data/   # sponsor data, not in the repo (data/README.md)
-scripts/reproduce.sh                                     # recomputes and checks 247 numbers, ~2 s, needs uv
+scripts/reproduce.sh                                     # recomputes and checks 264 numbers, ~2 s, needs uv
 ```
 
 The script rebuilds each number from committed model outputs, with no keys or network. Only latency, the GLM bake-off and the 30-cue live run are live-only. [REPRODUCE.md](REPRODUCE.md) maps each number to its file and key, and shows how to re-query the models. Live engine: https://coach.raava.dev · API: [CONTRACT.md](CONTRACT.md)
@@ -123,7 +123,7 @@ Labelled synthetic calls are split by `participant_id` hash: **dev 20%** (tuning
 | Coach move (12-way) | **93.1%** (EN 93.9%, ES 91.6%) |
 | Participant talk (3-way) | **90.9%** (EN 91.2%, ES 90.4%) |
 
-95% CIs, bootstrapped over calls: move 92.8–93.4%, talk 90.5–91.3%. Always answering the most common label would score 20.3% (move) and 47.3% (talk). 37 of 56,038 lines got no answer (upstream errors during the batch run) and are left out. Counted as wrong, they give 93.0% and 90.8%. Cohen's kappa is **0.921** for coach move (EN 0.930, ES 0.904) and **0.848** for participant talk (EN 0.854, ES 0.839). The weakest labels are simple reflection (recall 73.0%; misses go to complex reflection, emphasize autonomy and affirm) and sustain talk (recall 63.4%). Per-label precision, recall, F1 and the full confusion matrices are in `runs/metrics.json` (`tags.validation.{move,talk}.labels`). Clef call time per line in the batch run (`evaluate.py` on `/judge`): p50 ~0.3–0.5 s, p95 ~1.05 s. A `/api/turn` round trip from a browser takes longer, because it adds the network and, on participant lines, waits for the parallel flag call. In `runs/e2e-live-20261017T170443Z.json`, measured from a Cloudflare sandbox, the round-trip p50 is about 310 ms for coach lines and 800 ms for participant lines (time inside the Worker: 278 and 688 ms). From a laptop client (`runs/e2e-live-20261017T171736Z.json`) it is about 680 ms and 720 ms (Worker 331 and 478 ms). The network path accounts for most of the gap. These numbers come from the move and talk questions as they ship. They were not rerun after `scope` joined the coach request, because `scope` is a separate question in the same call.
+95% CIs, bootstrapped over calls: move 92.8–93.4%, talk 90.5–91.3%. Always answering the most common label would score 20.3% (move) and 47.3% (talk). 37 of 56,038 lines got no answer (upstream errors during the batch run) and are left out. Counted as wrong, they give 93.0% and 90.8%. Cohen's kappa is **0.921** for coach move (EN 0.930, ES 0.904) and **0.848** for participant talk (EN 0.854, ES 0.839). These are model-vs-human kappas. The synthetic calls carry one human label per line, so the data has no human-vs-human line kappa to set them against (only call-level scores come from two supervisors); the closest human-human reference is AnnoMI's 10-expert subset below, where Clef's kappa is lower. The weakest labels are simple reflection (recall 73.0%; misses go to complex reflection, emphasize autonomy and affirm) and sustain talk (recall 63.4%). Per-label precision, recall, F1 and the full confusion matrices are in `runs/metrics.json` (`tags.validation.{move,talk}.labels`). Clef call time per line in the batch run (`evaluate.py` on `/judge`): p50 ~0.3–0.5 s, p95 ~1.05 s. A `/api/turn` round trip from a browser takes longer, because it adds the network and, on participant lines, waits for the parallel flag call. In `runs/e2e-live-20261017T170443Z.json`, measured from a Cloudflare sandbox, the round-trip p50 is about 310 ms for coach lines and 800 ms for participant lines (time inside the Worker: 278 and 688 ms). From a laptop client (`runs/e2e-live-20261017T171736Z.json`) it is about 680 ms and 720 ms (Worker 331 and 478 ms). The network path accounts for most of the gap. These numbers come from the move and talk questions as they ship. They were not rerun after `scope` joined the coach request, because `scope` is a separate question in the same call.
 
 ### Coach score vs supervisors (`scripts/agreement.py`, `GET /api/c5/agreement`)
 
@@ -157,12 +157,12 @@ The participant flag is judged in its own line-only request. Its `none` examples
 | | Result | Wilson 95% CI |
 |---|---|---|
 | `needs_human` lines caught | **13/13** (10 medical, 2 social, 1 distress) | 77.2–100% |
-| False alarms, lines | **9 / 25,785** (5 distinct texts, 0 dropout) | 0.02–0.07% |
-| False alarms, calls | 9 / 1,085 | 0.4–1.6% |
+| False alarms, lines | **244 / 25,785** (22 distinct texts; 9 before the suicide-risk fix) | 0.84–1.07% |
+| False alarms, calls | 228 / 1,085 (9 before the fix) | 18.7–23.5% |
 | Coach conduct vs supervisor `safety_issue_handled` | 8/8 calls | 67.6–100% |
-| English: caught / false-alarm lines / calls | 6/6 · 7 / 16,696 · 7 / 704 | 61.0–100% · 0.02–0.09% · 0.5–2.0% |
-| Spanish: caught / false-alarm lines / calls | 7/7 · 2 / 9,089 · 2 / 381 | 64.6–100% · 0.01–0.08% · 0.1–1.9% |
-| dev: caught / false alarms | 7/7, 1 / 6,854 lines | |
+| English: caught / false-alarm lines / calls | 6/6 · 166 / 16,696 · 154 / 704 | 61.0–100% · 0.85–1.16% · 19.0–25.0% |
+| Spanish: caught / false-alarm lines / calls | 7/7 · 78 / 9,089 · 74 / 381 | 64.6–100% · 0.69–1.07% · 15.8–23.7% |
+| dev: caught / false alarms | 7/7, 53 / 6,854 lines | |
 
 ### Safety stress sets
 
@@ -172,39 +172,43 @@ Each line goes alone through the live `/api/turn` (`scripts/stress_flags.py`). A
 |---|---|---|---|---|
 | v1, `stress-set.json`, EN/ES, 40 + 20 | us, before rules | 39/40 (87.1–99.6%) | 5/6 | 1/20 |
 | v2, `stress-set-v2.json`, EN/ES/HT, 162 + 72 | separate agent from a brief, run with rules v1 | 132/162 (74.8–86.7%) | 31/54 (44.2–69.7%) | 31/72 (32.3–54.6%) |
-| **v3**, `stress-set-v3.json`, EN/ES/HT, 162 + 72 | separate agent from a brief, run with current rules | **131/162 (74.1–86.2%)** | **28/54 (38.9–64.6%)** | 21/72 (19.9–40.5%) |
+| v3, `stress-set-v3.json`, EN/ES/HT, 162 + 72 | separate agent from a brief, run with current rules, previous definition | 131/162 (74.1–86.2%) | 28/54 (38.9–64.6%) | 21/72 (19.9–40.5%) |
+| v4, `stress-set-v4.json`, EN/ES/HT, 162 + 72, previous definition (Worker ec884907) | separate agent from a brief, committed (e86bb99) before its first run, after the new definition was frozen | 118/162 (65.5–79.1%) | 25/54 (33.7–59.4%) | 20/72 |
+| **v4, current definition** | same set, held out | **139/162 (79.6–90.3%)** | **44/54 (69.2–89.6%)** | **37/72** |
 
-v3, by language and kind (Wilson 95% CIs in `runs/metrics.json` `stressV3`):
+The new definition was written and checked on v1–v3 and dev only, which are spent for it. v4 and the validation split were run once, after it was frozen. On v1–v3 it gave distress 6/6, 52/54 and 44/54 (offline, `scripts/flag_revalidate.py`).
+
+v4 with the current definition, by language and kind (before → after; Wilson 95% CIs in `runs/metrics.json` `stressV4`, `stressV4Before`):
 
 | | Medical | Social | Distress |
 |---|---|---|---|
-| English | 18/18 | 18/18 | 9/18 |
-| Spanish | 17/18 | 18/18 | 11/18 |
-| Haitian Creole | 17/18 | 15/18 | 8/18 |
+| English | 18/18 | 17/18 | 10 → 15/18 |
+| Spanish | 16/18 | 17/18 | 10 → 15/18 |
+| Haitian Creole | 12/18 | 13 → 15/18 | 5 → 14/18 |
 
 **What this says.**
-- The model flag is reliable for medical and social emergencies in all three languages.
-- It is not reliable for suicide risk unless the person says it outright. Its definition of distress (`src/payload.json`) covers hopelessness and not wanting to live, but none of the indirect warning signs.
-- Several warning-sign lines get the amber `dropout` flag: "I'm so done… not tryna be here for the next scan", "if you don't hear from me, tell the team thanks". The coach does see a banner then, but it is the wrong colour and owner.
-- The independent sets' hard negatives are much harder than real calls: resolved ER visits, someone else's fever, "this kale smoothie is killing me". About 30–40% of them raise a flag. On the 25,785 real validation lines the false-alarm rate is 0.03%.
+- The flag now catches most indirect suicide warning signs in all three languages. It still misses about 1 in 5. Every distress flag carries `action: "Use your suicide-risk screening protocol now."`.
+- The price is false alarms on real calls: 244 / 25,785 lines (0.84–1.07%), in 228 of 1,085 calls, against 9 before. 207 are medical and 36 distress. One repeated line, "I need to get my sugar down", accounts for 116. Lines like "I don't want to end up like my dad" now read as distress. We could not tune these away without touching the test split.
+- Medical recall in Haitian Creole is the weakest cell (12/18 on v4).
+- The independent sets' hard negatives are much harder than real calls (resolved ER visits, someone else's fever, dark humour): about half of v4's raise a flag.
 
 **Model-free red-flag screen** (`src/redflags.json`, same patterns in `scripts/redflags.py`):
 - What it is: patterns for explicit ideation, suicide warning signs, breathing or chest pain and bleeding, in English, Spanish and Haitian Creole. They run over lowercased, accent-stripped text before the model's answer is used.
 - What it does: a hit sets that red flag and adds `rule` to the response. It never clears a flag.
 - How it was built: tuned on dev and on v1 only. The warning-sign rules were added after v2's run, so v2 is not held out for them (distress 31/54 → 42/54 offline). v3 was written after them, and on v3 the rules caught 15 lines, 6 of them hard negatives.
-- Real calls: on validation the rules add **no** false alarms (still 9/25,785) and catch nothing the model missed.
+- Real calls: on validation the rules add **no** false alarms and catch nothing the model missed (checked with both definitions).
 
-**Next fix (not done):** move the warning signs into the flag question's distress definition, so the model learns them rather than the patterns. Changing it re-opens the validation numbers above, so it needs a full validation re-run (about 26,000 Clef calls on a separate Worker) and a fresh independent set.
+**Re-validation of the distress definition (done, `scripts/flag_revalidate.py`):** the flag request was re-run on every validation and dev participant line (3,195 + 1,500 unique texts). It was throttled to 3–4 requests in flight, with an automatic stop on Workers AI rate limits and a pause during judges-panel evidence windows. 13/13 urgent lines are still caught.
 
 ### Coaching cues
 
 Cues are written by GLM only at trigger moments that the page computes from the tags (`scripts/triggers.py`, the page's `checkTriggers` line for line).
 
 **On the 1,085 held-out calls** (offline, from the committed tags and flags; `cues` in `runs/metrics.json`):
-- **Rate:** 4.7 cues per call (median 5, 90th percentile 6), or one per 6 coach lines.
-- **Trigger precision vs the human labels: 94.0% (93.3–94.6%).** Of the coaching moments where the app asks for a cue, 94% also meet the trigger under the human tags at that line. Recall is 98.6%.
-- **By kind:** 79% are "change talk not reflected or affirmed" (precision 93.0%). Confront is the weakest at 87.7%.
-- **Not a quality score.** The number of coaching cues per call correlates **+0.31** (Spearman, 95% CI 0.225–0.388) with the supervisors' mean score, so better-rated calls get *more* cues. The likely reason is that the dominant trigger fires on change talk, which better calls draw out more often. The trigger mix has not been validated by an MI supervisor.
+- **Rate:** 4.8 cues per call (median 5, 90th percentile 7), or one per 6 coach lines.
+- **Trigger precision vs the human labels: 93.8% (93.1–94.4%).** Of the coaching moments where the app asks for a cue, 94% also meet the trigger under the human tags at that line. Recall is 98.6%.
+- **By kind:** 78% are "change talk not reflected or affirmed" (precision 92.8%). Confront is the weakest at 87.2%.
+- **Not a quality score.** The number of coaching cues per call correlates **+0.28** (Spearman, 95% CI 0.196–0.356) with the supervisors' mean score, so better-rated calls get *more* cues. The likely reason is that the dominant trigger fires on change talk, which better calls draw out more often. The trigger mix has not been validated by an MI supervisor.
 
 **Live, 30 trigger moments** (6 per kind, seed 7; `scripts/cue_eval.py`, `runs/cue-eval-20261017T173558Z.json`):
 - 30/30 answered, with no rate limits. GLM time in the Worker: **p50 2.4 s, p95 5.9 s** (round trip 3.0 s and 6.5 s).

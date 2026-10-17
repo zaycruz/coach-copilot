@@ -19,7 +19,7 @@ scripts/reproduce.sh
 `reproduce.sh` runs three steps:
 1. It checks the four data files against `data/SHA256SUMS` and stops on any mismatch.
 2. It runs `scripts/metrics.py`, which joins `runs/predictions/*.jsonl` (ids and model answers only, no text) with the sponsor labels and `scripts/stress-set.json` and writes `runs/metrics.json` and `runs/agreement-per-call.json`.
-3. It runs `scripts/check_metrics.py`, which compares 247 values with `scripts/expected.json`, rounded as the README shows them, and exits 1 on any mismatch.
+3. It runs `scripts/check_metrics.py`, which compares 264 values with `scripts/expected.json`, rounded as the README shows them, and exits 1 on any mismatch.
 
 **Runtime:** about 2 s for the metrics on an M-series laptop, plus the one-time `uv sync`.
 
@@ -27,7 +27,7 @@ scripts/reproduce.sh
 
 ### README number → `runs/metrics.json` key
 
-The full list (247 keys) is `scripts/expected.json`. The headline numbers:
+The full list (264 keys) is `scripts/expected.json`. The headline numbers:
 
 | README number | Key | Expected |
 |---|---|---|
@@ -48,18 +48,20 @@ The full list (247 keys) is `scripts/expected.json`. The headline numbers:
 | Supervisor A vs B, ICC(2,1) (CI) | `agreement.supervisorIcc.icc21` (`.ci95`) | 0.666 (0.613–0.712) |
 | MAE: app vs A, app vs B, A vs B | `agreement.mae.{maeVsA,maeVsB,maeAvsB}` | 0.553, 0.597, 0.61 |
 | `needs_human` lines caught (Wilson CI) | `flags.validation.caught` | 13/13 (0.772–1) |
-| False-alarm lines (CI), distinct texts, dropout | `flags.validation.falseAlarmLines`, `.falseAlarmTexts`, `.falseAlarmDropout` | 9/25,785 (0.0002–0.0007), 5, 0 |
-| Calls with a false alarm | `flags.validation.falseAlarmCalls` | 9/1,085 (0.004–0.016) |
+| False-alarm lines (CI), distinct texts, dropout | `flags.validation.falseAlarmLines`, `.falseAlarmTexts`, `.falseAlarmDropout` | 244/25,785 (0.0084–0.0107), 22, 0 |
+| Calls with a false alarm | `flags.validation.falseAlarmCalls` | 228/1,085 (0.187–0.235) |
 | Coach conduct vs supervisors | `flags.coachConduct` | 8/8 (0.676–1) |
-| Dev: lines caught, false alarms | `flags.dev.caught`, `flags.dev.falseAlarmLines` | 7/7, 1/6,854 |
+| Dev: lines caught, false alarms | `flags.dev.caught`, `flags.dev.falseAlarmLines` | 7/7, 53/6,854 |
 | AnnoMI: Clef vs expert agreement, all / counsellor / client | `annomi.accuracy`, `annomi.expertAgreementPct` (and per speaker) | 0.750 vs 83.9; 0.750 vs 87.5; 0.750 vs 80.2 |
 | AnnoMI, lines where all 10 experts agreed | `annomi.{counsellor,client}.byAgreement.100.accuracy` | 0.911, 0.931 |
 | AnnoMI subtypes | `annomi.questionSubtype`, `annomi.reflectionSubtype` | 0.732 (56), 0.391 (23) |
 | Stress set: urgent caught (Wilson CI), right kind, hard-negative false alarms | `stress.urgent.caught`, `stress.urgent.kindCorrect`, `stress.hardNegatives.falseAlarms` | 39/40 (0.871–0.996), 38/40, 1/20 |
 | Kappa: coach move, participant talk; AnnoMI counsellor, client | `tags.validation.{move,talk}.labels.kappa`; `annomi.labels.{counsellor,client}.kappa` | 0.921, 0.848; 0.656, 0.439 |
 | Independent stress sets v2, v3: urgent caught, distress, hard negatives flagged | `stressV2.*`, `stressV3.urgent.caught`, `.byKind.distress`, `stressV3.hardNegatives.falseAlarms` | 132/162, 31/54, 31/72; 131/162, 28/54, 21/72 |
-| Validation flags with the red-flag rules | `flags.validationWithRules.{caught,falseAlarmLines}` | 13/13, 9/25,785 |
-| Cues: per call, trigger precision (CI), recall, Spearman vs supervisor mean | `cues.cuesPerCall.mean`, `cues.precision`, `cues.recall`, `cues.vsSupervisor` | 4.7, 0.940 (0.933–0.946), 0.986, 0.31 |
+| Validation flags with the red-flag rules | `flags.validationWithRules.{caught,falseAlarmLines}` | 13/13, 244/25,785 |
+| Validation flags, previous distress definition (before) | `flags.validationBefore.{caught,falseAlarmLines}` | 13/13, 9/25,785 |
+| Held-out stress set v4, previous → current definition: urgent caught (CI), distress (CI), hard negatives flagged | `stressV4Before.*`, `stressV4.*` | 118/162 (0.655–0.791), 25/54 (0.337–0.594), 20/72 → 139/162 (0.796–0.903), 44/54 (0.692–0.896), 37/72 |
+| Cues: per call, trigger precision (CI), recall, Spearman vs supervisor mean | `cues.cuesPerCall.mean`, `cues.precision`, `cues.recall`, `cues.vsSupervisor` | 4.8, 0.938 (0.931–0.944), 0.986, 0.28 |
 | GLM review on 600 low-confidence lines | `review.{clefAlone,clefPlusReview,fixed,broke,answered}` | 0.760 → 0.767, fixed 8, broke 4, answered 65 |
 
 `src/agreement.json`, which `GET /api/c5/agreement` serves, is written by `scripts/agreement.py` from the same functions in `metrics.py`.
@@ -90,6 +92,8 @@ These numbers are live-only, so they are not recomputed offline:
    uv run python -I scripts/stress_flags.py                                         # stress set v1, 60 lines
    uv run python -I scripts/stress_flags.py $COACH_COPILOT_URL stress-set-v2.json stress-v2-flags.jsonl
    uv run python -I scripts/stress_flags.py $COACH_COPILOT_URL stress-set-v3.json stress-v3-flags.jsonl
+   uv run python -I scripts/stress_flags.py $COACH_COPILOT_URL stress-set-v4.json stress-v4-flags.jsonl
+   uv run python -I scripts/flag_revalidate.py split $D validation                  # throttled; ~3,200 Clef calls, fills the flag cache
    uv run python -I scripts/cue_eval.py $D 30                                       # GLM; 30 live cues, latency
    ```
 4. Run `uv run python -I scripts/export_predictions.py` to write the text-free `runs/predictions/`, then `scripts/reproduce.sh`.

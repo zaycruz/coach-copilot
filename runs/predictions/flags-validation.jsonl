@@ -38,7 +38,7 @@
 {"call_id": "CALL00021", "line_number": 39, "flag": "none"}
 {"call_id": "CALL00021", "line_number": 41, "flag": "none"}
 {"call_id": "CALL00021", "line_number": 43, "flag": "none"}
-{"call_id": "CALL00021", "line_number": 45, "flag": "none"}
+{"call_id": "CALL00021", "line_number": 45, "flag": "medical"}
 {"call_id": "CALL00021", "line_number": 47, "flag": "none"}
 {"call_id": "CALL00021", "line_number": 49, "flag": "none"}
 {"call_id": "CALL00021", "line_number": 51, "flag": "none"}
@@ -222,7 +222,7 @@
 {"call_id": "CALL00070", "line_number": 4, "flag": "none"}
 {"call_id": "CALL00070", "line_number": 6, "flag": "none"}
 {"call_id": "CALL00070", "line_number": 10, "flag": "none"}
-{"call_id": "CALL00070", "line_number": 13, "flag": "none"}
+{"call_id": "CALL00070", "line_number": 13, "flag": "medical"}
 {"call_id": "CALL00070", "line_number": 15, "flag": "none"}
 {"call_id": "CALL00070", "line_number": 17, "flag": "none"}
 {"call_id": "CALL00070", "line_number": 19, "flag": "none"}
@@ -322,7 +322,7 @@
 {"call_id": "CALL00098", "line_number": 27, "flag": "none"}
 {"call_id": "CALL00098", "line_number": 29, "flag": "none"}
 {"call_id": "CALL00098", "line_number": 31, "flag": "none"}
-{"call_id": "CALL00098", "line_number": 33, "flag": "none"}
+{"call_id": "CALL00098", "line_number": 33, "flag": "medical"}
 {"call_id": "CALL00098", "line_number": 35, "flag": "none"}
 {"call_id": "CALL00098", "line_number": 37, "flag": "none"}
 {"call_id": "CALL00098", "line_number": 39, "flag": "none"}
@@ -385,7 +385,7 @@
 {"call_id": "CALL00129", "line_number": 29, "flag": "none"}
 {"call_id": "CALL00129", "line_number": 31, "flag": "none"}
 {"call_id": "CALL00129", "line_number": 33, "flag": "none"}
-{"call_id": "CALL00129", "line_number": 36, "flag": "none"}
+{"call_id": "CALL00129", "line_number": 36, "flag": "medical"}
 {"call_id": "CALL00129", "line_number": 38, "flag": "none"}
 {"call_id": "CALL00129", "line_number": 40, "flag": "none"}
 {"call_id": "CALL00129", "line_number": 42, "flag": "none"}
@@ -673,7 +673,7 @@
 {"call_id": "CALL00188", "line_number": 25, "flag": "none"}
 {"call_id": "CALL00188", "line_number": 27, "flag": "none"}
 {"call_id": "CALL00188", "line_number": 29, "flag": "none"}
-{"call_id": "CALL00188", "line_number": 31, "flag": "none"}
+{"call_id": "CALL00188", "line_number": 31, "flag": "medical"}
 {"call_id": "CALL00188", "line_number": 33, "flag": "none"}
 {"call_id": "CALL00188", "line_number": 35, "flag": "none"}
 {"call_id": "CALL00188", "line_number": 37, "flag": "none"}
@@ -762,7 +762,7 @@
 {"call_id": "CALL00229", "line_number": 11, "flag": "none"}
 {"call_id": "CALL00229", "line_number": 13, "flag": "none"}
 {"call_id": "CALL00229", "line_number": 16, "flag": "none"}
-{"call_id": "CALL00229", "line_number": 18, "flag": "none"}
+{"call_id": "CALL00229", "line_number": 18, "flag": "medical"}
 {"call_id": "CALL00229", "line_number": 21, "flag": "none"}
 {"call_id": "CALL00229", "line_number": 23, "flag": "none"}
 {"call_id": "CALL00229", "line_number": 26, "flag": "none"}
@@ -1065,7 +1065,7 @@
 {"call_id": "CALL00291", "line_number": 17, "flag": "none"}
 {"call_id": "CALL00291", "line_number": 20, "flag": "none"}
 {"call_id": "CALL00291", "line_number": 22, "flag": "none"}
-{"call_id": "CALL00291", "line_number": 24, "flag": "none"}
+{"call_id": "CALL00291", "line_number": 24, "flag": "medical"}
 {"call_id": "CALL00291", "line_number": 26, "flag": "none"}
 {"call_id": "CALL00291", "line_number": 29, "flag": "none"}
 {"call_id": "CALL00291", "line_number": 33, "flag": "none"}
@@ -1180,7 +1180,7 @@
 {"call_id": "CALL00341", "line_number": 9, "flag": "none"}
 {"call_id": "CALL00341", "line_number": 11, "flag": "none"}
 {"call_id": "CALL00341", "line_number": 13, "flag": "none"}
-{"call_id": "CALL00341", "line_number": 15, "flag": "none"}
+{"call_id": "CALL00341", "line_number": 15, "flag": "distress"}
 {"call_id": "CALL00341", "line_number": 17, "flag": "none"}
 {"call_id": "CALL00341", "line_number": 19, "flag": "none"}
 {"call_id": "CALL00341", "line_number": 21, "flag": "none"}
@@ -1215,7 +1215,7 @@
 {"call_id": "CALL00353", "line_number": 22, "flag": "none"}
 {"call_id": "CALL00353", "line_number": 24, "flag": "none"}
 {"call_id": "CALL00353", "line_number": 27, "flag": "none"}
-{"call_id": "CALL00353", "line_number": 30, "flag": "none"}
+{"call_id": "CALL00353", "line_number": 30, "flag": "medical"}
 {"call_id": "CALL00353", "line_number": 32, "flag": "none"}
 {"call_id": "CALL00353", "line_number": 35, "flag": "none"}
 {"call_id": "CALL00353", "line_number": 38, "flag": "none"}
@@ -1232,7 +1232,7 @@
 {"call_id": "CALL00354", "line_number": 13, "flag": "none"}
 {"call_id": "CALL00354", "line_number": 15, "flag": "none"}
 {"call_id": "CALL00354", "line_number": 17, "flag": "none"}
-{"call_id": "CALL00354", "line_number": 19, "flag": "none"}
+{"call_id": "CALL00354", "line_number": 19, "flag": "distress"}
 {"call_id": "CALL00354", "line_number": 22, "flag": "none"}
 {"call_id": "CALL00354", "line_number": 25, "flag": "none"}
 {"call_id": "CALL00354", "line_number": 27, "flag": "none"}
@@ -1308,7 +1308,7 @@
 {"call_id": "CALL00361", "line_number": 7, "flag": "none"}
 {"call_id": "CALL00361", "line_number": 9, "flag": "none"}
 {"call_id": "CALL00361", "line_number": 11, "flag": "none"}
-{"call_id": "CALL00361", "line_number": 14, "flag": "none"}
+{"call_id": "CALL00361", "line_number": 14, "flag": "medical"}
 {"call_id": "CALL00361", "line_number": 16, "flag": "none"}
 {"call_id": "CALL00361", "line_number": 18, "flag": "none"}
 {"call_id": "CALL00361", "line_number": 20, "flag": "none"}
@@ -1343,7 +1343,7 @@
 {"call_id": "CALL00363", "line_number": 38, "flag": "none"}
 {"call_id": "CALL00363", "line_number": 40, "flag": "none"}
 {"call_id": "CALL00363", "line_number": 42, "flag": "none"}
-{"call_id": "CALL00363", "line_number": 44, "flag": "none"}
+{"call_id": "CALL00363", "line_number": 44, "flag": "medical"}
 {"call_id": "CALL00363", "line_number": 46, "flag": "none"}
 {"call_id": "CALL00363", "line_number": 48, "flag": "none"}
 {"call_id": "CALL00363", "line_number": 50, "flag": "none"}
@@ -1403,7 +1403,7 @@
 {"call_id": "CALL00371", "line_number": 19, "flag": "none"}
 {"call_id": "CALL00371", "line_number": 21, "flag": "none"}
 {"call_id": "CALL00371", "line_number": 23, "flag": "none"}
-{"call_id": "CALL00371", "line_number": 25, "flag": "none"}
+{"call_id": "CALL00371", "line_number": 25, "flag": "medical"}
 {"call_id": "CALL00371", "line_number": 27, "flag": "none"}
 {"call_id": "CALL00371", "line_number": 29, "flag": "none"}
 {"call_id": "CALL00371", "line_number": 31, "flag": "none"}
@@ -1498,7 +1498,7 @@
 {"call_id": "CALL00401", "line_number": 24, "flag": "none"}
 {"call_id": "CALL00401", "line_number": 26, "flag": "none"}
 {"call_id": "CALL00401", "line_number": 28, "flag": "none"}
-{"call_id": "CALL00401", "line_number": 30, "flag": "none"}
+{"call_id": "CALL00401", "line_number": 30, "flag": "medical"}
 {"call_id": "CALL00401", "line_number": 32, "flag": "none"}
 {"call_id": "CALL00401", "line_number": 34, "flag": "none"}
 {"call_id": "CALL00401", "line_number": 36, "flag": "none"}
@@ -1677,7 +1677,7 @@
 {"call_id": "CALL00444", "line_number": 25, "flag": "none"}
 {"call_id": "CALL00444", "line_number": 27, "flag": "none"}
 {"call_id": "CALL00444", "line_number": 29, "flag": "none"}
-{"call_id": "CALL00444", "line_number": 31, "flag": "none"}
+{"call_id": "CALL00444", "line_number": 31, "flag": "medical"}
 {"call_id": "CALL00444", "line_number": 34, "flag": "none"}
 {"call_id": "CALL00444", "line_number": 36, "flag": "none"}
 {"call_id": "CALL00444", "line_number": 38, "flag": "none"}
@@ -1721,9 +1721,9 @@
 {"call_id": "CALL00451", "line_number": 8, "flag": "none"}
 {"call_id": "CALL00451", "line_number": 10, "flag": "none"}
 {"call_id": "CALL00451", "line_number": 12, "flag": "none"}
-{"call_id": "CALL00451", "line_number": 14, "flag": "none"}
+{"call_id": "CALL00451", "line_number": 14, "flag": "medical"}
 {"call_id": "CALL00451", "line_number": 16, "flag": "none"}
-{"call_id": "CALL00451", "line_number": 18, "flag": "none"}
+{"call_id": "CALL00451", "line_number": 18, "flag": "distress"}
 {"call_id": "CALL00451", "line_number": 20, "flag": "none"}
 {"call_id": "CALL00451", "line_number": 22, "flag": "none"}
 {"call_id": "CALL00451", "line_number": 24, "flag": "none"}
@@ -2203,7 +2203,7 @@
 {"call_id": "CALL00558", "line_number": 10, "flag": "none"}
 {"call_id": "CALL00558", "line_number": 12, "flag": "none"}
 {"call_id": "CALL00558", "line_number": 14, "flag": "none"}
-{"call_id": "CALL00558", "line_number": 16, "flag": "none"}
+{"call_id": "CALL00558", "line_number": 16, "flag": "distress"}
 {"call_id": "CALL00558", "line_number": 19, "flag": "none"}
 {"call_id": "CALL00558", "line_number": 21, "flag": "none"}
 {"call_id": "CALL00558", "line_number": 23, "flag": "none"}
@@ -2330,7 +2330,7 @@
 {"call_id": "CALL00596", "line_number": 9, "flag": "none"}
 {"call_id": "CALL00596", "line_number": 11, "flag": "none"}
 {"call_id": "CALL00596", "line_number": 13, "flag": "none"}
-{"call_id": "CALL00596", "line_number": 16, "flag": "none"}
+{"call_id": "CALL00596", "line_number": 16, "flag": "distress"}
 {"call_id": "CALL00596", "line_number": 18, "flag": "none"}
 {"call_id": "CALL00596", "line_number": 20, "flag": "none"}
 {"call_id": "CALL00596", "line_number": 22, "flag": "none"}
@@ -2339,7 +2339,7 @@
 {"call_id": "CALL00596", "line_number": 29, "flag": "none"}
 {"call_id": "CALL00596", "line_number": 31, "flag": "none"}
 {"call_id": "CALL00596", "line_number": 33, "flag": "none"}
-{"call_id": "CALL00596", "line_number": 36, "flag": "none"}
+{"call_id": "CALL00596", "line_number": 36, "flag": "medical"}
 {"call_id": "CALL00596", "line_number": 38, "flag": "none"}
 {"call_id": "CALL00596", "line_number": 40, "flag": "none"}
 {"call_id": "CALL00596", "line_number": 42, "flag": "none"}
@@ -2351,7 +2351,7 @@
 {"call_id": "CALL00597", "line_number": 9, "flag": "none"}
 {"call_id": "CALL00597", "line_number": 11, "flag": "none"}
 {"call_id": "CALL00597", "line_number": 13, "flag": "none"}
-{"call_id": "CALL00597", "line_number": 15, "flag": "none"}
+{"call_id": "CALL00597", "line_number": 15, "flag": "medical"}
 {"call_id": "CALL00597", "line_number": 18, "flag": "none"}
 {"call_id": "CALL00597", "line_number": 20, "flag": "none"}
 {"call_id": "CALL00597", "line_number": 22, "flag": "none"}
@@ -2393,7 +2393,7 @@
 {"call_id": "CALL00603", "line_number": 47, "flag": "none"}
 {"call_id": "CALL00603", "line_number": 50, "flag": "none"}
 {"call_id": "CALL00603", "line_number": 52, "flag": "none"}
-{"call_id": "CALL00603", "line_number": 54, "flag": "none"}
+{"call_id": "CALL00603", "line_number": 54, "flag": "distress"}
 {"call_id": "CALL00603", "line_number": 56, "flag": "none"}
 {"call_id": "CALL00603", "line_number": 58, "flag": "none"}
 {"call_id": "CALL00603", "line_number": 60, "flag": "none"}
@@ -2467,7 +2467,7 @@
 {"call_id": "CALL00612", "line_number": 16, "flag": "none"}
 {"call_id": "CALL00612", "line_number": 18, "flag": "none"}
 {"call_id": "CALL00612", "line_number": 20, "flag": "none"}
-{"call_id": "CALL00612", "line_number": 23, "flag": "none"}
+{"call_id": "CALL00612", "line_number": 23, "flag": "medical"}
 {"call_id": "CALL00612", "line_number": 25, "flag": "none"}
 {"call_id": "CALL00612", "line_number": 28, "flag": "none"}
 {"call_id": "CALL00612", "line_number": 30, "flag": "none"}
@@ -2536,7 +2536,7 @@
 {"call_id": "CALL00625", "line_number": 2, "flag": "none"}
 {"call_id": "CALL00625", "line_number": 4, "flag": "none"}
 {"call_id": "CALL00625", "line_number": 6, "flag": "none"}
-{"call_id": "CALL00625", "line_number": 9, "flag": "none"}
+{"call_id": "CALL00625", "line_number": 9, "flag": "medical"}
 {"call_id": "CALL00625", "line_number": 11, "flag": "none"}
 {"call_id": "CALL00625", "line_number": 13, "flag": "none"}
 {"call_id": "CALL00625", "line_number": 15, "flag": "none"}
@@ -2656,7 +2656,7 @@
 {"call_id": "CALL00638", "line_number": 42, "flag": "none"}
 {"call_id": "CALL00638", "line_number": 45, "flag": "none"}
 {"call_id": "CALL00638", "line_number": 47, "flag": "none"}
-{"call_id": "CALL00638", "line_number": 49, "flag": "none"}
+{"call_id": "CALL00638", "line_number": 49, "flag": "medical"}
 {"call_id": "CALL00638", "line_number": 51, "flag": "none"}
 {"call_id": "CALL00638", "line_number": 53, "flag": "none"}
 {"call_id": "CALL00638", "line_number": 56, "flag": "none"}
@@ -2800,7 +2800,7 @@
 {"call_id": "CALL00655", "line_number": 30, "flag": "none"}
 {"call_id": "CALL00655", "line_number": 33, "flag": "none"}
 {"call_id": "CALL00655", "line_number": 35, "flag": "none"}
-{"call_id": "CALL00655", "line_number": 38, "flag": "none"}
+{"call_id": "CALL00655", "line_number": 38, "flag": "distress"}
 {"call_id": "CALL00655", "line_number": 41, "flag": "none"}
 {"call_id": "CALL00655", "line_number": 43, "flag": "none"}
 {"call_id": "CALL00655", "line_number": 45, "flag": "none"}
@@ -2931,7 +2931,7 @@
 {"call_id": "CALL00679", "line_number": 9, "flag": "none"}
 {"call_id": "CALL00679", "line_number": 12, "flag": "none"}
 {"call_id": "CALL00679", "line_number": 14, "flag": "none"}
-{"call_id": "CALL00679", "line_number": 16, "flag": "none"}
+{"call_id": "CALL00679", "line_number": 16, "flag": "medical"}
 {"call_id": "CALL00679", "line_number": 18, "flag": "none"}
 {"call_id": "CALL00679", "line_number": 20, "flag": "none"}
 {"call_id": "CALL00679", "line_number": 22, "flag": "none"}
@@ -3123,8 +3123,8 @@
 {"call_id": "CALL00721", "line_number": 11, "flag": "none"}
 {"call_id": "CALL00721", "line_number": 13, "flag": "none"}
 {"call_id": "CALL00721", "line_number": 15, "flag": "none"}
-{"call_id": "CALL00721", "line_number": 18, "flag": "none"}
-{"call_id": "CALL00721", "line_number": 20, "flag": "none"}
+{"call_id": "CALL00721", "line_number": 18, "flag": "distress"}
+{"call_id": "CALL00721", "line_number": 20, "flag": "medical"}
 {"call_id": "CALL00721", "line_number": 22, "flag": "none"}
 {"call_id": "CALL00721", "line_number": 24, "flag": "none"}
 {"call_id": "CALL00721", "line_number": 26, "flag": "none"}
@@ -3181,7 +3181,7 @@
 {"call_id": "CALL00744", "line_number": 26, "flag": "none"}
 {"call_id": "CALL00744", "line_number": 28, "flag": "none"}
 {"call_id": "CALL00744", "line_number": 30, "flag": "none"}
-{"call_id": "CALL00744", "line_number": 32, "flag": "none"}
+{"call_id": "CALL00744", "line_number": 32, "flag": "medical"}
 {"call_id": "CALL00744", "line_number": 35, "flag": "none"}
 {"call_id": "CALL00744", "line_number": 37, "flag": "none"}
 {"call_id": "CALL00744", "line_number": 40, "flag": "none"}
@@ -3275,7 +3275,7 @@
 {"call_id": "CALL00757", "line_number": 4, "flag": "none"}
 {"call_id": "CALL00757", "line_number": 7, "flag": "none"}
 {"call_id": "CALL00757", "line_number": 10, "flag": "none"}
-{"call_id": "CALL00757", "line_number": 12, "flag": "none"}
+{"call_id": "CALL00757", "line_number": 12, "flag": "medical"}
 {"call_id": "CALL00757", "line_number": 14, "flag": "none"}
 {"call_id": "CALL00757", "line_number": 16, "flag": "none"}
 {"call_id": "CALL00757", "line_number": 18, "flag": "none"}
@@ -3293,7 +3293,7 @@
 {"call_id": "CALL00758", "line_number": 6, "flag": "none"}
 {"call_id": "CALL00758", "line_number": 9, "flag": "none"}
 {"call_id": "CALL00758", "line_number": 11, "flag": "none"}
-{"call_id": "CALL00758", "line_number": 13, "flag": "none"}
+{"call_id": "CALL00758", "line_number": 13, "flag": "medical"}
 {"call_id": "CALL00758", "line_number": 15, "flag": "none"}
 {"call_id": "CALL00758", "line_number": 17, "flag": "none"}
 {"call_id": "CALL00758", "line_number": 19, "flag": "none"}
@@ -3407,7 +3407,7 @@
 {"call_id": "CALL00777", "line_number": 14, "flag": "none"}
 {"call_id": "CALL00777", "line_number": 17, "flag": "none"}
 {"call_id": "CALL00777", "line_number": 19, "flag": "none"}
-{"call_id": "CALL00777", "line_number": 21, "flag": "none"}
+{"call_id": "CALL00777", "line_number": 21, "flag": "medical"}
 {"call_id": "CALL00777", "line_number": 24, "flag": "none"}
 {"call_id": "CALL00777", "line_number": 26, "flag": "none"}
 {"call_id": "CALL00777", "line_number": 29, "flag": "none"}
@@ -3461,7 +3461,7 @@
 {"call_id": "CALL00787", "line_number": 2, "flag": "none"}
 {"call_id": "CALL00787", "line_number": 4, "flag": "none"}
 {"call_id": "CALL00787", "line_number": 6, "flag": "none"}
-{"call_id": "CALL00787", "line_number": 9, "flag": "none"}
+{"call_id": "CALL00787", "line_number": 9, "flag": "distress"}
 {"call_id": "CALL00787", "line_number": 11, "flag": "none"}
 {"call_id": "CALL00787", "line_number": 13, "flag": "none"}
 {"call_id": "CALL00787", "line_number": 15, "flag": "none"}
@@ -3518,7 +3518,7 @@
 {"call_id": "CALL00794", "line_number": 9, "flag": "none"}
 {"call_id": "CALL00794", "line_number": 12, "flag": "none"}
 {"call_id": "CALL00794", "line_number": 14, "flag": "none"}
-{"call_id": "CALL00794", "line_number": 16, "flag": "none"}
+{"call_id": "CALL00794", "line_number": 16, "flag": "medical"}
 {"call_id": "CALL00794", "line_number": 18, "flag": "none"}
 {"call_id": "CALL00794", "line_number": 21, "flag": "none"}
 {"call_id": "CALL00794", "line_number": 23, "flag": "none"}
@@ -3617,7 +3617,7 @@
 {"call_id": "CALL00821", "line_number": 30, "flag": "none"}
 {"call_id": "CALL00821", "line_number": 32, "flag": "none"}
 {"call_id": "CALL00821", "line_number": 34, "flag": "none"}
-{"call_id": "CALL00821", "line_number": 36, "flag": "none"}
+{"call_id": "CALL00821", "line_number": 36, "flag": "medical"}
 {"call_id": "CALL00821", "line_number": 38, "flag": "none"}
 {"call_id": "CALL00821", "line_number": 40, "flag": "none"}
 {"call_id": "CALL00821", "line_number": 42, "flag": "none"}
@@ -3912,7 +3912,7 @@
 {"call_id": "CALL00896", "line_number": 17, "flag": "none"}
 {"call_id": "CALL00896", "line_number": 19, "flag": "none"}
 {"call_id": "CALL00896", "line_number": 21, "flag": "none"}
-{"call_id": "CALL00896", "line_number": 23, "flag": "none"}
+{"call_id": "CALL00896", "line_number": 23, "flag": "medical"}
 {"call_id": "CALL00896", "line_number": 25, "flag": "none"}
 {"call_id": "CALL00896", "line_number": 27, "flag": "none"}
 {"call_id": "CALL00896", "line_number": 29, "flag": "none"}
@@ -3950,7 +3950,7 @@
 {"call_id": "CALL00898", "line_number": 13, "flag": "none"}
 {"call_id": "CALL00898", "line_number": 15, "flag": "none"}
 {"call_id": "CALL00898", "line_number": 17, "flag": "none"}
-{"call_id": "CALL00898", "line_number": 19, "flag": "none"}
+{"call_id": "CALL00898", "line_number": 19, "flag": "distress"}
 {"call_id": "CALL00898", "line_number": 22, "flag": "none"}
 {"call_id": "CALL00898", "line_number": 24, "flag": "none"}
 {"call_id": "CALL00898", "line_number": 26, "flag": "none"}
@@ -4132,7 +4132,7 @@
 {"call_id": "CALL00937", "line_number": 30, "flag": "none"}
 {"call_id": "CALL00937", "line_number": 32, "flag": "none"}
 {"call_id": "CALL00937", "line_number": 34, "flag": "none"}
-{"call_id": "CALL00937", "line_number": 37, "flag": "none"}
+{"call_id": "CALL00937", "line_number": 37, "flag": "medical"}
 {"call_id": "CALL00937", "line_number": 39, "flag": "none"}
 {"call_id": "CALL00937", "line_number": 41, "flag": "none"}
 {"call_id": "CALL00937", "line_number": 43, "flag": "none"}
@@ -4831,7 +4831,7 @@
 {"call_id": "CALL01072", "line_number": 11, "flag": "none"}
 {"call_id": "CALL01072", "line_number": 14, "flag": "none"}
 {"call_id": "CALL01072", "line_number": 16, "flag": "none"}
-{"call_id": "CALL01072", "line_number": 19, "flag": "none"}
+{"call_id": "CALL01072", "line_number": 19, "flag": "medical"}
 {"call_id": "CALL01072", "line_number": 21, "flag": "none"}
 {"call_id": "CALL01072", "line_number": 23, "flag": "none"}
 {"call_id": "CALL01072", "line_number": 25, "flag": "none"}
@@ -4935,7 +4935,7 @@
 {"call_id": "CALL01080", "line_number": 29, "flag": "none"}
 {"call_id": "CALL01080", "line_number": 32, "flag": "none"}
 {"call_id": "CALL01080", "line_number": 35, "flag": "none"}
-{"call_id": "CALL01080", "line_number": 37, "flag": "none"}
+{"call_id": "CALL01080", "line_number": 37, "flag": "medical"}
 {"call_id": "CALL01080", "line_number": 39, "flag": "none"}
 {"call_id": "CALL01080", "line_number": 41, "flag": "none"}
 {"call_id": "CALL01080", "line_number": 43, "flag": "none"}
@@ -4955,7 +4955,7 @@
 {"call_id": "CALL01081", "line_number": 16, "flag": "none"}
 {"call_id": "CALL01081", "line_number": 18, "flag": "none"}
 {"call_id": "CALL01081", "line_number": 20, "flag": "none"}
-{"call_id": "CALL01081", "line_number": 22, "flag": "none"}
+{"call_id": "CALL01081", "line_number": 22, "flag": "medical"}
 {"call_id": "CALL01081", "line_number": 24, "flag": "none"}
 {"call_id": "CALL01081", "line_number": 26, "flag": "none"}
 {"call_id": "CALL01081", "line_number": 28, "flag": "none"}
@@ -5002,7 +5002,7 @@
 {"call_id": "CALL01089", "line_number": 16, "flag": "none"}
 {"call_id": "CALL01089", "line_number": 18, "flag": "none"}
 {"call_id": "CALL01089", "line_number": 20, "flag": "none"}
-{"call_id": "CALL01089", "line_number": 22, "flag": "none"}
+{"call_id": "CALL01089", "line_number": 22, "flag": "medical"}
 {"call_id": "CALL01089", "line_number": 24, "flag": "none"}
 {"call_id": "CALL01089", "line_number": 26, "flag": "none"}
 {"call_id": "CALL01089", "line_number": 28, "flag": "none"}
@@ -5121,7 +5121,7 @@
 {"call_id": "CALL01104", "line_number": 52, "flag": "none"}
 {"call_id": "CALL01104", "line_number": 54, "flag": "none"}
 {"call_id": "CALL01104", "line_number": 56, "flag": "none"}
-{"call_id": "CALL01104", "line_number": 58, "flag": "none"}
+{"call_id": "CALL01104", "line_number": 58, "flag": "medical"}
 {"call_id": "CALL01104", "line_number": 61, "flag": "none"}
 {"call_id": "CALL01104", "line_number": 63, "flag": "none"}
 {"call_id": "CALL01104", "line_number": 65, "flag": "none"}
@@ -5163,7 +5163,7 @@
 {"call_id": "CALL01117", "line_number": 17, "flag": "none"}
 {"call_id": "CALL01117", "line_number": 19, "flag": "none"}
 {"call_id": "CALL01117", "line_number": 21, "flag": "none"}
-{"call_id": "CALL01117", "line_number": 23, "flag": "none"}
+{"call_id": "CALL01117", "line_number": 23, "flag": "medical"}
 {"call_id": "CALL01117", "line_number": 25, "flag": "none"}
 {"call_id": "CALL01117", "line_number": 28, "flag": "none"}
 {"call_id": "CALL01117", "line_number": 30, "flag": "none"}
@@ -5428,7 +5428,7 @@
 {"call_id": "CALL01191", "line_number": 36, "flag": "none"}
 {"call_id": "CALL01191", "line_number": 39, "flag": "none"}
 {"call_id": "CALL01191", "line_number": 41, "flag": "none"}
-{"call_id": "CALL01191", "line_number": 44, "flag": "none"}
+{"call_id": "CALL01191", "line_number": 44, "flag": "medical"}
 {"call_id": "CALL01191", "line_number": 47, "flag": "none"}
 {"call_id": "CALL01191", "line_number": 49, "flag": "none"}
 {"call_id": "CALL01191", "line_number": 51, "flag": "none"}
@@ -5485,7 +5485,7 @@
 {"call_id": "CALL01195", "line_number": 45, "flag": "none"}
 {"call_id": "CALL01195", "line_number": 47, "flag": "none"}
 {"call_id": "CALL01195", "line_number": 49, "flag": "none"}
-{"call_id": "CALL01195", "line_number": 51, "flag": "none"}
+{"call_id": "CALL01195", "line_number": 51, "flag": "distress"}
 {"call_id": "CALL01195", "line_number": 53, "flag": "none"}
 {"call_id": "CALL01195", "line_number": 55, "flag": "none"}
 {"call_id": "CALL01195", "line_number": 57, "flag": "none"}
@@ -5499,7 +5499,7 @@
 {"call_id": "CALL01208", "line_number": 9, "flag": "none"}
 {"call_id": "CALL01208", "line_number": 11, "flag": "none"}
 {"call_id": "CALL01208", "line_number": 14, "flag": "none"}
-{"call_id": "CALL01208", "line_number": 17, "flag": "none"}
+{"call_id": "CALL01208", "line_number": 17, "flag": "medical"}
 {"call_id": "CALL01208", "line_number": 19, "flag": "none"}
 {"call_id": "CALL01208", "line_number": 21, "flag": "none"}
 {"call_id": "CALL01208", "line_number": 23, "flag": "none"}
@@ -5603,7 +5603,7 @@
 {"call_id": "CALL01229", "line_number": 2, "flag": "none"}
 {"call_id": "CALL01229", "line_number": 4, "flag": "none"}
 {"call_id": "CALL01229", "line_number": 7, "flag": "none"}
-{"call_id": "CALL01229", "line_number": 10, "flag": "none"}
+{"call_id": "CALL01229", "line_number": 10, "flag": "medical"}
 {"call_id": "CALL01229", "line_number": 12, "flag": "none"}
 {"call_id": "CALL01229", "line_number": 14, "flag": "none"}
 {"call_id": "CALL01229", "line_number": 17, "flag": "none"}
@@ -5727,7 +5727,7 @@
 {"call_id": "CALL01253", "line_number": 13, "flag": "none"}
 {"call_id": "CALL01253", "line_number": 15, "flag": "none"}
 {"call_id": "CALL01253", "line_number": 17, "flag": "none"}
-{"call_id": "CALL01253", "line_number": 19, "flag": "none"}
+{"call_id": "CALL01253", "line_number": 19, "flag": "medical"}
 {"call_id": "CALL01253", "line_number": 22, "flag": "none"}
 {"call_id": "CALL01253", "line_number": 25, "flag": "none"}
 {"call_id": "CALL01253", "line_number": 27, "flag": "none"}
@@ -5742,7 +5742,7 @@
 {"call_id": "CALL01259", "line_number": 11, "flag": "none"}
 {"call_id": "CALL01259", "line_number": 13, "flag": "none"}
 {"call_id": "CALL01259", "line_number": 15, "flag": "none"}
-{"call_id": "CALL01259", "line_number": 17, "flag": "none"}
+{"call_id": "CALL01259", "line_number": 17, "flag": "distress"}
 {"call_id": "CALL01259", "line_number": 19, "flag": "none"}
 {"call_id": "CALL01259", "line_number": 21, "flag": "none"}
 {"call_id": "CALL01259", "line_number": 23, "flag": "none"}
@@ -5840,7 +5840,7 @@
 {"call_id": "CALL01272", "line_number": 11, "flag": "none"}
 {"call_id": "CALL01272", "line_number": 14, "flag": "none"}
 {"call_id": "CALL01272", "line_number": 16, "flag": "none"}
-{"call_id": "CALL01272", "line_number": 18, "flag": "none"}
+{"call_id": "CALL01272", "line_number": 18, "flag": "medical"}
 {"call_id": "CALL01272", "line_number": 22, "flag": "none"}
 {"call_id": "CALL01272", "line_number": 25, "flag": "none"}
 {"call_id": "CALL01272", "line_number": 27, "flag": "none"}
@@ -6039,7 +6039,7 @@
 {"call_id": "CALL01301", "line_number": 12, "flag": "none"}
 {"call_id": "CALL01301", "line_number": 14, "flag": "none"}
 {"call_id": "CALL01301", "line_number": 16, "flag": "none"}
-{"call_id": "CALL01301", "line_number": 18, "flag": "none"}
+{"call_id": "CALL01301", "line_number": 18, "flag": "medical"}
 {"call_id": "CALL01301", "line_number": 20, "flag": "none"}
 {"call_id": "CALL01301", "line_number": 22, "flag": "none"}
 {"call_id": "CALL01301", "line_number": 24, "flag": "none"}
@@ -6360,7 +6360,7 @@
 {"call_id": "CALL01374", "line_number": 13, "flag": "none"}
 {"call_id": "CALL01374", "line_number": 15, "flag": "none"}
 {"call_id": "CALL01374", "line_number": 17, "flag": "none"}
-{"call_id": "CALL01374", "line_number": 19, "flag": "none"}
+{"call_id": "CALL01374", "line_number": 19, "flag": "medical"}
 {"call_id": "CALL01374", "line_number": 21, "flag": "none"}
 {"call_id": "CALL01374", "line_number": 23, "flag": "none"}
 {"call_id": "CALL01374", "line_number": 25, "flag": "none"}
@@ -6430,7 +6430,7 @@
 {"call_id": "CALL01393", "line_number": 30, "flag": "none"}
 {"call_id": "CALL01393", "line_number": 33, "flag": "none"}
 {"call_id": "CALL01393", "line_number": 35, "flag": "none"}
-{"call_id": "CALL01393", "line_number": 37, "flag": "none"}
+{"call_id": "CALL01393", "line_number": 37, "flag": "medical"}
 {"call_id": "CALL01393", "line_number": 39, "flag": "none"}
 {"call_id": "CALL01393", "line_number": 41, "flag": "none"}
 {"call_id": "CALL01393", "line_number": 43, "flag": "none"}
@@ -6715,7 +6715,7 @@
 {"call_id": "CALL01451", "line_number": 13, "flag": "none"}
 {"call_id": "CALL01451", "line_number": 15, "flag": "none"}
 {"call_id": "CALL01451", "line_number": 17, "flag": "none"}
-{"call_id": "CALL01451", "line_number": 19, "flag": "none"}
+{"call_id": "CALL01451", "line_number": 19, "flag": "medical"}
 {"call_id": "CALL01451", "line_number": 21, "flag": "none"}
 {"call_id": "CALL01451", "line_number": 23, "flag": "none"}
 {"call_id": "CALL01451", "line_number": 25, "flag": "none"}
@@ -6791,7 +6791,7 @@
 {"call_id": "CALL01478", "line_number": 20, "flag": "none"}
 {"call_id": "CALL01478", "line_number": 22, "flag": "none"}
 {"call_id": "CALL01478", "line_number": 24, "flag": "none"}
-{"call_id": "CALL01478", "line_number": 26, "flag": "none"}
+{"call_id": "CALL01478", "line_number": 26, "flag": "medical"}
 {"call_id": "CALL01478", "line_number": 29, "flag": "none"}
 {"call_id": "CALL01478", "line_number": 31, "flag": "none"}
 {"call_id": "CALL01478", "line_number": 33, "flag": "none"}
@@ -6949,7 +6949,7 @@
 {"call_id": "CALL01497", "line_number": 6, "flag": "none"}
 {"call_id": "CALL01497", "line_number": 9, "flag": "none"}
 {"call_id": "CALL01497", "line_number": 12, "flag": "none"}
-{"call_id": "CALL01497", "line_number": 15, "flag": "none"}
+{"call_id": "CALL01497", "line_number": 15, "flag": "medical"}
 {"call_id": "CALL01497", "line_number": 18, "flag": "none"}
 {"call_id": "CALL01497", "line_number": 20, "flag": "none"}
 {"call_id": "CALL01497", "line_number": 22, "flag": "none"}
@@ -7242,7 +7242,7 @@
 {"call_id": "CALL01523", "line_number": 6, "flag": "none"}
 {"call_id": "CALL01523", "line_number": 9, "flag": "none"}
 {"call_id": "CALL01523", "line_number": 11, "flag": "none"}
-{"call_id": "CALL01523", "line_number": 13, "flag": "none"}
+{"call_id": "CALL01523", "line_number": 13, "flag": "medical"}
 {"call_id": "CALL01523", "line_number": 15, "flag": "none"}
 {"call_id": "CALL01523", "line_number": 18, "flag": "none"}
 {"call_id": "CALL01523", "line_number": 20, "flag": "none"}
@@ -7295,7 +7295,7 @@
 {"call_id": "CALL01552", "line_number": 19, "flag": "none"}
 {"call_id": "CALL01552", "line_number": 21, "flag": "none"}
 {"call_id": "CALL01552", "line_number": 23, "flag": "none"}
-{"call_id": "CALL01552", "line_number": 25, "flag": "none"}
+{"call_id": "CALL01552", "line_number": 25, "flag": "medical"}
 {"call_id": "CALL01552", "line_number": 27, "flag": "none"}
 {"call_id": "CALL01552", "line_number": 29, "flag": "none"}
 {"call_id": "CALL01552", "line_number": 32, "flag": "none"}
@@ -7319,7 +7319,7 @@
 {"call_id": "CALL01553", "line_number": 18, "flag": "none"}
 {"call_id": "CALL01553", "line_number": 20, "flag": "none"}
 {"call_id": "CALL01553", "line_number": 22, "flag": "none"}
-{"call_id": "CALL01553", "line_number": 25, "flag": "none"}
+{"call_id": "CALL01553", "line_number": 25, "flag": "medical"}
 {"call_id": "CALL01553", "line_number": 27, "flag": "none"}
 {"call_id": "CALL01553", "line_number": 29, "flag": "none"}
 {"call_id": "CALL01553", "line_number": 31, "flag": "none"}
@@ -7405,7 +7405,7 @@
 {"call_id": "CALL01566", "line_number": 17, "flag": "none"}
 {"call_id": "CALL01566", "line_number": 20, "flag": "none"}
 {"call_id": "CALL01566", "line_number": 22, "flag": "none"}
-{"call_id": "CALL01566", "line_number": 24, "flag": "none"}
+{"call_id": "CALL01566", "line_number": 24, "flag": "medical"}
 {"call_id": "CALL01566", "line_number": 26, "flag": "none"}
 {"call_id": "CALL01566", "line_number": 28, "flag": "none"}
 {"call_id": "CALL01566", "line_number": 30, "flag": "none"}
@@ -7530,7 +7530,7 @@
 {"call_id": "CALL01582", "line_number": 36, "flag": "none"}
 {"call_id": "CALL01582", "line_number": 39, "flag": "none"}
 {"call_id": "CALL01582", "line_number": 41, "flag": "none"}
-{"call_id": "CALL01582", "line_number": 43, "flag": "none"}
+{"call_id": "CALL01582", "line_number": 43, "flag": "medical"}
 {"call_id": "CALL01582", "line_number": 45, "flag": "none"}
 {"call_id": "CALL01582", "line_number": 47, "flag": "none"}
 {"call_id": "CALL01582", "line_number": 50, "flag": "none"}
@@ -7634,7 +7634,7 @@
 {"call_id": "CALL01614", "line_number": 25, "flag": "none"}
 {"call_id": "CALL01614", "line_number": 27, "flag": "none"}
 {"call_id": "CALL01614", "line_number": 29, "flag": "none"}
-{"call_id": "CALL01614", "line_number": 31, "flag": "none"}
+{"call_id": "CALL01614", "line_number": 31, "flag": "medical"}
 {"call_id": "CALL01614", "line_number": 34, "flag": "none"}
 {"call_id": "CALL01614", "line_number": 36, "flag": "none"}
 {"call_id": "CALL01614", "line_number": 38, "flag": "none"}
@@ -7931,7 +7931,7 @@
 {"call_id": "CALL01675", "line_number": 29, "flag": "none"}
 {"call_id": "CALL01675", "line_number": 31, "flag": "none"}
 {"call_id": "CALL01675", "line_number": 33, "flag": "none"}
-{"call_id": "CALL01675", "line_number": 35, "flag": "none"}
+{"call_id": "CALL01675", "line_number": 35, "flag": "medical"}
 {"call_id": "CALL01675", "line_number": 37, "flag": "none"}
 {"call_id": "CALL01675", "line_number": 39, "flag": "none"}
 {"call_id": "CALL01675", "line_number": 41, "flag": "none"}
@@ -8031,7 +8031,7 @@
 {"call_id": "CALL01698", "line_number": 13, "flag": "none"}
 {"call_id": "CALL01698", "line_number": 15, "flag": "none"}
 {"call_id": "CALL01698", "line_number": 18, "flag": "none"}
-{"call_id": "CALL01698", "line_number": 21, "flag": "none"}
+{"call_id": "CALL01698", "line_number": 21, "flag": "distress"}
 {"call_id": "CALL01698", "line_number": 23, "flag": "none"}
 {"call_id": "CALL01698", "line_number": 25, "flag": "none"}
 {"call_id": "CALL01698", "line_number": 27, "flag": "none"}
@@ -8043,7 +8043,7 @@
 {"call_id": "CALL01698", "line_number": 40, "flag": "none"}
 {"call_id": "CALL01698", "line_number": 42, "flag": "none"}
 {"call_id": "CALL01698", "line_number": 44, "flag": "none"}
-{"call_id": "CALL01698", "line_number": 46, "flag": "none"}
+{"call_id": "CALL01698", "line_number": 46, "flag": "distress"}
 {"call_id": "CALL01698", "line_number": 48, "flag": "none"}
 {"call_id": "CALL01698", "line_number": 51, "flag": "none"}
 {"call_id": "CALL01698", "line_number": 53, "flag": "none"}
@@ -8202,7 +8202,7 @@
 {"call_id": "CALL01725", "line_number": 8, "flag": "none"}
 {"call_id": "CALL01725", "line_number": 10, "flag": "none"}
 {"call_id": "CALL01725", "line_number": 12, "flag": "none"}
-{"call_id": "CALL01725", "line_number": 14, "flag": "medical"}
+{"call_id": "CALL01725", "line_number": 14, "flag": "none"}
 {"call_id": "CALL01725", "line_number": 16, "flag": "none"}
 {"call_id": "CALL01725", "line_number": 18, "flag": "none"}
 {"call_id": "CALL01725", "line_number": 20, "flag": "none"}
@@ -8287,7 +8287,7 @@
 {"call_id": "CALL01747", "line_number": 40, "flag": "none"}
 {"call_id": "CALL01747", "line_number": 42, "flag": "none"}
 {"call_id": "CALL01747", "line_number": 44, "flag": "none"}
-{"call_id": "CALL01747", "line_number": 46, "flag": "none"}
+{"call_id": "CALL01747", "line_number": 46, "flag": "medical"}
 {"call_id": "CALL01747", "line_number": 49, "flag": "none"}
 {"call_id": "CALL01747", "line_number": 51, "flag": "none"}
 {"call_id": "CALL01747", "line_number": 53, "flag": "none"}
@@ -8384,12 +8384,12 @@
 {"call_id": "CALL01790", "line_number": 11, "flag": "none"}
 {"call_id": "CALL01790", "line_number": 13, "flag": "none"}
 {"call_id": "CALL01790", "line_number": 15, "flag": "none"}
-{"call_id": "CALL01790", "line_number": 18, "flag": "none"}
+{"call_id": "CALL01790", "line_number": 18, "flag": "medical"}
 {"call_id": "CALL01790", "line_number": 20, "flag": "none"}
 {"call_id": "CALL01790", "line_number": 22, "flag": "none"}
 {"call_id": "CALL01790", "line_number": 25, "flag": "none"}
 {"call_id": "CALL01790", "line_number": 27, "flag": "none"}
-{"call_id": "CALL01790", "line_number": 29, "flag": "none"}
+{"call_id": "CALL01790", "line_number": 29, "flag": "social"}
 {"call_id": "CALL01790", "line_number": 31, "flag": "none"}
 {"call_id": "CALL01790", "line_number": 33, "flag": "none"}
 {"call_id": "CALL01790", "line_number": 35, "flag": "none"}
@@ -8406,7 +8406,7 @@
 {"call_id": "CALL01791", "line_number": 9, "flag": "none"}
 {"call_id": "CALL01791", "line_number": 11, "flag": "none"}
 {"call_id": "CALL01791", "line_number": 13, "flag": "none"}
-{"call_id": "CALL01791", "line_number": 15, "flag": "none"}
+{"call_id": "CALL01791", "line_number": 15, "flag": "medical"}
 {"call_id": "CALL01791", "line_number": 17, "flag": "none"}
 {"call_id": "CALL01791", "line_number": 20, "flag": "none"}
 {"call_id": "CALL01791", "line_number": 22, "flag": "none"}
@@ -8509,7 +8509,7 @@
 {"call_id": "CALL01816", "line_number": 6, "flag": "none"}
 {"call_id": "CALL01816", "line_number": 9, "flag": "none"}
 {"call_id": "CALL01816", "line_number": 11, "flag": "none"}
-{"call_id": "CALL01816", "line_number": 13, "flag": "none"}
+{"call_id": "CALL01816", "line_number": 13, "flag": "medical"}
 {"call_id": "CALL01816", "line_number": 16, "flag": "none"}
 {"call_id": "CALL01816", "line_number": 18, "flag": "none"}
 {"call_id": "CALL01816", "line_number": 20, "flag": "none"}
@@ -8548,7 +8548,7 @@
 {"call_id": "CALL01822", "line_number": 30, "flag": "none"}
 {"call_id": "CALL01822", "line_number": 32, "flag": "none"}
 {"call_id": "CALL01822", "line_number": 34, "flag": "none"}
-{"call_id": "CALL01822", "line_number": 36, "flag": "none"}
+{"call_id": "CALL01822", "line_number": 36, "flag": "distress"}
 {"call_id": "CALL01822", "line_number": 38, "flag": "none"}
 {"call_id": "CALL01822", "line_number": 40, "flag": "none"}
 {"call_id": "CALL01822", "line_number": 42, "flag": "none"}
@@ -8598,7 +8598,7 @@
 {"call_id": "CALL01846", "line_number": 30, "flag": "none"}
 {"call_id": "CALL01846", "line_number": 32, "flag": "none"}
 {"call_id": "CALL01846", "line_number": 34, "flag": "none"}
-{"call_id": "CALL01846", "line_number": 36, "flag": "none"}
+{"call_id": "CALL01846", "line_number": 36, "flag": "medical"}
 {"call_id": "CALL01846", "line_number": 38, "flag": "none"}
 {"call_id": "CALL01846", "line_number": 40, "flag": "none"}
 {"call_id": "CALL01846", "line_number": 42, "flag": "none"}
@@ -8821,7 +8821,7 @@
 {"call_id": "CALL01927", "line_number": 23, "flag": "none"}
 {"call_id": "CALL01927", "line_number": 26, "flag": "none"}
 {"call_id": "CALL01927", "line_number": 28, "flag": "none"}
-{"call_id": "CALL01927", "line_number": 30, "flag": "none"}
+{"call_id": "CALL01927", "line_number": 30, "flag": "medical"}
 {"call_id": "CALL01927", "line_number": 32, "flag": "none"}
 {"call_id": "CALL01927", "line_number": 34, "flag": "none"}
 {"call_id": "CALL01927", "line_number": 36, "flag": "none"}
@@ -8942,7 +8942,7 @@
 {"call_id": "CALL01940", "line_number": 20, "flag": "none"}
 {"call_id": "CALL01940", "line_number": 22, "flag": "none"}
 {"call_id": "CALL01940", "line_number": 24, "flag": "none"}
-{"call_id": "CALL01940", "line_number": 26, "flag": "none"}
+{"call_id": "CALL01940", "line_number": 26, "flag": "distress"}
 {"call_id": "CALL01940", "line_number": 28, "flag": "none"}
 {"call_id": "CALL01940", "line_number": 30, "flag": "none"}
 {"call_id": "CALL01940", "line_number": 32, "flag": "none"}
@@ -9034,7 +9034,7 @@
 {"call_id": "CALL01947", "line_number": 16, "flag": "none"}
 {"call_id": "CALL01947", "line_number": 19, "flag": "none"}
 {"call_id": "CALL01947", "line_number": 21, "flag": "none"}
-{"call_id": "CALL01947", "line_number": 23, "flag": "none"}
+{"call_id": "CALL01947", "line_number": 23, "flag": "medical"}
 {"call_id": "CALL01947", "line_number": 25, "flag": "none"}
 {"call_id": "CALL01947", "line_number": 28, "flag": "none"}
 {"call_id": "CALL01947", "line_number": 31, "flag": "none"}
@@ -9063,7 +9063,7 @@
 {"call_id": "CALL01953", "line_number": 21, "flag": "none"}
 {"call_id": "CALL01953", "line_number": 23, "flag": "none"}
 {"call_id": "CALL01953", "line_number": 25, "flag": "none"}
-{"call_id": "CALL01953", "line_number": 27, "flag": "none"}
+{"call_id": "CALL01953", "line_number": 27, "flag": "medical"}
 {"call_id": "CALL01953", "line_number": 29, "flag": "none"}
 {"call_id": "CALL01953", "line_number": 31, "flag": "none"}
 {"call_id": "CALL01953", "line_number": 33, "flag": "none"}
@@ -9376,9 +9376,9 @@
 {"call_id": "CALL02017", "line_number": 16, "flag": "none"}
 {"call_id": "CALL02017", "line_number": 19, "flag": "none"}
 {"call_id": "CALL02017", "line_number": 21, "flag": "none"}
-{"call_id": "CALL02017", "line_number": 23, "flag": "none"}
+{"call_id": "CALL02017", "line_number": 23, "flag": "medical"}
 {"call_id": "CALL02017", "line_number": 26, "flag": "none"}
-{"call_id": "CALL02017", "line_number": 28, "flag": "none"}
+{"call_id": "CALL02017", "line_number": 28, "flag": "distress"}
 {"call_id": "CALL02017", "line_number": 30, "flag": "none"}
 {"call_id": "CALL02017", "line_number": 32, "flag": "none"}
 {"call_id": "CALL02017", "line_number": 34, "flag": "none"}
@@ -9394,7 +9394,7 @@
 {"call_id": "CALL02018", "line_number": 2, "flag": "none"}
 {"call_id": "CALL02018", "line_number": 4, "flag": "none"}
 {"call_id": "CALL02018", "line_number": 6, "flag": "none"}
-{"call_id": "CALL02018", "line_number": 9, "flag": "none"}
+{"call_id": "CALL02018", "line_number": 9, "flag": "medical"}
 {"call_id": "CALL02018", "line_number": 11, "flag": "none"}
 {"call_id": "CALL02018", "line_number": 13, "flag": "none"}
 {"call_id": "CALL02018", "line_number": 15, "flag": "none"}
@@ -9566,7 +9566,7 @@
 {"call_id": "CALL02044", "line_number": 11, "flag": "none"}
 {"call_id": "CALL02044", "line_number": 13, "flag": "none"}
 {"call_id": "CALL02044", "line_number": 15, "flag": "none"}
-{"call_id": "CALL02044", "line_number": 17, "flag": "none"}
+{"call_id": "CALL02044", "line_number": 17, "flag": "medical"}
 {"call_id": "CALL02044", "line_number": 19, "flag": "none"}
 {"call_id": "CALL02044", "line_number": 21, "flag": "none"}
 {"call_id": "CALL02044", "line_number": 23, "flag": "none"}
@@ -9692,7 +9692,7 @@
 {"call_id": "CALL02067", "line_number": 17, "flag": "none"}
 {"call_id": "CALL02067", "line_number": 20, "flag": "none"}
 {"call_id": "CALL02067", "line_number": 22, "flag": "none"}
-{"call_id": "CALL02067", "line_number": 24, "flag": "none"}
+{"call_id": "CALL02067", "line_number": 24, "flag": "medical"}
 {"call_id": "CALL02067", "line_number": 26, "flag": "none"}
 {"call_id": "CALL02067", "line_number": 28, "flag": "none"}
 {"call_id": "CALL02067", "line_number": 30, "flag": "none"}
@@ -9805,7 +9805,7 @@
 {"call_id": "CALL02116", "line_number": 35, "flag": "none"}
 {"call_id": "CALL02116", "line_number": 37, "flag": "none"}
 {"call_id": "CALL02116", "line_number": 39, "flag": "none"}
-{"call_id": "CALL02116", "line_number": 41, "flag": "none"}
+{"call_id": "CALL02116", "line_number": 41, "flag": "medical"}
 {"call_id": "CALL02116", "line_number": 43, "flag": "none"}
 {"call_id": "CALL02116", "line_number": 46, "flag": "none"}
 {"call_id": "CALL02116", "line_number": 48, "flag": "none"}
@@ -9864,7 +9864,7 @@
 {"call_id": "CALL02142", "line_number": 44, "flag": "none"}
 {"call_id": "CALL02142", "line_number": 47, "flag": "none"}
 {"call_id": "CALL02142", "line_number": 49, "flag": "none"}
-{"call_id": "CALL02142", "line_number": 51, "flag": "none"}
+{"call_id": "CALL02142", "line_number": 51, "flag": "medical"}
 {"call_id": "CALL02142", "line_number": 53, "flag": "none"}
 {"call_id": "CALL02142", "line_number": 56, "flag": "none"}
 {"call_id": "CALL02142", "line_number": 58, "flag": "none"}
@@ -10360,7 +10360,7 @@
 {"call_id": "CALL02238", "line_number": 22, "flag": "none"}
 {"call_id": "CALL02238", "line_number": 24, "flag": "none"}
 {"call_id": "CALL02238", "line_number": 26, "flag": "none"}
-{"call_id": "CALL02238", "line_number": 28, "flag": "none"}
+{"call_id": "CALL02238", "line_number": 28, "flag": "medical"}
 {"call_id": "CALL02238", "line_number": 31, "flag": "none"}
 {"call_id": "CALL02238", "line_number": 33, "flag": "none"}
 {"call_id": "CALL02238", "line_number": 35, "flag": "none"}
@@ -10371,7 +10371,7 @@
 {"call_id": "CALL02239", "line_number": 2, "flag": "none"}
 {"call_id": "CALL02239", "line_number": 4, "flag": "none"}
 {"call_id": "CALL02239", "line_number": 6, "flag": "none"}
-{"call_id": "CALL02239", "line_number": 9, "flag": "none"}
+{"call_id": "CALL02239", "line_number": 9, "flag": "medical"}
 {"call_id": "CALL02239", "line_number": 11, "flag": "none"}
 {"call_id": "CALL02239", "line_number": 13, "flag": "none"}
 {"call_id": "CALL02239", "line_number": 15, "flag": "none"}
@@ -10464,7 +10464,7 @@
 {"call_id": "CALL02246", "line_number": 27, "flag": "none"}
 {"call_id": "CALL02246", "line_number": 29, "flag": "none"}
 {"call_id": "CALL02246", "line_number": 32, "flag": "none"}
-{"call_id": "CALL02246", "line_number": 34, "flag": "none"}
+{"call_id": "CALL02246", "line_number": 34, "flag": "medical"}
 {"call_id": "CALL02246", "line_number": 36, "flag": "none"}
 {"call_id": "CALL02246", "line_number": 39, "flag": "none"}
 {"call_id": "CALL02246", "line_number": 41, "flag": "none"}
@@ -10541,7 +10541,7 @@
 {"call_id": "CALL02285", "line_number": 21, "flag": "none"}
 {"call_id": "CALL02285", "line_number": 24, "flag": "none"}
 {"call_id": "CALL02285", "line_number": 26, "flag": "none"}
-{"call_id": "CALL02285", "line_number": 28, "flag": "none"}
+{"call_id": "CALL02285", "line_number": 28, "flag": "medical"}
 {"call_id": "CALL02285", "line_number": 31, "flag": "none"}
 {"call_id": "CALL02285", "line_number": 33, "flag": "none"}
 {"call_id": "CALL02285", "line_number": 35, "flag": "none"}
@@ -10566,7 +10566,7 @@
 {"call_id": "CALL02290", "line_number": 32, "flag": "none"}
 {"call_id": "CALL02290", "line_number": 34, "flag": "none"}
 {"call_id": "CALL02290", "line_number": 36, "flag": "none"}
-{"call_id": "CALL02290", "line_number": 38, "flag": "none"}
+{"call_id": "CALL02290", "line_number": 38, "flag": "medical"}
 {"call_id": "CALL02290", "line_number": 40, "flag": "none"}
 {"call_id": "CALL02290", "line_number": 42, "flag": "none"}
 {"call_id": "CALL02290", "line_number": 44, "flag": "none"}
@@ -10636,7 +10636,7 @@
 {"call_id": "CALL02305", "line_number": 20, "flag": "none"}
 {"call_id": "CALL02305", "line_number": 23, "flag": "none"}
 {"call_id": "CALL02305", "line_number": 25, "flag": "none"}
-{"call_id": "CALL02305", "line_number": 28, "flag": "none"}
+{"call_id": "CALL02305", "line_number": 28, "flag": "medical"}
 {"call_id": "CALL02305", "line_number": 30, "flag": "none"}
 {"call_id": "CALL02305", "line_number": 32, "flag": "none"}
 {"call_id": "CALL02305", "line_number": 34, "flag": "none"}
@@ -10673,7 +10673,7 @@
 {"call_id": "CALL02308", "line_number": 29, "flag": "none"}
 {"call_id": "CALL02308", "line_number": 31, "flag": "none"}
 {"call_id": "CALL02308", "line_number": 35, "flag": "none"}
-{"call_id": "CALL02308", "line_number": 37, "flag": "none"}
+{"call_id": "CALL02308", "line_number": 37, "flag": "medical"}
 {"call_id": "CALL02308", "line_number": 40, "flag": "none"}
 {"call_id": "CALL02308", "line_number": 43, "flag": "none"}
 {"call_id": "CALL02308", "line_number": 45, "flag": "none"}
@@ -10717,7 +10717,7 @@
 {"call_id": "CALL02319", "line_number": 25, "flag": "none"}
 {"call_id": "CALL02319", "line_number": 28, "flag": "none"}
 {"call_id": "CALL02319", "line_number": 31, "flag": "none"}
-{"call_id": "CALL02319", "line_number": 34, "flag": "none"}
+{"call_id": "CALL02319", "line_number": 34, "flag": "medical"}
 {"call_id": "CALL02319", "line_number": 36, "flag": "none"}
 {"call_id": "CALL02319", "line_number": 38, "flag": "none"}
 {"call_id": "CALL02319", "line_number": 40, "flag": "none"}
@@ -10891,7 +10891,7 @@
 {"call_id": "CALL02347", "line_number": 22, "flag": "none"}
 {"call_id": "CALL02347", "line_number": 24, "flag": "none"}
 {"call_id": "CALL02347", "line_number": 26, "flag": "none"}
-{"call_id": "CALL02347", "line_number": 28, "flag": "none"}
+{"call_id": "CALL02347", "line_number": 28, "flag": "medical"}
 {"call_id": "CALL02347", "line_number": 30, "flag": "none"}
 {"call_id": "CALL02347", "line_number": 33, "flag": "none"}
 {"call_id": "CALL02347", "line_number": 35, "flag": "none"}
@@ -11078,7 +11078,7 @@
 {"call_id": "CALL02392", "line_number": 9, "flag": "none"}
 {"call_id": "CALL02392", "line_number": 11, "flag": "none"}
 {"call_id": "CALL02392", "line_number": 13, "flag": "none"}
-{"call_id": "CALL02392", "line_number": 15, "flag": "none"}
+{"call_id": "CALL02392", "line_number": 15, "flag": "medical"}
 {"call_id": "CALL02392", "line_number": 17, "flag": "none"}
 {"call_id": "CALL02392", "line_number": 19, "flag": "none"}
 {"call_id": "CALL02392", "line_number": 21, "flag": "none"}
@@ -11091,7 +11091,7 @@
 {"call_id": "CALL02393", "line_number": 4, "flag": "none"}
 {"call_id": "CALL02393", "line_number": 6, "flag": "none"}
 {"call_id": "CALL02393", "line_number": 8, "flag": "none"}
-{"call_id": "CALL02393", "line_number": 10, "flag": "none"}
+{"call_id": "CALL02393", "line_number": 10, "flag": "medical"}
 {"call_id": "CALL02393", "line_number": 12, "flag": "none"}
 {"call_id": "CALL02393", "line_number": 14, "flag": "none"}
 {"call_id": "CALL02393", "line_number": 16, "flag": "none"}
@@ -11164,7 +11164,7 @@
 {"call_id": "CALL02407", "line_number": 39, "flag": "none"}
 {"call_id": "CALL02407", "line_number": 41, "flag": "none"}
 {"call_id": "CALL02407", "line_number": 43, "flag": "none"}
-{"call_id": "CALL02407", "line_number": 45, "flag": "none"}
+{"call_id": "CALL02407", "line_number": 45, "flag": "medical"}
 {"call_id": "CALL02407", "line_number": 47, "flag": "none"}
 {"call_id": "CALL02407", "line_number": 49, "flag": "none"}
 {"call_id": "CALL02407", "line_number": 52, "flag": "none"}
@@ -11531,7 +11531,7 @@
 {"call_id": "CALL02482", "line_number": 11, "flag": "none"}
 {"call_id": "CALL02482", "line_number": 14, "flag": "none"}
 {"call_id": "CALL02482", "line_number": 17, "flag": "none"}
-{"call_id": "CALL02482", "line_number": 19, "flag": "none"}
+{"call_id": "CALL02482", "line_number": 19, "flag": "medical"}
 {"call_id": "CALL02482", "line_number": 21, "flag": "none"}
 {"call_id": "CALL02482", "line_number": 23, "flag": "none"}
 {"call_id": "CALL02482", "line_number": 25, "flag": "none"}
@@ -11592,7 +11592,7 @@
 {"call_id": "CALL02507", "line_number": 40, "flag": "none"}
 {"call_id": "CALL02507", "line_number": 42, "flag": "none"}
 {"call_id": "CALL02507", "line_number": 44, "flag": "none"}
-{"call_id": "CALL02507", "line_number": 46, "flag": "none"}
+{"call_id": "CALL02507", "line_number": 46, "flag": "medical"}
 {"call_id": "CALL02507", "line_number": 48, "flag": "none"}
 {"call_id": "CALL02507", "line_number": 50, "flag": "none"}
 {"call_id": "CALL02507", "line_number": 52, "flag": "none"}
@@ -11613,7 +11613,7 @@
 {"call_id": "CALL02512", "line_number": 25, "flag": "none"}
 {"call_id": "CALL02512", "line_number": 27, "flag": "none"}
 {"call_id": "CALL02512", "line_number": 29, "flag": "none"}
-{"call_id": "CALL02512", "line_number": 31, "flag": "none"}
+{"call_id": "CALL02512", "line_number": 31, "flag": "distress"}
 {"call_id": "CALL02512", "line_number": 33, "flag": "none"}
 {"call_id": "CALL02512", "line_number": 36, "flag": "none"}
 {"call_id": "CALL02512", "line_number": 39, "flag": "none"}
@@ -11686,7 +11686,7 @@
 {"call_id": "CALL02516", "line_number": 25, "flag": "none"}
 {"call_id": "CALL02516", "line_number": 27, "flag": "none"}
 {"call_id": "CALL02516", "line_number": 30, "flag": "none"}
-{"call_id": "CALL02516", "line_number": 32, "flag": "none"}
+{"call_id": "CALL02516", "line_number": 32, "flag": "medical"}
 {"call_id": "CALL02516", "line_number": 34, "flag": "none"}
 {"call_id": "CALL02516", "line_number": 37, "flag": "none"}
 {"call_id": "CALL02516", "line_number": 39, "flag": "none"}
@@ -11778,7 +11778,7 @@
 {"call_id": "CALL02531", "line_number": 4, "flag": "none"}
 {"call_id": "CALL02531", "line_number": 6, "flag": "none"}
 {"call_id": "CALL02531", "line_number": 9, "flag": "none"}
-{"call_id": "CALL02531", "line_number": 11, "flag": "none"}
+{"call_id": "CALL02531", "line_number": 11, "flag": "medical"}
 {"call_id": "CALL02531", "line_number": 13, "flag": "none"}
 {"call_id": "CALL02531", "line_number": 16, "flag": "none"}
 {"call_id": "CALL02531", "line_number": 18, "flag": "none"}
@@ -11950,7 +11950,7 @@
 {"call_id": "CALL02573", "line_number": 19, "flag": "none"}
 {"call_id": "CALL02573", "line_number": 21, "flag": "none"}
 {"call_id": "CALL02573", "line_number": 24, "flag": "none"}
-{"call_id": "CALL02573", "line_number": 27, "flag": "none"}
+{"call_id": "CALL02573", "line_number": 27, "flag": "medical"}
 {"call_id": "CALL02573", "line_number": 29, "flag": "none"}
 {"call_id": "CALL02573", "line_number": 31, "flag": "none"}
 {"call_id": "CALL02573", "line_number": 33, "flag": "none"}
@@ -12182,7 +12182,7 @@
 {"call_id": "CALL02622", "line_number": 10, "flag": "none"}
 {"call_id": "CALL02622", "line_number": 12, "flag": "none"}
 {"call_id": "CALL02622", "line_number": 14, "flag": "none"}
-{"call_id": "CALL02622", "line_number": 16, "flag": "none"}
+{"call_id": "CALL02622", "line_number": 16, "flag": "medical"}
 {"call_id": "CALL02622", "line_number": 18, "flag": "none"}
 {"call_id": "CALL02622", "line_number": 20, "flag": "none"}
 {"call_id": "CALL02622", "line_number": 22, "flag": "none"}
@@ -12283,7 +12283,7 @@
 {"call_id": "CALL02634", "line_number": 37, "flag": "none"}
 {"call_id": "CALL02634", "line_number": 39, "flag": "none"}
 {"call_id": "CALL02634", "line_number": 41, "flag": "none"}
-{"call_id": "CALL02634", "line_number": 43, "flag": "none"}
+{"call_id": "CALL02634", "line_number": 43, "flag": "medical"}
 {"call_id": "CALL02634", "line_number": 46, "flag": "none"}
 {"call_id": "CALL02634", "line_number": 48, "flag": "none"}
 {"call_id": "CALL02634", "line_number": 50, "flag": "none"}
@@ -12407,7 +12407,7 @@
 {"call_id": "CALL02648", "line_number": 6, "flag": "none"}
 {"call_id": "CALL02648", "line_number": 9, "flag": "none"}
 {"call_id": "CALL02648", "line_number": 11, "flag": "none"}
-{"call_id": "CALL02648", "line_number": 13, "flag": "none"}
+{"call_id": "CALL02648", "line_number": 13, "flag": "medical"}
 {"call_id": "CALL02648", "line_number": 15, "flag": "none"}
 {"call_id": "CALL02648", "line_number": 17, "flag": "none"}
 {"call_id": "CALL02648", "line_number": 19, "flag": "none"}
@@ -12441,7 +12441,7 @@
 {"call_id": "CALL02660", "line_number": 17, "flag": "none"}
 {"call_id": "CALL02660", "line_number": 19, "flag": "none"}
 {"call_id": "CALL02660", "line_number": 21, "flag": "none"}
-{"call_id": "CALL02660", "line_number": 24, "flag": "none"}
+{"call_id": "CALL02660", "line_number": 24, "flag": "medical"}
 {"call_id": "CALL02660", "line_number": 26, "flag": "none"}
 {"call_id": "CALL02660", "line_number": 28, "flag": "none"}
 {"call_id": "CALL02660", "line_number": 30, "flag": "none"}
@@ -12490,7 +12490,7 @@
 {"call_id": "CALL02664", "line_number": 13, "flag": "none"}
 {"call_id": "CALL02664", "line_number": 15, "flag": "none"}
 {"call_id": "CALL02664", "line_number": 17, "flag": "none"}
-{"call_id": "CALL02664", "line_number": 20, "flag": "none"}
+{"call_id": "CALL02664", "line_number": 20, "flag": "medical"}
 {"call_id": "CALL02664", "line_number": 22, "flag": "none"}
 {"call_id": "CALL02664", "line_number": 24, "flag": "none"}
 {"call_id": "CALL02664", "line_number": 27, "flag": "none"}
@@ -12519,7 +12519,7 @@
 {"call_id": "CALL02676", "line_number": 28, "flag": "none"}
 {"call_id": "CALL02676", "line_number": 30, "flag": "none"}
 {"call_id": "CALL02676", "line_number": 32, "flag": "none"}
-{"call_id": "CALL02676", "line_number": 34, "flag": "none"}
+{"call_id": "CALL02676", "line_number": 34, "flag": "medical"}
 {"call_id": "CALL02676", "line_number": 36, "flag": "none"}
 {"call_id": "CALL02676", "line_number": 38, "flag": "none"}
 {"call_id": "CALL02676", "line_number": 40, "flag": "none"}
@@ -12544,7 +12544,7 @@
 {"call_id": "CALL02686", "line_number": 20, "flag": "none"}
 {"call_id": "CALL02686", "line_number": 23, "flag": "none"}
 {"call_id": "CALL02686", "line_number": 25, "flag": "none"}
-{"call_id": "CALL02686", "line_number": 27, "flag": "none"}
+{"call_id": "CALL02686", "line_number": 27, "flag": "distress"}
 {"call_id": "CALL02686", "line_number": 29, "flag": "none"}
 {"call_id": "CALL02686", "line_number": 32, "flag": "none"}
 {"call_id": "CALL02686", "line_number": 34, "flag": "none"}
@@ -12819,7 +12819,7 @@
 {"call_id": "CALL02737", "line_number": 2, "flag": "none"}
 {"call_id": "CALL02737", "line_number": 4, "flag": "none"}
 {"call_id": "CALL02737", "line_number": 6, "flag": "none"}
-{"call_id": "CALL02737", "line_number": 9, "flag": "none"}
+{"call_id": "CALL02737", "line_number": 9, "flag": "medical"}
 {"call_id": "CALL02737", "line_number": 11, "flag": "none"}
 {"call_id": "CALL02737", "line_number": 13, "flag": "none"}
 {"call_id": "CALL02737", "line_number": 15, "flag": "none"}
@@ -12880,7 +12880,7 @@
 {"call_id": "CALL02746", "line_number": 12, "flag": "none"}
 {"call_id": "CALL02746", "line_number": 15, "flag": "none"}
 {"call_id": "CALL02746", "line_number": 17, "flag": "none"}
-{"call_id": "CALL02746", "line_number": 20, "flag": "none"}
+{"call_id": "CALL02746", "line_number": 20, "flag": "medical"}
 {"call_id": "CALL02746", "line_number": 23, "flag": "none"}
 {"call_id": "CALL02746", "line_number": 25, "flag": "none"}
 {"call_id": "CALL02746", "line_number": 27, "flag": "none"}
@@ -13068,7 +13068,7 @@
 {"call_id": "CALL02803", "line_number": 11, "flag": "none"}
 {"call_id": "CALL02803", "line_number": 13, "flag": "none"}
 {"call_id": "CALL02803", "line_number": 15, "flag": "none"}
-{"call_id": "CALL02803", "line_number": 17, "flag": "none"}
+{"call_id": "CALL02803", "line_number": 17, "flag": "medical"}
 {"call_id": "CALL02803", "line_number": 19, "flag": "none"}
 {"call_id": "CALL02803", "line_number": 21, "flag": "none"}
 {"call_id": "CALL02803", "line_number": 23, "flag": "none"}
@@ -13202,7 +13202,7 @@
 {"call_id": "CALL02840", "line_number": 14, "flag": "none"}
 {"call_id": "CALL02840", "line_number": 17, "flag": "none"}
 {"call_id": "CALL02840", "line_number": 20, "flag": "none"}
-{"call_id": "CALL02840", "line_number": 22, "flag": "none"}
+{"call_id": "CALL02840", "line_number": 22, "flag": "distress"}
 {"call_id": "CALL02840", "line_number": 24, "flag": "none"}
 {"call_id": "CALL02840", "line_number": 26, "flag": "none"}
 {"call_id": "CALL02840", "line_number": 28, "flag": "none"}
@@ -13276,7 +13276,7 @@
 {"call_id": "CALL02857", "line_number": 26, "flag": "none"}
 {"call_id": "CALL02857", "line_number": 28, "flag": "none"}
 {"call_id": "CALL02857", "line_number": 30, "flag": "none"}
-{"call_id": "CALL02857", "line_number": 32, "flag": "none"}
+{"call_id": "CALL02857", "line_number": 32, "flag": "medical"}
 {"call_id": "CALL02857", "line_number": 35, "flag": "none"}
 {"call_id": "CALL02857", "line_number": 37, "flag": "none"}
 {"call_id": "CALL02857", "line_number": 39, "flag": "none"}
@@ -13322,7 +13322,7 @@
 {"call_id": "CALL02865", "line_number": 9, "flag": "none"}
 {"call_id": "CALL02865", "line_number": 12, "flag": "none"}
 {"call_id": "CALL02865", "line_number": 14, "flag": "none"}
-{"call_id": "CALL02865", "line_number": 16, "flag": "none"}
+{"call_id": "CALL02865", "line_number": 16, "flag": "medical"}
 {"call_id": "CALL02865", "line_number": 19, "flag": "none"}
 {"call_id": "CALL02865", "line_number": 21, "flag": "none"}
 {"call_id": "CALL02865", "line_number": 23, "flag": "none"}
@@ -13369,7 +13369,7 @@
 {"call_id": "CALL02869", "line_number": 22, "flag": "none"}
 {"call_id": "CALL02869", "line_number": 25, "flag": "none"}
 {"call_id": "CALL02869", "line_number": 27, "flag": "none"}
-{"call_id": "CALL02869", "line_number": 29, "flag": "none"}
+{"call_id": "CALL02869", "line_number": 29, "flag": "medical"}
 {"call_id": "CALL02869", "line_number": 32, "flag": "none"}
 {"call_id": "CALL02869", "line_number": 36, "flag": "none"}
 {"call_id": "CALL02869", "line_number": 38, "flag": "none"}
@@ -13494,7 +13494,7 @@
 {"call_id": "CALL02880", "line_number": 17, "flag": "none"}
 {"call_id": "CALL02880", "line_number": 19, "flag": "none"}
 {"call_id": "CALL02880", "line_number": 21, "flag": "none"}
-{"call_id": "CALL02880", "line_number": 23, "flag": "none"}
+{"call_id": "CALL02880", "line_number": 23, "flag": "medical"}
 {"call_id": "CALL02880", "line_number": 25, "flag": "none"}
 {"call_id": "CALL02880", "line_number": 27, "flag": "none"}
 {"call_id": "CALL02880", "line_number": 29, "flag": "none"}
@@ -13525,7 +13525,7 @@
 {"call_id": "CALL02885", "line_number": 37, "flag": "none"}
 {"call_id": "CALL02885", "line_number": 40, "flag": "none"}
 {"call_id": "CALL02885", "line_number": 42, "flag": "none"}
-{"call_id": "CALL02885", "line_number": 45, "flag": "none"}
+{"call_id": "CALL02885", "line_number": 45, "flag": "medical"}
 {"call_id": "CALL02885", "line_number": 47, "flag": "none"}
 {"call_id": "CALL02885", "line_number": 49, "flag": "none"}
 {"call_id": "CALL02885", "line_number": 51, "flag": "none"}
@@ -13570,9 +13570,9 @@
 {"call_id": "CALL02899", "line_number": 27, "flag": "none"}
 {"call_id": "CALL02899", "line_number": 29, "flag": "none"}
 {"call_id": "CALL02899", "line_number": 31, "flag": "none"}
-{"call_id": "CALL02899", "line_number": 33, "flag": "none"}
+{"call_id": "CALL02899", "line_number": 33, "flag": "distress"}
 {"call_id": "CALL02899", "line_number": 35, "flag": "none"}
-{"call_id": "CALL02899", "line_number": 38, "flag": "none"}
+{"call_id": "CALL02899", "line_number": 38, "flag": "medical"}
 {"call_id": "CALL02899", "line_number": 40, "flag": "none"}
 {"call_id": "CALL02899", "line_number": 42, "flag": "none"}
 {"call_id": "CALL02899", "line_number": 44, "flag": "none"}
@@ -13595,7 +13595,7 @@
 {"call_id": "CALL02902", "line_number": 37, "flag": "none"}
 {"call_id": "CALL02902", "line_number": 40, "flag": "none"}
 {"call_id": "CALL02902", "line_number": 42, "flag": "none"}
-{"call_id": "CALL02902", "line_number": 44, "flag": "none"}
+{"call_id": "CALL02902", "line_number": 44, "flag": "medical"}
 {"call_id": "CALL02902", "line_number": 46, "flag": "none"}
 {"call_id": "CALL02902", "line_number": 48, "flag": "none"}
 {"call_id": "CALL02902", "line_number": 50, "flag": "none"}
@@ -13911,7 +13911,7 @@
 {"call_id": "CALL02942", "line_number": 26, "flag": "none"}
 {"call_id": "CALL02942", "line_number": 28, "flag": "none"}
 {"call_id": "CALL02942", "line_number": 30, "flag": "none"}
-{"call_id": "CALL02942", "line_number": 32, "flag": "none"}
+{"call_id": "CALL02942", "line_number": 32, "flag": "distress"}
 {"call_id": "CALL02942", "line_number": 35, "flag": "none"}
 {"call_id": "CALL02942", "line_number": 37, "flag": "none"}
 {"call_id": "CALL02942", "line_number": 39, "flag": "none"}
@@ -13979,7 +13979,7 @@
 {"call_id": "CALL02961", "line_number": 10, "flag": "none"}
 {"call_id": "CALL02961", "line_number": 13, "flag": "none"}
 {"call_id": "CALL02961", "line_number": 15, "flag": "none"}
-{"call_id": "CALL02961", "line_number": 17, "flag": "none"}
+{"call_id": "CALL02961", "line_number": 17, "flag": "medical"}
 {"call_id": "CALL02961", "line_number": 19, "flag": "none"}
 {"call_id": "CALL02961", "line_number": 21, "flag": "none"}
 {"call_id": "CALL02961", "line_number": 23, "flag": "none"}
@@ -14049,7 +14049,7 @@
 {"call_id": "CALL02976", "line_number": 18, "flag": "none"}
 {"call_id": "CALL02976", "line_number": 20, "flag": "none"}
 {"call_id": "CALL02976", "line_number": 22, "flag": "none"}
-{"call_id": "CALL02976", "line_number": 24, "flag": "none"}
+{"call_id": "CALL02976", "line_number": 24, "flag": "distress"}
 {"call_id": "CALL02976", "line_number": 26, "flag": "none"}
 {"call_id": "CALL02976", "line_number": 28, "flag": "none"}
 {"call_id": "CALL02976", "line_number": 30, "flag": "none"}
@@ -14208,7 +14208,7 @@
 {"call_id": "CALL03047", "line_number": 18, "flag": "none"}
 {"call_id": "CALL03047", "line_number": 21, "flag": "none"}
 {"call_id": "CALL03047", "line_number": 23, "flag": "none"}
-{"call_id": "CALL03047", "line_number": 25, "flag": "none"}
+{"call_id": "CALL03047", "line_number": 25, "flag": "medical"}
 {"call_id": "CALL03047", "line_number": 27, "flag": "none"}
 {"call_id": "CALL03047", "line_number": 29, "flag": "none"}
 {"call_id": "CALL03047", "line_number": 31, "flag": "none"}
@@ -14356,7 +14356,7 @@
 {"call_id": "CALL03068", "line_number": 19, "flag": "none"}
 {"call_id": "CALL03068", "line_number": 21, "flag": "none"}
 {"call_id": "CALL03068", "line_number": 24, "flag": "none"}
-{"call_id": "CALL03068", "line_number": 26, "flag": "none"}
+{"call_id": "CALL03068", "line_number": 26, "flag": "medical"}
 {"call_id": "CALL03068", "line_number": 28, "flag": "none"}
 {"call_id": "CALL03068", "line_number": 30, "flag": "none"}
 {"call_id": "CALL03068", "line_number": 32, "flag": "none"}
@@ -14632,7 +14632,7 @@
 {"call_id": "CALL03119", "line_number": 14, "flag": "none"}
 {"call_id": "CALL03119", "line_number": 16, "flag": "none"}
 {"call_id": "CALL03119", "line_number": 18, "flag": "none"}
-{"call_id": "CALL03119", "line_number": 21, "flag": "none"}
+{"call_id": "CALL03119", "line_number": 21, "flag": "medical"}
 {"call_id": "CALL03119", "line_number": 23, "flag": "none"}
 {"call_id": "CALL03119", "line_number": 25, "flag": "none"}
 {"call_id": "CALL03119", "line_number": 27, "flag": "none"}
@@ -14685,7 +14685,7 @@
 {"call_id": "CALL03127", "line_number": 28, "flag": "none"}
 {"call_id": "CALL03127", "line_number": 30, "flag": "none"}
 {"call_id": "CALL03127", "line_number": 32, "flag": "none"}
-{"call_id": "CALL03127", "line_number": 34, "flag": "none"}
+{"call_id": "CALL03127", "line_number": 34, "flag": "medical"}
 {"call_id": "CALL03127", "line_number": 37, "flag": "none"}
 {"call_id": "CALL03127", "line_number": 39, "flag": "none"}
 {"call_id": "CALL03127", "line_number": 41, "flag": "none"}
@@ -14698,7 +14698,7 @@
 {"call_id": "CALL03145", "line_number": 9, "flag": "none"}
 {"call_id": "CALL03145", "line_number": 11, "flag": "none"}
 {"call_id": "CALL03145", "line_number": 13, "flag": "none"}
-{"call_id": "CALL03145", "line_number": 15, "flag": "none"}
+{"call_id": "CALL03145", "line_number": 15, "flag": "distress"}
 {"call_id": "CALL03145", "line_number": 18, "flag": "none"}
 {"call_id": "CALL03145", "line_number": 20, "flag": "none"}
 {"call_id": "CALL03145", "line_number": 22, "flag": "none"}
@@ -14793,7 +14793,7 @@
 {"call_id": "CALL03153", "line_number": 19, "flag": "none"}
 {"call_id": "CALL03153", "line_number": 22, "flag": "none"}
 {"call_id": "CALL03153", "line_number": 24, "flag": "none"}
-{"call_id": "CALL03153", "line_number": 26, "flag": "none"}
+{"call_id": "CALL03153", "line_number": 26, "flag": "medical"}
 {"call_id": "CALL03153", "line_number": 28, "flag": "none"}
 {"call_id": "CALL03153", "line_number": 30, "flag": "none"}
 {"call_id": "CALL03153", "line_number": 32, "flag": "none"}
@@ -14924,7 +14924,7 @@
 {"call_id": "CALL03209", "line_number": 6, "flag": "none"}
 {"call_id": "CALL03209", "line_number": 9, "flag": "none"}
 {"call_id": "CALL03209", "line_number": 11, "flag": "none"}
-{"call_id": "CALL03209", "line_number": 13, "flag": "none"}
+{"call_id": "CALL03209", "line_number": 13, "flag": "medical"}
 {"call_id": "CALL03209", "line_number": 15, "flag": "none"}
 {"call_id": "CALL03209", "line_number": 17, "flag": "none"}
 {"call_id": "CALL03209", "line_number": 19, "flag": "none"}
@@ -15183,7 +15183,7 @@
 {"call_id": "CALL03251", "line_number": 21, "flag": "none"}
 {"call_id": "CALL03251", "line_number": 23, "flag": "none"}
 {"call_id": "CALL03251", "line_number": 25, "flag": "none"}
-{"call_id": "CALL03251", "line_number": 29, "flag": "none"}
+{"call_id": "CALL03251", "line_number": 29, "flag": "medical"}
 {"call_id": "CALL03251", "line_number": 31, "flag": "none"}
 {"call_id": "CALL03251", "line_number": 33, "flag": "none"}
 {"call_id": "CALL03251", "line_number": 35, "flag": "none"}
@@ -15250,7 +15250,7 @@
 {"call_id": "CALL03256", "line_number": 31, "flag": "none"}
 {"call_id": "CALL03256", "line_number": 33, "flag": "none"}
 {"call_id": "CALL03256", "line_number": 36, "flag": "none"}
-{"call_id": "CALL03256", "line_number": 38, "flag": "none"}
+{"call_id": "CALL03256", "line_number": 38, "flag": "medical"}
 {"call_id": "CALL03256", "line_number": 40, "flag": "none"}
 {"call_id": "CALL03256", "line_number": 42, "flag": "none"}
 {"call_id": "CALL03256", "line_number": 44, "flag": "none"}
@@ -15284,7 +15284,7 @@
 {"call_id": "CALL03258", "line_number": 45, "flag": "none"}
 {"call_id": "CALL03258", "line_number": 47, "flag": "none"}
 {"call_id": "CALL03258", "line_number": 51, "flag": "none"}
-{"call_id": "CALL03258", "line_number": 53, "flag": "none"}
+{"call_id": "CALL03258", "line_number": 53, "flag": "medical"}
 {"call_id": "CALL03258", "line_number": 55, "flag": "none"}
 {"call_id": "CALL03258", "line_number": 57, "flag": "none"}
 {"call_id": "CALL03258", "line_number": 59, "flag": "none"}
@@ -15309,7 +15309,7 @@
 {"call_id": "CALL03259", "line_number": 31, "flag": "none"}
 {"call_id": "CALL03259", "line_number": 34, "flag": "none"}
 {"call_id": "CALL03259", "line_number": 36, "flag": "none"}
-{"call_id": "CALL03259", "line_number": 38, "flag": "none"}
+{"call_id": "CALL03259", "line_number": 38, "flag": "medical"}
 {"call_id": "CALL03259", "line_number": 41, "flag": "none"}
 {"call_id": "CALL03259", "line_number": 44, "flag": "none"}
 {"call_id": "CALL03259", "line_number": 47, "flag": "none"}
@@ -15455,7 +15455,7 @@
 {"call_id": "CALL03287", "line_number": 6, "flag": "none"}
 {"call_id": "CALL03287", "line_number": 9, "flag": "none"}
 {"call_id": "CALL03287", "line_number": 12, "flag": "none"}
-{"call_id": "CALL03287", "line_number": 14, "flag": "none"}
+{"call_id": "CALL03287", "line_number": 14, "flag": "medical"}
 {"call_id": "CALL03287", "line_number": 16, "flag": "none"}
 {"call_id": "CALL03287", "line_number": 18, "flag": "none"}
 {"call_id": "CALL03287", "line_number": 20, "flag": "none"}
@@ -15538,7 +15538,7 @@
 {"call_id": "CALL03294", "line_number": 25, "flag": "none"}
 {"call_id": "CALL03294", "line_number": 27, "flag": "none"}
 {"call_id": "CALL03294", "line_number": 29, "flag": "none"}
-{"call_id": "CALL03294", "line_number": 32, "flag": "none"}
+{"call_id": "CALL03294", "line_number": 32, "flag": "medical"}
 {"call_id": "CALL03294", "line_number": 35, "flag": "none"}
 {"call_id": "CALL03294", "line_number": 37, "flag": "none"}
 {"call_id": "CALL03294", "line_number": 39, "flag": "none"}
@@ -15620,7 +15620,7 @@
 {"call_id": "CALL03331", "line_number": 47, "flag": "none"}
 {"call_id": "CALL03331", "line_number": 50, "flag": "none"}
 {"call_id": "CALL03331", "line_number": 52, "flag": "none"}
-{"call_id": "CALL03331", "line_number": 54, "flag": "none"}
+{"call_id": "CALL03331", "line_number": 54, "flag": "medical"}
 {"call_id": "CALL03331", "line_number": 56, "flag": "none"}
 {"call_id": "CALL03331", "line_number": 59, "flag": "none"}
 {"call_id": "CALL03331", "line_number": 61, "flag": "none"}
@@ -15657,7 +15657,7 @@
 {"call_id": "CALL03348", "line_number": 6, "flag": "none"}
 {"call_id": "CALL03348", "line_number": 9, "flag": "none"}
 {"call_id": "CALL03348", "line_number": 12, "flag": "none"}
-{"call_id": "CALL03348", "line_number": 14, "flag": "none"}
+{"call_id": "CALL03348", "line_number": 14, "flag": "distress"}
 {"call_id": "CALL03348", "line_number": 17, "flag": "none"}
 {"call_id": "CALL03348", "line_number": 19, "flag": "none"}
 {"call_id": "CALL03348", "line_number": 21, "flag": "none"}
@@ -15786,7 +15786,7 @@
 {"call_id": "CALL03381", "line_number": 30, "flag": "none"}
 {"call_id": "CALL03381", "line_number": 32, "flag": "none"}
 {"call_id": "CALL03381", "line_number": 34, "flag": "none"}
-{"call_id": "CALL03381", "line_number": 37, "flag": "none"}
+{"call_id": "CALL03381", "line_number": 37, "flag": "medical"}
 {"call_id": "CALL03381", "line_number": 39, "flag": "none"}
 {"call_id": "CALL03381", "line_number": 41, "flag": "none"}
 {"call_id": "CALL03381", "line_number": 43, "flag": "none"}
@@ -15800,7 +15800,7 @@
 {"call_id": "CALL03387", "line_number": 2, "flag": "none"}
 {"call_id": "CALL03387", "line_number": 4, "flag": "none"}
 {"call_id": "CALL03387", "line_number": 6, "flag": "none"}
-{"call_id": "CALL03387", "line_number": 9, "flag": "medical"}
+{"call_id": "CALL03387", "line_number": 9, "flag": "none"}
 {"call_id": "CALL03387", "line_number": 11, "flag": "none"}
 {"call_id": "CALL03387", "line_number": 13, "flag": "none"}
 {"call_id": "CALL03387", "line_number": 15, "flag": "none"}
@@ -16033,7 +16033,7 @@
 {"call_id": "CALL03449", "line_number": 6, "flag": "none"}
 {"call_id": "CALL03449", "line_number": 9, "flag": "none"}
 {"call_id": "CALL03449", "line_number": 11, "flag": "none"}
-{"call_id": "CALL03449", "line_number": 13, "flag": "none"}
+{"call_id": "CALL03449", "line_number": 13, "flag": "medical"}
 {"call_id": "CALL03449", "line_number": 15, "flag": "none"}
 {"call_id": "CALL03449", "line_number": 17, "flag": "none"}
 {"call_id": "CALL03449", "line_number": 19, "flag": "none"}
@@ -16045,7 +16045,7 @@
 {"call_id": "CALL03449", "line_number": 31, "flag": "none"}
 {"call_id": "CALL03449", "line_number": 34, "flag": "none"}
 {"call_id": "CALL03449", "line_number": 36, "flag": "none"}
-{"call_id": "CALL03449", "line_number": 38, "flag": "none"}
+{"call_id": "CALL03449", "line_number": 38, "flag": "medical"}
 {"call_id": "CALL03449", "line_number": 40, "flag": "none"}
 {"call_id": "CALL03449", "line_number": 42, "flag": "none"}
 {"call_id": "CALL03449", "line_number": 44, "flag": "none"}
@@ -16194,7 +16194,7 @@
 {"call_id": "CALL03472", "line_number": 21, "flag": "none"}
 {"call_id": "CALL03472", "line_number": 24, "flag": "none"}
 {"call_id": "CALL03472", "line_number": 26, "flag": "none"}
-{"call_id": "CALL03472", "line_number": 28, "flag": "none"}
+{"call_id": "CALL03472", "line_number": 28, "flag": "medical"}
 {"call_id": "CALL03472", "line_number": 31, "flag": "none"}
 {"call_id": "CALL03472", "line_number": 33, "flag": "none"}
 {"call_id": "CALL03472", "line_number": 36, "flag": "none"}
@@ -16220,7 +16220,7 @@
 {"call_id": "CALL03481", "line_number": 11, "flag": "none"}
 {"call_id": "CALL03481", "line_number": 13, "flag": "none"}
 {"call_id": "CALL03481", "line_number": 15, "flag": "none"}
-{"call_id": "CALL03481", "line_number": 17, "flag": "none"}
+{"call_id": "CALL03481", "line_number": 17, "flag": "medical"}
 {"call_id": "CALL03481", "line_number": 19, "flag": "none"}
 {"call_id": "CALL03481", "line_number": 22, "flag": "none"}
 {"call_id": "CALL03481", "line_number": 24, "flag": "none"}
@@ -16275,7 +16275,7 @@
 {"call_id": "CALL03488", "line_number": 14, "flag": "none"}
 {"call_id": "CALL03488", "line_number": 16, "flag": "none"}
 {"call_id": "CALL03488", "line_number": 19, "flag": "none"}
-{"call_id": "CALL03488", "line_number": 21, "flag": "none"}
+{"call_id": "CALL03488", "line_number": 21, "flag": "medical"}
 {"call_id": "CALL03488", "line_number": 23, "flag": "none"}
 {"call_id": "CALL03488", "line_number": 25, "flag": "none"}
 {"call_id": "CALL03488", "line_number": 27, "flag": "none"}
@@ -16330,7 +16330,7 @@
 {"call_id": "CALL03496", "line_number": 33, "flag": "none"}
 {"call_id": "CALL03496", "line_number": 35, "flag": "none"}
 {"call_id": "CALL03496", "line_number": 37, "flag": "none"}
-{"call_id": "CALL03496", "line_number": 40, "flag": "none"}
+{"call_id": "CALL03496", "line_number": 40, "flag": "medical"}
 {"call_id": "CALL03496", "line_number": 43, "flag": "none"}
 {"call_id": "CALL03496", "line_number": 45, "flag": "none"}
 {"call_id": "CALL03496", "line_number": 48, "flag": "none"}
@@ -16514,7 +16514,7 @@
 {"call_id": "CALL03533", "line_number": 46, "flag": "none"}
 {"call_id": "CALL03533", "line_number": 48, "flag": "none"}
 {"call_id": "CALL03533", "line_number": 50, "flag": "none"}
-{"call_id": "CALL03533", "line_number": 52, "flag": "none"}
+{"call_id": "CALL03533", "line_number": 52, "flag": "medical"}
 {"call_id": "CALL03533", "line_number": 55, "flag": "none"}
 {"call_id": "CALL03533", "line_number": 57, "flag": "none"}
 {"call_id": "CALL03533", "line_number": 60, "flag": "none"}
@@ -16644,7 +16644,7 @@
 {"call_id": "CALL03556", "line_number": 25, "flag": "none"}
 {"call_id": "CALL03556", "line_number": 27, "flag": "none"}
 {"call_id": "CALL03556", "line_number": 29, "flag": "none"}
-{"call_id": "CALL03556", "line_number": 31, "flag": "none"}
+{"call_id": "CALL03556", "line_number": 31, "flag": "medical"}
 {"call_id": "CALL03556", "line_number": 33, "flag": "none"}
 {"call_id": "CALL03556", "line_number": 35, "flag": "none"}
 {"call_id": "CALL03556", "line_number": 38, "flag": "none"}
@@ -16748,7 +16748,7 @@
 {"call_id": "CALL03581", "line_number": 27, "flag": "none"}
 {"call_id": "CALL03581", "line_number": 29, "flag": "none"}
 {"call_id": "CALL03581", "line_number": 32, "flag": "none"}
-{"call_id": "CALL03581", "line_number": 34, "flag": "none"}
+{"call_id": "CALL03581", "line_number": 34, "flag": "medical"}
 {"call_id": "CALL03581", "line_number": 36, "flag": "none"}
 {"call_id": "CALL03581", "line_number": 38, "flag": "none"}
 {"call_id": "CALL03581", "line_number": 40, "flag": "none"}
@@ -16776,7 +16776,7 @@
 {"call_id": "CALL03592", "line_number": 46, "flag": "none"}
 {"call_id": "CALL03592", "line_number": 48, "flag": "none"}
 {"call_id": "CALL03592", "line_number": 50, "flag": "none"}
-{"call_id": "CALL03592", "line_number": 52, "flag": "none"}
+{"call_id": "CALL03592", "line_number": 52, "flag": "medical"}
 {"call_id": "CALL03592", "line_number": 55, "flag": "none"}
 {"call_id": "CALL03592", "line_number": 58, "flag": "none"}
 {"call_id": "CALL03592", "line_number": 61, "flag": "none"}
@@ -16905,7 +16905,7 @@
 {"call_id": "CALL03615", "line_number": 18, "flag": "none"}
 {"call_id": "CALL03615", "line_number": 20, "flag": "none"}
 {"call_id": "CALL03615", "line_number": 22, "flag": "none"}
-{"call_id": "CALL03615", "line_number": 24, "flag": "none"}
+{"call_id": "CALL03615", "line_number": 24, "flag": "medical"}
 {"call_id": "CALL03615", "line_number": 26, "flag": "none"}
 {"call_id": "CALL03615", "line_number": 28, "flag": "none"}
 {"call_id": "CALL03615", "line_number": 30, "flag": "none"}
@@ -16957,7 +16957,7 @@
 {"call_id": "CALL03648", "line_number": 7, "flag": "none"}
 {"call_id": "CALL03648", "line_number": 10, "flag": "none"}
 {"call_id": "CALL03648", "line_number": 13, "flag": "none"}
-{"call_id": "CALL03648", "line_number": 15, "flag": "none"}
+{"call_id": "CALL03648", "line_number": 15, "flag": "medical"}
 {"call_id": "CALL03648", "line_number": 18, "flag": "none"}
 {"call_id": "CALL03648", "line_number": 20, "flag": "none"}
 {"call_id": "CALL03648", "line_number": 22, "flag": "none"}
@@ -17044,7 +17044,7 @@
 {"call_id": "CALL03653", "line_number": 18, "flag": "none"}
 {"call_id": "CALL03653", "line_number": 20, "flag": "none"}
 {"call_id": "CALL03653", "line_number": 22, "flag": "none"}
-{"call_id": "CALL03653", "line_number": 24, "flag": "none"}
+{"call_id": "CALL03653", "line_number": 24, "flag": "medical"}
 {"call_id": "CALL03653", "line_number": 26, "flag": "none"}
 {"call_id": "CALL03653", "line_number": 28, "flag": "none"}
 {"call_id": "CALL03653", "line_number": 31, "flag": "none"}
@@ -17131,7 +17131,7 @@
 {"call_id": "CALL03664", "line_number": 6, "flag": "none"}
 {"call_id": "CALL03664", "line_number": 9, "flag": "none"}
 {"call_id": "CALL03664", "line_number": 11, "flag": "none"}
-{"call_id": "CALL03664", "line_number": 13, "flag": "none"}
+{"call_id": "CALL03664", "line_number": 13, "flag": "medical"}
 {"call_id": "CALL03664", "line_number": 15, "flag": "none"}
 {"call_id": "CALL03664", "line_number": 17, "flag": "none"}
 {"call_id": "CALL03664", "line_number": 19, "flag": "none"}
@@ -17332,12 +17332,12 @@
 {"call_id": "CALL03708", "line_number": 4, "flag": "none"}
 {"call_id": "CALL03708", "line_number": 6, "flag": "none"}
 {"call_id": "CALL03708", "line_number": 9, "flag": "none"}
-{"call_id": "CALL03708", "line_number": 11, "flag": "none"}
+{"call_id": "CALL03708", "line_number": 11, "flag": "medical"}
 {"call_id": "CALL03708", "line_number": 13, "flag": "none"}
 {"call_id": "CALL03708", "line_number": 15, "flag": "none"}
 {"call_id": "CALL03708", "line_number": 17, "flag": "none"}
 {"call_id": "CALL03708", "line_number": 20, "flag": "none"}
-{"call_id": "CALL03708", "line_number": 22, "flag": "none"}
+{"call_id": "CALL03708", "line_number": 22, "flag": "medical"}
 {"call_id": "CALL03708", "line_number": 24, "flag": "none"}
 {"call_id": "CALL03708", "line_number": 26, "flag": "none"}
 {"call_id": "CALL03708", "line_number": 28, "flag": "none"}
@@ -17352,7 +17352,7 @@
 {"call_id": "CALL03710", "line_number": 4, "flag": "none"}
 {"call_id": "CALL03710", "line_number": 6, "flag": "none"}
 {"call_id": "CALL03710", "line_number": 8, "flag": "none"}
-{"call_id": "CALL03710", "line_number": 10, "flag": "none"}
+{"call_id": "CALL03710", "line_number": 10, "flag": "medical"}
 {"call_id": "CALL03710", "line_number": 12, "flag": "none"}
 {"call_id": "CALL03710", "line_number": 14, "flag": "none"}
 {"call_id": "CALL03710", "line_number": 16, "flag": "none"}
@@ -17594,7 +17594,7 @@
 {"call_id": "CALL03772", "line_number": 9, "flag": "none"}
 {"call_id": "CALL03772", "line_number": 11, "flag": "none"}
 {"call_id": "CALL03772", "line_number": 13, "flag": "none"}
-{"call_id": "CALL03772", "line_number": 16, "flag": "none"}
+{"call_id": "CALL03772", "line_number": 16, "flag": "medical"}
 {"call_id": "CALL03772", "line_number": 18, "flag": "none"}
 {"call_id": "CALL03772", "line_number": 20, "flag": "none"}
 {"call_id": "CALL03772", "line_number": 22, "flag": "none"}
@@ -17665,7 +17665,7 @@
 {"call_id": "CALL03778", "line_number": 6, "flag": "none"}
 {"call_id": "CALL03778", "line_number": 9, "flag": "none"}
 {"call_id": "CALL03778", "line_number": 12, "flag": "none"}
-{"call_id": "CALL03778", "line_number": 14, "flag": "none"}
+{"call_id": "CALL03778", "line_number": 14, "flag": "medical"}
 {"call_id": "CALL03778", "line_number": 16, "flag": "none"}
 {"call_id": "CALL03778", "line_number": 18, "flag": "none"}
 {"call_id": "CALL03778", "line_number": 20, "flag": "none"}
@@ -17786,7 +17786,7 @@
 {"call_id": "CALL03809", "line_number": 29, "flag": "none"}
 {"call_id": "CALL03809", "line_number": 31, "flag": "none"}
 {"call_id": "CALL03809", "line_number": 33, "flag": "none"}
-{"call_id": "CALL03809", "line_number": 35, "flag": "none"}
+{"call_id": "CALL03809", "line_number": 35, "flag": "medical"}
 {"call_id": "CALL03809", "line_number": 38, "flag": "none"}
 {"call_id": "CALL03809", "line_number": 40, "flag": "none"}
 {"call_id": "CALL03809", "line_number": 43, "flag": "none"}
@@ -17914,7 +17914,7 @@
 {"call_id": "CALL03835", "line_number": 18, "flag": "none"}
 {"call_id": "CALL03835", "line_number": 20, "flag": "none"}
 {"call_id": "CALL03835", "line_number": 22, "flag": "none"}
-{"call_id": "CALL03835", "line_number": 24, "flag": "none"}
+{"call_id": "CALL03835", "line_number": 24, "flag": "medical"}
 {"call_id": "CALL03835", "line_number": 26, "flag": "none"}
 {"call_id": "CALL03835", "line_number": 28, "flag": "none"}
 {"call_id": "CALL03835", "line_number": 30, "flag": "none"}
@@ -18135,7 +18135,7 @@
 {"call_id": "CALL03909", "line_number": 11, "flag": "none"}
 {"call_id": "CALL03909", "line_number": 14, "flag": "none"}
 {"call_id": "CALL03909", "line_number": 16, "flag": "none"}
-{"call_id": "CALL03909", "line_number": 18, "flag": "none"}
+{"call_id": "CALL03909", "line_number": 18, "flag": "medical"}
 {"call_id": "CALL03909", "line_number": 20, "flag": "none"}
 {"call_id": "CALL03909", "line_number": 22, "flag": "none"}
 {"call_id": "CALL03909", "line_number": 24, "flag": "none"}
@@ -18314,7 +18314,7 @@
 {"call_id": "CALL03930", "line_number": 38, "flag": "none"}
 {"call_id": "CALL03930", "line_number": 40, "flag": "none"}
 {"call_id": "CALL03930", "line_number": 42, "flag": "none"}
-{"call_id": "CALL03930", "line_number": 45, "flag": "none"}
+{"call_id": "CALL03930", "line_number": 45, "flag": "medical"}
 {"call_id": "CALL03930", "line_number": 47, "flag": "none"}
 {"call_id": "CALL03930", "line_number": 49, "flag": "none"}
 {"call_id": "CALL03930", "line_number": 51, "flag": "none"}
@@ -18415,7 +18415,7 @@
 {"call_id": "CALL03957", "line_number": 7, "flag": "none"}
 {"call_id": "CALL03957", "line_number": 9, "flag": "none"}
 {"call_id": "CALL03957", "line_number": 11, "flag": "none"}
-{"call_id": "CALL03957", "line_number": 14, "flag": "none"}
+{"call_id": "CALL03957", "line_number": 14, "flag": "medical"}
 {"call_id": "CALL03957", "line_number": 16, "flag": "none"}
 {"call_id": "CALL03957", "line_number": 18, "flag": "none"}
 {"call_id": "CALL03957", "line_number": 20, "flag": "none"}
@@ -18496,7 +18496,7 @@
 {"call_id": "CALL03989", "line_number": 15, "flag": "none"}
 {"call_id": "CALL03989", "line_number": 17, "flag": "none"}
 {"call_id": "CALL03989", "line_number": 19, "flag": "none"}
-{"call_id": "CALL03989", "line_number": 21, "flag": "none"}
+{"call_id": "CALL03989", "line_number": 21, "flag": "medical"}
 {"call_id": "CALL03989", "line_number": 23, "flag": "none"}
 {"call_id": "CALL03989", "line_number": 25, "flag": "none"}
 {"call_id": "CALL03989", "line_number": 27, "flag": "none"}
@@ -18550,7 +18550,7 @@
 {"call_id": "CALL04001", "line_number": 26, "flag": "none"}
 {"call_id": "CALL04001", "line_number": 28, "flag": "none"}
 {"call_id": "CALL04001", "line_number": 30, "flag": "none"}
-{"call_id": "CALL04001", "line_number": 33, "flag": "none"}
+{"call_id": "CALL04001", "line_number": 33, "flag": "medical"}
 {"call_id": "CALL04001", "line_number": 35, "flag": "none"}
 {"call_id": "CALL04001", "line_number": 37, "flag": "none"}
 {"call_id": "CALL04001", "line_number": 40, "flag": "none"}
@@ -18600,7 +18600,7 @@
 {"call_id": "CALL04014", "line_number": 4, "flag": "none"}
 {"call_id": "CALL04014", "line_number": 6, "flag": "none"}
 {"call_id": "CALL04014", "line_number": 9, "flag": "none"}
-{"call_id": "CALL04014", "line_number": 11, "flag": "none"}
+{"call_id": "CALL04014", "line_number": 11, "flag": "medical"}
 {"call_id": "CALL04014", "line_number": 13, "flag": "none"}
 {"call_id": "CALL04014", "line_number": 15, "flag": "none"}
 {"call_id": "CALL04014", "line_number": 17, "flag": "none"}
@@ -18652,7 +18652,7 @@
 {"call_id": "CALL04022", "line_number": 15, "flag": "none"}
 {"call_id": "CALL04022", "line_number": 18, "flag": "none"}
 {"call_id": "CALL04022", "line_number": 20, "flag": "none"}
-{"call_id": "CALL04022", "line_number": 22, "flag": "none"}
+{"call_id": "CALL04022", "line_number": 22, "flag": "medical"}
 {"call_id": "CALL04022", "line_number": 24, "flag": "none"}
 {"call_id": "CALL04022", "line_number": 26, "flag": "none"}
 {"call_id": "CALL04022", "line_number": 28, "flag": "none"}
@@ -18823,7 +18823,7 @@
 {"call_id": "CALL04046", "line_number": 11, "flag": "none"}
 {"call_id": "CALL04046", "line_number": 14, "flag": "none"}
 {"call_id": "CALL04046", "line_number": 16, "flag": "none"}
-{"call_id": "CALL04046", "line_number": 18, "flag": "none"}
+{"call_id": "CALL04046", "line_number": 18, "flag": "medical"}
 {"call_id": "CALL04046", "line_number": 20, "flag": "none"}
 {"call_id": "CALL04046", "line_number": 22, "flag": "none"}
 {"call_id": "CALL04046", "line_number": 24, "flag": "none"}
@@ -18871,7 +18871,7 @@
 {"call_id": "CALL04051", "line_number": 4, "flag": "none"}
 {"call_id": "CALL04051", "line_number": 6, "flag": "none"}
 {"call_id": "CALL04051", "line_number": 9, "flag": "none"}
-{"call_id": "CALL04051", "line_number": 11, "flag": "none"}
+{"call_id": "CALL04051", "line_number": 11, "flag": "medical"}
 {"call_id": "CALL04051", "line_number": 14, "flag": "none"}
 {"call_id": "CALL04051", "line_number": 17, "flag": "none"}
 {"call_id": "CALL04051", "line_number": 19, "flag": "none"}
@@ -18909,7 +18909,7 @@
 {"call_id": "CALL04053", "line_number": 27, "flag": "none"}
 {"call_id": "CALL04053", "line_number": 29, "flag": "none"}
 {"call_id": "CALL04053", "line_number": 31, "flag": "none"}
-{"call_id": "CALL04053", "line_number": 34, "flag": "none"}
+{"call_id": "CALL04053", "line_number": 34, "flag": "medical"}
 {"call_id": "CALL04053", "line_number": 36, "flag": "none"}
 {"call_id": "CALL04053", "line_number": 38, "flag": "none"}
 {"call_id": "CALL04053", "line_number": 40, "flag": "none"}
@@ -18950,7 +18950,7 @@
 {"call_id": "CALL04056", "line_number": 29, "flag": "none"}
 {"call_id": "CALL04056", "line_number": 31, "flag": "none"}
 {"call_id": "CALL04056", "line_number": 33, "flag": "none"}
-{"call_id": "CALL04056", "line_number": 35, "flag": "none"}
+{"call_id": "CALL04056", "line_number": 35, "flag": "distress"}
 {"call_id": "CALL04056", "line_number": 37, "flag": "none"}
 {"call_id": "CALL04056", "line_number": 39, "flag": "none"}
 {"call_id": "CALL04056", "line_number": 41, "flag": "none"}
@@ -18964,7 +18964,7 @@
 {"call_id": "CALL04059", "line_number": 18, "flag": "none"}
 {"call_id": "CALL04059", "line_number": 20, "flag": "none"}
 {"call_id": "CALL04059", "line_number": 22, "flag": "none"}
-{"call_id": "CALL04059", "line_number": 24, "flag": "none"}
+{"call_id": "CALL04059", "line_number": 24, "flag": "medical"}
 {"call_id": "CALL04059", "line_number": 26, "flag": "none"}
 {"call_id": "CALL04059", "line_number": 28, "flag": "none"}
 {"call_id": "CALL04059", "line_number": 30, "flag": "none"}
@@ -19060,7 +19060,7 @@
 {"call_id": "CALL04066", "line_number": 22, "flag": "none"}
 {"call_id": "CALL04066", "line_number": 24, "flag": "none"}
 {"call_id": "CALL04066", "line_number": 26, "flag": "none"}
-{"call_id": "CALL04066", "line_number": 28, "flag": "none"}
+{"call_id": "CALL04066", "line_number": 28, "flag": "medical"}
 {"call_id": "CALL04066", "line_number": 30, "flag": "none"}
 {"call_id": "CALL04066", "line_number": 32, "flag": "none"}
 {"call_id": "CALL04066", "line_number": 34, "flag": "none"}
@@ -19284,7 +19284,7 @@
 {"call_id": "CALL04132", "line_number": 19, "flag": "none"}
 {"call_id": "CALL04132", "line_number": 21, "flag": "none"}
 {"call_id": "CALL04132", "line_number": 24, "flag": "none"}
-{"call_id": "CALL04132", "line_number": 27, "flag": "none"}
+{"call_id": "CALL04132", "line_number": 27, "flag": "medical"}
 {"call_id": "CALL04132", "line_number": 29, "flag": "none"}
 {"call_id": "CALL04132", "line_number": 32, "flag": "none"}
 {"call_id": "CALL04132", "line_number": 34, "flag": "none"}
@@ -19317,7 +19317,7 @@
 {"call_id": "CALL04134", "line_number": 39, "flag": "none"}
 {"call_id": "CALL04134", "line_number": 41, "flag": "none"}
 {"call_id": "CALL04134", "line_number": 44, "flag": "none"}
-{"call_id": "CALL04134", "line_number": 46, "flag": "none"}
+{"call_id": "CALL04134", "line_number": 46, "flag": "medical"}
 {"call_id": "CALL04134", "line_number": 49, "flag": "none"}
 {"call_id": "CALL04134", "line_number": 51, "flag": "none"}
 {"call_id": "CALL04134", "line_number": 53, "flag": "none"}
@@ -19341,7 +19341,7 @@
 {"call_id": "CALL04140", "line_number": 30, "flag": "none"}
 {"call_id": "CALL04140", "line_number": 33, "flag": "none"}
 {"call_id": "CALL04140", "line_number": 36, "flag": "none"}
-{"call_id": "CALL04140", "line_number": 38, "flag": "none"}
+{"call_id": "CALL04140", "line_number": 38, "flag": "medical"}
 {"call_id": "CALL04140", "line_number": 41, "flag": "none"}
 {"call_id": "CALL04140", "line_number": 43, "flag": "none"}
 {"call_id": "CALL04140", "line_number": 45, "flag": "none"}
@@ -19487,7 +19487,7 @@
 {"call_id": "CALL04159", "line_number": 35, "flag": "none"}
 {"call_id": "CALL04159", "line_number": 37, "flag": "none"}
 {"call_id": "CALL04159", "line_number": 39, "flag": "none"}
-{"call_id": "CALL04159", "line_number": 41, "flag": "none"}
+{"call_id": "CALL04159", "line_number": 41, "flag": "medical"}
 {"call_id": "CALL04159", "line_number": 44, "flag": "none"}
 {"call_id": "CALL04159", "line_number": 46, "flag": "none"}
 {"call_id": "CALL04159", "line_number": 48, "flag": "none"}
@@ -19682,7 +19682,7 @@
 {"call_id": "CALL04194", "line_number": 37, "flag": "none"}
 {"call_id": "CALL04194", "line_number": 39, "flag": "none"}
 {"call_id": "CALL04194", "line_number": 41, "flag": "none"}
-{"call_id": "CALL04194", "line_number": 43, "flag": "none"}
+{"call_id": "CALL04194", "line_number": 43, "flag": "medical"}
 {"call_id": "CALL04194", "line_number": 45, "flag": "none"}
 {"call_id": "CALL04194", "line_number": 47, "flag": "none"}
 {"call_id": "CALL04194", "line_number": 49, "flag": "none"}
@@ -19735,7 +19735,7 @@
 {"call_id": "CALL04197", "line_number": 14, "flag": "none"}
 {"call_id": "CALL04197", "line_number": 16, "flag": "none"}
 {"call_id": "CALL04197", "line_number": 18, "flag": "none"}
-{"call_id": "CALL04197", "line_number": 20, "flag": "none"}
+{"call_id": "CALL04197", "line_number": 20, "flag": "medical"}
 {"call_id": "CALL04197", "line_number": 22, "flag": "none"}
 {"call_id": "CALL04197", "line_number": 24, "flag": "none"}
 {"call_id": "CALL04197", "line_number": 26, "flag": "none"}
@@ -19886,7 +19886,7 @@
 {"call_id": "CALL04222", "line_number": 23, "flag": "none"}
 {"call_id": "CALL04222", "line_number": 26, "flag": "none"}
 {"call_id": "CALL04222", "line_number": 28, "flag": "none"}
-{"call_id": "CALL04222", "line_number": 30, "flag": "none"}
+{"call_id": "CALL04222", "line_number": 30, "flag": "medical"}
 {"call_id": "CALL04222", "line_number": 32, "flag": "none"}
 {"call_id": "CALL04222", "line_number": 35, "flag": "none"}
 {"call_id": "CALL04222", "line_number": 37, "flag": "none"}
@@ -19906,7 +19906,7 @@
 {"call_id": "CALL04233", "line_number": 9, "flag": "none"}
 {"call_id": "CALL04233", "line_number": 11, "flag": "none"}
 {"call_id": "CALL04233", "line_number": 13, "flag": "none"}
-{"call_id": "CALL04233", "line_number": 15, "flag": "none"}
+{"call_id": "CALL04233", "line_number": 15, "flag": "medical"}
 {"call_id": "CALL04233", "line_number": 17, "flag": "none"}
 {"call_id": "CALL04233", "line_number": 19, "flag": "none"}
 {"call_id": "CALL04233", "line_number": 21, "flag": "none"}
@@ -19956,7 +19956,7 @@
 {"call_id": "CALL04239", "line_number": 36, "flag": "none"}
 {"call_id": "CALL04239", "line_number": 38, "flag": "none"}
 {"call_id": "CALL04239", "line_number": 40, "flag": "none"}
-{"call_id": "CALL04239", "line_number": 42, "flag": "none"}
+{"call_id": "CALL04239", "line_number": 42, "flag": "medical"}
 {"call_id": "CALL04239", "line_number": 44, "flag": "none"}
 {"call_id": "CALL04239", "line_number": 46, "flag": "none"}
 {"call_id": "CALL04239", "line_number": 48, "flag": "none"}
@@ -20116,7 +20116,7 @@
 {"call_id": "CALL04278", "line_number": 9, "flag": "none"}
 {"call_id": "CALL04278", "line_number": 11, "flag": "none"}
 {"call_id": "CALL04278", "line_number": 13, "flag": "none"}
-{"call_id": "CALL04278", "line_number": 15, "flag": "none"}
+{"call_id": "CALL04278", "line_number": 15, "flag": "distress"}
 {"call_id": "CALL04278", "line_number": 17, "flag": "none"}
 {"call_id": "CALL04278", "line_number": 19, "flag": "none"}
 {"call_id": "CALL04278", "line_number": 21, "flag": "none"}
@@ -20158,7 +20158,7 @@
 {"call_id": "CALL04283", "line_number": 11, "flag": "none"}
 {"call_id": "CALL04283", "line_number": 13, "flag": "none"}
 {"call_id": "CALL04283", "line_number": 15, "flag": "none"}
-{"call_id": "CALL04283", "line_number": 17, "flag": "none"}
+{"call_id": "CALL04283", "line_number": 17, "flag": "medical"}
 {"call_id": "CALL04283", "line_number": 19, "flag": "none"}
 {"call_id": "CALL04283", "line_number": 21, "flag": "none"}
 {"call_id": "CALL04283", "line_number": 23, "flag": "none"}
@@ -20488,7 +20488,7 @@
 {"call_id": "CALL04337", "line_number": 23, "flag": "none"}
 {"call_id": "CALL04337", "line_number": 26, "flag": "none"}
 {"call_id": "CALL04337", "line_number": 28, "flag": "none"}
-{"call_id": "CALL04337", "line_number": 30, "flag": "none"}
+{"call_id": "CALL04337", "line_number": 30, "flag": "medical"}
 {"call_id": "CALL04337", "line_number": 32, "flag": "none"}
 {"call_id": "CALL04337", "line_number": 35, "flag": "none"}
 {"call_id": "CALL04337", "line_number": 38, "flag": "none"}
@@ -20524,7 +20524,7 @@
 {"call_id": "CALL04338", "line_number": 36, "flag": "none"}
 {"call_id": "CALL04338", "line_number": 39, "flag": "none"}
 {"call_id": "CALL04338", "line_number": 41, "flag": "none"}
-{"call_id": "CALL04338", "line_number": 43, "flag": "none"}
+{"call_id": "CALL04338", "line_number": 43, "flag": "medical"}
 {"call_id": "CALL04338", "line_number": 45, "flag": "none"}
 {"call_id": "CALL04338", "line_number": 48, "flag": "none"}
 {"call_id": "CALL04338", "line_number": 51, "flag": "none"}
@@ -20645,7 +20645,7 @@
 {"call_id": "CALL04354", "line_number": 36, "flag": "none"}
 {"call_id": "CALL04354", "line_number": 38, "flag": "none"}
 {"call_id": "CALL04354", "line_number": 40, "flag": "none"}
-{"call_id": "CALL04354", "line_number": 42, "flag": "none"}
+{"call_id": "CALL04354", "line_number": 42, "flag": "medical"}
 {"call_id": "CALL04354", "line_number": 44, "flag": "none"}
 {"call_id": "CALL04354", "line_number": 46, "flag": "none"}
 {"call_id": "CALL04354", "line_number": 48, "flag": "none"}
@@ -20775,7 +20775,7 @@
 {"call_id": "CALL04370", "line_number": 9, "flag": "none"}
 {"call_id": "CALL04370", "line_number": 11, "flag": "none"}
 {"call_id": "CALL04370", "line_number": 13, "flag": "none"}
-{"call_id": "CALL04370", "line_number": 16, "flag": "none"}
+{"call_id": "CALL04370", "line_number": 16, "flag": "distress"}
 {"call_id": "CALL04370", "line_number": 18, "flag": "none"}
 {"call_id": "CALL04370", "line_number": 20, "flag": "none"}
 {"call_id": "CALL04370", "line_number": 22, "flag": "none"}
@@ -21001,7 +21001,7 @@
 {"call_id": "CALL04422", "line_number": 22, "flag": "none"}
 {"call_id": "CALL04422", "line_number": 24, "flag": "none"}
 {"call_id": "CALL04422", "line_number": 26, "flag": "none"}
-{"call_id": "CALL04422", "line_number": 28, "flag": "none"}
+{"call_id": "CALL04422", "line_number": 28, "flag": "medical"}
 {"call_id": "CALL04422", "line_number": 30, "flag": "none"}
 {"call_id": "CALL04422", "line_number": 32, "flag": "none"}
 {"call_id": "CALL04422", "line_number": 34, "flag": "none"}
@@ -21136,7 +21136,7 @@
 {"call_id": "CALL04431", "line_number": 18, "flag": "none"}
 {"call_id": "CALL04431", "line_number": 20, "flag": "none"}
 {"call_id": "CALL04431", "line_number": 22, "flag": "none"}
-{"call_id": "CALL04431", "line_number": 24, "flag": "none"}
+{"call_id": "CALL04431", "line_number": 24, "flag": "medical"}
 {"call_id": "CALL04431", "line_number": 26, "flag": "none"}
 {"call_id": "CALL04431", "line_number": 28, "flag": "none"}
 {"call_id": "CALL04431", "line_number": 30, "flag": "none"}
@@ -21166,14 +21166,14 @@
 {"call_id": "CALL04434", "line_number": 2, "flag": "none"}
 {"call_id": "CALL04434", "line_number": 4, "flag": "none"}
 {"call_id": "CALL04434", "line_number": 7, "flag": "none"}
-{"call_id": "CALL04434", "line_number": 9, "flag": "none"}
+{"call_id": "CALL04434", "line_number": 9, "flag": "medical"}
 {"call_id": "CALL04434", "line_number": 11, "flag": "none"}
 {"call_id": "CALL04434", "line_number": 13, "flag": "none"}
 {"call_id": "CALL04434", "line_number": 15, "flag": "none"}
 {"call_id": "CALL04434", "line_number": 17, "flag": "none"}
 {"call_id": "CALL04434", "line_number": 19, "flag": "none"}
 {"call_id": "CALL04434", "line_number": 21, "flag": "none"}
-{"call_id": "CALL04434", "line_number": 23, "flag": "none"}
+{"call_id": "CALL04434", "line_number": 23, "flag": "medical"}
 {"call_id": "CALL04434", "line_number": 25, "flag": "none"}
 {"call_id": "CALL04434", "line_number": 27, "flag": "none"}
 {"call_id": "CALL04434", "line_number": 30, "flag": "none"}
@@ -21349,7 +21349,7 @@
 {"call_id": "CALL04496", "line_number": 11, "flag": "none"}
 {"call_id": "CALL04496", "line_number": 13, "flag": "none"}
 {"call_id": "CALL04496", "line_number": 16, "flag": "none"}
-{"call_id": "CALL04496", "line_number": 18, "flag": "none"}
+{"call_id": "CALL04496", "line_number": 18, "flag": "medical"}
 {"call_id": "CALL04496", "line_number": 20, "flag": "none"}
 {"call_id": "CALL04496", "line_number": 22, "flag": "none"}
 {"call_id": "CALL04496", "line_number": 24, "flag": "none"}
@@ -21381,7 +21381,7 @@
 {"call_id": "CALL04500", "line_number": 34, "flag": "none"}
 {"call_id": "CALL04500", "line_number": 37, "flag": "none"}
 {"call_id": "CALL04500", "line_number": 39, "flag": "none"}
-{"call_id": "CALL04500", "line_number": 42, "flag": "none"}
+{"call_id": "CALL04500", "line_number": 42, "flag": "medical"}
 {"call_id": "CALL04500", "line_number": 45, "flag": "none"}
 {"call_id": "CALL04500", "line_number": 47, "flag": "none"}
 {"call_id": "CALL04500", "line_number": 49, "flag": "none"}
@@ -21400,7 +21400,7 @@
 {"call_id": "CALL04501", "line_number": 20, "flag": "none"}
 {"call_id": "CALL04501", "line_number": 22, "flag": "none"}
 {"call_id": "CALL04501", "line_number": 24, "flag": "none"}
-{"call_id": "CALL04501", "line_number": 27, "flag": "none"}
+{"call_id": "CALL04501", "line_number": 27, "flag": "medical"}
 {"call_id": "CALL04501", "line_number": 29, "flag": "none"}
 {"call_id": "CALL04501", "line_number": 31, "flag": "none"}
 {"call_id": "CALL04501", "line_number": 33, "flag": "none"}
@@ -21599,7 +21599,7 @@
 {"call_id": "CALL04530", "line_number": 22, "flag": "none"}
 {"call_id": "CALL04530", "line_number": 24, "flag": "none"}
 {"call_id": "CALL04530", "line_number": 26, "flag": "none"}
-{"call_id": "CALL04530", "line_number": 28, "flag": "none"}
+{"call_id": "CALL04530", "line_number": 28, "flag": "medical"}
 {"call_id": "CALL04530", "line_number": 30, "flag": "none"}
 {"call_id": "CALL04530", "line_number": 32, "flag": "none"}
 {"call_id": "CALL04530", "line_number": 34, "flag": "none"}
@@ -21833,9 +21833,9 @@
 {"call_id": "CALL04609", "line_number": 2, "flag": "none"}
 {"call_id": "CALL04609", "line_number": 4, "flag": "none"}
 {"call_id": "CALL04609", "line_number": 6, "flag": "none"}
-{"call_id": "CALL04609", "line_number": 9, "flag": "none"}
+{"call_id": "CALL04609", "line_number": 9, "flag": "medical"}
 {"call_id": "CALL04609", "line_number": 11, "flag": "none"}
-{"call_id": "CALL04609", "line_number": 13, "flag": "none"}
+{"call_id": "CALL04609", "line_number": 13, "flag": "medical"}
 {"call_id": "CALL04609", "line_number": 15, "flag": "none"}
 {"call_id": "CALL04609", "line_number": 17, "flag": "none"}
 {"call_id": "CALL04609", "line_number": 20, "flag": "none"}
@@ -21998,7 +21998,7 @@
 {"call_id": "CALL04621", "line_number": 11, "flag": "none"}
 {"call_id": "CALL04621", "line_number": 14, "flag": "none"}
 {"call_id": "CALL04621", "line_number": 16, "flag": "none"}
-{"call_id": "CALL04621", "line_number": 18, "flag": "none"}
+{"call_id": "CALL04621", "line_number": 18, "flag": "medical"}
 {"call_id": "CALL04621", "line_number": 20, "flag": "none"}
 {"call_id": "CALL04621", "line_number": 22, "flag": "none"}
 {"call_id": "CALL04621", "line_number": 24, "flag": "none"}
@@ -22124,7 +22124,7 @@
 {"call_id": "CALL04670", "line_number": 9, "flag": "none"}
 {"call_id": "CALL04670", "line_number": 11, "flag": "none"}
 {"call_id": "CALL04670", "line_number": 14, "flag": "none"}
-{"call_id": "CALL04670", "line_number": 16, "flag": "none"}
+{"call_id": "CALL04670", "line_number": 16, "flag": "medical"}
 {"call_id": "CALL04670", "line_number": 18, "flag": "none"}
 {"call_id": "CALL04670", "line_number": 21, "flag": "none"}
 {"call_id": "CALL04670", "line_number": 23, "flag": "none"}
@@ -22155,7 +22155,7 @@
 {"call_id": "CALL04686", "line_number": 42, "flag": "none"}
 {"call_id": "CALL04686", "line_number": 44, "flag": "none"}
 {"call_id": "CALL04686", "line_number": 46, "flag": "none"}
-{"call_id": "CALL04686", "line_number": 48, "flag": "none"}
+{"call_id": "CALL04686", "line_number": 48, "flag": "medical"}
 {"call_id": "CALL04686", "line_number": 51, "flag": "none"}
 {"call_id": "CALL04686", "line_number": 53, "flag": "none"}
 {"call_id": "CALL04686", "line_number": 55, "flag": "none"}
@@ -22496,7 +22496,7 @@
 {"call_id": "CALL04787", "line_number": 4, "flag": "none"}
 {"call_id": "CALL04787", "line_number": 6, "flag": "none"}
 {"call_id": "CALL04787", "line_number": 9, "flag": "none"}
-{"call_id": "CALL04787", "line_number": 12, "flag": "none"}
+{"call_id": "CALL04787", "line_number": 12, "flag": "medical"}
 {"call_id": "CALL04787", "line_number": 14, "flag": "none"}
 {"call_id": "CALL04787", "line_number": 17, "flag": "none"}
 {"call_id": "CALL04787", "line_number": 19, "flag": "none"}
@@ -22597,7 +22597,7 @@
 {"call_id": "CALL04827", "line_number": 9, "flag": "none"}
 {"call_id": "CALL04827", "line_number": 11, "flag": "none"}
 {"call_id": "CALL04827", "line_number": 13, "flag": "none"}
-{"call_id": "CALL04827", "line_number": 17, "flag": "none"}
+{"call_id": "CALL04827", "line_number": 17, "flag": "medical"}
 {"call_id": "CALL04827", "line_number": 20, "flag": "none"}
 {"call_id": "CALL04827", "line_number": 22, "flag": "none"}
 {"call_id": "CALL04827", "line_number": 24, "flag": "none"}
@@ -22717,7 +22717,7 @@
 {"call_id": "CALL04840", "line_number": 9, "flag": "none"}
 {"call_id": "CALL04840", "line_number": 11, "flag": "none"}
 {"call_id": "CALL04840", "line_number": 13, "flag": "none"}
-{"call_id": "CALL04840", "line_number": 15, "flag": "none"}
+{"call_id": "CALL04840", "line_number": 15, "flag": "medical"}
 {"call_id": "CALL04840", "line_number": 17, "flag": "none"}
 {"call_id": "CALL04840", "line_number": 19, "flag": "none"}
 {"call_id": "CALL04840", "line_number": 22, "flag": "none"}
@@ -22920,7 +22920,7 @@
 {"call_id": "CALL04882", "line_number": 18, "flag": "none"}
 {"call_id": "CALL04882", "line_number": 20, "flag": "none"}
 {"call_id": "CALL04882", "line_number": 22, "flag": "none"}
-{"call_id": "CALL04882", "line_number": 25, "flag": "none"}
+{"call_id": "CALL04882", "line_number": 25, "flag": "medical"}
 {"call_id": "CALL04882", "line_number": 27, "flag": "none"}
 {"call_id": "CALL04882", "line_number": 29, "flag": "none"}
 {"call_id": "CALL04882", "line_number": 32, "flag": "none"}
@@ -23246,7 +23246,7 @@
 {"call_id": "CALL04964", "line_number": 36, "flag": "none"}
 {"call_id": "CALL04964", "line_number": 39, "flag": "none"}
 {"call_id": "CALL04964", "line_number": 42, "flag": "none"}
-{"call_id": "CALL04964", "line_number": 45, "flag": "none"}
+{"call_id": "CALL04964", "line_number": 45, "flag": "medical"}
 {"call_id": "CALL04964", "line_number": 47, "flag": "none"}
 {"call_id": "CALL04964", "line_number": 49, "flag": "none"}
 {"call_id": "CALL04964", "line_number": 51, "flag": "none"}
@@ -23430,7 +23430,7 @@
 {"call_id": "CALL05049", "line_number": 2, "flag": "none"}
 {"call_id": "CALL05049", "line_number": 4, "flag": "none"}
 {"call_id": "CALL05049", "line_number": 7, "flag": "none"}
-{"call_id": "CALL05049", "line_number": 9, "flag": "none"}
+{"call_id": "CALL05049", "line_number": 9, "flag": "medical"}
 {"call_id": "CALL05049", "line_number": 11, "flag": "none"}
 {"call_id": "CALL05049", "line_number": 13, "flag": "none"}
 {"call_id": "CALL05049", "line_number": 15, "flag": "none"}
@@ -23532,7 +23532,7 @@
 {"call_id": "CALL05092", "line_number": 19, "flag": "none"}
 {"call_id": "CALL05092", "line_number": 21, "flag": "none"}
 {"call_id": "CALL05092", "line_number": 23, "flag": "none"}
-{"call_id": "CALL05092", "line_number": 25, "flag": "none"}
+{"call_id": "CALL05092", "line_number": 25, "flag": "distress"}
 {"call_id": "CALL05092", "line_number": 27, "flag": "none"}
 {"call_id": "CALL05092", "line_number": 29, "flag": "none"}
 {"call_id": "CALL05092", "line_number": 31, "flag": "none"}
@@ -23594,7 +23594,7 @@
 {"call_id": "CALL05103", "line_number": 60, "flag": "none"}
 {"call_id": "CALL05103", "line_number": 63, "flag": "none"}
 {"call_id": "CALL05103", "line_number": 65, "flag": "none"}
-{"call_id": "CALL05103", "line_number": 67, "flag": "none"}
+{"call_id": "CALL05103", "line_number": 67, "flag": "medical"}
 {"call_id": "CALL05103", "line_number": 69, "flag": "none"}
 {"call_id": "CALL05103", "line_number": 72, "flag": "none"}
 {"call_id": "CALL05103", "line_number": 74, "flag": "none"}
@@ -23643,7 +23643,7 @@
 {"call_id": "CALL05106", "line_number": 24, "flag": "none"}
 {"call_id": "CALL05106", "line_number": 26, "flag": "none"}
 {"call_id": "CALL05106", "line_number": 29, "flag": "none"}
-{"call_id": "CALL05106", "line_number": 31, "flag": "none"}
+{"call_id": "CALL05106", "line_number": 31, "flag": "medical"}
 {"call_id": "CALL05106", "line_number": 33, "flag": "none"}
 {"call_id": "CALL05106", "line_number": 36, "flag": "none"}
 {"call_id": "CALL05106", "line_number": 38, "flag": "none"}
@@ -23750,7 +23750,7 @@
 {"call_id": "CALL05135", "line_number": 30, "flag": "none"}
 {"call_id": "CALL05135", "line_number": 32, "flag": "none"}
 {"call_id": "CALL05135", "line_number": 35, "flag": "none"}
-{"call_id": "CALL05135", "line_number": 37, "flag": "none"}
+{"call_id": "CALL05135", "line_number": 37, "flag": "medical"}
 {"call_id": "CALL05135", "line_number": 40, "flag": "none"}
 {"call_id": "CALL05135", "line_number": 42, "flag": "none"}
 {"call_id": "CALL05135", "line_number": 45, "flag": "none"}
@@ -23824,7 +23824,7 @@
 {"call_id": "CALL05167", "line_number": 18, "flag": "none"}
 {"call_id": "CALL05167", "line_number": 20, "flag": "none"}
 {"call_id": "CALL05167", "line_number": 22, "flag": "none"}
-{"call_id": "CALL05167", "line_number": 25, "flag": "none"}
+{"call_id": "CALL05167", "line_number": 25, "flag": "medical"}
 {"call_id": "CALL05167", "line_number": 27, "flag": "none"}
 {"call_id": "CALL05167", "line_number": 29, "flag": "none"}
 {"call_id": "CALL05167", "line_number": 31, "flag": "none"}
@@ -24259,7 +24259,7 @@
 {"call_id": "CALL05263", "line_number": 4, "flag": "none"}
 {"call_id": "CALL05263", "line_number": 7, "flag": "none"}
 {"call_id": "CALL05263", "line_number": 9, "flag": "none"}
-{"call_id": "CALL05263", "line_number": 11, "flag": "none"}
+{"call_id": "CALL05263", "line_number": 11, "flag": "medical"}
 {"call_id": "CALL05263", "line_number": 14, "flag": "none"}
 {"call_id": "CALL05263", "line_number": 16, "flag": "none"}
 {"call_id": "CALL05263", "line_number": 19, "flag": "none"}
@@ -24437,7 +24437,7 @@
 {"call_id": "CALL05301", "line_number": 21, "flag": "none"}
 {"call_id": "CALL05301", "line_number": 23, "flag": "none"}
 {"call_id": "CALL05301", "line_number": 25, "flag": "none"}
-{"call_id": "CALL05301", "line_number": 27, "flag": "none"}
+{"call_id": "CALL05301", "line_number": 27, "flag": "medical"}
 {"call_id": "CALL05301", "line_number": 29, "flag": "none"}
 {"call_id": "CALL05301", "line_number": 32, "flag": "none"}
 {"call_id": "CALL05301", "line_number": 34, "flag": "none"}
@@ -24466,7 +24466,7 @@
 {"call_id": "CALL05304", "line_number": 34, "flag": "none"}
 {"call_id": "CALL05304", "line_number": 36, "flag": "none"}
 {"call_id": "CALL05304", "line_number": 38, "flag": "none"}
-{"call_id": "CALL05304", "line_number": 40, "flag": "none"}
+{"call_id": "CALL05304", "line_number": 40, "flag": "medical"}
 {"call_id": "CALL05304", "line_number": 42, "flag": "none"}
 {"call_id": "CALL05304", "line_number": 44, "flag": "none"}
 {"call_id": "CALL05304", "line_number": 46, "flag": "none"}
@@ -24600,7 +24600,7 @@
 {"call_id": "CALL05336", "line_number": 39, "flag": "none"}
 {"call_id": "CALL05336", "line_number": 42, "flag": "none"}
 {"call_id": "CALL05336", "line_number": 44, "flag": "none"}
-{"call_id": "CALL05336", "line_number": 46, "flag": "none"}
+{"call_id": "CALL05336", "line_number": 46, "flag": "medical"}
 {"call_id": "CALL05336", "line_number": 48, "flag": "none"}
 {"call_id": "CALL05336", "line_number": 50, "flag": "none"}
 {"call_id": "CALL05336", "line_number": 52, "flag": "none"}
@@ -24727,7 +24727,7 @@
 {"call_id": "CALL05361", "line_number": 14, "flag": "none"}
 {"call_id": "CALL05361", "line_number": 16, "flag": "none"}
 {"call_id": "CALL05361", "line_number": 19, "flag": "none"}
-{"call_id": "CALL05361", "line_number": 21, "flag": "none"}
+{"call_id": "CALL05361", "line_number": 21, "flag": "medical"}
 {"call_id": "CALL05361", "line_number": 23, "flag": "none"}
 {"call_id": "CALL05361", "line_number": 26, "flag": "none"}
 {"call_id": "CALL05361", "line_number": 28, "flag": "none"}
@@ -24741,7 +24741,7 @@
 {"call_id": "CALL05364", "line_number": 2, "flag": "none"}
 {"call_id": "CALL05364", "line_number": 4, "flag": "none"}
 {"call_id": "CALL05364", "line_number": 7, "flag": "none"}
-{"call_id": "CALL05364", "line_number": 10, "flag": "none"}
+{"call_id": "CALL05364", "line_number": 10, "flag": "distress"}
 {"call_id": "CALL05364", "line_number": 12, "flag": "none"}
 {"call_id": "CALL05364", "line_number": 14, "flag": "none"}
 {"call_id": "CALL05364", "line_number": 16, "flag": "none"}
@@ -24933,7 +24933,7 @@
 {"call_id": "CALL05424", "line_number": 6, "flag": "none"}
 {"call_id": "CALL05424", "line_number": 9, "flag": "none"}
 {"call_id": "CALL05424", "line_number": 11, "flag": "none"}
-{"call_id": "CALL05424", "line_number": 13, "flag": "none"}
+{"call_id": "CALL05424", "line_number": 13, "flag": "medical"}
 {"call_id": "CALL05424", "line_number": 15, "flag": "none"}
 {"call_id": "CALL05424", "line_number": 17, "flag": "none"}
 {"call_id": "CALL05424", "line_number": 19, "flag": "none"}
@@ -25001,7 +25001,7 @@
 {"call_id": "CALL05441", "line_number": 25, "flag": "none"}
 {"call_id": "CALL05441", "line_number": 28, "flag": "none"}
 {"call_id": "CALL05441", "line_number": 30, "flag": "none"}
-{"call_id": "CALL05441", "line_number": 32, "flag": "none"}
+{"call_id": "CALL05441", "line_number": 32, "flag": "distress"}
 {"call_id": "CALL05441", "line_number": 35, "flag": "none"}
 {"call_id": "CALL05441", "line_number": 38, "flag": "none"}
 {"call_id": "CALL05441", "line_number": 40, "flag": "none"}
@@ -25023,7 +25023,7 @@
 {"call_id": "CALL05444", "line_number": 29, "flag": "none"}
 {"call_id": "CALL05444", "line_number": 31, "flag": "none"}
 {"call_id": "CALL05444", "line_number": 33, "flag": "none"}
-{"call_id": "CALL05444", "line_number": 36, "flag": "none"}
+{"call_id": "CALL05444", "line_number": 36, "flag": "medical"}
 {"call_id": "CALL05444", "line_number": 39, "flag": "none"}
 {"call_id": "CALL05444", "line_number": 41, "flag": "none"}
 {"call_id": "CALL05444", "line_number": 43, "flag": "none"}
@@ -25036,7 +25036,7 @@
 {"call_id": "CALL05447", "line_number": 6, "flag": "none"}
 {"call_id": "CALL05447", "line_number": 8, "flag": "none"}
 {"call_id": "CALL05447", "line_number": 11, "flag": "none"}
-{"call_id": "CALL05447", "line_number": 13, "flag": "none"}
+{"call_id": "CALL05447", "line_number": 13, "flag": "medical"}
 {"call_id": "CALL05447", "line_number": 16, "flag": "none"}
 {"call_id": "CALL05447", "line_number": 18, "flag": "none"}
 {"call_id": "CALL05447", "line_number": 20, "flag": "none"}
@@ -25159,8 +25159,8 @@
 {"call_id": "CALL05469", "line_number": 51, "flag": "none"}
 {"call_id": "CALL05469", "line_number": 54, "flag": "none"}
 {"call_id": "CALL05469", "line_number": 56, "flag": "none"}
-{"call_id": "CALL05469", "line_number": 58, "flag": "none"}
-{"call_id": "CALL05469", "line_number": 60, "flag": "none"}
+{"call_id": "CALL05469", "line_number": 58, "flag": "medical"}
+{"call_id": "CALL05469", "line_number": 60, "flag": "medical"}
 {"call_id": "CALL05469", "line_number": 62, "flag": "none"}
 {"call_id": "CALL05469", "line_number": 64, "flag": "none"}
 {"call_id": "CALL05469", "line_number": 66, "flag": "none"}
@@ -25182,14 +25182,14 @@
 {"call_id": "CALL05473", "line_number": 27, "flag": "none"}
 {"call_id": "CALL05473", "line_number": 29, "flag": "none"}
 {"call_id": "CALL05473", "line_number": 32, "flag": "none"}
-{"call_id": "CALL05473", "line_number": 34, "flag": "none"}
+{"call_id": "CALL05473", "line_number": 34, "flag": "distress"}
 {"call_id": "CALL05473", "line_number": 36, "flag": "none"}
 {"call_id": "CALL05473", "line_number": 38, "flag": "none"}
 {"call_id": "CALL05473", "line_number": 40, "flag": "none"}
 {"call_id": "CALL05473", "line_number": 42, "flag": "none"}
 {"call_id": "CALL05473", "line_number": 44, "flag": "none"}
 {"call_id": "CALL05473", "line_number": 46, "flag": "none"}
-{"call_id": "CALL05473", "line_number": 48, "flag": "none"}
+{"call_id": "CALL05473", "line_number": 48, "flag": "medical"}
 {"call_id": "CALL05473", "line_number": 50, "flag": "none"}
 {"call_id": "CALL05473", "line_number": 52, "flag": "none"}
 {"call_id": "CALL05473", "line_number": 54, "flag": "none"}
@@ -25247,7 +25247,7 @@
 {"call_id": "CALL05478", "line_number": 8, "flag": "none"}
 {"call_id": "CALL05478", "line_number": 10, "flag": "none"}
 {"call_id": "CALL05478", "line_number": 12, "flag": "none"}
-{"call_id": "CALL05478", "line_number": 14, "flag": "none"}
+{"call_id": "CALL05478", "line_number": 14, "flag": "distress"}
 {"call_id": "CALL05478", "line_number": 16, "flag": "none"}
 {"call_id": "CALL05478", "line_number": 18, "flag": "none"}
 {"call_id": "CALL05478", "line_number": 20, "flag": "none"}
@@ -25288,7 +25288,7 @@
 {"call_id": "CALL05480", "line_number": 48, "flag": "none"}
 {"call_id": "CALL05481", "line_number": 2, "flag": "none"}
 {"call_id": "CALL05481", "line_number": 4, "flag": "none"}
-{"call_id": "CALL05481", "line_number": 6, "flag": "none"}
+{"call_id": "CALL05481", "line_number": 6, "flag": "medical"}
 {"call_id": "CALL05481", "line_number": 8, "flag": "none"}
 {"call_id": "CALL05481", "line_number": 11, "flag": "none"}
 {"call_id": "CALL05481", "line_number": 13, "flag": "none"}
@@ -25453,7 +25453,7 @@
 {"call_id": "CALL05520", "line_number": 4, "flag": "none"}
 {"call_id": "CALL05520", "line_number": 6, "flag": "none"}
 {"call_id": "CALL05520", "line_number": 8, "flag": "none"}
-{"call_id": "CALL05520", "line_number": 10, "flag": "none"}
+{"call_id": "CALL05520", "line_number": 10, "flag": "medical"}
 {"call_id": "CALL05520", "line_number": 12, "flag": "none"}
 {"call_id": "CALL05520", "line_number": 15, "flag": "none"}
 {"call_id": "CALL05520", "line_number": 17, "flag": "none"}
@@ -25482,11 +25482,11 @@
 {"call_id": "CALL05531", "line_number": 17, "flag": "none"}
 {"call_id": "CALL05531", "line_number": 19, "flag": "none"}
 {"call_id": "CALL05531", "line_number": 21, "flag": "none"}
-{"call_id": "CALL05531", "line_number": 23, "flag": "none"}
+{"call_id": "CALL05531", "line_number": 23, "flag": "medical"}
 {"call_id": "CALL05531", "line_number": 25, "flag": "none"}
 {"call_id": "CALL05531", "line_number": 27, "flag": "none"}
 {"call_id": "CALL05531", "line_number": 29, "flag": "none"}
-{"call_id": "CALL05531", "line_number": 31, "flag": "none"}
+{"call_id": "CALL05531", "line_number": 31, "flag": "medical"}
 {"call_id": "CALL05531", "line_number": 34, "flag": "none"}
 {"call_id": "CALL05531", "line_number": 36, "flag": "none"}
 {"call_id": "CALL05531", "line_number": 38, "flag": "none"}
@@ -25565,7 +25565,7 @@
 {"call_id": "CALL05536", "line_number": 23, "flag": "none"}
 {"call_id": "CALL05536", "line_number": 25, "flag": "none"}
 {"call_id": "CALL05536", "line_number": 28, "flag": "none"}
-{"call_id": "CALL05536", "line_number": 30, "flag": "none"}
+{"call_id": "CALL05536", "line_number": 30, "flag": "distress"}
 {"call_id": "CALL05536", "line_number": 32, "flag": "none"}
 {"call_id": "CALL05536", "line_number": 34, "flag": "none"}
 {"call_id": "CALL05536", "line_number": 36, "flag": "none"}
@@ -25609,7 +25609,7 @@
 {"call_id": "CALL05540", "line_number": 9, "flag": "none"}
 {"call_id": "CALL05540", "line_number": 11, "flag": "none"}
 {"call_id": "CALL05540", "line_number": 13, "flag": "none"}
-{"call_id": "CALL05540", "line_number": 15, "flag": "none"}
+{"call_id": "CALL05540", "line_number": 15, "flag": "medical"}
 {"call_id": "CALL05540", "line_number": 17, "flag": "none"}
 {"call_id": "CALL05540", "line_number": 20, "flag": "none"}
 {"call_id": "CALL05540", "line_number": 22, "flag": "none"}
@@ -25672,7 +25672,7 @@
 {"call_id": "CALL05553", "line_number": 28, "flag": "none"}
 {"call_id": "CALL05553", "line_number": 30, "flag": "none"}
 {"call_id": "CALL05553", "line_number": 32, "flag": "none"}
-{"call_id": "CALL05553", "line_number": 35, "flag": "none"}
+{"call_id": "CALL05553", "line_number": 35, "flag": "medical"}
 {"call_id": "CALL05553", "line_number": 37, "flag": "none"}
 {"call_id": "CALL05553", "line_number": 39, "flag": "none"}
 {"call_id": "CALL05553", "line_number": 41, "flag": "none"}
@@ -25753,7 +25753,7 @@
 {"call_id": "CALL05566", "line_number": 18, "flag": "none"}
 {"call_id": "CALL05566", "line_number": 20, "flag": "none"}
 {"call_id": "CALL05566", "line_number": 22, "flag": "none"}
-{"call_id": "CALL05566", "line_number": 24, "flag": "none"}
+{"call_id": "CALL05566", "line_number": 24, "flag": "medical"}
 {"call_id": "CALL05566", "line_number": 27, "flag": "none"}
 {"call_id": "CALL05566", "line_number": 29, "flag": "none"}
 {"call_id": "CALL05566", "line_number": 31, "flag": "none"}
