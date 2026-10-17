@@ -1,0 +1,24 @@
+{
+ "at": "2026-10-17T17:22:41.349Z",
+ "base": "https://e87a1ef9-coach-copilot-clef.zay-259.workers.dev",
+ "views": [
+  {
+   "name": "desktop",
+   "width": 1280,
+   "errors": [],
+   "horizontalScroll": false,
+   "calls": 27,
+   "headline": "0.75 Coach score agrees with supervisors as well as they agree with each other r = 0.75 with supervisor A (95% CI 0.71–0.79) and 0.70 with supervisor B (0.66–0.74), against 0.69 between A and B. SYNTHETIC · CRANE LAB HELD-OUT CALLS",
+   "ok": true
+  },
+  {
+   "name": "phone",
+   "width": 390,
+   "errors": [],
+   "horizontalScroll": false,
+   "calls": 27,
+   "headline": "0.75 Coach score agrees with supervisors as well as they agree with each other r = 0.75 with supervisor A (95% CI 0.71–0.79) and 0.70 with supervisor B (0.66–0.74), against 0.69 between A and B. SYNTHETIC · CRANE LAB HELD-OUT CALLS",
+   "ok": true
+  }
+ ]
+}
