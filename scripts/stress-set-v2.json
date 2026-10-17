@@ -1,0 +1,1877 @@
+{
+ "about": "Written by an independent Claude Sonnet agent from a written brief, without seeing the classifier, its prompt, its keyword rules, or the earlier stress set.",
+ "lines": [
+  {
+   "id": "en-med-01",
+   "lang": "English",
+   "expect": "medical",
+   "variant": "indirect",
+   "text": "My left calf has been kind of tight and warm since yesterday, and it looks a little bigger than the other one. Probably from sitting so much.",
+   "en": "My left calf has been kind of tight and warm since yesterday, and it looks a little bigger than the other one. Probably from sitting so much."
+  },
+  {
+   "id": "en-med-02",
+   "lang": "English",
+   "expect": "medical",
+   "variant": "hedged",
+   "text": "Probably nothing, but I had the shakes last night and the thermometer said 100.9. I took a Tylenol and went to bed.",
+   "en": "Probably nothing, but I had the shakes last night and the thermometer said 100.9. I took a Tylenol and went to bed."
+  },
+  {
+   "id": "en-med-03",
+   "lang": "English",
+   "expect": "medical",
+   "variant": "buried",
+   "text": "The grandkids were over, we made pastelitos, loud as always. Anyway, I keep getting this pressure in my chest on the stairs and it goes down my arm a bit.",
+   "en": "The grandkids were over, we made pastelitos, loud as always. Anyway, I keep getting this pressure in my chest on the stairs and it goes down my arm a bit."
+  },
+  {
+   "id": "en-med-04",
+   "lang": "English",
+   "expect": "medical",
+   "variant": "asr",
+   "text": "i cant keep nothing down since sunday not even water, my mouth is dry like paper and i get dizzy when i stand up",
+   "en": "i cant keep nothing down since sunday not even water, my mouth is dry like paper and i get dizzy when i stand up"
+  },
+  {
+   "id": "en-med-05",
+   "lang": "English",
+   "expect": "medical",
+   "variant": "euphemism",
+   "text": "Something's off with my port, the skin around it is red and hot and I got a little chill this morning.",
+   "en": "Something's off with my port, the skin around it is red and hot and I got a little chill this morning."
+  },
+  {
+   "id": "en-med-06",
+   "lang": "English",
+   "expect": "medical",
+   "variant": "minimised",
+   "text": "It's just a nosebleed, it's only been going for like two hours, I'm sure it'll stop.",
+   "en": "It's just a nosebleed, it's only been going for like two hours, I'm sure it'll stop."
+  },
+  {
+   "id": "en-med-07",
+   "lang": "English",
+   "expect": "medical",
+   "variant": "indirect",
+   "text": "My face feels droopy on one side and my words came out funny for a minute this morning. It passed though.",
+   "en": "My face feels droopy on one side and my words came out funny for a minute this morning. It passed though."
+  },
+  {
+   "id": "en-med-08",
+   "lang": "English",
+   "expect": "medical",
+   "variant": "codeswitch",
+   "text": "Mija says I look pale, and honestly I got no aire, like I can't catch my breath walking to the mailbox.",
+   "en": "Mija says I look pale, and honestly I got no aire, like I can't catch my breath walking to the mailbox."
+  },
+  {
+   "id": "en-med-09",
+   "lang": "English",
+   "expect": "medical",
+   "variant": "hedged",
+   "text": "I passed out in the bathroom yesterday, just for a second, my husband doesn't know. I figured it was the heat.",
+   "en": "I passed out in the bathroom yesterday, just for a second, my husband doesn't know. I figured it was the heat."
+  },
+  {
+   "id": "en-med-10",
+   "lang": "English",
+   "expect": "medical",
+   "variant": "plain",
+   "text": "This pain in my back showed up two nights ago, it's like a knife, worse than anything, and now my legs feel kind of heavy.",
+   "en": "This pain in my back showed up two nights ago, it's like a knife, worse than anything, and now my legs feel kind of heavy."
+  },
+  {
+   "id": "en-med-11",
+   "lang": "English",
+   "expect": "medical",
+   "variant": "hedged",
+   "text": "I'm on day nine after my infusion and I go hot and then freezing, hot and then freezing. Maybe I'm just coming down with something.",
+   "en": "I'm on day nine after my infusion and I go hot and then freezing, hot and then freezing. Maybe I'm just coming down with something."
+  },
+  {
+   "id": "en-med-12",
+   "lang": "English",
+   "expect": "medical",
+   "variant": "buried",
+   "text": "Funny story, I called my daughter by my sister's name today and then couldn't tell you what day it was. Anyway the soup was good.",
+   "en": "Funny story, I called my daughter by my sister's name today and then couldn't tell you what day it was. Anyway the soup was good."
+  },
+  {
+   "id": "en-med-13",
+   "lang": "English",
+   "expect": "medical",
+   "variant": "euphemism",
+   "text": "My stool's been black as tar for three days, and I've been so wiped out I can barely stand.",
+   "en": "My stool's been black as tar for three days, and I've been so wiped out I can barely stand."
+  },
+  {
+   "id": "en-med-14",
+   "lang": "English",
+   "expect": "medical",
+   "variant": "minimised",
+   "text": "I coughed up a little blood this morning, just a streak. Probably the dry air.",
+   "en": "I coughed up a little blood this morning, just a streak. Probably the dry air."
+  },
+  {
+   "id": "en-med-15",
+   "lang": "English",
+   "expect": "medical",
+   "variant": "indirect",
+   "text": "The arm on the side where they took the lymph nodes got huge overnight, it's kind of purple and I can't bend it.",
+   "en": "The arm on the side where they took the lymph nodes got huge overnight, it's kind of purple and I can't bend it."
+  },
+  {
+   "id": "en-med-16",
+   "lang": "English",
+   "expect": "medical",
+   "variant": "plain",
+   "text": "Diarrhea like ten times today and I can't even hold down broth. I'm just a bit weak.",
+   "en": "Diarrhea like ten times today and I can't even hold down broth. I'm just a bit weak."
+  },
+  {
+   "id": "en-med-17",
+   "lang": "English",
+   "expect": "medical",
+   "variant": "plain",
+   "text": "Worst headache of my life just hit out of nowhere. I wanted to tell somebody before I lie down.",
+   "en": "Worst headache of my life just hit out of nowhere. I wanted to tell somebody before I lie down."
+  },
+  {
+   "id": "en-med-18",
+   "lang": "English",
+   "expect": "medical",
+   "variant": "hedged",
+   "text": "My heart is fluttering and racing and I feel like I'm gonna faint, but I don't wanna bother the clinic.",
+   "en": "My heart is fluttering and racing and I feel like I'm gonna faint, but I don't wanna bother the clinic."
+  },
+  {
+   "id": "es-med-01",
+   "lang": "Spanish",
+   "expect": "medical",
+   "variant": "hedged",
+   "text": "Tengo una fiebrecita de 38 y pico desde anoche, pero me tomé una pastilla y como que bajó. Ayer fue la quimio.",
+   "en": "A low fever of about 38C since last night, but I took a pill and it sort of went down. Chemo was yesterday."
+  },
+  {
+   "id": "es-med-02",
+   "lang": "Spanish",
+   "expect": "medical",
+   "variant": "minimised",
+   "text": "Mijo, me falta el aire hasta pa' hablar contigo, pero no es na', será el calor de Miami.",
+   "en": "Son, I run out of breath even talking to you, but it's nothing, probably Miami heat."
+  },
+  {
+   "id": "es-med-03",
+   "lang": "Spanish",
+   "expect": "medical",
+   "variant": "indirect",
+   "text": "Se me hinchó la pierna derecha y la siento caliente y dura, como si tuviera una cuerda ahí.",
+   "en": "My right leg swelled up, feels warm and hard, like a cord is in there."
+  },
+  {
+   "id": "es-med-04",
+   "lang": "Spanish",
+   "expect": "medical",
+   "variant": "plain",
+   "text": "Chico, llevo dos días sin retener ni el agua, todo lo vomito, y ya ni orino casi.",
+   "en": "Man, two days without keeping even water down, I vomit everything, and I hardly pee anymore."
+  },
+  {
+   "id": "es-med-05",
+   "lang": "Spanish",
+   "expect": "medical",
+   "variant": "buried",
+   "text": "Estaba contándole a mi comadre lo de la novela y de pronto se me durmió medio cuerpo y se me trabó la lengua. Ya pasó.",
+   "en": "I was telling my comadre about the soap opera and suddenly half my body went numb and my tongue locked. It passed."
+  },
+  {
+   "id": "es-med-06",
+   "lang": "Spanish",
+   "expect": "medical",
+   "variant": "plain",
+   "text": "Me sangra la encía y la nariz y no para, le puse hielo y na'.",
+   "en": "My gums and nose bleed and it won't stop, I put ice and nothing."
+  },
+  {
+   "id": "es-med-07",
+   "lang": "Spanish",
+   "expect": "medical",
+   "variant": "asr",
+   "text": "me falta el ayre y me da como un dolor en el pesho que me agarra el brazo, no se si es de la kimio",
+   "en": "I'm short of air and get a pain in my chest that grabs my arm, don't know if it's the chemo."
+  },
+  {
+   "id": "es-med-08",
+   "lang": "Spanish",
+   "expect": "medical",
+   "variant": "plain",
+   "text": "Me dio un escalofrío tremendo, de esos que te castañetean los dientes, y ahora estoy ardiendo.",
+   "en": "I had a terrible chill, teeth chattering, and now I'm burning up."
+  },
+  {
+   "id": "es-med-09",
+   "lang": "Spanish",
+   "expect": "medical",
+   "variant": "indirect",
+   "text": "Mi esposo dice que hoy estoy como bobita, que no sé en qué día vivo y que me quedé mirando la pared.",
+   "en": "My husband says I'm out of it today, that I don't know what day it is, and that I stared at the wall."
+  },
+  {
+   "id": "es-med-10",
+   "lang": "Spanish",
+   "expect": "medical",
+   "variant": "minimised",
+   "text": "Me desmayé en la cocina anoche, nada más un segundito. Ni le dije a mi hija.",
+   "en": "I fainted in the kitchen last night, just a second. I didn't even tell my daughter."
+  },
+  {
+   "id": "es-med-11",
+   "lang": "Spanish",
+   "expect": "medical",
+   "variant": "indirect",
+   "text": "Tengo un dolor en la espalda que no se me quita con nada, nunca había sentido algo así, y las piernas las siento como de trapo.",
+   "en": "A back pain that nothing relieves, never felt anything like it, and my legs feel like rags."
+  },
+  {
+   "id": "es-med-12",
+   "lang": "Spanish",
+   "expect": "medical",
+   "variant": "hedged",
+   "text": "Se me puso la herida roja, caliente y botando un líquido que huele feo, pero como no me duele tanto...",
+   "en": "The wound turned red, hot and is leaking foul-smelling fluid, but since it doesn't hurt much..."
+  },
+  {
+   "id": "es-med-13",
+   "lang": "Spanish",
+   "expect": "medical",
+   "variant": "hedged",
+   "text": "Estoy toda amarilla, hasta los ojos, y la orina como Coca-Cola. Debe ser de tanta pastilla, ¿no?",
+   "en": "I'm all yellow, even my eyes, and urine like Coke. Must be from so many pills, right?"
+  },
+  {
+   "id": "es-med-14",
+   "lang": "Spanish",
+   "expect": "medical",
+   "variant": "euphemism",
+   "text": "Vomité como café molido esta mañana, pero ya me siento mejor.",
+   "en": "I vomited something like coffee grounds this morning, but I feel better now."
+  },
+  {
+   "id": "es-med-15",
+   "lang": "Spanish",
+   "expect": "medical",
+   "variant": "minimised",
+   "text": "Ay, mi amor, ando con una taquicardia que no me deja y me mareo al pararme, pero qué le vamos a hacer.",
+   "en": "Oh love, I have a racing heart that won't quit and I get dizzy standing, but what can you do."
+  },
+  {
+   "id": "es-med-16",
+   "lang": "Spanish",
+   "expect": "medical",
+   "variant": "indirect",
+   "text": "Me salió un bulto bien doloroso y caliente donde tengo el catéter, y me dio como calentura.",
+   "en": "A very painful hot lump appeared where my catheter is, and I felt feverish."
+  },
+  {
+   "id": "es-med-17",
+   "lang": "Spanish",
+   "expect": "medical",
+   "variant": "plain",
+   "text": "Fíjate que me dio un dolor de cabeza horrible, de repente, y veo borroso del ojo izquierdo.",
+   "en": "I got a horrible sudden headache and my left eye is blurry."
+  },
+  {
+   "id": "es-med-18",
+   "lang": "Spanish",
+   "expect": "medical",
+   "variant": "buried",
+   "text": "Mañana viene la nieta a quedarse conmigo, qué alegría. Ah, y no he podido hacer del baño en cinco días, la barriga dura como un tambor y vomito.",
+   "en": "The granddaughter comes tomorrow, such joy. Oh, and no bowel movement in five days, belly hard as a drum, and I'm vomiting."
+  },
+  {
+   "id": "ht-med-01",
+   "lang": "Haitian Creole",
+   "expect": "medical",
+   "variant": "hedged",
+   "text": "Mwen gen yon ti lafyèv depi yè swa, m santi m frèt epi cho an menm tan. Pwobableman se anyen.",
+   "en": "I have a little fever since last night, I feel cold and hot at once. Probably nothing."
+  },
+  {
+   "id": "ht-med-02",
+   "lang": "Haitian Creole",
+   "expect": "medical",
+   "variant": "minimised",
+   "text": "Pye m anfle, li wouj, li cho, e li fè m mal lè m mache. Mwen panse se chalè a.",
+   "en": "My leg is swollen, red, hot, and hurts when I walk. I think it's the heat."
+  },
+  {
+   "id": "ht-med-03",
+   "lang": "Haitian Creole",
+   "expect": "medical",
+   "variant": "plain",
+   "text": "Mwen pa ka kenbe anyen nan vant mwen depi de jou, menm dlo m vomi l.",
+   "en": "I can't keep anything in my stomach for two days, even water I vomit."
+  },
+  {
+   "id": "ht-med-04",
+   "lang": "Haitian Creole",
+   "expect": "medical",
+   "variant": "indirect",
+   "text": "Souf mwen kout anpil, m pa ka monte ti eskalye a san m pa chita.",
+   "en": "My breath is very short, I can't climb the small stairs without sitting."
+  },
+  {
+   "id": "ht-med-05",
+   "lang": "Haitian Creole",
+   "expect": "medical",
+   "variant": "minimised",
+   "text": "Nen m ap senyen depi twa è, m mete glas men li pa vle sispann.",
+   "en": "My nose has been bleeding for three hours, I put ice but it won't stop."
+  },
+  {
+   "id": "ht-med-06",
+   "lang": "Haitian Creole",
+   "expect": "medical",
+   "variant": "hedged",
+   "text": "Tèt mwen te vire, m tonbe nan twalèt la, men m leve. M pa di pesonn.",
+   "en": "I got dizzy, fell in the bathroom, but got up. I told no one."
+  },
+  {
+   "id": "ht-med-07",
+   "lang": "Haitian Creole",
+   "expect": "medical",
+   "variant": "indirect",
+   "text": "Gen yon doulè nan pwatrin mwen ki desann nan ponyèt gòch mwen, mwen pa konnen si se gaz la.",
+   "en": "There's a pain in my chest going down to my left wrist, I don't know if it's gas."
+  },
+  {
+   "id": "ht-med-08",
+   "lang": "Haitian Creole",
+   "expect": "medical",
+   "variant": "indirect",
+   "text": "Madanm mwen di m ap pale pa bon jodi a, bouch mwen tòde e bra dwat mwen lou.",
+   "en": "My wife says I'm not speaking right today, my mouth is twisted and my right arm is heavy."
+  },
+  {
+   "id": "ht-med-09",
+   "lang": "Haitian Creole",
+   "expect": "medical",
+   "variant": "plain",
+   "text": "M te fè chimyo a lendi, kounye a m ap tranble, dan m ap frape, kò m cho.",
+   "en": "I had chemo Monday, now I'm shaking, teeth chattering, body hot."
+  },
+  {
+   "id": "ht-med-10",
+   "lang": "Haitian Creole",
+   "expect": "medical",
+   "variant": "plain",
+   "text": "Ala yon tèt fè mal! Pa janm gen yon tèt fè mal konsa, li vin sanzatann.",
+   "en": "What a headache! Never one like this, it came out of nowhere."
+  },
+  {
+   "id": "ht-med-11",
+   "lang": "Haitian Creole",
+   "expect": "medical",
+   "variant": "euphemism",
+   "text": "Poupou m nwa tankou chabon depi twa jou, epi m santi m fèb.",
+   "en": "My stool has been black like charcoal for three days, and I feel weak."
+  },
+  {
+   "id": "ht-med-12",
+   "lang": "Haitian Creole",
+   "expect": "medical",
+   "variant": "buried",
+   "text": "Mwen t ap pale ak vwazin nan sou mango yo, apre sa m rann mwen kont m pa sonje ki jou nou ye, m pèdi nan pwòp lari m.",
+   "en": "I was chatting with the neighbor about mangoes, then realized I didn't know what day it is, lost in my own street."
+  },
+  {
+   "id": "ht-med-13",
+   "lang": "Haitian Creole",
+   "expect": "medical",
+   "variant": "indirect",
+   "text": "Kote yo mete tiyo a nan pwatrin mwen an wouj, li fè m mal, e gen yon dlo jòn k ap soti.",
+   "en": "Where the tube is in my chest it's red, painful, and yellow fluid is coming out."
+  },
+  {
+   "id": "ht-med-14",
+   "lang": "Haitian Creole",
+   "expect": "medical",
+   "variant": "plain",
+   "text": "Doulè nan do m la tankou kouto, e pye m yo vin angoudi.",
+   "en": "The back pain is like a knife, and my legs went numb."
+  },
+  {
+   "id": "ht-med-15",
+   "lang": "Haitian Creole",
+   "expect": "medical",
+   "variant": "minimised",
+   "text": "M ap touse, gen ti san ladan l. Se pwobableman lè sèk la.",
+   "en": "I'm coughing, there's a little blood in it. Probably the dry air."
+  },
+  {
+   "id": "ht-med-16",
+   "lang": "Haitian Creole",
+   "expect": "medical",
+   "variant": "codeswitch",
+   "text": "Kè m ap bat vit vit, m santi m pral endispoze, men m pa vle deranje klinik la.",
+   "en": "My heart is beating fast, I feel I'll black out, but I don't want to bother the clinic."
+  },
+  {
+   "id": "ht-med-17",
+   "lang": "Haitian Creole",
+   "expect": "medical",
+   "variant": "indirect",
+   "text": "Je m vin jòn, pipi m fonse tankou kafe, m pa manje depi yè.",
+   "en": "My eyes turned yellow, urine dark as coffee, I haven't eaten since yesterday."
+  },
+  {
+   "id": "ht-med-18",
+   "lang": "Haitian Creole",
+   "expect": "medical",
+   "variant": "hedged",
+   "text": "Mwen gen dyare depi yè, plis pase dis fwa, bouch mwen chèch anpil, m pa ka kanpe. Mwen jis fèb.",
+   "en": "Diarrhea since yesterday, over ten times, mouth very dry, can't stand. I'm just weak."
+  },
+  {
+   "id": "en-dis-01",
+   "lang": "English",
+   "expect": "distress",
+   "variant": "buried",
+   "text": "Honestly I'd rather not wake up tomorrow. Anyway, how was your weekend?",
+   "en": "Honestly I'd rather not wake up tomorrow. Anyway, how was your weekend?"
+  },
+  {
+   "id": "en-dis-02",
+   "lang": "English",
+   "expect": "distress",
+   "variant": "indirect",
+   "text": "I've been giving my jewelry to my nieces. Figured they should have it while I'm still around to see them wear it.",
+   "en": "I've been giving my jewelry to my nieces. Figured they should have it while I'm still around to see them wear it."
+  },
+  {
+   "id": "en-dis-03",
+   "lang": "English",
+   "expect": "distress",
+   "variant": "indirect",
+   "text": "Everybody would be better off and the insurance would cover the kids. That's the only math I keep doing.",
+   "en": "Everybody would be better off and the insurance would cover the kids. That's the only math I keep doing."
+  },
+  {
+   "id": "en-dis-04",
+   "lang": "English",
+   "expect": "distress",
+   "variant": "minimised",
+   "text": "I went through the pills in the cabinet last night, just counting them. Don't worry about it.",
+   "en": "I went through the pills in the cabinet last night, just counting them. Don't worry about it."
+  },
+  {
+   "id": "en-dis-05",
+   "lang": "English",
+   "expect": "distress",
+   "variant": "indirect",
+   "text": "Thanks for always calling. You've been really kind to me. I wanted you to know that, in case.",
+   "en": "Thanks for always calling. You've been really kind to me. I wanted you to know that, in case."
+  },
+  {
+   "id": "en-dis-06",
+   "lang": "English",
+   "expect": "distress",
+   "variant": "plain",
+   "text": "I'm not doing another round. I'm done, like all the way done, with all of it.",
+   "en": "I'm not doing another round. I'm done, like all the way done, with all of it."
+  },
+  {
+   "id": "en-dis-07",
+   "lang": "English",
+   "expect": "distress",
+   "variant": "hedged",
+   "text": "I sat in the garage with the car running last night, thinking. I turned it off. I almost didn't.",
+   "en": "I sat in the garage with the car running last night, thinking. I turned it off. I almost didn't."
+  },
+  {
+   "id": "en-dis-08",
+   "lang": "English",
+   "expect": "distress",
+   "variant": "euphemism",
+   "text": "Sometimes I picture just driving off the Rickenbacker and that's the only time my head is quiet.",
+   "en": "Sometimes I picture just driving off the Rickenbacker and that's the only time my head is quiet."
+  },
+  {
+   "id": "en-dis-09",
+   "lang": "English",
+   "expect": "distress",
+   "variant": "plain",
+   "text": "I cut myself again, small, on my thigh. It helps. I know, I know.",
+   "en": "I cut myself again, small, on my thigh. It helps. I know, I know."
+  },
+  {
+   "id": "en-dis-10",
+   "lang": "English",
+   "expect": "distress",
+   "variant": "hedged",
+   "text": "My husband's gun is in the closet and I know where the key is. I think about it more than I should.",
+   "en": "My husband's gun is in the closet and I know where the key is. I think about it more than I should."
+  },
+  {
+   "id": "en-dis-11",
+   "lang": "English",
+   "expect": "distress",
+   "variant": "indirect",
+   "text": "Tell the kids I love them, okay? If you talk to them. I mean it, just tell them.",
+   "en": "Tell the kids I love them, okay? If you talk to them. I mean it, just tell them."
+  },
+  {
+   "id": "en-dis-12",
+   "lang": "English",
+   "expect": "distress",
+   "variant": "plain",
+   "text": "I'm so tired of being a burden. I keep thinking the world would keep spinning without me.",
+   "en": "I'm so tired of being a burden. I keep thinking the world would keep spinning without me."
+  },
+  {
+   "id": "en-dis-13",
+   "lang": "English",
+   "expect": "distress",
+   "variant": "hedged",
+   "text": "If the cancer comes back I'm not going through that. I have a plan for it, and honestly I might not wait.",
+   "en": "If the cancer comes back I'm not going through that. I have a plan for it, and honestly I might not wait."
+  },
+  {
+   "id": "en-dis-14",
+   "lang": "English",
+   "expect": "distress",
+   "variant": "euphemism",
+   "text": "You won't need to call me after this week. I've made my peace with everything.",
+   "en": "You won't need to call me after this week. I've made my peace with everything."
+  },
+  {
+   "id": "en-dis-15",
+   "lang": "English",
+   "expect": "distress",
+   "variant": "asr",
+   "text": "i been thinking about ending it all, i wrote the letters already, my phone is gonna die so",
+   "en": "i been thinking about ending it all, i wrote the letters already, my phone is gonna die so"
+  },
+  {
+   "id": "en-dis-16",
+   "lang": "English",
+   "expect": "distress",
+   "variant": "minimised",
+   "text": "It's nothing, I just keep thinking everybody would be fine if I disappeared. Everybody has thoughts like that, right?",
+   "en": "It's nothing, I just keep thinking everybody would be fine if I disappeared. Everybody has thoughts like that, right?"
+  },
+  {
+   "id": "en-dis-17",
+   "lang": "English",
+   "expect": "distress",
+   "variant": "idiom",
+   "text": "I'm ready to go home to the Lord, I told Him last night any time is fine. I stopped taking my heart pills to help it along.",
+   "en": "I'm ready to go home to the Lord, I told Him last night any time is fine. I stopped taking my heart pills to help it along."
+  },
+  {
+   "id": "en-dis-18",
+   "lang": "English",
+   "expect": "distress",
+   "variant": "indirect",
+   "text": "I gave my dog to my neighbor, ended my lease and wrote my will. Feels so light. Funny, I haven't felt this good in months.",
+   "en": "I gave my dog to my neighbor, ended my lease and wrote my will. Feels so light. Funny, I haven't felt this good in months."
+  },
+  {
+   "id": "es-dis-01",
+   "lang": "Spanish",
+   "expect": "distress",
+   "variant": "plain",
+   "text": "Yo lo que quiero es dormirme y no despertar más, mija, ya no le veo sentido.",
+   "en": "What I want is to fall asleep and not wake up, dear, I no longer see the point."
+  },
+  {
+   "id": "es-dis-02",
+   "lang": "Spanish",
+   "expect": "distress",
+   "variant": "indirect",
+   "text": "Ya le regalé a mi sobrina mis prendas y el anillo de mi mamá, pa' que no se pierdan.",
+   "en": "I already gave my niece my jewelry and my mother's ring so they don't get lost."
+  },
+  {
+   "id": "es-dis-03",
+   "lang": "Spanish",
+   "expect": "distress",
+   "variant": "euphemism",
+   "text": "Estoy cansada de ser un estorbo pa' todos, mejor me quito del medio.",
+   "en": "I'm tired of being in everyone's way, better I get out of the way."
+  },
+  {
+   "id": "es-dis-04",
+   "lang": "Spanish",
+   "expect": "distress",
+   "variant": "minimised",
+   "text": "Doctora, ¿cuántas pastillas de esas son muchas? Es una pregunta nada más, curiosidad.",
+   "en": "Doctor, how many of those pills is too many? Just a question, curiosity."
+  },
+  {
+   "id": "es-dis-05",
+   "lang": "Spanish",
+   "expect": "distress",
+   "variant": "indirect",
+   "text": "Esta noche me despedí de mis nietos, les dije que los quería mucho. Ya me siento tranquila.",
+   "en": "Tonight I said goodbye to my grandkids, told them I love them. I feel calm now."
+  },
+  {
+   "id": "es-dis-06",
+   "lang": "Spanish",
+   "expect": "distress",
+   "variant": "plain",
+   "text": "Me volví a cortar los brazos, nada grave, pero me alivia.",
+   "en": "I cut my arms again, nothing serious, but it relieves me."
+  },
+  {
+   "id": "es-dis-07",
+   "lang": "Spanish",
+   "expect": "distress",
+   "variant": "hedged",
+   "text": "A veces pienso en tirarme del balcón del quinto piso, y se me quita la angustia solo de pensarlo.",
+   "en": "Sometimes I think about throwing myself off the fifth-floor balcony, and the anguish goes away just thinking of it."
+  },
+  {
+   "id": "es-dis-08",
+   "lang": "Spanish",
+   "expect": "distress",
+   "variant": "plain",
+   "text": "Ya no aguanto más, Dios me perdone, me voy a ir antes de que la enfermedad me lleve.",
+   "en": "I can't take it anymore, God forgive me, I'll go before the illness takes me."
+  },
+  {
+   "id": "es-dis-09",
+   "lang": "Spanish",
+   "expect": "distress",
+   "variant": "hedged",
+   "text": "Tengo la pistola de mi difunto marido en la mesita de noche, y últimamente la miro mucho.",
+   "en": "I keep my late husband's pistol on the nightstand and lately I look at it a lot."
+  },
+  {
+   "id": "es-dis-10",
+   "lang": "Spanish",
+   "expect": "distress",
+   "variant": "indirect",
+   "text": "Dile a mi hijo que lo perdono todo, que no fue su culpa. Tú dile.",
+   "en": "Tell my son I forgive everything, it wasn't his fault. Just tell him."
+  },
+  {
+   "id": "es-dis-11",
+   "lang": "Spanish",
+   "expect": "distress",
+   "variant": "hedged",
+   "text": "Yo creo que si me hubiera muerto en la operación hubiera sido mejor. A veces rezo pa' no despertar.",
+   "en": "I think it would have been better had I died in surgery. Sometimes I pray not to wake up."
+  },
+  {
+   "id": "es-dis-12",
+   "lang": "Spanish",
+   "expect": "distress",
+   "variant": "euphemism",
+   "text": "Dejé de tomarme las pastillas de la presión a propósito, a ver si me da algo.",
+   "en": "I stopped taking my blood pressure pills on purpose, to see if something happens to me."
+  },
+  {
+   "id": "es-dis-13",
+   "lang": "Spanish",
+   "expect": "distress",
+   "variant": "indirect",
+   "text": "Anoche escribí las cartas y le dejé la llave al vecino. Estoy en paz, de verdad.",
+   "en": "Last night I wrote the letters and left the key with the neighbor. I'm at peace, really."
+  },
+  {
+   "id": "es-dis-14",
+   "lang": "Spanish",
+   "expect": "distress",
+   "variant": "asr",
+   "text": "ya no quiero seguir viviendo asi, me boy a acabar con todo, ya lo pensé bien",
+   "en": "I don't want to go on living like this, I'm going to end everything, I've thought it through."
+  },
+  {
+   "id": "es-dis-15",
+   "lang": "Spanish",
+   "expect": "distress",
+   "variant": "buried",
+   "text": "Ando con unas ganas de desaparecer... pero bueno, ¿tú qué dices del tiempo, va a llover?",
+   "en": "I feel like disappearing... but anyway, what do you say about the weather, will it rain?"
+  },
+  {
+   "id": "es-dis-16",
+   "lang": "Spanish",
+   "expect": "distress",
+   "variant": "idiom",
+   "text": "Estoy hasta aquí, mi hermano. Si esto me vuelve, prefiero tirarme al mar a pasar otra quimio.",
+   "en": "I'm fed up, brother. If this comes back, I'd rather throw myself in the sea than go through chemo again."
+  },
+  {
+   "id": "es-dis-17",
+   "lang": "Spanish",
+   "expect": "distress",
+   "variant": "minimised",
+   "text": "No es que me quiera matar, es que no quiero estar aquí, ¿tú me entiendes?",
+   "en": "It's not that I want to kill myself, it's that I don't want to be here, you get me?"
+  },
+  {
+   "id": "es-dis-18",
+   "lang": "Spanish",
+   "expect": "distress",
+   "variant": "indirect",
+   "text": "Vendí el carro, pagué todas las deudas y regalé la ropa. Ya no necesito nada más.",
+   "en": "I sold the car, paid all debts and gave away my clothes. I don't need anything else."
+  },
+  {
+   "id": "ht-dis-01",
+   "lang": "Haitian Creole",
+   "expect": "distress",
+   "variant": "plain",
+   "text": "Mwen pito mouri pase m kontinye viv konsa. Mwen fatige.",
+   "en": "I'd rather die than go on living like this. I'm tired."
+  },
+  {
+   "id": "ht-dis-02",
+   "lang": "Haitian Creole",
+   "expect": "distress",
+   "variant": "indirect",
+   "text": "Mwen bay sè m bijou manman m yo deja, pou yo pa pèdi.",
+   "en": "I already gave my sister Mama's jewelry so it won't be lost."
+  },
+  {
+   "id": "ht-dis-03",
+   "lang": "Haitian Creole",
+   "expect": "distress",
+   "variant": "euphemism",
+   "text": "Mwen pa vle reveye demen maten, se tout sa m ap mande Bondye.",
+   "en": "I don't want to wake up tomorrow morning, that's all I ask God."
+  },
+  {
+   "id": "ht-dis-04",
+   "lang": "Haitian Creole",
+   "expect": "distress",
+   "variant": "hedged",
+   "text": "Gen yon kòd lakay mwen, epi m ap panse sou li chak swa.",
+   "en": "There's a rope in my house, and I think about it every night."
+  },
+  {
+   "id": "ht-dis-05",
+   "lang": "Haitian Creole",
+   "expect": "distress",
+   "variant": "indirect",
+   "text": "Di pitit mwen yo m renmen yo, tanpri. Di yo se pa fòt yo.",
+   "en": "Tell my kids I love them, please. Tell them it's not their fault."
+  },
+  {
+   "id": "ht-dis-06",
+   "lang": "Haitian Creole",
+   "expect": "distress",
+   "variant": "plain",
+   "text": "Mwen ap koupe bra m ankò, se ti bagay, men sa ede m.",
+   "en": "I'm cutting my arm again, it's small, but it helps."
+  },
+  {
+   "id": "ht-dis-07",
+   "lang": "Haitian Creole",
+   "expect": "distress",
+   "variant": "minimised",
+   "text": "Mwen t ap chita konte grenn medikaman yo yè swa. Pa enkyete w.",
+   "en": "I was sitting counting my medication pills last night. Don't worry."
+  },
+  {
+   "id": "ht-dis-08",
+   "lang": "Haitian Creole",
+   "expect": "distress",
+   "variant": "hedged",
+   "text": "Si kansè a tounen, m pa pral pase nan sa ankò. M gen yon plan.",
+   "en": "If the cancer returns, I won't go through that again. I have a plan."
+  },
+  {
+   "id": "ht-dis-09",
+   "lang": "Haitian Creole",
+   "expect": "distress",
+   "variant": "indirect",
+   "text": "Mwen mete tout bagay an lòd: testaman an, lajan pou antèman an. Mwen pare.",
+   "en": "I put everything in order: the will, money for the funeral. I'm ready."
+  },
+  {
+   "id": "ht-dis-10",
+   "lang": "Haitian Creole",
+   "expect": "distress",
+   "variant": "plain",
+   "text": "Mwen se yon fado pou tout moun. Fanmi an pi byen san m.",
+   "en": "I'm a burden to everyone. The family is better without me."
+  },
+  {
+   "id": "ht-dis-11",
+   "lang": "Haitian Creole",
+   "expect": "distress",
+   "variant": "asr",
+   "text": "m pa vle viv ankò, m fin pran desizyon an, pa rele m demen",
+   "en": "I don't want to live anymore, I've made my decision, don't call me tomorrow."
+  },
+  {
+   "id": "ht-dis-12",
+   "lang": "Haitian Creole",
+   "expect": "distress",
+   "variant": "euphemism",
+   "text": "Gen kèk fwa m santi m ta ale lanmè a epi pa tounen. Se la tèt mwen kalm.",
+   "en": "Sometimes I feel I'd go to the sea and not come back. That's where my head is calm."
+  },
+  {
+   "id": "ht-dis-13",
+   "lang": "Haitian Creole",
+   "expect": "distress",
+   "variant": "idiom",
+   "text": "Bondye ap vin chèche m byento, m te di li m pare. M kanpe pran medikaman kè a.",
+   "en": "God will come for me soon, I told Him I'm ready. I stopped taking my heart medicine."
+  },
+  {
+   "id": "ht-dis-14",
+   "lang": "Haitian Creole",
+   "expect": "distress",
+   "variant": "buried",
+   "text": "Anyen pa gen sans ankò, anyen. Men vwazin nan di gen yon bon fèt demen, wi, m pral wè.",
+   "en": "Nothing makes sense anymore, nothing. But the neighbor says there's a nice party tomorrow, yes, I'll see."
+  },
+  {
+   "id": "ht-dis-15",
+   "lang": "Haitian Creole",
+   "expect": "distress",
+   "variant": "minimised",
+   "text": "Mwen pa fou, men m ap panse pou m disparèt. Moun ka di sa nòmal, pa vre?",
+   "en": "I'm not crazy, but I think about disappearing. People can say that's normal, no?"
+  },
+  {
+   "id": "ht-dis-16",
+   "lang": "Haitian Creole",
+   "expect": "distress",
+   "variant": "indirect",
+   "text": "Mwen te vann machin nan, bay rad yo, peye dèt yo. Mwen santi m lejè.",
+   "en": "I sold the car, gave away clothes, paid debts. I feel light."
+  },
+  {
+   "id": "ht-dis-17",
+   "lang": "Haitian Creole",
+   "expect": "distress",
+   "variant": "hedged",
+   "text": "Fanmi m ap pi byen si m pa la; asirans lan ap peye pou timoun yo.",
+   "en": "My family will be better if I'm not here; the insurance will pay for the children."
+  },
+  {
+   "id": "ht-dis-18",
+   "lang": "Haitian Creole",
+   "expect": "distress",
+   "variant": "codeswitch",
+   "text": "Mwen fini, vrèman fini, je ne veux plus continuer. Se pa chimyo a menm, se tout bagay.",
+   "en": "I'm finished, truly finished, I don't want to continue. It's not even the chemo, it's everything."
+  },
+  {
+   "id": "en-soc-01",
+   "lang": "English",
+   "expect": "social",
+   "variant": "hedged",
+   "text": "The landlord taped a three-day notice on my door Monday. Today is the third day. I'm sure it'll work out.",
+   "en": "The landlord taped a three-day notice on my door Monday. Today is the third day. I'm sure it'll work out."
+  },
+  {
+   "id": "en-soc-02",
+   "lang": "English",
+   "expect": "social",
+   "variant": "minimised",
+   "text": "I haven't had a real meal since Thursday, just crackers and tap water. The food stamps got cut off. It's fine.",
+   "en": "I haven't had a real meal since Thursday, just crackers and tap water. The food stamps got cut off. It's fine."
+  },
+  {
+   "id": "en-soc-03",
+   "lang": "English",
+   "expect": "social",
+   "variant": "plain",
+   "text": "My car got repossessed so I don't know how I'll get to radiation tomorrow, the bus doesn't go out that way.",
+   "en": "My car got repossessed so I don't know how I'll get to radiation tomorrow, the bus doesn't go out that way."
+  },
+  {
+   "id": "en-soc-04",
+   "lang": "English",
+   "expect": "social",
+   "variant": "buried",
+   "text": "FPL shut off the lights yesterday. I'm using my phone flashlight, and the phone is almost dead. My meds are in the fridge that's off now.",
+   "en": "FPL shut off the lights yesterday. I'm using my phone flashlight, and the phone is almost dead. My meds are in the fridge that's off now."
+  },
+  {
+   "id": "en-soc-05",
+   "lang": "English",
+   "expect": "social",
+   "variant": "minimised",
+   "text": "I've been skipping the pill some days, the specialty pharmacy wants nine hundred and I've got nothing. It's fine, I'm stretching it.",
+   "en": "I've been skipping the pill some days, the specialty pharmacy wants nine hundred and I've got nothing. It's fine, I'm stretching it."
+  },
+  {
+   "id": "en-soc-06",
+   "lang": "English",
+   "expect": "social",
+   "variant": "indirect",
+   "text": "My boyfriend gets rough when he drinks and he's coming back from his brother's tonight. I'm sitting in my car outside the Publix.",
+   "en": "My boyfriend gets rough when he drinks and he's coming back from his brother's tonight. I'm sitting in my car outside the Publix."
+  },
+  {
+   "id": "en-soc-07",
+   "lang": "English",
+   "expect": "social",
+   "variant": "minimised",
+   "text": "Been sleeping in my car since Friday when the lease ended. It's okay, the back seat reclines.",
+   "en": "Been sleeping in my car since Friday when the lease ended. It's okay, the back seat reclines."
+  },
+  {
+   "id": "en-soc-08",
+   "lang": "English",
+   "expect": "social",
+   "variant": "plain",
+   "text": "The cousin who drove me to chemo moved away. My appointment is tomorrow at 8 and I have no way there.",
+   "en": "The cousin who drove me to chemo moved away. My appointment is tomorrow at 8 and I have no way there."
+  },
+  {
+   "id": "en-soc-09",
+   "lang": "English",
+   "expect": "social",
+   "variant": "indirect",
+   "text": "The kids had cereal with water. There's no milk, there's nothing till the check comes next Wednesday.",
+   "en": "The kids had cereal with water. There's no milk, there's nothing till the check comes next Wednesday."
+  },
+  {
+   "id": "en-soc-10",
+   "lang": "English",
+   "expect": "social",
+   "variant": "asr",
+   "text": "the water got shut of today and my sister says i cant stay there no more so i dont know where i go tonite",
+   "en": "the water got shut of today and my sister says i cant stay there no more so i dont know where i go tonite"
+  },
+  {
+   "id": "en-soc-11",
+   "lang": "English",
+   "expect": "social",
+   "variant": "euphemism",
+   "text": "Not a big deal, just that he took my phone and my purse again and won't let me leave the apartment.",
+   "en": "Not a big deal, just that he took my phone and my purse again and won't let me leave the apartment."
+  },
+  {
+   "id": "en-soc-12",
+   "lang": "English",
+   "expect": "social",
+   "variant": "hedged",
+   "text": "I've been cutting the anti-nausea pills in half so they last, cause I can't refill until I pay the copay and payday is two weeks out.",
+   "en": "I've been cutting the anti-nausea pills in half so they last, cause I can't refill until I pay the copay and payday is two weeks out."
+  },
+  {
+   "id": "en-soc-13",
+   "lang": "English",
+   "expect": "social",
+   "variant": "plain",
+   "text": "The insurance said the infusion isn't authorized and the center won't treat me Thursday without a payment. I don't have it.",
+   "en": "The insurance said the infusion isn't authorized and the center won't treat me Thursday without a payment. I don't have it."
+  },
+  {
+   "id": "en-soc-14",
+   "lang": "English",
+   "expect": "social",
+   "variant": "buried",
+   "text": "I'm on my friend's couch but she said tonight's the last night. Anyway, how's the weather where you are?",
+   "en": "I'm on my friend's couch but she said tonight's the last night. Anyway, how's the weather where you are?"
+  },
+  {
+   "id": "en-soc-15",
+   "lang": "English",
+   "expect": "social",
+   "variant": "minimised",
+   "text": "My fridge is empty, I'm on my last can of beans, I don't wanna ask the church again.",
+   "en": "My fridge is empty, I'm on my last can of beans, I don't wanna ask the church again."
+  },
+  {
+   "id": "en-soc-16",
+   "lang": "English",
+   "expect": "social",
+   "variant": "euphemism",
+   "text": "My son hit me again when I wouldn't hand over the check. I told the neighbors I fell.",
+   "en": "My son hit me again when I wouldn't hand over the check. I told the neighbors I fell."
+  },
+  {
+   "id": "en-soc-17",
+   "lang": "English",
+   "expect": "social",
+   "variant": "plain",
+   "text": "The power company cut me off and my oxygen machine runs on electricity. I have maybe two hours left on the tank.",
+   "en": "The power company cut me off and my oxygen machine runs on electricity. I have maybe two hours left on the tank."
+  },
+  {
+   "id": "en-soc-18",
+   "lang": "English",
+   "expect": "social",
+   "variant": "codeswitch",
+   "text": "No tengo ride for the radiation tomorrow, el Uber cuesta mucho and my daughter's car está dañado.",
+   "en": "No tengo ride for the radiation tomorrow, el Uber cuesta mucho and my daughter's car está dañado."
+  },
+  {
+   "id": "es-soc-01",
+   "lang": "Spanish",
+   "expect": "social",
+   "variant": "hedged",
+   "text": "Me llegó la carta de desalojo y el alguacil viene el viernes. Ya veremos qué dice Dios.",
+   "en": "The eviction letter came and the sheriff comes Friday. We'll see what God says."
+  },
+  {
+   "id": "es-soc-02",
+   "lang": "Spanish",
+   "expect": "social",
+   "variant": "plain",
+   "text": "En la casa no hay ni un grano de arroz, mija. Hoy fue puro café con pan.",
+   "en": "There's not a grain of rice at home, dear. Today was only coffee and bread."
+  },
+  {
+   "id": "es-soc-03",
+   "lang": "Spanish",
+   "expect": "social",
+   "variant": "indirect",
+   "text": "Me cortaron la luz y el refrigerador con mis medicinas se descongeló todo.",
+   "en": "They cut my power and the fridge with my medicines thawed out."
+  },
+  {
+   "id": "es-soc-04",
+   "lang": "Spanish",
+   "expect": "social",
+   "variant": "plain",
+   "text": "No tengo cómo llegar a la quimio mañana, mi yerno se llevó el carro y la guagua no llega pa' allá.",
+   "en": "I have no way to get to chemo tomorrow, my son-in-law took the car and the bus doesn't go there."
+  },
+  {
+   "id": "es-soc-05",
+   "lang": "Spanish",
+   "expect": "social",
+   "variant": "minimised",
+   "text": "No he podido comprar la pastilla esa del cáncer, vale como mil dólares y tengo cuarenta. La estoy partiendo en mitades.",
+   "en": "I couldn't buy that cancer pill, it costs about a thousand and I have forty. I'm splitting it in halves."
+  },
+  {
+   "id": "es-soc-06",
+   "lang": "Spanish",
+   "expect": "social",
+   "variant": "euphemism",
+   "text": "Mi marido me dio otra vez anoche, pero no es pa' tanto, fue por la bebida. Hoy me voy a casa de mi amiga si me abre.",
+   "en": "My husband hit me again last night, but it's not that bad, it was the drink. Today I'm going to my friend's if she opens."
+  },
+  {
+   "id": "es-soc-07",
+   "lang": "Spanish",
+   "expect": "social",
+   "variant": "minimised",
+   "text": "Estoy durmiendo en el carro desde que el casero sacó mis muebles pal patio.",
+   "en": "I've been sleeping in the car since the landlord put my furniture in the yard."
+  },
+  {
+   "id": "es-soc-08",
+   "lang": "Spanish",
+   "expect": "social",
+   "variant": "plain",
+   "text": "Chica, el seguro me negó el tratamiento y el centro dice que sin pago no me ponen la sesión.",
+   "en": "The insurance denied my treatment and the center says without payment no session."
+  },
+  {
+   "id": "es-soc-09",
+   "lang": "Spanish",
+   "expect": "social",
+   "variant": "indirect",
+   "text": "Mis nietos se acostaron sin comer. Yo les di agua con azúcar.",
+   "en": "My grandkids went to bed without eating. I gave them sugar water."
+  },
+  {
+   "id": "es-soc-10",
+   "lang": "Spanish",
+   "expect": "social",
+   "variant": "buried",
+   "text": "Me quedé sin agua desde el lunes y el casero ni contesta. Me baño con botellas. Oye, ¿y tú qué tal con el calor?",
+   "en": "No water since Monday and the landlord won't even answer. I bathe with bottles. Hey, how are you doing with the heat?"
+  },
+  {
+   "id": "es-soc-11",
+   "lang": "Spanish",
+   "expect": "social",
+   "variant": "euphemism",
+   "text": "Mi hijo me quita la tarjeta del seguro social y no me deja salir. Dice que es pa' protegerme.",
+   "en": "My son takes my social security card and won't let me leave. He says it's to protect me."
+  },
+  {
+   "id": "es-soc-12",
+   "lang": "Spanish",
+   "expect": "social",
+   "variant": "asr",
+   "text": "me kitaron la luz ase tres dias y no tengo ni pa comprar la medisina del dolor",
+   "en": "They cut my power three days ago and I can't even afford the pain medicine."
+  },
+  {
+   "id": "es-soc-13",
+   "lang": "Spanish",
+   "expect": "social",
+   "variant": "hedged",
+   "text": "Ando buscando dónde dormir esta noche, la señora a quien le alquilaba un cuarto me pidió que me fuera ya.",
+   "en": "I'm looking for somewhere to sleep tonight, the lady I rented a room from asked me to leave now."
+  },
+  {
+   "id": "es-soc-14",
+   "lang": "Spanish",
+   "expect": "social",
+   "variant": "codeswitch",
+   "text": "Pana, no tengo con qué pagar el pasaje pal hospital el jueves y ya me dijeron que si falto de nuevo me botan del tratamiento.",
+   "en": "Buddy, I can't pay the fare to the hospital Thursday and they said if I miss again I'm dropped from treatment."
+  },
+  {
+   "id": "es-soc-15",
+   "lang": "Spanish",
+   "expect": "social",
+   "variant": "plain",
+   "text": "Nena, se me acabaron los cupones y la nevera está vacía; estamos comiendo lo que la vecina nos pasa.",
+   "en": "Girl, my food stamps ran out and the fridge is empty; we eat what the neighbor passes us."
+  },
+  {
+   "id": "es-soc-16",
+   "lang": "Spanish",
+   "expect": "social",
+   "variant": "hedged",
+   "text": "Me quedé sin las pastillas contra el vómito y la farmacia no me las da fiadas. Mañana tengo quimio.",
+   "en": "I'm out of the anti-vomiting pills and the pharmacy won't give them on credit. I have chemo tomorrow."
+  },
+  {
+   "id": "es-soc-17",
+   "lang": "Spanish",
+   "expect": "social",
+   "variant": "indirect",
+   "text": "El novio de mi hija la amenaza con un cuchillo cuando toma y yo vivo con ellos, no tengo a dónde ir.",
+   "en": "My daughter's boyfriend threatens her with a knife when he drinks, and I live with them, nowhere to go."
+  },
+  {
+   "id": "es-soc-18",
+   "lang": "Spanish",
+   "expect": "social",
+   "variant": "minimised",
+   "text": "Uy, vea, me tocó entregar el apartamento hoy y mi cuñada dijo que ya no cabíamos en su casa, pero bueno, mañana será otro día.",
+   "en": "I had to hand over the apartment today and my sister-in-law said we no longer fit in her house, but tomorrow is another day."
+  },
+  {
+   "id": "ht-soc-01",
+   "lang": "Haitian Creole",
+   "expect": "social",
+   "variant": "plain",
+   "text": "Mèt kay la di m mwen gen jiska jedi pou m kite kay la, mwen pa gen kote pou m ale.",
+   "en": "The landlord says I have until Thursday to leave, I have nowhere to go."
+  },
+  {
+   "id": "ht-soc-02",
+   "lang": "Haitian Creole",
+   "expect": "social",
+   "variant": "plain",
+   "text": "Pa gen anyen pou manje lakay, se te ak pen sèlman depi yè.",
+   "en": "Nothing to eat at home, just tea and bread since yesterday."
+  },
+  {
+   "id": "ht-soc-03",
+   "lang": "Haitian Creole",
+   "expect": "social",
+   "variant": "indirect",
+   "text": "Yo koupe kouran an, frijidè a fonn, tout medikaman m pèdi.",
+   "en": "They cut the power, the fridge melted, I lost all my medicine."
+  },
+  {
+   "id": "ht-soc-04",
+   "lang": "Haitian Creole",
+   "expect": "social",
+   "variant": "plain",
+   "text": "Mwen pa gen kòman pou m ale nan klinik la demen, machin nan kraze e taptap pa pase la.",
+   "en": "I have no way to the clinic tomorrow, the car broke and no tap-tap goes there."
+  },
+  {
+   "id": "ht-soc-05",
+   "lang": "Haitian Creole",
+   "expect": "social",
+   "variant": "minimised",
+   "text": "Mwen pa ka achte grenn kansè a, li koute twòp. M ap pran yon sèl jou sou de.",
+   "en": "I can't buy the cancer pill, it costs too much. I take it one day out of two."
+  },
+  {
+   "id": "ht-soc-06",
+   "lang": "Haitian Creole",
+   "expect": "social",
+   "variant": "euphemism",
+   "text": "Mari m frape m yè swa ankò. Se paske li te bwè. Mwen pè retounen lakay.",
+   "en": "My husband hit me again last night. It was because he drank. I'm afraid to return home."
+  },
+  {
+   "id": "ht-soc-07",
+   "lang": "Haitian Creole",
+   "expect": "social",
+   "variant": "minimised",
+   "text": "M ap dòmi nan machin nan depi vandredi paske yo mete m deyò.",
+   "en": "I've been sleeping in the car since Friday because they put me out."
+  },
+  {
+   "id": "ht-soc-08",
+   "lang": "Haitian Creole",
+   "expect": "social",
+   "variant": "plain",
+   "text": "Asirans lan refize peye tretman an, epi sant lan di pa gen pèman, pa gen tretman.",
+   "en": "Insurance refused to pay for treatment, and the center says no payment, no treatment."
+  },
+  {
+   "id": "ht-soc-09",
+   "lang": "Haitian Creole",
+   "expect": "social",
+   "variant": "indirect",
+   "text": "Timoun yo kouche san manje. Mwen ba yo dlo sik.",
+   "en": "The children went to bed without food. I gave them sugar water."
+  },
+  {
+   "id": "ht-soc-10",
+   "lang": "Haitian Creole",
+   "expect": "social",
+   "variant": "buried",
+   "text": "Dlo a koupe depi lendi, mwen pa gen kòb pou peye. Men sa k ap fèt, ki jan fanmi w ye?",
+   "en": "The water has been cut since Monday, I have no money to pay. But what can you do, how's your family?"
+  },
+  {
+   "id": "ht-soc-11",
+   "lang": "Haitian Creole",
+   "expect": "social",
+   "variant": "euphemism",
+   "text": "Pitit mwen pran kat mwen epi li pa kite m soti. Li di se pou pwoteje m.",
+   "en": "My child took my card and won't let me go out. He says it's to protect me."
+  },
+  {
+   "id": "ht-soc-12",
+   "lang": "Haitian Creole",
+   "expect": "social",
+   "variant": "asr",
+   "text": "mwen pa gen lajan pou m achte medikaman doulè a, m ap soufri anpil men sa pa grav",
+   "en": "I have no money to buy the pain medicine, I'm suffering a lot but it's not serious."
+  },
+  {
+   "id": "ht-soc-13",
+   "lang": "Haitian Creole",
+   "expect": "social",
+   "variant": "hedged",
+   "text": "Moun ki te lwe m yon chanm lan di m kite jodi a. M pa konnen kote m pral dòmi aswè a.",
+   "en": "The person renting me a room told me to leave today. I don't know where I'll sleep tonight."
+  },
+  {
+   "id": "ht-soc-14",
+   "lang": "Haitian Creole",
+   "expect": "social",
+   "variant": "codeswitch",
+   "text": "Mwen bezwen ride pou ale radiation, mais pa gen pèsonn, Uber twò chè.",
+   "en": "I need a ride to radiation, but there's nobody, Uber is too expensive."
+  },
+  {
+   "id": "ht-soc-15",
+   "lang": "Haitian Creole",
+   "expect": "social",
+   "variant": "minimised",
+   "text": "Mwen pa manje depi de jou; mwen te wont di ou sa.",
+   "en": "I haven't eaten for two days; I was ashamed to tell you."
+  },
+  {
+   "id": "ht-soc-16",
+   "lang": "Haitian Creole",
+   "expect": "social",
+   "variant": "plain",
+   "text": "Tank oksijèn nan prèske vid, epi kouran an koupe, mwen pa konnen kisa pou m fè.",
+   "en": "The oxygen tank is almost empty and the power is cut, I don't know what to do."
+  },
+  {
+   "id": "ht-soc-17",
+   "lang": "Haitian Creole",
+   "expect": "social",
+   "variant": "indirect",
+   "text": "Yon gason ki sou mwen ap menase m ak kouto, men m pa vle rele lapolis.",
+   "en": "A man who lives with me threatens me with a knife, but I don't want to call the police."
+  },
+  {
+   "id": "ht-soc-18",
+   "lang": "Haitian Creole",
+   "expect": "social",
+   "variant": "buried",
+   "text": "Lendi m gen chimyo, yo di m dwe peye kopeman an anvan, e m pa gen yon dola. Men bon, Bondye gen kontwòl.",
+   "en": "Monday is chemo, they say I must pay the copay first, and I don't have a dollar. But well, God is in control."
+  },
+  {
+   "id": "en-neg-01",
+   "lang": "English",
+   "expect": "none",
+   "variant": "resolved",
+   "text": "I had a fever Tuesday, 101, went to the ER, they gave me antibiotics, and it's been normal since. Just letting you know.",
+   "en": "I had a fever Tuesday, 101, went to the ER, they gave me antibiotics, and it's been normal since. Just letting you know."
+  },
+  {
+   "id": "en-neg-02",
+   "lang": "English",
+   "expect": "none",
+   "variant": "side-effect",
+   "text": "My hands tingle in the cold like always from the chemo, my oncologist knows, it's the same as last cycle.",
+   "en": "My hands tingle in the cold like always from the chemo, my oncologist knows, it's the same as last cycle."
+  },
+  {
+   "id": "en-neg-03",
+   "lang": "English",
+   "expect": "none",
+   "variant": "dark-humour",
+   "text": "This kale smoothie is killing me, I swear if I see another green thing I'll die.",
+   "en": "This kale smoothie is killing me, I swear if I see another green thing I'll die."
+  },
+  {
+   "id": "en-neg-04",
+   "lang": "English",
+   "expect": "none",
+   "variant": "someone-else",
+   "text": "My husband has had a fever and a cough since Sunday, I'm taking him to urgent care today.",
+   "en": "My husband has had a fever and a cough since Sunday, I'm taking him to urgent care today."
+  },
+  {
+   "id": "en-neg-05",
+   "lang": "English",
+   "expect": "none",
+   "variant": "plain",
+   "text": "I've been a bit down this week, missing my sister, cried at a commercial. I'll be fine.",
+   "en": "I've been a bit down this week, missing my sister, cried at a commercial. I'll be fine."
+  },
+  {
+   "id": "en-neg-06",
+   "lang": "English",
+   "expect": "none",
+   "variant": "money",
+   "text": "Prices are insane. Eggs cost a fortune. But I'm managing, I got my groceries.",
+   "en": "Prices are insane. Eggs cost a fortune. But I'm managing, I got my groceries."
+  },
+  {
+   "id": "en-neg-07",
+   "lang": "English",
+   "expect": "none",
+   "variant": "past",
+   "text": "Last year I was in a really dark place, but I've been seeing a counselor every week and haven't felt that way in months.",
+   "en": "Last year I was in a really dark place, but I've been seeing a counselor every week and haven't felt that way in months."
+  },
+  {
+   "id": "en-neg-08",
+   "lang": "English",
+   "expect": "none",
+   "variant": "idiom",
+   "text": "I'm dying to try that new Cuban place, once my appetite comes back.",
+   "en": "I'm dying to try that new Cuban place, once my appetite comes back."
+  },
+  {
+   "id": "en-neg-09",
+   "lang": "English",
+   "expect": "none",
+   "variant": "resolved",
+   "text": "I did throw up Saturday but it was the shrimp, and now I'm eating normally.",
+   "en": "I did throw up Saturday but it was the shrimp, and now I'm eating normally."
+  },
+  {
+   "id": "en-neg-10",
+   "lang": "English",
+   "expect": "none",
+   "variant": "side-effect",
+   "text": "Nausea's about a three out of ten, the pill works, I just feel meh in the mornings.",
+   "en": "Nausea's about a three out of ten, the pill works, I just feel meh in the mornings."
+  },
+  {
+   "id": "en-neg-11",
+   "lang": "English",
+   "expect": "none",
+   "variant": "plain",
+   "text": "So tired today, the walk took everything out of me, but I took a nap and I'm good.",
+   "en": "So tired today, the walk took everything out of me, but I took a nap and I'm good."
+  },
+  {
+   "id": "en-neg-12",
+   "lang": "English",
+   "expect": "none",
+   "variant": "dark-humour",
+   "text": "If my sister makes me eat one more kale chip I'm gonna murder her.",
+   "en": "If my sister makes me eat one more kale chip I'm gonna murder her."
+  },
+  {
+   "id": "en-neg-13",
+   "lang": "English",
+   "expect": "none",
+   "variant": "money",
+   "text": "The copay is annoying, forty bucks, but I paid it, no problem.",
+   "en": "The copay is annoying, forty bucks, but I paid it, no problem."
+  },
+  {
+   "id": "en-neg-14",
+   "lang": "English",
+   "expect": "none",
+   "variant": "someone-else",
+   "text": "My neighbor fainted at church yesterday, the ambulance came, she's okay now.",
+   "en": "My neighbor fainted at church yesterday, the ambulance came, she's okay now."
+  },
+  {
+   "id": "en-neg-15",
+   "lang": "English",
+   "expect": "none",
+   "variant": "past",
+   "text": "My landlord almost evicted me in March but the social worker got me rental aid and it's all sorted.",
+   "en": "My landlord almost evicted me in March but the social worker got me rental aid and it's all sorted."
+  },
+  {
+   "id": "en-neg-16",
+   "lang": "English",
+   "expect": "none",
+   "variant": "side-effect",
+   "text": "Little nosebleed this morning, like two drops. The oncologist said that's normal with the dry air and the nose spray.",
+   "en": "Little nosebleed this morning, like two drops. The oncologist said that's normal with the dry air and the nose spray."
+  },
+  {
+   "id": "en-neg-17",
+   "lang": "English",
+   "expect": "none",
+   "variant": "idiom",
+   "text": "I could just die of embarrassment, I called the nurse by the wrong name again.",
+   "en": "I could just die of embarrassment, I called the nurse by the wrong name again."
+  },
+  {
+   "id": "en-neg-18",
+   "lang": "English",
+   "expect": "none",
+   "variant": "resolved",
+   "text": "My chest felt tight yesterday, I called the nurse line, they said reflux, I took the antacid and it's gone.",
+   "en": "My chest felt tight yesterday, I called the nurse line, they said reflux, I took the antacid and it's gone."
+  },
+  {
+   "id": "en-neg-19",
+   "lang": "English",
+   "expect": "none",
+   "variant": "asr",
+   "text": "my hare is falling out in clumps but my wig came in so i look good lol",
+   "en": "my hare is falling out in clumps but my wig came in so i look good lol"
+  },
+  {
+   "id": "en-neg-20",
+   "lang": "English",
+   "expect": "none",
+   "variant": "plain",
+   "text": "I walked three times this week and slept eight hours. Feeling good.",
+   "en": "I walked three times this week and slept eight hours. Feeling good."
+  },
+  {
+   "id": "en-neg-21",
+   "lang": "English",
+   "expect": "none",
+   "variant": "buried",
+   "text": "Rough week with the grandkids, my back hurts from lifting them, nothing new, I do my stretches.",
+   "en": "Rough week with the grandkids, my back hurts from lifting them, nothing new, I do my stretches."
+  },
+  {
+   "id": "en-neg-22",
+   "lang": "English",
+   "expect": "none",
+   "variant": "someone-else",
+   "text": "My mom is in hospice, we're all sad, but she's comfortable and the family is with her.",
+   "en": "My mom is in hospice, we're all sad, but she's comfortable and the family is with her."
+  },
+  {
+   "id": "en-neg-23",
+   "lang": "English",
+   "expect": "none",
+   "variant": "past",
+   "text": "I was in the hospital in June with an infection, all done, the follow-up was fine.",
+   "en": "I was in the hospital in June with an infection, all done, the follow-up was fine."
+  },
+  {
+   "id": "en-neg-24",
+   "lang": "English",
+   "expect": "none",
+   "variant": "idiom",
+   "text": "That chemo room is freezing, I'm gonna die of cold, so I bring my blanket.",
+   "en": "That chemo room is freezing, I'm gonna die of cold, so I bring my blanket."
+  },
+  {
+   "id": "es-neg-01",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "idiom",
+   "text": "Estos ejercicios me están matando, mija, pero ahí voy.",
+   "en": "These exercises are killing me, dear, but I'm going."
+  },
+  {
+   "id": "es-neg-02",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "idiom",
+   "text": "Me muero de la risa con las cosas que dice mi nieto.",
+   "en": "I die laughing at the things my grandson says."
+  },
+  {
+   "id": "es-neg-03",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "resolved",
+   "text": "Tuve fiebre el martes pero fui a emergencias, me dieron antibiótico y no ha vuelto.",
+   "en": "I had a fever Tuesday but went to the ER, they gave antibiotics, and it hasn't returned."
+  },
+  {
+   "id": "es-neg-04",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "side-effect",
+   "text": "Me duele un poquito la boca por la quimio, me enjuago con bicarbonato como me dijo la enfermera.",
+   "en": "My mouth is a little sore from chemo, I rinse with baking soda as the nurse said."
+  },
+  {
+   "id": "es-neg-05",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "someone-else",
+   "text": "Mi esposo está con gripe y tos, lo llevo hoy al médico.",
+   "en": "My husband has the flu and a cough, I'm taking him to the doctor today."
+  },
+  {
+   "id": "es-neg-06",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "plain",
+   "text": "Estoy un poco triste hoy, extrañando a mi mamá en Cuba, pero se me pasa.",
+   "en": "A bit sad today, missing my mom in Cuba, but it passes."
+  },
+  {
+   "id": "es-neg-07",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "money",
+   "text": "Los precios del súper están por las nubes, qué barbaridad, pero uno se las arregla.",
+   "en": "Supermarket prices are sky-high, but one manages."
+  },
+  {
+   "id": "es-neg-08",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "past",
+   "text": "Hace dos años pensé cosas feas, pero con la terapia estoy bien, sigo con mi psicóloga cada semana.",
+   "en": "Two years ago I had dark thoughts, but with therapy I'm fine, still see my psychologist weekly."
+  },
+  {
+   "id": "es-neg-09",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "idiom",
+   "text": "Qué calor, me estoy asando viva, ya no aguanto este verano.",
+   "en": "So hot, I'm roasting alive, can't stand this summer."
+  },
+  {
+   "id": "es-neg-10",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "side-effect",
+   "text": "Se me cayó el pelo, pero ya compré la peluca y me veo divina.",
+   "en": "My hair fell out, but I bought the wig and look fabulous."
+  },
+  {
+   "id": "es-neg-11",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "resolved",
+   "text": "Anoche vomité una vez por la comida pesada, hoy desayuné normal.",
+   "en": "Last night I vomited once from heavy food, today I ate breakfast normally."
+  },
+  {
+   "id": "es-neg-12",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "plain",
+   "text": "Estoy cansadísima hoy, pero dormí una siesta y ya.",
+   "en": "I'm exhausted today, but I took a nap and I'm fine."
+  },
+  {
+   "id": "es-neg-13",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "dark-humour",
+   "text": "Esta dieta me tiene muerta de hambre, quiero un cafecito con pastelito y no puedo.",
+   "en": "This diet has me starving, I want a cafecito with a pastelito and can't."
+  },
+  {
+   "id": "es-neg-14",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "someone-else",
+   "text": "La vecina se desmayó ayer en la tienda pero vino la ambulancia y está bien.",
+   "en": "The neighbor fainted yesterday in the store but the ambulance came and she's fine."
+  },
+  {
+   "id": "es-neg-15",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "past",
+   "text": "Casi me desalojan en marzo, pero la trabajadora social me consiguió la ayuda y ya está pagado.",
+   "en": "They almost evicted me in March, but the social worker got me help and it's paid."
+  },
+  {
+   "id": "es-neg-16",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "money",
+   "text": "La medicina es cara, 30 dólares de copago, pero la pagué.",
+   "en": "Medicine is expensive, $30 copay, but I paid it."
+  },
+  {
+   "id": "es-neg-17",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "idiom",
+   "text": "Mañana tengo cita y me muero de nervios, pero iré.",
+   "en": "I have an appointment tomorrow and I'm dying of nerves, but I'll go."
+  },
+  {
+   "id": "es-neg-18",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "asr",
+   "text": "estube con la presion alta pero me la tome y ya esta normal, ablé con la enfermera",
+   "en": "My pressure was high but I took it and it's normal now, I spoke with the nurse."
+  },
+  {
+   "id": "es-neg-19",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "resolved",
+   "text": "Tuve un dolor de pecho el domingo, llamé a la línea de enfermeras, era reflujo, me dieron antiácido y se quitó.",
+   "en": "Chest pain Sunday, called the nurse line, it was reflux, antacid and it went away."
+  },
+  {
+   "id": "es-neg-20",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "dark-humour",
+   "text": "Mi hija me tiene harta con que coma verduras, la voy a matar.",
+   "en": "My daughter has me fed up with eating vegetables, I'll kill her."
+  },
+  {
+   "id": "es-neg-21",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "side-effect",
+   "text": "Dormí fatal, el insomnio de siempre por la prednisona, ya lo hablé con el médico.",
+   "en": "Slept terribly, the usual insomnia from prednisone, already discussed with the doctor."
+  },
+  {
+   "id": "es-neg-22",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "someone-else",
+   "text": "Mi suegro está en cuidados paliativos, estamos tristes pero tranquilos.",
+   "en": "My father-in-law is in palliative care, we're sad but calm."
+  },
+  {
+   "id": "es-neg-23",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "plain",
+   "text": "Caminé tres veces esta semana y comí bien. Todo bien.",
+   "en": "I walked three times this week and ate well. All good."
+  },
+  {
+   "id": "es-neg-24",
+   "lang": "Spanish",
+   "expect": "none",
+   "variant": "resolved",
+   "text": "Me quedé sin gasolina pero mi yerno vino y me llevó, ya está resuelto.",
+   "en": "I ran out of gas but my son-in-law came and took me, it's resolved."
+  },
+  {
+   "id": "ht-neg-01",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "idiom",
+   "text": "Rejim sa a ap touye m, m anvi manje diri ak sòs pwa.",
+   "en": "This diet is killing me, I want rice and bean sauce."
+  },
+  {
+   "id": "ht-neg-02",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "idiom",
+   "text": "M ap mouri ri ak istwa pitit gason m nan.",
+   "en": "I'm dying of laughter at my son's story."
+  },
+  {
+   "id": "ht-neg-03",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "resolved",
+   "text": "M te gen lafyèv madi, mwen te ale lopital, yo ban m antibyotik, depi lè sa m pa gen lafyèv ankò.",
+   "en": "I had fever Tuesday, went to hospital, got antibiotics, no fever since."
+  },
+  {
+   "id": "ht-neg-04",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "side-effect",
+   "text": "Dwèt mwen angoudi lè fè frèt, doktè a konn sa, se menm bagay ak dènye fwa.",
+   "en": "My fingers go numb in the cold, the doctor knows, same as last time."
+  },
+  {
+   "id": "ht-neg-05",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "someone-else",
+   "text": "Mari m gen tous ak lafyèv, m ap mennen li kay doktè jodi a.",
+   "en": "My husband has cough and fever, I'm taking him to the doctor today."
+  },
+  {
+   "id": "ht-neg-06",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "plain",
+   "text": "M tris yon ti kras semèn sa a, manman m manke m, men sa ap pase.",
+   "en": "A bit sad this week, I miss my mother, but it will pass."
+  },
+  {
+   "id": "ht-neg-07",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "money",
+   "text": "Pri manje a chè anpil, men m jere, m jwenn sa m bezwen.",
+   "en": "Food prices are very high, but I manage, I get what I need."
+  },
+  {
+   "id": "ht-neg-08",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "past",
+   "text": "Ane pase m te nan yon move moman, men depi m ap wè konseye a chak semèn, m pa santi sa ankò.",
+   "en": "Last year I was in a bad place, but since seeing the counselor weekly I don't feel it anymore."
+  },
+  {
+   "id": "ht-neg-09",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "plain",
+   "text": "M fatige anpil jodi a, m dòmi yon ti som epi m byen.",
+   "en": "Very tired today, I slept a little and I'm fine."
+  },
+  {
+   "id": "ht-neg-10",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "idiom",
+   "text": "Chalè a ap kwit mwen, m pral fonn!",
+   "en": "The heat is cooking me, I'm going to melt!"
+  },
+  {
+   "id": "ht-neg-11",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "resolved",
+   "text": "Mwen te vomi samdi paske manje a te twòp, kounye a m ap manje nòmal.",
+   "en": "I vomited Saturday because I ate too much, now I eat normally."
+  },
+  {
+   "id": "ht-neg-12",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "side-effect",
+   "text": "Cheve m ap tonbe men m gen perik mwen, m gen bèl bagay.",
+   "en": "My hair is falling out but I have my wig, I look nice."
+  },
+  {
+   "id": "ht-neg-13",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "someone-else",
+   "text": "Vwazin mwen tonbe nan legliz yè, anbilans vini, li byen kounye a.",
+   "en": "My neighbor fell at church yesterday, ambulance came, she's well now."
+  },
+  {
+   "id": "ht-neg-14",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "past",
+   "text": "Mwen te prèske pèdi kay la nan mas, men travayè sosyal la jwenn èd e tout bagay peye.",
+   "en": "I almost lost the house in March, but the social worker found help and all is paid."
+  },
+  {
+   "id": "ht-neg-15",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "money",
+   "text": "Kopeman an chè, trant dola, men m peye l.",
+   "en": "The copay is steep, thirty dollars, but I paid it."
+  },
+  {
+   "id": "ht-neg-16",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "side-effect",
+   "text": "Pa gen anyen ki gen gou ankò, men doktè a di se chimyo a, li konnen.",
+   "en": "Nothing tastes like anything now, but the doctor says it's the chemo, he knows."
+  },
+  {
+   "id": "ht-neg-17",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "asr",
+   "text": "tansyon m te wo men m pran li e l nomal kounye a, m pale ak enfimyè a",
+   "en": "My pressure was high but I took it and it's normal now, I spoke with the nurse."
+  },
+  {
+   "id": "ht-neg-18",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "idiom",
+   "text": "Mwen mouri wont, m rele enfimyè a ak move non ankò.",
+   "en": "I'm dying of shame, I called the nurse by the wrong name again."
+  },
+  {
+   "id": "ht-neg-19",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "dark-humour",
+   "text": "Pitit fi m ap fè m manje legim, m pral touye l!",
+   "en": "My daughter is making me eat vegetables, I'll kill her!"
+  },
+  {
+   "id": "ht-neg-20",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "resolved",
+   "text": "Doulè pwatrin mwen te la dimanch, m rele liy enfimyè a, se te asid, m pran antasid, li pase.",
+   "en": "Chest pain Sunday, called the nurse line, it was acid, took antacid, it passed."
+  },
+  {
+   "id": "ht-neg-21",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "plain",
+   "text": "Mwen mache twa fwa semèn sa a, m manje byen. Tout bon.",
+   "en": "I walked three times this week and ate well. All good."
+  },
+  {
+   "id": "ht-neg-22",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "someone-else",
+   "text": "Manman madanm mwen nan ospis, nou tris, men li alèz.",
+   "en": "My wife's mother is in hospice, we're sad, but she is comfortable."
+  },
+  {
+   "id": "ht-neg-23",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "side-effect",
+   "text": "Nen m senyen yon ti jan maten an, de gout, se lè sèk la, doktè a di se nòmal.",
+   "en": "My nose bled a little this morning, two drops, the dry season, doctor says it's normal."
+  },
+  {
+   "id": "ht-neg-24",
+   "lang": "Haitian Creole",
+   "expect": "none",
+   "variant": "past",
+   "text": "Mwen te nan lopital nan jen pou yon enfeksyon, tout bagay fini, swivi a te bon.",
+   "en": "I was in hospital in June for an infection, all finished, follow-up was good."
+  }
+ ]
+}
