@@ -53,8 +53,8 @@ The engine follows a coaching call live or recorded, spoken or typed. It tags ev
 ```
 speech (Safari = Apple speech engine) ─┐
 recorded / typed lines ────────────────┼─> Worker (coach.raava.dev) ──> AI Gateway "coach-copilot" ──> Workers AI
-                                       │     /api/turn   every line        Clef      (~0.3–0.5 s Clef call)
-                                       │     /api/review conf < 0.3 only    GLM-5.3-flash (async, ~2–4 s)
+                                       │     /api/turn   every line        Clef      (batch p50 0.66 s; live Worker p50 ~0.3 s)
+                                       │     /api/review conf < 0.3 only    GLM-5.3-flash (async; batch p50 4.3 s, p95 23.3 s)
                                        │     /api/cue    triggers only      GLM-5.3-flash (async, ~2–5 s)
 browser: score, banner, cues <─────────┘
 ```
@@ -139,7 +139,7 @@ Labelled synthetic calls are split by `participant_id` hash: **dev 20%** (tuning
 | Coach move (12-way) | **93.1%** (EN 93.9%, ES 91.6%) |
 | Participant talk (3-way) | **90.9%** (EN 91.2%, ES 90.4%) |
 
-95% CIs, bootstrapped over calls: move 92.8–93.4%, talk 90.5–91.3%. Always answering the most common label would score 20.3% (move) and 47.3% (talk). 37 of 56,038 lines got no answer (upstream errors during the batch run) and are left out. Counted as wrong, they give 93.0% and 90.8%. Cohen's kappa is **0.921** for coach move (EN 0.930, ES 0.904) and **0.848** for participant talk (EN 0.854, ES 0.839). These are model-vs-human kappas. The synthetic calls carry one human label per line, so the data has no human-vs-human line kappa to set them against (only call-level scores come from two supervisors); the closest human-human reference is AnnoMI's 10-expert subset below, where Clef's kappa is lower. The weakest labels are simple reflection (recall 73.0%; misses go to complex reflection, emphasize autonomy and affirm) and sustain talk (recall 63.4%). Per-label precision, recall, F1 and the full confusion matrices are in `runs/metrics.json` (`tags.validation.{move,talk}.labels`). Clef call time per line in the batch run (`evaluate.py` on `/judge`): p50 ~0.3–0.5 s, p95 ~1.05 s. A `/api/turn` round trip from a browser takes longer, because it adds the network and, on participant lines, waits for the parallel flag call. In `runs/e2e-live-20261017T170443Z.json`, measured from a Cloudflare sandbox, the round-trip p50 is about 310 ms for coach lines and 800 ms for participant lines (time inside the Worker: 278 and 688 ms). From a laptop client (`runs/e2e-live-20261017T171736Z.json`) it is about 680 ms and 720 ms (Worker 331 and 478 ms). The network path accounts for most of the gap. These numbers come from the move and talk questions as they ship. They were not rerun after `scope` joined the coach request, because `scope` is a separate question in the same call.
+95% CIs, bootstrapped over calls: move 92.8–93.4%, talk 90.5–91.3%. Always answering the most common label would score 20.3% (move) and 47.3% (talk). 37 of 56,038 lines got no answer (upstream errors during the batch run) and are left out. Counted as wrong, they give 93.0% and 90.8%. Cohen's kappa is **0.921** for coach move (EN 0.930, ES 0.904) and **0.848** for participant talk (EN 0.854, ES 0.839). These are model-vs-human kappas. The synthetic calls carry one human label per line, so the data has no human-vs-human line kappa to set them against (only call-level scores come from two supervisors); the closest human-human reference is AnnoMI's 10-expert subset below, where Clef's kappa is lower. The weakest labels are simple reflection (recall 73.0%; misses go to complex reflection, emphasize autonomy and affirm) and sustain talk (recall 63.4%). Per-label precision, recall, F1 and the full confusion matrices are in `runs/metrics.json` (`tags.validation.{move,talk}.labels`). Clef call time per line in the batch run (`evaluate.py` on `/judge`, `runs/validation-clef.log`): p50 0.66 s, p95 1.62 s. Live, one line at a time, the Worker is faster: in the latest live E2E (`runs/e2e-live-20261017T190720Z.json`) time inside the Worker is p50 290 ms for coach lines and 350 ms for participant lines (all lines 181–450 ms), with round trip p50 887 and 792 ms. A `/api/turn` round trip from a browser takes longer, because it adds the network and, on participant lines, waits for the parallel flag call. In `runs/e2e-live-20261017T170443Z.json`, measured from a Cloudflare sandbox, the round-trip p50 is about 310 ms for coach lines and 800 ms for participant lines (time inside the Worker: 278 and 688 ms). From a laptop client (`runs/e2e-live-20261017T171736Z.json`) it is about 680 ms and 720 ms (Worker 331 and 478 ms). The network path accounts for most of the gap. These numbers come from the move and talk questions as they ship. They were not rerun after `scope` joined the coach request, because `scope` is a separate question in the same call.
 
 ### Coach score vs supervisors (`scripts/agreement.py`, `GET /api/c5/agreement`)
 
@@ -232,7 +232,7 @@ Cues are written by GLM only at trigger moments that the page computes from the 
 - **By kind:** 78% are "change talk not reflected or affirmed" (precision 92.8%). Confront is the weakest at 87.2%.
 - **Not a quality score.** The number of coaching cues per call correlates **+0.28** (Spearman, 95% CI 0.196–0.356) with the supervisors' mean score, so better-rated calls get *more* cues. The likely reason is that the dominant trigger fires on change talk, which better calls draw out more often. The trigger mix has not been validated by an MI supervisor.
 
-**Live, 30 trigger moments** (6 per kind, seed 7; `scripts/cue_eval.py`, `runs/cue-eval-20261017T173558Z.json`):
+**Live, 30 trigger moments** (6 kinds × 5 each, seed 7; `scripts/cue_eval.py`, `runs/cue-eval-20261017T173558Z.json`):
 - 30/30 answered, with no rate limits. GLM time in the Worker: **p50 2.4 s, p95 5.9 s** (round trip 3.0 s and 6.5 s).
 - 30/30 `say` lines in the call's language, 30/30 with no dosing or medication instruction, and 30/30 cues of at most 45 words.
 - Cues are asynchronous, so the tag and the banner never wait for them. Repeats are served from the KV cache.
@@ -253,6 +253,7 @@ Cues are written by GLM only at trigger moments that the page computes from the 
 - Clef alone: 76.0%. Clef + review: 76.7% (fixed 8, broke 4).
 - The review was right on 89.2% of the lines it answered, against Clef's 83.1% on those same lines.
 - It answered only 65 of 600. The rest hit the Workers AI per-minute limit (error 3021).
+- Review time on the answered lines (batch, `runs/review-validation.log`): p50 4.3 s, p95 23.3 s.
 
 Cues are where GLM earns its place. Review stays an optional background second opinion. Cue language is set by the Worker (`Call language: English|Spanish` from the participant's words); left to infer it, the models sometimes answered in Spanish or French.
 

@@ -17,7 +17,7 @@ The console (Patient 360) is the user-facing app. This Worker is the engine: Cle
 
 Workers AI quotas are per account and model, shared by every caller of this Worker (coach.raava.dev, Patient 360, batch scripts).
 
-## `POST /api/turn`: tag one line (every line; Clef call ~0.3–0.5 s p50, round trip longer: see `scripts/e2e_live.py`)
+## `POST /api/turn`: tag one line (every line; Clef call p50 0.66 s, p95 1.62 s in the batch run, `runs/validation-clef.log`; live Worker time p50 290–350 ms, round trip longer: see `scripts/e2e_live.py`)
 
 Body: `line` = `{speaker, text}`, `previous` = up to the 2 lines before it. Pass each previous line's `flag` as returned; a coach line right after a red flag (`medical`, `distress`, `social`) is then also judged for routing.
 
@@ -112,7 +112,7 @@ Coach line after that flag, not routed:
 }
 ```
 
-## `POST /api/review`: second opinion on an unsure tag (async, ~2–4 s)
+## `POST /api/review`: second opinion on an unsure tag (async; p50 4.3 s, p95 23.3 s in the 600-line batch run, `runs/review-validation.log`)
 
 Answers are cached for 7 days by model and prompt. A repeat returns at once with `"cached": true` and `"ms": 0`.
 
