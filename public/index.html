@@ -4,105 +4,50 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Coach's Co-pilot</title>
-<style>
-:root {
-  --bg: #f6f5f2; --panel: #ffffff; --ink: #1d1d1f; --muted: #6b6b70; --line: #e4e2dc;
-  --coach: #eef3ff; --part: #f3f1ea; --accent: #2f5bd3;
-  --good: #1f8a4c; --warn: #b7791f; --bad: #c0392b; --info: #5b5bd6;
-  --q: #2f5bd3; --r: #1f8a4c; --s: #8a5cf5; --i: #b7791f; --x: #c0392b; --o: #8b8b90;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #141416; --panel: #1d1d20; --ink: #ececef; --muted: #9a9aa2; --line: #2e2e33;
-    --coach: #1c2436; --part: #26241f; --accent: #7b9cff;
-    --q: #7b9cff; --r: #4cc283; --s: #b39cff; --i: #e0a84a; --x: #ff7a6b; --o: #8b8b90;
-  }
-}
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; }
-header { display: flex; align-items: center; gap: 16px; padding: 14px 20px; border-bottom: 1px solid var(--line); background: var(--panel); flex-wrap: wrap; }
-header h1 { font-size: 17px; margin: 0; letter-spacing: -0.01em; }
-header .sub { color: var(--muted); font-size: 13px; }
-.tabs { margin-left: auto; display: flex; gap: 4px; background: var(--bg); padding: 3px; border-radius: 9px; }
-.tabs button { border: 0; background: transparent; color: var(--muted); padding: 6px 12px; border-radius: 7px; font: inherit; font-size: 13px; cursor: pointer; }
-.tabs button.on { background: var(--panel); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.08); }
-.banner { display: flex; color: #fff; padding: 10px 20px; font-weight: 600; align-items: center; gap: 12px; animation: in .25s ease; }
-.banner.red { background: var(--bad); }
-.banner.amber { background: var(--warn); }
-.banner small { font-weight: 400; opacity: .9; }
-.banner button { margin-left: auto; background: rgba(255,255,255,.2); color: #fff; border: 0; padding: 4px 10px; border-radius: 6px; cursor: pointer; }
-main { display: grid; grid-template-columns: 280px minmax(0, 1fr) 320px; grid-template-areas: "left convo right"; gap: 16px; padding: 16px 20px; max-width: 1500px; margin: 0 auto; }
-main > section { grid-area: convo; }
-#left { grid-area: left; }
-#right { grid-area: right; }
-@media (max-width: 1100px) { main { grid-template-columns: minmax(0, 1fr) 300px; grid-template-areas: "convo right" "left right"; } }
-@media (max-width: 760px) { main { grid-template-columns: 1fr; grid-template-areas: "convo" "right" "left"; padding: 12px 16px; } }
-.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
-.controls { padding: 12px 14px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; border-bottom: 1px solid var(--line); }
-.controls select, .controls input[type=text] { font: inherit; font-size: 14px; padding: 7px 9px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); min-width: 0; max-width: 100%; }
-.controls input[type=text] { flex: 1; min-width: 180px; }
-.btn { font: inherit; font-size: 14px; padding: 7px 13px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); cursor: pointer; }
-.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-.btn.rec { background: var(--bad); border-color: var(--bad); color: #fff; }
-.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-.seg button { border: 0; background: var(--bg); color: var(--muted); padding: 7px 11px; font: inherit; font-size: 13px; cursor: pointer; }
-.seg button.on { background: var(--accent); color: #fff; }
-.hint { color: var(--muted); font-size: 12px; }
-#transcript { height: calc(100vh - 210px); min-height: 360px; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 8px; }
-.ln { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 10px; align-items: start; animation: in .25s ease; }
-@keyframes in { from { opacity: 0; transform: translateY(4px); } }
-.who { font-size: 12px; color: var(--muted); padding-top: 9px; text-align: right; }
-.bubble { padding: 8px 11px; border-radius: 10px; background: var(--part); }
-.ln.coach .bubble { background: var(--coach); }
-.ln.flagged .bubble { outline: 2px solid var(--bad); }
-.tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 5px; align-items: center; font-size: 12px; }
-.chip { padding: 1px 8px; border-radius: 999px; font-weight: 600; font-size: 12px; color: #fff; background: var(--o); }
-.chip.pending { background: transparent; color: var(--muted); border: 1px dashed var(--line); font-weight: 400; }
-.chip.q { background: var(--q); } .chip.r { background: var(--r); } .chip.s { background: var(--s); }
-.chip.i { background: var(--i); } .chip.x { background: var(--x); } .chip.o { background: var(--o); }
-.chip.change { background: var(--r); } .chip.sustain { background: var(--x); } .chip.neutral { background: var(--o); }
-.chip.flag { background: var(--bad); }
-.chip.flag.amber { background: var(--warn); }
-.meta { color: var(--muted); }
-.gold.ok { color: var(--good); } .gold.no { color: var(--bad); }
-.glm { color: var(--info); }
-.interim { opacity: .55; font-style: italic; }
-aside { display: flex; flex-direction: column; gap: 16px; }
-aside .panel { padding: 14px; }
-aside h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 10px; font-weight: 600; }
-.score { display: flex; align-items: baseline; gap: 8px; }
-.score b { font-size: 44px; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
-.score span { color: var(--muted); }
-.bar { height: 6px; background: var(--bg); border-radius: 3px; overflow: hidden; margin: 6px 0 12px; }
-.bar i { display: block; height: 100%; background: var(--accent); transition: width .4s; }
-.metrics { display: grid; grid-template-columns: 1fr auto; gap: 6px 10px; font-size: 14px; margin: 0; }
-.metrics dd { margin: 0; font-variant-numeric: tabular-nums; font-weight: 600; text-align: right; }
-.metrics dt { color: var(--muted); }
-#cues { display: flex; flex-direction: column; gap: 10px; }
-.cue { border-left: 3px solid var(--info); padding: 6px 10px; background: var(--bg); border-radius: 0 8px 8px 0; animation: in .3s ease; }
-.cue b { display: block; font-size: 14px; }
-.cue q { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; }
-.cue .why { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 2px; }
-.empty { color: var(--muted); font-size: 13px; }
-.legend { display: flex; gap: 6px; flex-wrap: wrap; }
-.lat { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
-[hidden] { display: none !important; }
-</style>
+<meta name="description" content="Patient 360 · Coach's Co-pilot: follows a health-coaching call line by line, scores the coach and raises a banner for anything a person must act on today.">
+<meta name="theme-color" content="#F5F6F8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0D12" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="p360.css">
+<link rel="stylesheet" href="clef.css">
 </head>
 <body>
-<header>
-  <div>
-    <h1>Coach's Co-pilot</h1>
-    <div class="sub">Live motivational-interviewing tagging · Clef classifies every line · GLM-5.3 reviews and coaches only when needed</div>
-  </div>
-  <div class="tabs" role="tablist">
-    <button data-mode="replay" class="on">Replay a call</button>
-    <button data-mode="live">Live mic</button>
-    <button data-mode="type">Type</button>
+<header class="topbar app-top">
+  <div class="topbar-in">
+    <a class="lockup" href="https://patient-360.raava.dev/" aria-label="Patient 360 · Coach's Co-pilot">
+      <svg viewBox="0 0 24 24" aria-hidden="true" width="22" height="22"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 12h3l1.5-3 3 6 1.5-3h1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Patient 360</span><span class="sep" aria-hidden="true">·</span>
+      <span class="prog"><span class="dot c5" aria-hidden="true"></span>Coach's Co-pilot</span>
+    </a>
+    <div class="tabs" role="tablist" aria-label="Input">
+      <button data-mode="replay" class="on">Replay a call</button>
+      <button data-mode="live">Live mic</button>
+      <button data-mode="type">Type</button>
+    </div>
   </div>
 </header>
+
+<section class="app-intro" aria-labelledby="title">
+  <div>
+    <p class="eyebrow"><span class="dot c5" aria-hidden="true"></span>Challenge 5 · Coaching calls</p>
+    <h1 id="title">Follow a coaching call, line by line</h1>
+    <p class="lead">Every line gets a motivational-interviewing tag (the coaching style the program trains). The coach gets a score, a cue only when one helps, and a red banner for anything a person must act on today.</p>
+    <div class="btn-row">
+      <button class="btn primary" id="playSafety" type="button">Play the safety call <span aria-hidden="true">→</span></button>
+      <a class="btn" href="https://patient-360.raava.dev/#call-CALL05423">See it in Patient 360 <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+  <div class="proof" role="group" aria-label="Headline result">
+    <p class="n num">0.79</p>
+    <div class="t">
+      <b>Coach score tracks the supervisors</b>
+      Correlation with the mean of two supervisors (95% CI 0.75–0.82). The two supervisors agree with each other at 0.69.
+      <div class="chips"><span class="chip source synthetic"><b>Synthetic</b> · Crane Lab</span><span class="chip source">Held-out calls</span></div>
+    </div>
+  </div>
+</section>
+
 <div id="banners"></div>
-<main>
+<main class="app" id="app" aria-label="Call follower">
   <section class="panel">
     <div class="controls" data-for="replay">
       <select id="callPick" aria-label="Demo call"></select>
@@ -153,6 +98,81 @@ aside h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; co
     </div>
   </aside>
 </main>
+
+<div class="evidence">
+<div class="wrap stack">
+  <section aria-labelledby="results-h">
+    <div class="section-head">
+      <h2 id="results-h">How well it works</h2>
+      <p>Validation calls held out from all tuning (80% of participants), plus one real expert benchmark.</p>
+    </div>
+    <ol class="results">
+      <li class="result">
+        <p class="big num">0.79</p>
+        <div>
+          <h3>Score agreement with supervisors</h3>
+          <p class="gloss">Pearson r between the app's coach score and the mean of supervisors A and B, on 477 rated calls. 1 is perfect agreement.</p>
+          <p class="src"><span class="sig yes">✓ Closer than the supervisors are to each other</span></p>
+        </div>
+        <dl><dt>Baseline</dt><dd>0.69 (A vs B)</dd><dt>95% CI</dt><dd>0.754 to 0.820</dd><dt>Source</dt><dd>Held-out · Synthetic</dd></dl>
+      </li>
+      <li class="result">
+        <p class="big num">13<small>/13</small></p>
+        <div>
+          <h3>Safety lines caught</h3>
+          <p class="gloss">Lines a person must act on today (10 medical, 2 social, 1 distress), with 9 false alarms in 25,785 lines.</p>
+          <p class="src"><span class="sig yes">✓ None missed</span></p>
+        </div>
+        <dl><dt>False alarms</dt><dd>0.04% of lines</dd><dt>95% CI</dt><dd>77.2% to 100% (Wilson)</dd><dt>Source</dt><dd>Held-out · Synthetic</dd></dl>
+      </li>
+      <li class="result">
+        <p class="big num">75<small>%</small></p>
+        <div>
+          <h3>Real counselling, expert labels</h3>
+          <p class="gloss">AnnoMI: 428 lines from real counselling sessions, each labelled by 10 experts. Where all 10 agreed, it gets 91%.</p>
+          <p class="src"><span class="sig no">▲ Below expert agreement</span></p>
+        </div>
+        <dl><dt>Experts</dt><dd>84% agree with the majority</dd><dt>95% CI</dt><dd>Not reported</dd><dt>Source</dt><dd>Real · AnnoMI</dd></dl>
+      </li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="api-h">
+    <div class="section-head">
+      <h2 id="api-h">Endpoints</h2>
+      <p>JSON over HTTPS. The live engine (POST /api/turn, /api/review, /api/cue) powers the screen above.</p>
+    </div>
+    <ul class="endpoints">
+      <li><a href="/api/c5/demo"><span class="verb">GET</span><span class="path">/api/c5/demo</span><span class="arrow" aria-hidden="true">→</span><span class="desc">The held-out safety call, pre-played through the live engine: every tag, the red banner at 05:12, the cues and the score.</span></a></li>
+      <li><a href="/api/c5/agreement"><span class="verb">GET</span><span class="path">/api/c5/agreement</span><span class="arrow" aria-hidden="true">→</span><span class="desc">Score vs supervisors with CIs, the per-call table, and the safety-flag results.</span></a></li>
+      <li><a href="/api/c5/calls"><span class="verb">GET</span><span class="path">/api/c5/calls[/:callId]</span><span class="arrow" aria-hidden="true">→</span><span class="desc">The 27 supervisor-labelled demo calls, scored with the live screen's arithmetic.</span></a></li>
+      <li><a href="/api/c5/survivors"><span class="verb">GET</span><span class="path">/api/c5/survivors[/:id]</span><span class="arrow" aria-hidden="true">→</span><span class="desc">One row per participant, with status from their worst call.</span></a></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="repro-h">
+    <div class="section-head">
+      <h2 id="repro-h">Reproduce</h2>
+      <p>Batch scripts share the live model quota. Do not run them during a demo.</p>
+    </div>
+    <div class="card repro">
+      <a class="repo-link" href="https://github.com/zaycruz/coach-copilot">github.com/zaycruz/coach-copilot <span aria-hidden="true">→</span></a>
+      <ol class="steps">
+        <li><div><code>npm install</code><p class="note">Then <code class="inline-code">npx wrangler deploy</code> serves the Worker at coach.raava.dev.</p></div></li>
+        <li><div><code>uv run --with pandas python -I scripts/evaluate.py &lt;data_dir&gt; validation 0 @cf/cloudflare/clef 2 --flags-only</code><p class="note">Scores the safety flags on the held-out validation calls.</p></div></li>
+        <li><div><code>uv run --with pandas python -I scripts/annomi_bench.py &lt;data_dir&gt;</code><p class="note">The real expert benchmark (AnnoMI), with the shipped payload unchanged.</p></div></li>
+      </ol>
+    </div>
+  </section>
+</div>
+</div>
+
+<footer class="footer">
+  <div class="footer-in">
+    <a class="lockup" href="https://patient-360.raava.dev/"><span class="dot c5" aria-hidden="true"></span>Patient 360</a>
+    <p>Patient 360 · Emerge hackathon · Synthetic data from the Crane Lab set, hospital-risk data from MEPS 2017 · Not for clinical use</p>
+  </div>
+</footer>
 <script>
 const REVIEW_BELOW = 0.3;
 const CUE_GAP = 3;
@@ -413,6 +433,21 @@ function stopAll() {
   if (rec) { const r = rec; rec = null; r.onend = null; r.stop(); }
   $("mic").textContent = "Start mic"; $("mic").classList.remove("rec");
 }
+</script>
+<script>
+// "Play the safety call": pick held-out call CALL05423 in the replay list and start it. Uses only the page's own controls.
+document.getElementById("playSafety").addEventListener("click", () => {
+  const replayTab = document.querySelector('.tabs button[data-mode="replay"]');
+  if (!replayTab.classList.contains("on")) replayTab.click();
+  const pick = document.getElementById("callPick");
+  if (!pick.options.length) return;
+  const i = [...pick.options].findIndex((o) => o.textContent.includes("CALL05423"));
+  if (i >= 0) pick.selectedIndex = i;
+  const play = document.getElementById("play");
+  if (play.textContent === "Stop") play.click();
+  play.click();
+  document.getElementById("banners").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+});
 </script>
 </body>
 </html>

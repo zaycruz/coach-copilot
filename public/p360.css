@@ -1,0 +1,223 @@
+/* Patient 360 shared design: tokens and components for the module pages.
+   One file, copied identically into c1-acute-risk, c3-rough-patch, c4-glucose-guide and coach-copilot public/.
+   Token sheet: coach-console/POLISH.md. System fonts only, no external dependencies. */
+
+:root {
+  color-scheme: light dark;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", system-ui, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --bg: #F5F6F8; --surface: #FFFFFF; --surface-2: #F0F2F5;
+  --ink: #0E1420; --ink-2: #4A5568; --ink-3: #6B7486;
+  --line: #E3E6EB; --accent: #0A5CC2; --accent-ink: #FFFFFF;
+  --accent-soft: color-mix(in srgb, var(--accent) 9%, var(--surface));
+  --red: #C62828; --red-soft: #FDECEC; --amber: #B26A00; --amber-soft: #FFF4E0; --green: #1E7F4A; --green-soft: #E7F5EC;
+  --c1: #00968F; --c3: #1F6FD1; --c4: #D4642A; --c5: #7B5BD6;
+
+  --t-hero: 700 48px/52px var(--font);
+  --t-h1: 700 28px/34px var(--font);
+  --t-h2: 600 20px/26px var(--font);
+  --t-h3: 600 17px/24px var(--font);
+  --t-body: 400 15px/22px var(--font);
+  --t-small: 400 13px/18px var(--font);
+  --t-micro: 600 12px/16px var(--font);
+
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+  --gutter: 40px; --pad: 24px;
+  --r-sm: 8px; --r-md: 12px; --r-lg: 16px; --r-pill: 999px;
+  --sh-1: 0 1px 2px rgb(15 23 42 / .06), 0 0 0 1px rgb(15 23 42 / .06);
+  --sh-2: 0 6px 20px rgb(15 23 42 / .08), 0 0 0 1px rgb(15 23 42 / .07);
+  --ease: cubic-bezier(.2, .8, .2, 1); --d-1: 150ms; --d-2: 200ms; --d-3: 250ms;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0B0D12; --surface: #151821; --surface-2: #1C2030;
+    --ink: #ECEEF3; --ink-2: #A9B1C1; --ink-3: #7D8698;
+    --line: #262B38; --accent: #5B9BFF; --accent-ink: #0B0D12;
+    --red: #FF6B6B; --red-soft: #3A1A1D; --amber: #F0B44C; --amber-soft: #33270F; --green: #4CC38A; --green-soft: #12291F;
+    --sh-1: 0 0 0 1px var(--line); --sh-2: 0 8px 24px rgb(0 0 0 / .4), 0 0 0 1px #313849;
+  }
+}
+@media (max-width: 720px) { :root { --gutter: 16px; --pad: 16px; --t-hero: 700 44px/48px var(--font); --t-h1: 700 24px/30px var(--font); } }
+
+/* ---------- base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: var(--t-body); -webkit-font-smoothing: antialiased; overflow-wrap: break-word; }
+h1, h2, h3, p { margin: 0; }
+h1 { font: var(--t-h1); letter-spacing: -0.015em; text-wrap: balance; }
+h2 { font: var(--t-h2); letter-spacing: -0.01em; }
+h3 { font: var(--t-h3); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: var(--r-sm); }
+.num { font-variant-numeric: tabular-nums; }
+code, .mono { font-family: var(--mono); font-size: .92em; }
+.muted { color: var(--ink-2); }
+.small { font: var(--t-small); }
+.eyebrow { font: var(--t-micro); letter-spacing: .04em; text-transform: uppercase; color: var(--ink-3); }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- top bar: the Patient 360 lockup ---------- */
+.topbar { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--surface) 88%, transparent); backdrop-filter: saturate(1.4) blur(14px); -webkit-backdrop-filter: saturate(1.4) blur(14px); border-bottom: 1px solid var(--line); }
+.topbar-in { display: flex; align-items: center; gap: var(--s-4); min-height: 56px; padding: 0 var(--gutter); max-width: 1200px; margin: 0 auto; }
+.lockup { display: inline-flex; align-items: center; gap: var(--s-2); color: var(--ink); font: 600 15px/20px var(--font); min-width: 0; white-space: nowrap; }
+.lockup:hover { text-decoration: none; }
+.lockup svg { flex: none; color: var(--accent); }
+.lockup .sep { color: var(--ink-3); font-weight: 400; }
+.lockup .prog { display: inline-flex; align-items: center; gap: 6px; font-weight: 500; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.topbar-end { margin-left: auto; display: flex; align-items: center; gap: var(--s-2); }
+.show-sm { display: none; }
+@media (max-width: 560px) { .hide-sm { display: none !important; } .show-sm { display: inline; } .topbar-in { gap: var(--s-3); } .topbar .btn { padding: 0 var(--s-3); } }
+
+/* ---------- program dot ---------- */
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; flex: none; background: var(--ink-3); }
+.dot.c1 { background: var(--c1); } .dot.c3 { background: var(--c3); } .dot.c4 { background: var(--c4); } .dot.c5 { background: var(--c5); }
+
+/* ---------- layout ---------- */
+.wrap { max-width: 1080px; margin: 0 auto; padding: var(--s-6) var(--gutter) var(--s-8); }
+.stack > * + * { margin-top: var(--s-7); }
+.section-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-4); flex-wrap: wrap; margin-bottom: var(--s-4); }
+.section-head p { font: var(--t-small); color: var(--ink-2); }
+.intro { max-width: 70ch; }
+.intro .eyebrow { display: flex; align-items: flex-start; gap: var(--s-2); margin-bottom: var(--s-2); }
+.intro .eyebrow .dot { margin-top: 4px; }
+.intro p { margin-top: var(--s-3); color: var(--ink-2); font-size: 17px; line-height: 26px; }
+
+/* ---------- cards ---------- */
+.card { background: var(--surface); border-radius: var(--r-md); box-shadow: var(--sh-1); padding: var(--pad); min-width: 0; }
+.card.raised { transition: box-shadow var(--d-1) var(--ease), transform var(--d-1) var(--ease); }
+.card.raised:hover { box-shadow: var(--sh-2); }
+.grid-2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s-4); }
+@media (max-width: 820px) { .grid-2 { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- hero (Whoop pattern: one number, its comparison, its CI, its source) ---------- */
+.hero { background: var(--surface); border-radius: var(--r-lg); box-shadow: var(--sh-1); padding: var(--s-6); display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: var(--s-6); animation: rise var(--d-3) var(--ease) both; }
+@media (max-width: 820px) { .hero { grid-template-columns: minmax(0, 1fr); padding: var(--s-5) var(--pad); gap: var(--s-5); } }
+.hero-num { display: flex; align-items: baseline; gap: 0; margin-top: var(--s-3); font: var(--t-hero); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.hero-num .unit { font: 600 20px/26px var(--font); letter-spacing: 0; color: var(--ink-2); }
+.hero-label { margin-top: var(--s-2); font: var(--t-h3); max-width: 34ch; }
+.hero-vs { margin-top: var(--s-4); display: grid; gap: var(--s-2); }
+.vs-row { display: flex; align-items: baseline; gap: var(--s-3); font: var(--t-body); color: var(--ink-2); }
+.vs-row b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.vs-row .k { flex: 0 0 76px; font: var(--t-micro); letter-spacing: .04em; text-transform: uppercase; color: var(--ink-3); }
+.hero-side { display: flex; flex-direction: column; gap: var(--s-4); border-left: 1px solid var(--line); padding-left: var(--s-6); }
+@media (max-width: 820px) { .hero-side { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: var(--s-5); } }
+.meaning h3 { font: var(--t-micro); letter-spacing: .04em; text-transform: uppercase; color: var(--ink-3); margin-bottom: var(--s-2); }
+.meaning p { font: var(--t-body); }
+.chips { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+
+/* bar comparing the result with its baseline */
+.compare { display: grid; gap: 6px; margin-top: var(--s-4); }
+.compare .track { position: relative; height: 8px; border-radius: var(--r-pill); background: var(--surface-2); overflow: hidden; }
+.compare .fill { position: absolute; inset: 0 auto 0 0; border-radius: inherit; background: var(--accent); transform-origin: left; animation: grow 600ms var(--ease) both; }
+.compare .fill.base { background: var(--ink-3); opacity: .55; }
+.compare .lbl { display: flex; justify-content: space-between; font: var(--t-small); color: var(--ink-2); }
+
+/* ---------- chips and status ---------- */
+.chip { display: inline-flex; align-items: center; gap: 6px; min-height: 26px; padding: 3px 10px; border-radius: var(--r-pill); border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); font: var(--t-micro); letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
+.chip.source { border-style: dashed; border-color: color-mix(in srgb, var(--ink-3) 55%, transparent); }
+.chip.source.real b { color: var(--green); }
+.chip.source.synthetic b { color: var(--c5); }
+.chip b { font-weight: 700; }
+.status { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; border-radius: var(--r-pill); font: 600 13px/20px var(--font); white-space: nowrap; }
+.status.act { color: var(--red); background: var(--red-soft); }
+.status.watch { color: var(--amber); background: var(--amber-soft); }
+.status.ok { color: var(--green); background: var(--green-soft); }
+.sig { font: 600 13px/18px var(--font); white-space: nowrap; }
+.sig.yes { color: var(--green); } .sig.no { color: var(--amber); } .sig.na { color: var(--ink-3); font-weight: 500; }
+
+/* ---------- buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2); min-height: 40px; padding: 0 var(--s-4); border-radius: var(--r-pill); border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: 600 15px/20px var(--font); cursor: pointer; text-decoration: none; transition: background var(--d-1) var(--ease), box-shadow var(--d-1) var(--ease), transform var(--d-1) var(--ease); }
+.btn:hover { text-decoration: none; background: var(--surface-2); }
+.btn:active { transform: scale(.98); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn.primary:hover { background: color-mix(in srgb, var(--accent) 88%, #000); }
+.btn.block { width: 100%; }
+.btn-row { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+
+/* ---------- results list ---------- */
+.results { list-style: none; margin: 0; padding: 0; background: var(--surface); border-radius: var(--r-md); box-shadow: var(--sh-1); }
+.result { display: grid; grid-template-columns: 132px minmax(0, 1fr) 264px; gap: var(--s-5); align-items: start; padding: var(--s-5) var(--pad); }
+.result + .result { border-top: 1px solid var(--line); }
+.result .big { font: 700 30px/34px var(--font); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.result .big small { font: 600 15px/20px var(--font); color: var(--ink-2); letter-spacing: 0; }
+.result h3 { font: var(--t-h3); }
+.result .gloss { font: var(--t-small); color: var(--ink-2); margin-top: 2px; }
+.result .src { margin-top: var(--s-2); }
+.result dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px var(--s-3); font: var(--t-small); }
+.result dt { color: var(--ink-3); }
+.result dd { margin: 0; color: var(--ink); font-variant-numeric: tabular-nums; }
+@media (max-width: 820px) {
+  .result { grid-template-columns: minmax(0, 1fr); gap: var(--s-2); padding: var(--s-4) var(--pad); }
+  .result dl { margin-top: var(--s-2); }
+}
+
+/* ---------- patient deep link ---------- */
+.patient { display: flex; align-items: center; gap: var(--s-4); color: var(--ink); }
+.patient:hover { text-decoration: none; }
+.patient .who { min-width: 0; flex: 1; }
+.patient .who b { display: block; font: var(--t-h3); }
+.patient .status { margin-right: var(--s-2); }
+.patient .who > span { display: block; font: var(--t-small); color: var(--ink-2); margin-top: 2px; }
+.patient .go { flex: none; color: var(--accent); font: 600 15px/20px var(--font); white-space: nowrap; }
+.avatar { flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--surface-2); color: var(--ink-2); font: 600 13px/1 var(--font); }
+
+/* ---------- endpoints ---------- */
+.endpoints { list-style: none; margin: 0; padding: 0; background: var(--surface); border-radius: var(--r-md); box-shadow: var(--sh-1); }
+.endpoints li + li { border-top: 1px solid var(--line); }
+.endpoints a { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: var(--s-3); align-items: baseline; padding: var(--s-4) var(--pad); color: var(--ink); min-height: 40px; }
+.endpoints a:hover { text-decoration: none; background: var(--surface-2); }
+.endpoints li:first-child a { border-radius: var(--r-md) var(--r-md) 0 0; }
+.endpoints li:last-child a { border-radius: 0 0 var(--r-md) var(--r-md); }
+.endpoints .verb { font: 700 11px/16px var(--mono); color: var(--green); background: var(--green-soft); border-radius: 6px; padding: 2px 0; text-align: center; letter-spacing: .04em; }
+.endpoints .path { font: 500 14px/20px var(--mono); overflow-wrap: anywhere; }
+.endpoints .desc { grid-column: 2; font: var(--t-small); color: var(--ink-2); }
+.endpoints .arrow { grid-row: 1 / span 2; grid-column: 3; color: var(--ink-3); align-self: center; }
+
+/* ---------- reproduce ---------- */
+.repro { display: grid; gap: var(--s-4); }
+.repo-link { display: inline-flex; align-items: center; gap: var(--s-2); font: 500 14px/20px var(--mono); overflow-wrap: anywhere; }
+.code { margin: 0; padding: var(--s-4); border-radius: var(--r-sm); background: var(--surface-2); font: 13px/22px var(--mono); color: var(--ink); overflow-x: auto; white-space: pre; }
+.code .c { color: var(--ink-3); }
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: s; display: grid; gap: var(--s-3); }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: var(--s-3); align-items: start; }
+.steps li::before { content: counter(s); width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); font: 700 13px/1 var(--font); }
+.steps code { display: block; padding: 6px 10px; border-radius: var(--r-sm); background: var(--surface-2); overflow-x: auto; white-space: pre; font-size: 13px; line-height: 20px; }
+.steps .note { font: var(--t-small); color: var(--ink-2); margin-top: 4px; }
+
+/* ---------- notes, limits ---------- */
+.notes { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--s-3); }
+.notes li { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: var(--s-2); font: var(--t-body); color: var(--ink-2); }
+.notes li::before { content: "▲"; color: var(--amber); font-size: 11px; line-height: 22px; }
+.notes li.info::before { content: "i"; color: var(--accent); font: 700 13px/22px var(--font); text-align: center; }
+.notes b { color: var(--ink); font-weight: 600; }
+
+/* ---------- footer ---------- */
+.footer { border-top: 1px solid var(--line); background: var(--surface); }
+.footer-in { max-width: 1080px; margin: 0 auto; padding: var(--s-5) var(--gutter) var(--s-6); display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-5); align-items: center; justify-content: space-between; font: var(--t-small); color: var(--ink-3); }
+.footer-in .lockup { font-size: 13px; }
+.footer-in p { max-width: 80ch; }
+
+/* ---------- motion ---------- */
+@keyframes rise { from { opacity: 0; transform: translateY(4px); } }
+@keyframes grow { from { transform: scaleX(0); } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ---------- utilities ---------- */
+.mt-2 { margin-top: var(--s-2); } .mt-3 { margin-top: var(--s-3); } .mt-4 { margin-top: var(--s-4); }
+.inline-code, .steps .inline-code { display: inline; padding: 0 4px; border-radius: 4px; background: var(--surface-2); white-space: normal; }
+
+/* ---------- phone refinements ---------- */
+@media (max-width: 560px) {
+  .patient { align-items: flex-start; gap: var(--s-3); }
+  .patient .avatar { display: none; }
+  .patient .status { display: flex; width: fit-content; margin: 6px 0 4px; }
+  .patient .go { padding-top: 2px; }
+}
+@media (max-width: 420px) {
+  .lockup { font-size: 14px; gap: 6px; }
+  .lockup svg { display: none; }
+}
