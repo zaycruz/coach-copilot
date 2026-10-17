@@ -26,6 +26,22 @@ scripts/reproduce.sh                                     # recomputes and checks
 
 The script rebuilds each number from committed model outputs, with no keys or network. Only latency, the GLM bake-off and the 30-cue live run are live-only. [REPRODUCE.md](REPRODUCE.md) maps each number to its file and key, and shows how to re-query the models. Live engine: https://coach.raava.dev · API: [CONTRACT.md](CONTRACT.md)
 
+## How it works
+
+**Technical architecture:** files, endpoints, models and fallbacks, each box checked against this repo.
+
+![C5 technical architecture](docs/arch-c5.png)
+
+**Results panel:** the data, the model, how it was validated, what the user sees, the held-out results and the honest limits.
+
+![C5 Coach's Co-pilot](docs/c5.png)
+
+**Clef at runtime:** what happens to one spoken line of a call, with live timings, and which steps are AI and which are rules.
+
+![Clef at runtime](docs/clef-runtime.png)
+
+Method in full, with every choice and why: [METHODOLOGY.md](METHODOLOGY.md).
+
 ---
 
 **Below:** [Architecture](#architecture) · [Clef payload](#clef-payload) · [Evaluation](#evaluation) · [Run](#run) · [Patient 360 endpoints](#patient-360-endpoints)
