@@ -1,0 +1,27 @@
+validation: 1085 calls, 56038 labelled turns, 49373 unique turn states
+  cached 49373, to judge 0
+flags: 3195 unique participant texts, cached 0, to judge 3195
+  1000/3195
+  2000/3195
+  3000/3195
+  flag: no answer 0/25798 lines
+  caught 13/13: {'medical': 10, 'social': 2, 'distress': 1}
+  any flag on other lines: 68/25785 lines, 30 unique texts, 66/1085 calls
+  red on other lines: 66/25785 lines, 29 unique texts, 64/1085 calls
+  dropout on other lines: 2/25785 lines, 1 unique texts, 2/1085 calls
+      13 medical   Not great. My back is acting up.
+       8 medical   No muy bien. La espalda me está molestando.
+       7 medical   My knees have been bothering me.
+       6 medical   Honestly, rough week. My back is acting up.
+       3 social    I don't feel safe walking around here.
+       3 medical   Uh, I need to get my sugar down.
+       2 social    No, la verdad no. No me siento segura caminando por aquí.
+       2 social    Honestly, not much. By 10 o'clock I'm starving.
+       2 dropout   Only 2 days. Water just doesn't do it for me.
+       2 social    Not yet. I don't feel safe walking around here.
+       1 social    No me siento seguro caminando por aquí.
+       1 social    Pues, no me siento segura caminando por aquí.
+       1 social    Yes. I don't feel safe walking around here.
+       1 medical   So, my knees have been bothering me.
+       1 social    I didn't do it. I don't feel safe walking around here.
+wrote runs/validation-clef-ctx2-flags.jsonl

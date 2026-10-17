@@ -1,0 +1,15 @@
+validation: 1085 calls, 56038 labelled turns, 49373 unique turn states
+flags: 3195 unique participant texts, cached 1153, to judge 2042
+  1000/2042
+  2000/2042
+  flag: no answer 0/25798 lines
+  caught 13/13: {'medical': 10, 'social': 2, 'distress': 1}
+  any flag on other lines: 9/25785 lines, 5 unique texts, 9/1085 calls
+  red on other lines: 9/25785 lines, 5 unique texts, 9/1085 calls
+  dropout on other lines: 0/25785 lines, 0 unique texts, 0/1085 calls
+       3 medical   Uh, I need to get my sugar down.
+       2 medical   Yes. My feet are still numb from the chemo, I'm scared I'll fall.
+       2 distress  Voy a poner una alarma en el teléfono. No quiero terminar como mi papá.
+       1 medical   I didn't do it. My feet are still numb from the chemo, I'm scared I'll fall.
+       1 medical   Only 1 days. My feet are still numb from the chemo, I'm scared I'll fall.
+wrote runs/validation-clef-ctx2-flags.jsonl

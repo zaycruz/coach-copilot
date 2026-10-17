@@ -1,0 +1,28 @@
+60 low-confidence dev lines; Clef alone gets 77% of them
+   unanswered: ['HTTP Error 502: Bad Gateway']
+@cf/zai-org/glm-5.3            review acc 62%  answered 37/60  p50 3.7s  p90 12.1s
+   unanswered: ['HTTP Error 502: Bad Gateway']
+@cf/zai-org/glm-5.3-flash      review acc 78%  answered 27/60  p50 2.2s  p90 4.4s
+   unanswered: ['no label']
+@cf/zai-org/glm-4.7-flash      review acc 81%  answered 47/60  p50 16.5s  p90 27.8s
+
+## The coach just confronted the participant.
+  glm-5.3          2.7s  Repair the confrontation with a reflective, non-judgmental statement.  |  Sounds like the week got away from you after Tuesday - that happens to a lot of people. What got in the way?  
+  glm-5.3-flash    2.1s  Soften the confrontation: step back, reflect the struggle without judgment, and invite them to explore what got in the way. Example: "Olvidé el martes y algo me está diciendo que hubo más detrás de eso. ¿Qué pasó después del martes?"  |    
+  glm-4.7-flash   22.1s  Validate the difficulty of the task and explore the barrier without judgment.  |  I hear that you forgot. Can you tell me what made it hard to remember after Tuesday?  
+## The coach just told the participant what to do without asking permission.
+  glm-5.3         14.4s  You gave advice without permission. Walk it back and offer a choice, e.g.: 'Sorry, that came out strong. Would it be okay if we explored what an earlier dinner could look like for you?'  |  Perdón, soné muy tajante. ¿Te parecería explorar juntos cómo podría ser una cena más temprano en tu casa?  
+  glm-5.3-flash    3.3s  Repair the directive by handing autonomy back: acknowledge you got ahead of them, then ask an open question about what feels possible. Example: "Sorry, that came out like an order. What would feel realistic for dinner timing at your place?"  |  Perdón, soné como una orden. ¿Qué te sentiría realista con la hora de la cena en tu casa?  
+  glm-4.7-flash   16.4s  Shift focus from your advice to exploring the participant's perspective on meal timing.  |  It sounds like dinner time is a bit unpredictable. How does that affect your schedule?  
+## The participant voiced change talk and the coach did not reflect or affirm it.
+  glm-5.3         13.8s  Affirm the change talk and reflect it before moving on — e.g., 'It sounds like you're really committed to lowering your sugar; writing it on the calendar shows you're taking this seriously.' Then invite them to elaborate with an open question.  |  It sounds like lowering your sugar really matters to you — and writing it on your calendar shows real commitment. What's your plan been so far?  
+  glm-5.3-flash    7.9s  Missed change talk — affirm and reflect it instead of pivoting to logistics. Example: 'You put it right on the calendar — that tells me this really matters to you. What made you decide now was the time?'  |  Lo escribiste en el calendario — eso me dice que esto es importante para ti. ¿Qué te hizo decidir que era el momento?  
+  glm-4.7-flash   20.9s  Validate the participant's desire to change and their specific plan before moving to logistics.  |  It sounds like you're taking a proactive step by writing it down. How does that help you stay on track?  
+## Three closed questions in a row.
+  glm-5.3         90.0s  Shift to an open question to invite her to talk about options in her own words. Example: 'What times of day feel most doable for you right now?' / '¿Qué momentos del día te parecen más posibles ahora mismo?'  |  What would make it easier to fit a walk in? / ¿Qué haría que fuera más fácil meter una caminata en tu día?  
+  glm-5.3-flash    6.2s  Switch to an open question or a reflective statement instead of a third closed question; give space for the participant to elaborate.  |  "What was it like trying to walk in that heat?"  
+  glm-4.7-flash    7.1s  Shift to an open-ended question to explore their experience or feelings.  |  What happened when you tried to walk?  
+## Participant raised a medical concern. Help the coach respond with care and connect them to the right person today.
+  glm-5.3          4.6s  Take the fever seriously without diagnosing: acknowledge it, affirm them for mentioning it, and urge them to contact their oncology/care team today — offer to help them find the number now.  |  Thank you for telling me — that's really important to mention. A fever like that is something your care team needs to know about today. Would you like to call your doctor's office now, or have someone help you reach them?  
+  glm-5.3-flash    2.7s  Respond with warmth, acknowledge the fever, and encourage contacting their care team today without diagnosing. Example: "Thanks for telling me — a fever with your history is worth checking today. Who on your care team could you call right after this call?"  |  Thanks for telling me — a fever with your history is worth checking today. Who on your care team could you call right after this call?  
+  glm-4.7-flash   14.1s  Acknowledge the symptom and validate their concern, then gently encourage them to contact their oncology team or nurse line to get checked.  |  I'm sorry to hear you're feeling unwell; that sounds uncomfortable. Have you thought about reaching out to your oncology nurse today to get checked?  

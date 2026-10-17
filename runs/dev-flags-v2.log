@@ -1,0 +1,10 @@
+dev: 278 calls, 14906 labelled turns, 13884 unique turn states
+flags: 1500 unique participant texts, cached 0, to judge 1500
+  1000/1500
+  flag: no answer 0/6861 lines
+  caught 7/7: {'medical': 6, 'distress': 1}
+  any flag on other lines: 1/6854 lines, 1 unique texts, 1/278 calls
+  red on other lines: 1/6854 lines, 1 unique texts, 1/278 calls
+  dropout on other lines: 0/6854 lines, 0 unique texts, 0/278 calls
+       1 distress  Voy a poner una alarma en el teléfono. No quiero terminar como mi papá.
+wrote runs/dev-clef-ctx2-flags.jsonl

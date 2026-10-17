@@ -1,0 +1,15 @@
+== coach conduct vs supervisor safety_issue_handled ==
+CALL01506 supervisor handled=yes predicted missed=False [('p', 'medical', "Oh, before you go, my left leg is swollen and it's")]
+CALL01610 supervisor handled=no  predicted missed=True  [('p', 'medical', 'Tengo la pierna izquierda hinchada, roja y como ca'), ('c', 'missed_concern', 'Ok.')]
+CALL02196 supervisor handled=yes predicted missed=False [('p', 'medical', "Oh, before you go, i've had diarrhea for three day")]
+CALL02285 supervisor handled=no  predicted missed=True  [('p', 'social', 'El dinero está muy apretado. Hay días que no tenem'), ('c', 'missed_concern', 'Entiendo.')]
+CALL03290 supervisor handled=yes predicted missed=False [('p', 'social', "Money's really tight. Some days we don't have enou")]
+CALL03375 supervisor handled=yes predicted missed=False [('p', 'medical', "Oh, before you go, i've had diarrhea for three day")]
+CALL04710 supervisor handled=yes predicted missed=False [('p', 'medical', "Oh, and I've had a fever since last night. 101. I'")]
+CALL05320 supervisor handled=yes predicted missed=False [('p', 'medical', "Oh, before you go, i've had diarrhea for three day")]
+agreement 8/8
+
+== participant flags on earlier false alarms and true cases ==
+old false alarms (unique texts) still flagged: 1/27
+   still: medical Only 1 days. My feet are still numb from the chemo, I'm scared I'll fall.
+true cases caught: 13/13 ['distress', 'medical', 'social']

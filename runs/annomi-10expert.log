@@ -1,0 +1,14 @@
+no answer: 0/428
+client: Clef 75.0% (159/212) vs expert agreement 80.2%
+   experts <=70%: 58.0% of 81
+   experts 80-90%: 79.5% of 73
+   experts 100%: 93.1% of 58
+   misses: {('sustain', 'neutral'): 22, ('change', 'neutral'): 15, ('sustain', 'change'): 7, ('neutral', 'change'): 5, ('neutral', 'sustain'): 3, ('change', 'sustain'): 1}
+counsellor: Clef 75.0% (162/216) vs expert agreement 87.5%
+   experts <=70%: 50.0% of 50
+   experts 80-90%: 64.8% of 54
+   experts 100%: 91.1% of 112
+   misses: {('giving information or advice', 'other'): 11, ('reflection', 'other'): 11, ('giving information or advice', 'question'): 9, ('reflection', 'question'): 6, ('other', 'question'): 5, ('reflection', 'giving information or advice'): 5}
+question subtype (where coarse label matched): 73.2% of 56
+reflection subtype (where coarse label matched): 39.1% of 23
+all 428: 75.0%

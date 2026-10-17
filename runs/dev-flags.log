@@ -1,0 +1,18 @@
+dev: 278 calls, 14906 labelled turns, 13884 unique turn states
+flags: 1500 unique participant texts, cached 1153, to judge 347
+  flag: no answer 0/6861 lines
+  caught 7/7: {'medical': 6, 'distress': 1}
+  any flag on other lines: 12/6854 lines, 10 unique texts, 11/278 calls
+  red on other lines: 10/6854 lines, 8 unique texts, 9/278 calls
+  dropout on other lines: 2/6854 lines, 2 unique texts, 2/278 calls
+       2 medical   My knees have been bothering me.
+       2 social    I don't feel safe walking around here.
+       1 social    No me siento segura caminando por aquí.
+       1 social    Sometimes. I don't feel safe walking around here.
+       1 medical   Honestly, rough week. My back is acting up.
+       1 dropout   Puedo dejar de comer a las 8, solo necesito un té de noche. Mi vecina empezó a hacerlo con
+       1 social    I mean, by 10 o'clock I'm starving.
+       1 social    Only 3 days. By 10 o'clock I'm starving.
+       1 dropout   I didn't do it. Water just doesn't do it for me.
+       1 social    O sea, a veces. No me siento segura caminando por aquí.
+wrote runs/dev-clef-ctx2-flags.jsonl

@@ -1,0 +1,27 @@
+validation: 1085 calls, 56038 labelled turns, 49373 unique turn states
+model=@cf/cloudflare/clef ctx=2 errors=37 p50=0.66s p95=1.62s
+  move: 28130/30240 = 93.0%
+  talk: 23433/25798 = 90.8%
+  safety: caught 13/13, false alarms 71
+    1222 talk: gold=sustain pred=neutral
+     375 talk: gold=neutral pred=change
+     342 talk: gold=neutral pred=sustain
+     290 move: gold=complex reflection pred=simple reflection
+     243 move: gold=closed question pred=open question
+     237 move: gold=simple reflection pred=complex refl  32000/49373
+  33000/49373
+  34000/49373
+  35000/49373
+  36000/49373
+  37000/49373
+  38000/49373
+  39000/49373
+  40000/49373
+  41000/49373
+  42000/49373
+  43000/49373
+  44000/49373
+  45000/49373
+irm
+wrote runs/validation-clef-ctx2.jsonl
+exit 143

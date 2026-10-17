@@ -1,0 +1,7 @@
+validation: 13769/56038 lines below 0.3 (25%); sample 600
+answered 65/600; review p50 4.3s p95 23.3s
+all: Clef alone 76.0%, Clef + review 76.7% of 600; review fixed 8, broke 4
+coach: Clef alone 80.1%, Clef + review 80.1% of 336; review fixed 3, broke 3
+participant: Clef alone 70.8%, Clef + review 72.3% of 264; review fixed 5, broke 1
+on answered lines: Clef 83.1% review 89.2%
+changes: {('neutral', 'sustain'): 5, ('simple reflection', 'complex reflection'): 2, ('complex reflection', 'simple reflection'): 2, ('open question', 'closed question'): 2, ('give information', 'simple reflection'): 1, ('neutral', 'change'): 1}

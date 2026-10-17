@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coach's Co-pilot</title>
+<style>
+:root {
+  --bg: #f6f5f2; --panel: #ffffff; --ink: #1d1d1f; --muted: #6b6b70; --line: #e4e2dc;
+  --coach: #eef3ff; --part: #f3f1ea; --accent: #2f5bd3;
+  --good: #1f8a4c; --warn: #b7791f; --bad: #c0392b; --info: #5b5bd6;
+  --q: #2f5bd3; --r: #1f8a4c; --s: #8a5cf5; --i: #b7791f; --x: #c0392b; --o: #8b8b90;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141416; --panel: #1d1d20; --ink: #ececef; --muted: #9a9aa2; --line: #2e2e33;
+    --coach: #1c2436; --part: #26241f; --accent: #7b9cff;
+    --q: #7b9cff; --r: #4cc283; --s: #b39cff; --i: #e0a84a; --x: #ff7a6b; --o: #8b8b90;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; }
+header { display: flex; align-items: center; gap: 16px; padding: 14px 20px; border-bottom: 1px solid var(--line); background: var(--panel); flex-wrap: wrap; }
+header h1 { font-size: 17px; margin: 0; letter-spacing: -0.01em; }
+header .sub { color: var(--muted); font-size: 13px; }
+.tabs { margin-left: auto; display: flex; gap: 4px; background: var(--bg); padding: 3px; border-radius: 9px; }
+.tabs button { border: 0; background: transparent; color: var(--muted); padding: 6px 12px; border-radius: 7px; font: inherit; font-size: 13px; cursor: pointer; }
+.tabs button.on { background: var(--panel); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+.banner { display: flex; color: #fff; padding: 10px 20px; font-weight: 600; align-items: center; gap: 12px; animation: in .25s ease; }
+.banner.red { background: var(--bad); }
+.banner.amber { background: var(--warn); }
+.banner small { font-weight: 400; opacity: .9; }
+.banner button { margin-left: auto; background: rgba(255,255,255,.2); color: #fff; border: 0; padding: 4px 10px; border-radius: 6px; cursor: pointer; }
+main { display: grid; grid-template-columns: 280px minmax(0, 1fr) 320px; grid-template-areas: "left convo right"; gap: 16px; padding: 16px 20px; max-width: 1500px; margin: 0 auto; }
+main > section { grid-area: convo; }
+#left { grid-area: left; }
+#right { grid-area: right; }
+@media (max-width: 1100px) { main { grid-template-columns: minmax(0, 1fr) 300px; grid-template-areas: "convo right" "left right"; } }
+@media (max-width: 760px) { main { grid-template-columns: 1fr; grid-template-areas: "convo" "right" "left"; padding: 12px 16px; } }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
+.controls { padding: 12px 14px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; border-bottom: 1px solid var(--line); }
+.controls select, .controls input[type=text] { font: inherit; font-size: 14px; padding: 7px 9px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--ink); min-width: 0; max-width: 100%; }
+.controls input[type=text] { flex: 1; min-width: 180px; }
+.btn { font: inherit; font-size: 14px; padding: 7px 13px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); cursor: pointer; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.rec { background: var(--bad); border-color: var(--bad); color: #fff; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button { border: 0; background: var(--bg); color: var(--muted); padding: 7px 11px; font: inherit; font-size: 13px; cursor: pointer; }
+.seg button.on { background: var(--accent); color: #fff; }
+.hint { color: var(--muted); font-size: 12px; }
+#transcript { height: calc(100vh - 210px); min-height: 360px; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+.ln { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 10px; align-items: start; animation: in .25s ease; }
+@keyframes in { from { opacity: 0; transform: translateY(4px); } }
+.who { font-size: 12px; color: var(--muted); padding-top: 9px; text-align: right; }
+.bubble { padding: 8px 11px; border-radius: 10px; background: var(--part); }
+.ln.coach .bubble { background: var(--coach); }
+.ln.flagged .bubble { outline: 2px solid var(--bad); }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 5px; align-items: center; font-size: 12px; }
+.chip { padding: 1px 8px; border-radius: 999px; font-weight: 600; font-size: 12px; color: #fff; background: var(--o); }
+.chip.pending { background: transparent; color: var(--muted); border: 1px dashed var(--line); font-weight: 400; }
+.chip.q { background: var(--q); } .chip.r { background: var(--r); } .chip.s { background: var(--s); }
+.chip.i { background: var(--i); } .chip.x { background: var(--x); } .chip.o { background: var(--o); }
+.chip.change { background: var(--r); } .chip.sustain { background: var(--x); } .chip.neutral { background: var(--o); }
+.chip.flag { background: var(--bad); }
+.chip.flag.amber { background: var(--warn); }
+.meta { color: var(--muted); }
+.gold.ok { color: var(--good); } .gold.no { color: var(--bad); }
+.glm { color: var(--info); }
+.interim { opacity: .55; font-style: italic; }
+aside { display: flex; flex-direction: column; gap: 16px; }
+aside .panel { padding: 14px; }
+aside h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 10px; font-weight: 600; }
+.score { display: flex; align-items: baseline; gap: 8px; }
+.score b { font-size: 44px; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.score span { color: var(--muted); }
+.bar { height: 6px; background: var(--bg); border-radius: 3px; overflow: hidden; margin: 6px 0 12px; }
+.bar i { display: block; height: 100%; background: var(--accent); transition: width .4s; }
+.metrics { display: grid; grid-template-columns: 1fr auto; gap: 6px 10px; font-size: 14px; margin: 0; }
+.metrics dd { margin: 0; font-variant-numeric: tabular-nums; font-weight: 600; text-align: right; }
+.metrics dt { color: var(--muted); }
+#cues { display: flex; flex-direction: column; gap: 10px; }
+.cue { border-left: 3px solid var(--info); padding: 6px 10px; background: var(--bg); border-radius: 0 8px 8px 0; animation: in .3s ease; }
+.cue b { display: block; font-size: 14px; }
+.cue q { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; }
+.cue .why { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 2px; }
+.empty { color: var(--muted); font-size: 13px; }
+.legend { display: flex; gap: 6px; flex-wrap: wrap; }
+.lat { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Coach's Co-pilot</h1>
+    <div class="sub">Live motivational-interviewing tagging · Clef classifies every line · GLM-5.3 reviews and coaches only when needed</div>
+  </div>
+  <div class="tabs" role="tablist">
+    <button data-mode="replay" class="on">Replay a call</button>
+    <button data-mode="live">Live mic</button>
+    <button data-mode="type">Type</button>
+  </div>
+</header>
+<div id="banners"></div>
+<main>
+  <section class="panel">
+    <div class="controls" data-for="replay">
+      <select id="callPick" aria-label="Demo call"></select>
+      <select id="speed" aria-label="Speed"><option value="1500">1×</option><option value="800" selected>2×</option><option value="350">4×</option></select>
+      <button class="btn primary" id="play">Play</button>
+      <label class="hint"><input type="checkbox" id="showGold" checked> show expert labels</label>
+    </div>
+    <div class="controls" data-for="live" hidden>
+      <div class="seg" id="liveSpeaker"><button data-s="coach" class="on">Coach</button><button data-s="participant">Participant</button></div>
+      <select id="lang" aria-label="Language"><option value="en-US">English</option><option value="es-US">Español</option></select>
+      <button class="btn" id="mic">Start mic</button>
+      <span class="hint">Space switches speaker. Best in Safari (Apple speech).</span>
+    </div>
+    <div class="controls" data-for="type" hidden>
+      <div class="seg" id="typeSpeaker"><button data-s="coach" class="on">Coach</button><button data-s="participant">Participant</button></div>
+      <input type="text" id="typeText" placeholder="Type a line and press Enter">
+      <button class="btn primary" id="send">Send</button>
+    </div>
+    <div id="transcript" aria-live="polite"></div>
+  </section>
+  <aside id="left">
+    <div class="panel">
+      <h2>Coach score</h2>
+      <div class="score"><b id="score">–</b><span>/ 100 MI fidelity</span></div>
+      <div class="bar"><i id="scoreBar" style="width:0"></i></div>
+      <dl class="metrics">
+        <dt>Open questions</dt><dd id="mOQ">–</dd>
+        <dt>Reflections per question</dt><dd id="mRQ">–</dd>
+        <dt>Complex reflections</dt><dd id="mCR">–</dd>
+        <dt>MI-consistent moves</dt><dd id="mAD">–</dd>
+        <dt>Persuade / confront</dt><dd id="mNA">–</dd>
+        <dt>Participant change talk</dt><dd id="mCT">–</dd>
+      </dl>
+    </div>
+    <div class="panel">
+      <h2>Tags</h2>
+      <div class="legend">
+        <span class="chip q">question</span><span class="chip r">reflection</span><span class="chip s">MI support</span>
+        <span class="chip i">information</span><span class="chip x">persuade / confront</span><span class="chip o">other</span>
+      </div>
+      <p class="lat" id="lat">Clef – · GLM –</p>
+    </div>
+  </aside>
+  <aside id="right">
+    <div class="panel">
+      <h2>Live cues</h2>
+      <div id="cues"><div class="empty">Quiet. Cues appear only when the coach needs one.</div></div>
+    </div>
+  </aside>
+</main>
+<script>
+const REVIEW_BELOW = 0.3;
+const CUE_GAP = 3;
+const FAMILY = {
+  "open question": "q", "closed question": "q",
+  "simple reflection": "r", "complex reflection": "r",
+  "affirm": "s", "seek collaboration": "s", "emphasize autonomy": "s", "ask permission": "s",
+  "give information": "i", "persuade": "x", "confront": "x", "other": "o",
+};
+const FLAG_TEXT = {
+  medical: ["red", "Medical concern: tell the care team today"],
+  distress: ["red", "Emotional distress: check in and connect to support today"],
+  social: ["red", "Unmet basic need: connect to a navigator today"],
+  dropout: ["amber", "Dropout risk: participant may leave the program"],
+  missed_concern: ["amber", "Coach did not route a concern the participant raised"],
+  medical_advice: ["amber", "Coach gave medical advice outside their role"],
+};
+
+const $ = (id) => document.getElementById(id);
+let lines = [];
+let mode = "replay";
+let session = 0;
+let lastCueAt = -99;
+const lat = { clef: [], glm: [] };
+
+async function api(path, body) {
+  const r = await fetch(path, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
+  return r.json();
+}
+
+function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+
+function chipFor(tag, speaker) {
+  const cls = speaker === "coach" ? (FAMILY[tag] || "o") : tag;
+  return `<span class="chip ${cls}">${esc(tag)}</span>`;
+}
+
+function render(l) {
+  const conf = l.confidence == null ? "" : `<span class="meta">${Math.round(l.confidence * 100)}%</span>`;
+  const tag = l.tag ? chipFor(l.tag, l.speaker) : `<span class="chip pending">tagging…</span>`;
+  const glm = l.reviewing ? `<span class="glm">GLM reviewing…</span>`
+    : l.reviewed ? `<span class="glm" title="${esc(l.reason || "")}">${l.reviewed === l.clefTag ? "GLM agrees" : `GLM changed from ${esc(l.clefTag)}`}</span>` : "";
+  const flag = l.flag && l.flag !== "none" ? `<span class="chip flag ${(FLAG_TEXT[l.flag] || ["red"])[0]}">${esc(l.flag.replace("_", " "))}</span>` : "";
+  const gold = l.gold && l.tag && $("showGold").checked && mode === "replay"
+    ? `<span class="gold ${l.gold === l.tag ? "ok" : "no"}">${l.gold === l.tag ? "✓ expert" : "expert: " + esc(l.gold)}</span>` : "";
+  l.el.className = `ln ${l.speaker}${flag ? " flagged" : ""}`;
+  l.el.innerHTML = `<div class="who">${l.speaker === "coach" ? "Coach" : "Participant"}</div>
+    <div><div class="bubble">${esc(l.text)}</div><div class="tags">${tag}${conf}${flag}${glm}${gold}</div></div>`;
+}
+
+async function addLine(speaker, text, gold) {
+  const mine = session;
+  const prev = lines.slice(-2).map(({ speaker, text, flag }) => ({ speaker, text, flag: flag || undefined }));
+  const l = { speaker, text, gold, el: document.createElement("div") };
+  lines.push(l);
+  render(l);
+  $("transcript").appendChild(l.el);
+  $("transcript").scrollTop = $("transcript").scrollHeight;
+  const t0 = performance.now();
+  const r = await api("/api/turn", { line: { speaker, text }, previous: prev });
+  if (mine !== session) return;
+  lat.clef.push(performance.now() - t0);
+  Object.assign(l, { tag: r.tag, clefTag: r.tag, confidence: r.confidence, flag: r.flag });
+  render(l);
+  if (l.flag && l.flag !== "none") showBanner(l);
+  updateScore();
+  checkTriggers(lines.indexOf(l));
+  showLatency();
+  if (r.confidence != null && r.confidence < REVIEW_BELOW) {
+    l.reviewing = true; render(l);
+    const g0 = performance.now();
+    const v = await api("/api/review", { line: { speaker, text }, previous: prev, probabilities: r.probabilities });
+    if (mine !== session) return;
+    lat.glm.push(performance.now() - g0);
+    l.reviewing = false;
+    if (v.label) { l.reviewed = v.label; l.reason = v.reason; l.tag = v.label; }
+    render(l);
+    updateScore();
+    showLatency();
+  }
+}
+
+function showLatency() {
+  const med = (a) => a.length ? Math.round([...a].sort((x, y) => x - y)[Math.floor(a.length / 2)]) + " ms" : "–";
+  $("lat").textContent = `Clef median ${med(lat.clef)} · GLM review median ${med(lat.glm)} (${lat.glm.length} of ${lat.clef.length} lines reviewed)`;
+}
+
+function showBanner(l) {
+  const [level, text] = FLAG_TEXT[l.flag] || ["red", "Needs attention"];
+  const b = document.createElement("div");
+  b.className = `banner ${level}`;
+  b.setAttribute("role", "alert");
+  b.innerHTML = `<span>⚠ ${esc(text)} <small>“${esc(l.text.slice(0, 120))}”</small></span><button>Dismiss</button>`;
+  b.querySelector("button").onclick = () => b.remove();
+  $("banners").prepend(b);
+  while ($("banners").children.length > 3) $("banners").lastChild.remove();
+}
+
+function updateScore() {
+  const c = lines.filter((l) => l.speaker === "coach" && l.tag).map((l) => l.tag);
+  const p = lines.filter((l) => l.speaker === "participant" && l.tag).map((l) => l.tag);
+  const n = (t) => c.filter((x) => x === t).length;
+  const oq = n("open question"), cq = n("closed question"), sr = n("simple reflection"), cr = n("complex reflection");
+  const ad = n("affirm") + n("seek collaboration") + n("emphasize autonomy") + n("ask permission");
+  const na = n("persuade") + n("confront");
+  const q = oq + cq, r = sr + cr;
+  const ch = p.filter((x) => x === "change").length, su = p.filter((x) => x === "sustain").length;
+  const pct = (a, b) => (b ? Math.round((a / b) * 100) + "%" : "–");
+  $("mOQ").textContent = pct(oq, q);
+  $("mRQ").textContent = q ? (r / q).toFixed(1) : "–";
+  $("mCR").textContent = pct(cr, r);
+  $("mAD").textContent = ad;
+  $("mNA").textContent = na;
+  $("mCT").textContent = pct(ch, ch + su);
+  if (c.length < 4) return;
+  // MITI-style targets: 2 reflections per question, 40% complex reflections, 50% open questions;
+  // persuading or confronting costs points.
+  const s = 30 * Math.min((q ? r / q : r ? 2 : 0) / 2, 1) + 20 * Math.min((r ? cr / r : 0) / 0.4, 1)
+    + 20 * Math.min((q ? oq / q : 0) / 0.5, 1) + 30 * (ad + na ? ad / (ad + na) : 1);
+  $("score").textContent = Math.round(s);
+  $("scoreBar").style.width = Math.round(s) + "%";
+  $("scoreBar").style.background = s >= 70 ? "var(--good)" : s >= 50 ? "var(--warn)" : "var(--bad)";
+}
+
+function checkTriggers(i) {
+  const l = lines[i];
+  let trigger = null;
+  if (l.flag === "missed_concern") trigger = "The participant raised a concern and the coach moved on without routing it. Help the coach go back to it now.";
+  else if (l.flag === "medical_advice") trigger = "The coach just gave medical advice outside their role. Help the coach walk it back and refer to the care team.";
+  else if (l.flag === "dropout") trigger = "The participant is talking about leaving the program. Help the coach explore it without pressure.";
+  else if (l.flag && l.flag !== "none") trigger = `Participant raised a ${l.flag} concern. Help the coach respond with care and connect them to the right person today.`;
+  else if (l.speaker === "coach") {
+    const coach = lines.slice(0, i + 1).filter((x) => x.speaker === "coach" && x.tag);
+    const last = coach.slice(-4).map((x) => x.tag);
+    const before = lines[i - 1];
+    if (l.tag === "confront") trigger = "The coach just confronted the participant.";
+    else if (l.tag === "persuade" && !coach.slice(-3, -1).some((x) => x.tag === "ask permission")) trigger = "The coach just told the participant what to do without asking permission.";
+    else if (before && before.speaker === "participant" && before.tag === "change" && FAMILY[l.tag] !== "r" && l.tag !== "affirm") trigger = "The participant voiced change talk and the coach did not reflect or affirm it.";
+    else if (last.length === 4 && last.every((t) => FAMILY[t] === "q")) trigger = "The coach has asked four questions in a row without a reflection.";
+    else if (last.length >= 3 && last.slice(-3).every((t) => t === "closed question")) trigger = "Three closed questions in a row.";
+    if (trigger && lines.filter((x) => x.speaker === "coach").length - lastCueAt < CUE_GAP) trigger = null;
+  }
+  if (!trigger) return;
+  lastCueAt = lines.filter((x) => x.speaker === "coach").length;
+  const mine = session;
+  const recent = lines.slice(Math.max(0, i - 7), i + 1).map(({ speaker, text, tag }) => ({ speaker, text, tag }));
+  api("/api/cue", { trigger, recent }).then((c) => {
+    if (mine !== session || !c.cue) return;
+    const box = $("cues");
+    box.querySelector(".empty")?.remove();
+    const d = document.createElement("div");
+    d.className = "cue";
+    d.innerHTML = `<div class="why">${esc(trigger)}</div><b>${esc(c.cue)}</b>${c.say ? `<q>${esc(c.say)}</q>` : ""}`;
+    box.prepend(d);
+    while (box.children.length > 4) box.lastChild.remove();
+  });
+}
+
+function reset() {
+  session++;
+  lines = []; lastCueAt = -99;
+  $("transcript").innerHTML = "";
+  $("cues").innerHTML = `<div class="empty">Quiet. Cues appear only when the coach needs one.</div>`;
+  $("banners").innerHTML = "";
+  for (const id of ["mOQ", "mRQ", "mCR", "mAD", "mNA", "mCT", "score"]) $(id).textContent = "–";
+  $("scoreBar").style.width = "0";
+}
+
+document.querySelectorAll(".tabs button").forEach((b) => b.onclick = () => {
+  stopAll();
+  mode = b.dataset.mode;
+  document.querySelectorAll(".tabs button").forEach((x) => x.classList.toggle("on", x === b));
+  document.querySelectorAll("[data-for]").forEach((c) => c.hidden = c.dataset.for !== mode);
+  reset();
+});
+
+let calls = [];
+let playing = false;
+fetch("/demo-calls.json").then((r) => r.json()).then((d) => {
+  calls = d.calls;
+  $("callPick").innerHTML = calls.map((c, i) =>
+    `<option value="${i}">${c.demo_tag === "safety" ? "⚠ " : c.demo_tag === "rough coach" ? "△ " : ""}${esc(c.call_id)} · ${esc(c.language)} · ${esc(c.goal_topic)} · ${esc(c.demo_tag)}</option>`).join("");
+});
+$("play").onclick = async () => {
+  if (playing) return stopAll();
+  reset();
+  playing = true; $("play").textContent = "Stop";
+  const mine = session;
+  const call = calls[+$("callPick").value];
+  for (const ln of call.lines) {
+    if (!playing || mine !== session) break;
+    addLine(ln.speaker, ln.text, ln.speaker === "coach" ? ln.coach_move : ln.participant_talk);
+    await new Promise((r) => setTimeout(r, +$("speed").value));
+  }
+  if (mine === session) { playing = false; $("play").textContent = "Play"; }
+};
+$("showGold").onchange = () => lines.forEach(render);
+
+function setSeg(id, s) { document.querySelectorAll(`#${id} button`).forEach((b) => b.classList.toggle("on", b.dataset.s === s)); }
+function segment(id, cb) {
+  document.querySelectorAll(`#${id} button`).forEach((b) => b.onclick = () => { setSeg(id, b.dataset.s); cb(b.dataset.s); });
+}
+
+let typeSpeaker = "coach";
+segment("typeSpeaker", (s) => typeSpeaker = s);
+const sendTyped = () => {
+  const t = $("typeText").value.trim();
+  if (!t) return;
+  addLine(typeSpeaker, t);
+  $("typeText").value = "";
+  typeSpeaker = typeSpeaker === "coach" ? "participant" : "coach";
+  setSeg("typeSpeaker", typeSpeaker);
+};
+$("send").onclick = sendTyped;
+$("typeText").onkeydown = (e) => { if (e.key === "Enter") sendTyped(); };
+
+// Live mic uses the browser's speech recognition: Apple's engine in Safari.
+let liveSpeaker = "coach";
+let rec = null;
+let interim = null;
+segment("liveSpeaker", (s) => liveSpeaker = s);
+document.addEventListener("keydown", (e) => {
+  if (mode !== "live" || e.code !== "Space" || e.target.tagName === "INPUT") return;
+  e.preventDefault();
+  liveSpeaker = liveSpeaker === "coach" ? "participant" : "coach";
+  setSeg("liveSpeaker", liveSpeaker);
+});
+$("mic").onclick = () => {
+  if (rec) return stopAll();
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) { alert("This browser has no speech recognition. Use Safari or Chrome, or the Type tab."); return; }
+  rec = new SR();
+  rec.lang = $("lang").value;
+  rec.continuous = true;
+  rec.interimResults = true;
+  rec.onresult = (e) => {
+    for (let k = e.resultIndex; k < e.results.length; k++) {
+      const res = e.results[k];
+      const text = res[0].transcript.trim();
+      if (res.isFinal) {
+        interim?.remove(); interim = null;
+        if (text) addLine(liveSpeaker, text);
+      } else {
+        if (!interim) { interim = document.createElement("div"); $("transcript").appendChild(interim); }
+        interim.className = `ln ${liveSpeaker} interim`;
+        interim.innerHTML = `<div class="who">${liveSpeaker === "coach" ? "Coach" : "Participant"}</div><div class="bubble">${esc(text)}</div>`;
+        $("transcript").scrollTop = $("transcript").scrollHeight;
+      }
+    }
+  };
+  rec.onend = () => { if (rec) rec.start(); };
+  rec.start();
+  $("mic").textContent = "Stop mic"; $("mic").classList.add("rec");
+};
+
+function stopAll() {
+  playing = false; $("play").textContent = "Play";
+  if (rec) { const r = rec; rec = null; r.onend = null; r.stop(); }
+  $("mic").textContent = "Start mic"; $("mic").classList.remove("rec");
+}
+</script>
+</body>
+</html>

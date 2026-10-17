@@ -1,0 +1,600 @@
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":"complex reflection","final":"complex reflection","secs":4.44140172}
+{"speaker":"coach","gold":"other","clef":"other","review":"other","final":"other","secs":22.0268850327}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":"sustain","final":"sustain","secs":23.3014850616}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":"neutral","final":"neutral","secs":3.5447621346}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":"sustain","final":"sustain","secs":1.6980800629}
+{"speaker":"coach","gold":"simple reflection","clef":"complex reflection","review":"simple reflection","final":"simple reflection","secs":27.1280150414}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":"closed question","final":"closed question","secs":1.6980950832}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":"closed question","final":"closed question","secs":4.1131589413}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":"neutral","final":"neutral","secs":20.9412829876}
+{"speaker":"coach","gold":"other","clef":"other","review":"other","final":"other","secs":3.1802060604}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":"simple reflection","final":"simple reflection","secs":3.1233022213}
+{"speaker":"coach","gold":"other","clef":"other","review":"other","final":"other","secs":0.8627209663}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":"simple reflection","final":"simple reflection","secs":1.5607790947}
+{"speaker":"participant","gold":"neutral","clef":"change","review":"change","final":"change","secs":21.2252306938}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":"complex reflection","final":"complex reflection","secs":23.2459127903}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":"simple reflection","final":"simple reflection","secs":4.9764971733}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":"sustain","final":"sustain","secs":2.4441809654}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":"closed question","final":"closed question","secs":1.2186901569}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":"simple reflection","final":"simple reflection","secs":4.3021149635}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":"sustain","final":"sustain","secs":2.1639778614}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":"complex reflection","final":"complex reflection","secs":17.8912849426}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":"simple reflection","final":"simple reflection","secs":8.3170230389}
+{"speaker":"coach","gold":"closed question","clef":"open question","review":"closed question","final":"closed question","secs":12.5259969234}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":"sustain","final":"sustain","secs":8.2289400101}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":"simple reflection","final":"simple reflection","secs":14.257422924}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":"sustain","final":"sustain","secs":8.4405887127}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":"closed question","final":"closed question","secs":8.5619699955}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":"sustain","final":"sustain","secs":9.3820500374}
+{"speaker":"participant","gold":"neutral","clef":"change","review":"change","final":"change","secs":9.8086371422}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":"closed question","final":"closed question","secs":9.6033830643}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.8901801109}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":1.0152308941}
+{"speaker":"participant","gold":"neutral","clef":"sustain","review":null,"final":"sustain","secs":0.9691410065}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.8827769756}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":"sustain","final":"sustain","secs":5.5908248425}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9871308804}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9650878906}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":0.9355177879}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.0718340874}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9318461418}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9041669369}
+{"speaker":"coach","gold":"other","clef":"other","review":"other","final":"other","secs":2.9429969788}
+{"speaker":"coach","gold":"complex reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9247779846}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9070651531}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9345450401}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":0.9195129871}
+{"speaker":"participant","gold":"neutral","clef":"sustain","review":null,"final":"sustain","secs":0.9273452759}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9268028736}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9055428505}
+{"speaker":"participant","gold":"neutral","clef":"sustain","review":null,"final":"sustain","secs":0.951646328}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.0936059952}
+{"speaker":"coach","gold":"complex reflection","clef":"affirm","review":null,"final":"affirm","secs":0.9727449417}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":0.9367079735}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9671018124}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.8661687374}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":1.1817469597}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.3034021854}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.0648431778}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":"sustain","final":"sustain","secs":2.3463039398}
+{"speaker":"coach","gold":"complex reflection","clef":"give information","review":null,"final":"give information","secs":1.0322699547}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9891929626}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9565968513}
+{"speaker":"participant","gold":"change","clef":"neutral","review":null,"final":"neutral","secs":0.9345078468}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.012018919}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.012570858}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9567298889}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9911463261}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9906010628}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.960796833}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9182770252}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.8857581615}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9154551029}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.0367159843}
+{"speaker":"coach","gold":"persuade","clef":"persuade","review":null,"final":"persuade","secs":0.9150731564}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.907087326}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.8715519905}
+{"speaker":"coach","gold":"simple reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9226460457}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":"simple reflection","final":"simple reflection","secs":2.1878459454}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.8883781433}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9391469955}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9139711857}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.8952755928}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.8603541851}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.0874431133}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":1.0673699379}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9487261772}
+{"speaker":"coach","gold":"simple reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.0186889172}
+{"speaker":"participant","gold":"neutral","clef":"change","review":null,"final":"change","secs":1.0132799149}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9705820084}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":0.9532561302}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9024231434}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":0.8551254272}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9183969498}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9362390041}
+{"speaker":"participant","gold":"neutral","clef":"sustain","review":null,"final":"sustain","secs":0.9224550724}
+{"speaker":"coach","gold":"simple reflection","clef":"emphasize autonomy","review":null,"final":"emphasize autonomy","secs":0.9002540112}
+{"speaker":"participant","gold":"neutral","clef":"sustain","review":null,"final":"sustain","secs":0.8901460171}
+{"speaker":"coach","gold":"persuade","clef":"persuade","review":null,"final":"persuade","secs":0.9300920963}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9655323029}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9955279827}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":0.8882260323}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":"complex reflection","final":"complex reflection","secs":19.8339571953}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":0.8778660297}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9333651066}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.8662860394}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9767701626}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.8567380905}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.8813989162}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9400010109}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9082529545}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":0.9030559063}
+{"speaker":"participant","gold":"change","clef":"neutral","review":null,"final":"neutral","secs":0.8770060539}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.8739178181}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.8929860592}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":0.8998248577}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9345440865}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.8881659508}
+{"speaker":"coach","gold":"simple reflection","clef":"closed question","review":null,"final":"closed question","secs":0.9225759506}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.915047884}
+{"speaker":"coach","gold":"affirm","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9188029766}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.845593214}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9219462872}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.8648347855}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":"complex reflection","final":"complex reflection","secs":18.1489608288}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":0.963963747}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":0.9233622551}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.8948738575}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.8844120502}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9116671085}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9393539429}
+{"speaker":"participant","gold":"neutral","clef":"sustain","review":null,"final":"sustain","secs":0.9024727345}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.946944952}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":0.8907499313}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.8560519218}
+{"speaker":"participant","gold":"neutral","clef":"sustain","review":null,"final":"sustain","secs":0.8893020153}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9867699146}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9204599857}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":0.8630650043}
+{"speaker":"participant","gold":"sustain","clef":"change","review":null,"final":"change","secs":0.8893210888}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":0.8530321121}
+{"speaker":"coach","gold":"affirm","clef":"affirm","review":null,"final":"affirm","secs":0.9383218288}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":"sustain","final":"sustain","secs":15.1369020939}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9012820721}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9058001041}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.924986124}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9723711014}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.88803792}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9974160194}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9143610001}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9927270412}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9536347389}
+{"speaker":"coach","gold":"complex reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.2086138725}
+{"speaker":"coach","gold":"open question","clef":"open question","review":null,"final":"open question","secs":0.941740036}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":1.1946771145}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9452621937}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":0.9148352146}
+{"speaker":"coach","gold":"closed question","clef":"open question","review":null,"final":"open question","secs":1.2566440105}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.0336928368}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.2079091072}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":"neutral","final":"neutral","secs":2.4506750107}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":0.9565992355}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.025439024}
+{"speaker":"participant","gold":"neutral","clef":"change","review":null,"final":"change","secs":1.1478710175}
+{"speaker":"participant","gold":"neutral","clef":"sustain","review":null,"final":"sustain","secs":0.9372780323}
+{"speaker":"coach","gold":"simple reflection","clef":"affirm","review":null,"final":"affirm","secs":1.1692690849}
+{"speaker":"participant","gold":"neutral","clef":"change","review":null,"final":"change","secs":1.1124899387}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9285240173}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.2058508396}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9795899391}
+{"speaker":"coach","gold":"simple reflection","clef":"emphasize autonomy","review":null,"final":"emphasize autonomy","secs":1.003549099}
+{"speaker":"participant","gold":"neutral","clef":"sustain","review":null,"final":"sustain","secs":1.0068421364}
+{"speaker":"participant","gold":"sustain","clef":"change","review":null,"final":"change","secs":1.0041909218}
+{"speaker":"coach","gold":"other","clef":"other","review":"other","final":"other","secs":26.5957491398}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":0.9543728828}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.0209317207}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":1.08390975}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9111299515}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":0.8837180138}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.2430539131}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.1235342026}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":1.0292720795}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":0.9284660816}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9594669342}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9269423485}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9934771061}
+{"speaker":"participant","gold":"change","clef":"neutral","review":null,"final":"neutral","secs":0.9949040413}
+{"speaker":"participant","gold":"change","clef":"change","review":"change","final":"change","secs":2.2345609665}
+{"speaker":"coach","gold":"simple reflection","clef":"affirm","review":null,"final":"affirm","secs":0.9368288517}
+{"speaker":"coach","gold":"simple reflection","clef":"affirm","review":null,"final":"affirm","secs":1.2348959446}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.0881550312}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.8804030418}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9708709717}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":1.2397119999}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":0.9923210144}
+{"speaker":"participant","gold":"change","clef":"neutral","review":null,"final":"neutral","secs":0.9904360771}
+{"speaker":"coach","gold":"closed question","clef":"open question","review":null,"final":"open question","secs":0.9469559193}
+{"speaker":"participant","gold":"change","clef":"neutral","review":null,"final":"neutral","secs":1.1087973118}
+{"speaker":"participant","gold":"change","clef":"change","review":"change","final":"change","secs":25.5520298481}
+{"speaker":"coach","gold":"other","clef":"closed question","review":null,"final":"closed question","secs":1.1285870075}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.154102087}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.8947799206}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.1214570999}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.0143578053}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.3873310089}
+{"speaker":"coach","gold":"affirm","clef":"affirm","review":null,"final":"affirm","secs":0.974383831}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.1456210613}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":1.1450812817}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":1.0725250244}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.1092569828}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":"neutral","final":"neutral","secs":23.0397450924}
+{"speaker":"participant","gold":"neutral","clef":"sustain","review":null,"final":"sustain","secs":1.126844883}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.9764859676}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":2.042812109}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.92501688}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.6837239265}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.5728871822}
+{"speaker":"coach","gold":"complex reflection","clef":"give information","review":"simple reflection","final":"simple reflection","secs":22.6862359047}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9691662788}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9528009892}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":0.9028999805}
+{"speaker":"participant","gold":"neutral","clef":"change","review":null,"final":"change","secs":1.0106191635}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.0734579563}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":1.0342988968}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":1.0344460011}
+{"speaker":"coach","gold":"simple reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.0176708698}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.118242979}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.1045670509}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":1.0655710697}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.8835730553}
+{"speaker":"participant","gold":"neutral","clef":"change","review":null,"final":"change","secs":1.2181413174}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":1.2184100151}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.2051346302}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":"sustain","final":"sustain","secs":19.3731300831}
+{"speaker":"coach","gold":"closed question","clef":"open question","review":null,"final":"open question","secs":1.0047528744}
+{"speaker":"participant","gold":"change","clef":"neutral","review":null,"final":"neutral","secs":0.9674129486}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9091567993}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9471588135}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":0.9254989624}
+{"speaker":"participant","gold":"neutral","clef":"sustain","review":null,"final":"sustain","secs":1.1084096432}
+{"speaker":"coach","gold":"other","clef":"other","review":"other","final":"other","secs":17.6953611374}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.0579111576}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9392359257}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":0.9672579765}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":1.0548098087}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9396240711}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.1387031078}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":"sustain","final":"sustain","secs":9.364377737}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":1.1810781956}
+{"speaker":"participant","gold":"neutral","clef":"change","review":null,"final":"change","secs":0.9723410606}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.8789207935}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":"sustain","final":"sustain","secs":2.5690932274}
+{"speaker":"coach","gold":"other","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9291629791}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":"neutral","final":"neutral","secs":3.3746879101}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9650499821}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.0446982384}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9654238224}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.1280629635}
+{"speaker":"participant","gold":"change","clef":"change","review":"change","final":"change","secs":5.8687119484}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.0282628536}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.1370871067}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":1.1260941029}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.2125451565}
+{"speaker":"coach","gold":"complex reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.157886982}
+{"speaker":"coach","gold":"affirm","clef":"affirm","review":null,"final":"affirm","secs":0.9343709946}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":0.9088540077}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9157412052}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":"neutral","final":"neutral","secs":1.8511779308}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.8622200489}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9688658714}
+{"speaker":"coach","gold":"complex reflection","clef":"give information","review":null,"final":"give information","secs":0.8667657375}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.8489060402}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.0292499065}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.8746497631}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9511089325}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.8766160011}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.8884730339}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.0601329803}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.1206152439}
+{"speaker":"participant","gold":"sustain","clef":"change","review":null,"final":"change","secs":1.1055212021}
+{"speaker":"coach","gold":"affirm","clef":"affirm","review":null,"final":"affirm","secs":1.0270240307}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.907597065}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":0.9436349869}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":"neutral","final":"neutral","secs":1.4608411789}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.1080150604}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9826641083}
+{"speaker":"coach","gold":"complex reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.1326048374}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":1.1322979927}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":1.1315991879}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":1.4578387737}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.0446710587}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9018130302}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.0027320385}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9580407143}
+{"speaker":"coach","gold":"persuade","clef":"emphasize autonomy","review":null,"final":"emphasize autonomy","secs":0.886477232}
+{"speaker":"coach","gold":"closed question","clef":"open question","review":null,"final":"open question","secs":0.9485251904}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.8862979412}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.8459887505}
+{"speaker":"coach","gold":"persuade","clef":"persuade","review":null,"final":"persuade","secs":0.9282169342}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":0.8690159321}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.8666040897}
+{"speaker":"coach","gold":"simple reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9484128952}
+{"speaker":"participant","gold":"neutral","clef":"sustain","review":null,"final":"sustain","secs":0.9788739681}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9784200191}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9164526463}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9312310219}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.828548193}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.8395471573}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":"complex reflection","final":"complex reflection","secs":2.4210729599}
+{"speaker":"coach","gold":"affirm","clef":"affirm","review":null,"final":"affirm","secs":0.9605529308}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9489130974}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9783799648}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9213130474}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.940541029}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9134311676}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.8658850193}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9170470238}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.8976268768}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9179189205}
+{"speaker":"coach","gold":"other","clef":"closed question","review":null,"final":"closed question","secs":0.8916218281}
+{"speaker":"participant","gold":"neutral","clef":"change","review":null,"final":"change","secs":0.9392251968}
+{"speaker":"coach","gold":"affirm","clef":"affirm","review":null,"final":"affirm","secs":0.8868348598}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.8993508816}
+{"speaker":"coach","gold":"affirm","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9409201145}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9376850128}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9558358192}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.915545702}
+{"speaker":"coach","gold":"closed question","clef":"open question","review":null,"final":"open question","secs":0.9046809673}
+{"speaker":"coach","gold":"persuade","clef":"persuade","review":null,"final":"persuade","secs":0.9201440811}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.8216660023}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.8882241249}
+{"speaker":"coach","gold":"other","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.966394186}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":0.9725728035}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9615831375}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9009270668}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.8948152065}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":"simple reflection","final":"simple reflection","secs":2.1013720036}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":0.8476629257}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":0.9241735935}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.8996007442}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.8782839775}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9156761169}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9703159332}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9312579632}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9358830452}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":0.8986968994}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.041862011}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":0.9774971008}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9368858337}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9678549767}
+{"speaker":"coach","gold":"other","clef":"open question","review":null,"final":"open question","secs":0.8945808411}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9778182507}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9707717896}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.8792698383}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9355792999}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9170341492}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9165568352}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9228088856}
+{"speaker":"participant","gold":"change","clef":"change","review":"change","final":"change","secs":2.0317897797}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9433672428}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9282560349}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9384560585}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":0.9549541473}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.952725172}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.5030918121}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.6651518345}
+{"speaker":"coach","gold":"closed question","clef":"open question","review":null,"final":"open question","secs":0.9455199242}
+{"speaker":"participant","gold":"neutral","clef":"change","review":null,"final":"change","secs":0.923760891}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.0381228924}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":0.903097868}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.8510150909}
+{"speaker":"participant","gold":"sustain","clef":"change","review":null,"final":"change","secs":0.9255468845}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":1.0045959949}
+{"speaker":"coach","gold":"other","clef":"open question","review":null,"final":"open question","secs":0.9155471325}
+{"speaker":"coach","gold":"persuade","clef":"persuade","review":null,"final":"persuade","secs":1.0915808678}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":0.9978868961}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9179272652}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.8745322227}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":0.8479189873}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":"neutral","final":"neutral","secs":2.1338329315}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.0154497623}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":1.003786087}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.0140070915}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.0102009773}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9277920723}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":0.9018831253}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9221792221}
+{"speaker":"coach","gold":"complex reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.1190237999}
+{"speaker":"coach","gold":"simple reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.0501272678}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.8490798473}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9216208458}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.8684248924}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9122340679}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":0.9163730145}
+{"speaker":"participant","gold":"sustain","clef":"change","review":null,"final":"change","secs":1.0149731636}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.014220953}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.0111012459}
+{"speaker":"coach","gold":"complex reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9351201057}
+{"speaker":"participant","gold":"neutral","clef":"change","review":null,"final":"change","secs":0.9813001156}
+{"speaker":"participant","gold":"neutral","clef":"change","review":null,"final":"change","secs":0.9786667824}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.933852911}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":0.8962597847}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.979049921}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":1.0228869915}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9953951836}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":1.0302538872}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9758858681}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":"change","final":"change","secs":4.1327059269}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.0747909546}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":1.1377029419}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9851670265}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9683299065}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9854121208}
+{"speaker":"coach","gold":"simple reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.875015974}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":0.9005801678}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9318449497}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9349529743}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":1.0997617245}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.1002368927}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":1.0993099213}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":1.0559318066}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.0101919174}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":1.0780117512}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":1.003538847}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":"closed question","final":"closed question","secs":3.3668141365}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.1111369133}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":1.2455801964}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.087528944}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.0872881413}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":1.0365719795}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9229211807}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.0576679707}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9663062096}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.0346591473}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.0091221333}
+{"speaker":"coach","gold":"persuade","clef":"persuade","review":null,"final":"persuade","secs":0.9004402161}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9002270699}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.8976380825}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.003426075}
+{"speaker":"coach","gold":"closed question","clef":"open question","review":null,"final":"open question","secs":0.9508869648}
+{"speaker":"coach","gold":"simple reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.0491471291}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":1.1865870953}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.8780181408}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.8755869865}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.0641999245}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":0.9307370186}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9303359985}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":"neutral","final":"neutral","secs":1.9795718193}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.8577060699}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":1.1357533932}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.0273926258}
+{"speaker":"participant","gold":"sustain","clef":"change","review":null,"final":"change","secs":0.9985501766}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9651331902}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9644010067}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.0108380318}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.0106291771}
+{"speaker":"participant","gold":"neutral","clef":"change","review":null,"final":"change","secs":1.0708589554}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":1.028113842}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.0276539326}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.0273742676}
+{"speaker":"coach","gold":"other","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.0945169926}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.8815221786}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.0447871685}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9787578583}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.2543199062}
+{"speaker":"participant","gold":"change","clef":"change","review":"change","final":"change","secs":2.2464902401}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.204061985}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":1.2040040493}
+{"speaker":"participant","gold":"change","clef":"neutral","review":null,"final":"neutral","secs":0.984500885}
+{"speaker":"coach","gold":"closed question","clef":"open question","review":null,"final":"open question","secs":0.9815380573}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9795498848}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":0.8503727913}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.8519601822}
+{"speaker":"participant","gold":"sustain","clef":"change","review":null,"final":"change","secs":0.858175993}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":0.8586392403}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":1.0085501671}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9760570526}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":1.187625885}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.006868124}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.008259058}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9825851917}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.1011061668}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.8474357128}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.3391959667}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":1.3193509579}
+{"speaker":"participant","gold":"neutral","clef":"change","review":null,"final":"change","secs":1.0379767418}
+{"speaker":"coach","gold":"complex reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9817967415}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.8624470234}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":"sustain","final":"sustain","secs":1.6934211254}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.0298039913}
+{"speaker":"coach","gold":"simple reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9593219757}
+{"speaker":"coach","gold":"complex reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.0619280338}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9378437996}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.937153101}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9197092056}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.0558400154}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.8921289444}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.8921179771}
+{"speaker":"coach","gold":"other","clef":"open question","review":null,"final":"open question","secs":0.8798599243}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.0060348511}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":0.9183871746}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9208021164}
+{"speaker":"coach","gold":"complex reflection","clef":"affirm","review":null,"final":"affirm","secs":0.9879968166}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9516649246}
+{"speaker":"coach","gold":"simple reflection","clef":"affirm","review":null,"final":"affirm","secs":0.9166982174}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":0.91664505}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9592356682}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9161877632}
+{"speaker":"participant","gold":"neutral","clef":"change","review":null,"final":"change","secs":0.965941906}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9315137863}
+{"speaker":"coach","gold":"simple reflection","clef":"affirm","review":null,"final":"affirm","secs":0.9129121304}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":"sustain","final":"sustain","secs":9.9113628864}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.2147388458}
+{"speaker":"coach","gold":"complex reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.2169656754}
+{"speaker":"coach","gold":"simple reflection","clef":"affirm","review":null,"final":"affirm","secs":0.9472780228}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9505681992}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.1750767231}
+{"speaker":"coach","gold":"complex reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.1675021648}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.1245560646}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9145920277}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9204471111}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.0282349586}
+{"speaker":"coach","gold":"complex reflection","clef":"affirm","review":null,"final":"affirm","secs":1.0195441246}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":1.0096700191}
+{"speaker":"coach","gold":"closed question","clef":"open question","review":null,"final":"open question","secs":0.9018571377}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.8851540089}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9850850105}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9650497437}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":0.9228239059}
+{"speaker":"participant","gold":"sustain","clef":"change","review":null,"final":"change","secs":1.0754680634}
+{"speaker":"coach","gold":"simple reflection","clef":"closed question","review":null,"final":"closed question","secs":0.9233059883}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9160480499}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.9091629982}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.8572690487}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":0.9052510262}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":"complex reflection","final":"complex reflection","secs":2.0747961998}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9097390175}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":1.0013277531}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9200050831}
+{"speaker":"coach","gold":"closed question","clef":"open question","review":null,"final":"open question","secs":1.0465359688}
+{"speaker":"coach","gold":"simple reflection","clef":"emphasize autonomy","review":null,"final":"emphasize autonomy","secs":0.9153306484}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9662799835}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.8653488159}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.8920109272}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.8980097771}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.8252370358}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9261639118}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.8756999969}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.8573610783}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.8462610245}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.8421070576}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.8566739559}
+{"speaker":"coach","gold":"affirm","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9844720364}
+{"speaker":"coach","gold":"affirm","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9662358761}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.8565530777}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.0243649483}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":1.0870199203}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.0082519054}
+{"speaker":"participant","gold":"neutral","clef":"change","review":null,"final":"change","secs":0.9702777863}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":"neutral","final":"neutral","secs":3.5128438473}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":0.8691871166}
+{"speaker":"coach","gold":"complex reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.9930260181}
+{"speaker":"coach","gold":"simple reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.0228738785}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9325330257}
+{"speaker":"coach","gold":"affirm","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.932505846}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":0.9316122532}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.0442349911}
+{"speaker":"coach","gold":"closed question","clef":"open question","review":null,"final":"open question","secs":0.8711311817}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.076925993}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9990839958}
+{"speaker":"participant","gold":"change","clef":"change","review":null,"final":"change","secs":0.9988029003}
+{"speaker":"coach","gold":"complex reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":0.8605031967}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":1.0421202183}
+{"speaker":"participant","gold":"neutral","clef":"change","review":null,"final":"change","secs":1.0973641872}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9018051624}
+{"speaker":"participant","gold":"neutral","clef":"change","review":null,"final":"change","secs":0.9067931175}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.0691998005}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":0.9962229729}
+{"speaker":"coach","gold":"closed question","clef":"open question","review":"closed question","final":"closed question","secs":2.6760849953}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.081140995}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9049191475}
+{"speaker":"coach","gold":"simple reflection","clef":"affirm","review":null,"final":"affirm","secs":0.9787068367}
+{"speaker":"coach","gold":"closed question","clef":"closed question","review":null,"final":"closed question","secs":0.9650130272}
+{"speaker":"participant","gold":"sustain","clef":"neutral","review":null,"final":"neutral","secs":1.1890439987}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.0264430046}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.0219190121}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.166990757}
+{"speaker":"coach","gold":"simple reflection","clef":"simple reflection","review":null,"final":"simple reflection","secs":1.1543149948}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.931469202}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":0.9288780689}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":1.4915399551}
+{"speaker":"participant","gold":"neutral","clef":"change","review":null,"final":"change","secs":1.4888629913}
+{"speaker":"coach","gold":"other","clef":"other","review":null,"final":"other","secs":1.4325959682}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.1805682182}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":1.0425589085}
+{"speaker":"participant","gold":"sustain","clef":"change","review":null,"final":"change","secs":1.0664229393}
+{"speaker":"coach","gold":"other","clef":"other","review":"other","final":"other","secs":7.2442712784}
+{"speaker":"participant","gold":"sustain","clef":"sustain","review":null,"final":"sustain","secs":1.1975197792}
+{"speaker":"participant","gold":"neutral","clef":"neutral","review":null,"final":"neutral","secs":0.9673850536}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9640932083}
+{"speaker":"coach","gold":"complex reflection","clef":"complex reflection","review":null,"final":"complex reflection","secs":0.9602818489}
