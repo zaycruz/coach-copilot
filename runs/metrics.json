@@ -1584,6 +1584,89 @@
   "answeredClef": 0.8308,
   "answeredReview": 0.8923
  },
+ "cues": {
+  "calls": 1085,
+  "cuesPerCall": {
+   "mean": 4.6857,
+   "median": 5.0,
+   "p90": 6.0,
+   "coachingMean": 4.6654,
+   "perCoachLine": 0.1681
+  },
+  "precision": {
+   "k": 4758,
+   "n": 5062,
+   "rate": 0.9399,
+   "ci95": [
+    0.9331,
+    0.9462
+   ]
+  },
+  "recall": {
+   "k": 4839,
+   "n": 4907,
+   "rate": 0.9861,
+   "ci95": [
+    0.9825,
+    0.9891
+   ]
+  },
+  "precisionByKind": {
+   "confront": {
+    "k": 143,
+    "n": 163,
+    "rate": 0.8773,
+    "ci95": [
+     0.8181,
+     0.9192
+    ]
+   },
+   "persuade": {
+    "k": 828,
+    "n": 831,
+    "rate": 0.9964,
+    "ci95": [
+     0.9894,
+     0.9988
+    ]
+   },
+   "unreflected_change": {
+    "k": 3699,
+    "n": 3976,
+    "rate": 0.9303,
+    "ci95": [
+     0.922,
+     0.9378
+    ]
+   },
+   "four_questions": {
+    "k": 61,
+    "n": 63,
+    "rate": 0.9683,
+    "ci95": [
+     0.8914,
+     0.9913
+    ]
+   },
+   "three_closed": {
+    "k": 27,
+    "n": 29,
+    "rate": 0.931,
+    "ci95": [
+     0.7804,
+     0.9809
+    ]
+   }
+  },
+  "vsSupervisor": {
+   "calls": 477,
+   "spearmanCoachingCuesVsMeanScore": 0.3112,
+   "ci95": [
+    0.225,
+    0.388
+   ]
+  }
+ },
  "stress": {
   "urgent": {
    "caught": {

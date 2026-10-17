@@ -12,6 +12,7 @@ import pandas as pd
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from score import score
 from redflags import red_rule
+from triggers import COACHING, coaching_kind, play
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 PRED = os.path.join(ROOT, "runs", "predictions")
@@ -250,6 +251,43 @@ def stress(set_file="stress-set.json", pred_file="stress-flags.jsonl", rules=Fal
     return out
 
 
+def cues(data, tag_rows):
+    """When cues fire on held-out calls, from the committed tags and flags, using the page's own trigger rules.
+    precision: share of coaching cues whose trigger also holds under the human labels at that line; recall: share of
+    the cues the human labels would fire that the app fires at the same line. Coach-line flags (missed_concern,
+    medical_advice) are not in the batch outputs, so their cues are not counted."""
+    f = preds("flags-validation.jsonl")[["call_id", "line_number", "flag"]]
+    t = tag_rows.merge(f, on=["call_id", "line_number"], how="left").sort_values(["call_id", "line_number"])
+    per_call, tp, fired, gold_n, gold_hit = [], 0, 0, 0, 0
+    by_kind = {k: [0, 0] for k in COACHING}
+    for call_id, g in t.groupby("call_id"):
+        model = [{"speaker": r.speaker, "tag": r.pred if isinstance(r.pred, str) else None, "flag": r.flag if isinstance(r.flag, str) else "none"}
+                 for r in g.itertuples()]
+        gold = [{"speaker": r.speaker, "tag": r.gold, "flag": "none"} for r in g.itertuples()]
+        cue = play(model)
+        coaching = [(i, k) for i, k, _ in cue if k in COACHING]
+        for i, k in coaching:
+            ok = coaching_kind(gold, i) is not None
+            tp += ok
+            by_kind[k][0] += ok
+            by_kind[k][1] += 1
+        fired += len(coaching)
+        gcue = [i for i, k, _ in play(gold) if k in COACHING]
+        gold_n += len(gcue)
+        gold_hit += sum(coaching_kind(model, i) is not None for i in gcue)
+        per_call.append({"call_id": call_id, "cues": len(cue), "coaching": len(coaching), "coachLines": sum(x["speaker"] == "coach" for x in model)})
+    pc = pd.DataFrame(per_call).set_index("call_id")
+    sup = pd.read_csv(f"{data}/synthetic_data/synthetic_supervisor_ratings.csv").groupby("call_id").overall_1_to_5.mean()
+    j = pc.join(sup, how="inner")
+    rho = j.coaching.rank().corr(j.overall_1_to_5.rank())
+    return {"calls": len(pc), "cuesPerCall": {"mean": r4(pc.cues.mean()), "median": float(pc.cues.median()), "p90": float(pc.cues.quantile(0.9)),
+                                              "coachingMean": r4(pc.coaching.mean()), "perCoachLine": r4(pc.cues.sum() / pc.coachLines.sum())},
+            "precision": wilson(tp, fired), "recall": wilson(gold_hit, gold_n),
+            "precisionByKind": {k: wilson(a, n) for k, (a, n) in by_kind.items() if n},
+            "vsSupervisor": {"calls": len(j), "spearmanCoachingCuesVsMeanScore": r4(rho),
+                             "ci95": boot(j.coaching.values, j.overall_1_to_5.values, lambda x, y: pd.Series(x).rank().corr(pd.Series(y).rank()))}}
+
+
 def review(tag_rows):
     v = preds("review-validation.jsonl").merge(tag_rows, on=["call_id", "line_number"])
     final = v.review.where(v.review.notna(), v.pred)
@@ -269,7 +307,7 @@ def main():
     m = {"tags": {"validation": val, "dev": dev},
          "flags": {"validation": flags(lines, "validation"), "dev": flags(lines, "dev"), "coachConduct": conduct(data),
                    "validationWithRules": flags(lines, "validation", rules=True), "devWithRules": flags(lines, "dev", rules=True)},
-         "agreement": agree, "annomi": annomi(data), "review": review(val_rows),
+         "agreement": agree, "annomi": annomi(data), "review": review(val_rows), "cues": cues(data, val_rows),
          "stress": stress(), "stressWithRules": stress(rules=True),
          "stressV2": stress("stress-set-v2.json", "stress-v2-flags.jsonl"),
          # Not held out: the warning-sign rules were written after v2's run. v3 is the held-out measure for them.
