@@ -271,7 +271,10 @@ def main():
                    "validationWithRules": flags(lines, "validation", rules=True), "devWithRules": flags(lines, "dev", rules=True)},
          "agreement": agree, "annomi": annomi(data), "review": review(val_rows),
          "stress": stress(), "stressWithRules": stress(rules=True),
-         "stressV2": stress("stress-set-v2.json", "stress-v2-flags.jsonl")}
+         "stressV2": stress("stress-set-v2.json", "stress-v2-flags.jsonl"),
+         # Not held out: the warning-sign rules were written after v2's run. v3 is the held-out measure for them.
+         "stressV2CurrentRules": stress("stress-set-v2.json", "stress-v2-flags.jsonl", rules=True),
+         "stressV3": stress("stress-set-v3.json", "stress-v3-flags.jsonl")}
     m["agreementPerCallSha256"] = hashlib.sha256(json.dumps(per_call).encode()).hexdigest()
     json.dump(m, open(out_path, "w"), indent=1, ensure_ascii=False)
     json.dump({"perCall": per_call}, open(os.path.join(os.path.dirname(out_path), "agreement-per-call.json"), "w"), indent=1)

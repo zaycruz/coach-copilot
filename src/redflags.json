@@ -1,5 +1,5 @@
 {
- "about": "Model-free red-flag screen, run on every participant line before the Clef flag is used. Patterns match lowercased text with accents removed (NFD, combining marks stripped), so they are plain ASCII. A hit sets the red flag of that kind whatever the model says. Written from clinical screening wording (C-SSRS style ideation, emergency warning signs) in English, Spanish and Haitian Creole; tuned only on the dev split and the first stress set, never on validation or stress-set-v2.",
+ "about": "Model-free red-flag screen, run on every participant line before the Clef flag is used. Patterns match lowercased text with accents removed (NFD, combining marks stripped), so they are plain ASCII. A hit sets the red flag of that kind whatever the model says. Written from clinical screening wording (C-SSRS style ideation, emergency warning signs) in English, Spanish and Haitian Creole; tuned only on the dev split and the first stress set, never on validation. The warning-sign rules (warning-*) were added after stress-set-v2's run, from the standard suicide warning-sign lists (giving possessions away, goodbyes, stockpiling medication, access to means, a plan, being a burden); stress-set-v2 is therefore not held out for them, and stress-set-v3 (written after, by a separate agent) measures them.",
  "rules": [
   {
    "id": "ideation-en",
@@ -25,6 +25,21 @@
    "id": "bleeding",
    "kind": "medical",
    "pattern": "((coughing|throwing|vomiting) up blood|blood (in|when i) (my )?(vomit|cough)|bleeding (that )?won'?t stop|(tosiendo|vomitando|escupiendo) sangre|sangrado que no para|vomi san|touse san)"
+  },
+  {
+   "id": "warning-en",
+   "kind": "distress",
+   "pattern": "\\b((gave|giving|give|handed) (away )?(all )?(of )?my (\\w+ )?(things|stuff|belongings|jewelry|jewellery|ring|rings|clothes|watch)( away)?\\b(?! for (her|his|their) (birthday|wedding|graduation))|tell (my|the) (kids|children|son|daughter|family|grandkids|wife|husband) (that )?i (love|forgive)|in case (something happens|i'?m not (here|around)|i don'?t)|(said|saying|say) (my )?goodbyes?|(counting|saving|stockpiling|hoarding|saved up) (up )?(all )?(my |the |of my )?(pills|meds|medications?|tablets)|how many (of (those|these|my|the) )?(pills|tablets|meds) (is|are|would be) too many|(i have|i'?ve got|i bought|there'?s) (a|my) (rope|gun|pistol)|(drive|driving|jump|jumping) off (the|a) (bridge|causeway|roof|building)|i (have|'ve got|made) a plan\\b|made (my )?peace with (everything|it all|dying)|(i'?m|i am) (just )?a burden|wrote (the|my|some) (letters|goodbye))"
+  },
+  {
+   "id": "warning-es",
+   "kind": "distress",
+   "pattern": "((regale|regalo|regalando|regalar|di|deje|le di|les di) (a \\w+ )?(todas )?(mis|las) (joyas|cosas|prendas|ropa|anillos?)(?! (de|para) (su )?(cumpleanos|boda|graduacion))|diles? (a (mis|mi) \\w+ )?que (los|las|lo|la) (quiero|perdono)|por si (acaso )?(me pasa algo|ya no estoy|no estoy)|(me despedi|despedirme|me despido) de|contando (las|mis) pastillas|guardando (las|mis) pastillas|cuantas pastillas (son|seria|serian|es) demasiad|tengo (una soga|una cuerda|una pistola|un arma)|tengo un plan\\b|soy una carga|(escribi|deje escritas) (las|unas|mis) cartas|me voy (a ir )?antes (de )?que (la enfermedad|el cancer))"
+  },
+  {
+   "id": "warning-ht",
+   "kind": "distress",
+   "pattern": "((bay|ba) (\\w+ )?(tout )?(bijou|rad|bagay|afe|bag) (mwen|m)|di pitit (mwen|m) yo (m|mwen) renmen yo|di (yo|li) (m|mwen) padone|konte grenn|sere grenn|konbyen grenn (ki twop|se twop)|(m|mwen) gen yon (kod|plan|zam|revolve)|gen yon kod (lakay|nan kay)|(m|mwen) se yon chay|(m|mwen) di (yo )?orevwa|(m|mwen) ekri le(t|tr) yo)"
   }
  ]
 }
