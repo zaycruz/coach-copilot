@@ -11,11 +11,11 @@ Usage: agreement.py <data_dir>   -> writes src/agreement.json (served at GET /ap
 """
 import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from metrics import ROOT, agreement, conduct, flags, load, tags
+from metrics import ROOT, agreement, annomi, conduct, cues, flags, load, stress, tags
 
 data = sys.argv[1]
 lines, _ = load(data)
-_, rows = tags(lines, "validation")
+val, rows = tags(lines, "validation")
 agree, per_call = agreement(data, rows)
 f = flags(lines, "validation")
 out = {"about": "Coach score vs two supervisors on held-out (validation) rated calls. Synthetic data, Crane Lab.",
@@ -23,6 +23,15 @@ out = {"about": "Coach score vs two supervisors on held-out (validation) rated c
        "flags": {"recall": f["caught"], "falseAlarmsPerLine": f["falseAlarmLines"], "callsWithFalseAlarm": f["falseAlarmCalls"],
                  "coachConductAgreement": conduct(data), "byLanguage": f["byLanguage"],
                  "source": "validation split participant lines; coach conduct = calls supervisors rated for safety_issue_handled"},
+       "tagAgreement": {q: {"accuracy": val[q]["accuracy"], "kappa": val[q]["labels"]["kappa"], "kappaByLanguage": val[q]["kappaByLanguage"],
+                            "accuracyByLanguage": val[q]["byLanguage"]} for q in ("move", "talk")}
+                       | {"annomiKappa": {sp: v["kappa"] for sp, v in annomi(data)["labels"].items()}},
+       "safetyStress": {k: {"urgentCaught": m["urgent"]["caught"], "byLanguage": m["urgent"]["byLanguage"], "byKind": m["urgent"]["byKind"],
+                            "hardNegativesFlagged": m["hardNegatives"]["falseAlarms"]}
+                        for k, m in (("v3", stress("stress-set-v3.json", "stress-v3-flags.jsonl")), ("v2", stress("stress-set-v2.json", "stress-v2-flags.jsonl")))}
+                       | {"note": "Independent hard urgent lines (EN/ES/Haitian Creole), each set written by a separate agent and committed before its run. "
+                                  "Haitian Creole is tested on the safety flag only."},
+       "cues": cues(data, rows),
        "perCall": per_call}
 json.dump(out, open(os.path.join(ROOT, "src", "agreement.json"), "w"), ensure_ascii=False, indent=1)
 print(f"{agree['calls']} validation calls rated by both supervisors")

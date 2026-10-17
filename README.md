@@ -10,18 +10,21 @@ For the care team, every coaching call can be scored and screened for urgent con
 | Coach score vs each supervisor: **r = 0.751** (A), **0.701** (B), 477 calls | Supervisor B vs A: r = 0.692 | 0.708–0.788 (A), 0.657–0.739 (B) |
 | Coach move tags: **93.1%** correct (12 labels, 1,085 calls) | Always the most common label: 20.3% | 92.8–93.4% |
 | Urgent lines caught: **13 / 13**, with 9 false alarms in 25,785 lines | Base rate: 0.05% of lines are urgent | 77.2–100% |
+| Independent hard urgent lines (EN/ES/Haitian Creole): **131 / 162**; suicide warning signs only **28 / 54** | — | 74.1–86.2%; 38.9–64.6% |
 
-English and Spanish are measured separately, and Spanish holds up. The score-vs-supervisors r is 0.818 in Spanish and 0.771 in English. Urgent lines caught: 7/7 in Spanish and 6/6 in English ([Evaluation](#evaluation)). **Haitian Creole is not supported.** The data has no Creole calls, and the engine has not been tested on Creole. The calls are synthetic (Crane Lab). On real, expert-labelled counselling sessions (AnnoMI), Clef tags 75.0% of lines like the experts' majority (68.2–79.6%), where the experts themselves agree 83.9% of the time. The sponsor data has only 13 urgent lines, which is why that CI is wide. A separate hand-written stress set covers paraphrased, hedged, buried, speech-to-text and Spanish urgent lines. It catches **39 of 40** (Wilson 87.1–99.6%), and 1 of 20 hard negatives raises a flag. The one miss is a Spanish line hinting at not wanting to live, which got the amber `dropout` flag instead of red ([Stress set](#stress-set-scriptsstress-setjson)).
+**Read this before relying on the red flag.** The sponsor data has only 13 urgent lines. Two independent sets of 162 hard urgent lines were written by a separate agent and committed before their runs. On those, the engine catches medical and social emergencies (52/54 and 51/54 on the latest set), but it **misses about half of indirect suicide warning signs**: giving a pet or ring away, letters "just in case", "I know how and when", testing extra sleeping pills, standing on a bridge. A model-free keyword screen now runs before the model and catches explicit ideation in English, Spanish and Creole, but patterns cannot cover warning signs this varied. Until the flag question itself covers warning signs and is re-validated, **the coach's own suicide screening protocol stays in charge**, and this flag is a backup ([Safety stress sets](#safety-stress-sets)).
+
+English and Spanish are measured separately, and Spanish holds up. The score-vs-supervisors r is 0.818 in Spanish and 0.771 in English. Urgent lines caught: 7/7 in Spanish and 6/6 in English. **Haitian Creole is tested only on the safety flag** (stress sets, 40/54 urgent lines caught on the latest set). The sponsor data has no Creole calls, so tags and scores are not validated in Creole. The calls are synthetic (Crane Lab). On real, expert-labelled counselling sessions (AnnoMI), Clef tags 75.0% of lines like the experts' majority (68.2–79.6%), where the experts themselves agree 83.9% of the time. It almost never recognises client *sustain* talk there (2 of 31).
 
 ### Reproduce in 3 commands
 
 ```sh
 git clone https://github.com/zaycruz/coach-copilot && cd coach-copilot
 unzip /path/to/Challenge5_Coaches_Copilot.zip -d data/   # sponsor data, not in the repo (data/README.md)
-scripts/reproduce.sh                                     # recomputes and checks 202 numbers, ~2 s, needs uv
+scripts/reproduce.sh                                     # recomputes and checks 247 numbers, ~2 s, needs uv
 ```
 
-The script rebuilds each number from committed model outputs, with no keys or network. Only latency and the GLM bake-off are live-only. [REPRODUCE.md](REPRODUCE.md) maps each number to its file and key, and shows how to re-query the models. Live engine: https://coach.raava.dev · API: [CONTRACT.md](CONTRACT.md)
+The script rebuilds each number from committed model outputs, with no keys or network. Only latency, the GLM bake-off and the 30-cue live run are live-only. [REPRODUCE.md](REPRODUCE.md) maps each number to its file and key, and shows how to re-query the models. Live engine: https://coach.raava.dev · API: [CONTRACT.md](CONTRACT.md)
 
 ---
 
@@ -120,7 +123,7 @@ Labelled synthetic calls are split by `participant_id` hash: **dev 20%** (tuning
 | Coach move (12-way) | **93.1%** (EN 93.9%, ES 91.6%) |
 | Participant talk (3-way) | **90.9%** (EN 91.2%, ES 90.4%) |
 
-95% CIs, bootstrapped over calls: move 92.8–93.4%, talk 90.5–91.3%. Always answering the most common label would score 20.3% (move) and 47.3% (talk). 37 of 56,038 lines got no answer (upstream errors during the batch run) and are left out. Counted as wrong, they give 93.0% and 90.8%. Clef call time per line in the batch run (`evaluate.py` on `/judge`): p50 ~0.3–0.5 s, p95 ~1.05 s. A `/api/turn` round trip from a browser takes longer, because it adds the network and, on participant lines, waits for the parallel flag call. In `runs/e2e-live-20261017T170443Z.json`, measured from a Cloudflare sandbox, the round-trip p50 is about 310 ms for coach lines and 800 ms for participant lines (time inside the Worker: 278 and 688 ms). From a laptop client (`runs/e2e-live-20261017T171736Z.json`) it is about 680 ms and 720 ms (Worker 331 and 478 ms). The network path accounts for most of the gap. These numbers come from the move and talk questions as they ship. They were not rerun after `scope` joined the coach request, because `scope` is a separate question in the same call.
+95% CIs, bootstrapped over calls: move 92.8–93.4%, talk 90.5–91.3%. Always answering the most common label would score 20.3% (move) and 47.3% (talk). 37 of 56,038 lines got no answer (upstream errors during the batch run) and are left out. Counted as wrong, they give 93.0% and 90.8%. Cohen's kappa is **0.921** for coach move (EN 0.930, ES 0.904) and **0.848** for participant talk (EN 0.854, ES 0.839). The weakest labels are simple reflection (recall 73.0%; misses go to complex reflection, emphasize autonomy and affirm) and sustain talk (recall 63.4%). Per-label precision, recall, F1 and the full confusion matrices are in `runs/metrics.json` (`tags.validation.{move,talk}.labels`). Clef call time per line in the batch run (`evaluate.py` on `/judge`): p50 ~0.3–0.5 s, p95 ~1.05 s. A `/api/turn` round trip from a browser takes longer, because it adds the network and, on participant lines, waits for the parallel flag call. In `runs/e2e-live-20261017T170443Z.json`, measured from a Cloudflare sandbox, the round-trip p50 is about 310 ms for coach lines and 800 ms for participant lines (time inside the Worker: 278 and 688 ms). From a laptop client (`runs/e2e-live-20261017T171736Z.json`) it is about 680 ms and 720 ms (Worker 331 and 478 ms). The network path accounts for most of the gap. These numbers come from the move and talk questions as they ship. They were not rerun after `scope` joined the coach request, because `scope` is a separate question in the same call.
 
 ### Coach score vs supervisors (`scripts/agreement.py`, `GET /api/c5/agreement`)
 
@@ -161,28 +164,54 @@ The participant flag is judged in its own line-only request. Its `none` examples
 | Spanish: caught / false-alarm lines / calls | 7/7 · 2 / 9,089 · 2 / 381 | 64.6–100% · 0.01–0.08% · 0.1–1.9% |
 | dev: caught / false alarms | 7/7, 1 / 6,854 lines | |
 
-### Stress set (`scripts/stress-set.json`)
+### Safety stress sets
 
-These are 60 lines we wrote by hand, not sponsor data, to test the participant flag beyond the 13 sponsor positives.
-- **Urgent lines:** 40, split 20 English and 20 Spanish.
-  - By kind: 22 medical, 12 social, 6 distress.
-  - By variant: paraphrased away from the payload's own examples, hedged, buried in small talk, speech-to-text style, implied rather than named, and Spanglish.
-- **Hard negatives:** 20, namely denied or resolved symptoms, known side effects, someone else's cold, ordinary low mood and price complaints.
+Each line goes alone through the live `/api/turn` (`scripts/stress_flags.py`). An urgent line counts as caught when any red flag fires (medical, distress or social). Every set was committed before its first run.
 
-The failure modes were listed first. The set was committed (6a093d6) before its first run and is never used to tune the payload. Each line goes through the live `/api/turn` alone (`scripts/stress_flags.py`). An urgent line counts as caught when any red flag fires.
+| Set | Written by | Urgent caught | Distress (suicide risk) | Hard negatives flagged |
+|---|---|---|---|---|
+| v1, `stress-set.json`, EN/ES, 40 + 20 | us, before rules | 39/40 (87.1–99.6%) | 5/6 | 1/20 |
+| v2, `stress-set-v2.json`, EN/ES/HT, 162 + 72 | separate agent from a brief, run with rules v1 | 132/162 (74.8–86.7%) | 31/54 (44.2–69.7%) | 31/72 (32.3–54.6%) |
+| **v3**, `stress-set-v3.json`, EN/ES/HT, 162 + 72 | separate agent from a brief, run with current rules | **131/162 (74.1–86.2%)** | **28/54 (38.9–64.6%)** | 21/72 (19.9–40.5%) |
 
-| | Result | Wilson 95% CI |
-|---|---|---|
-| Urgent lines caught | **39 / 40** | 87.1–99.6% |
-| … with the right kind | 38 / 40 | 83.5–98.6% |
-| English / Spanish | 20 / 20 · 19 / 20 | 83.9–100% · 76.4–99.1% |
-| Medical / social / distress | 22 / 22 · 12 / 12 · 5 / 6 | 85.1–100% · 75.7–100% · 43.6–97.0% |
-| Hard negatives that raised a flag | 1 / 20 | 0.9–23.6% |
+v3, by language and kind (Wilson 95% CIs in `runs/metrics.json` `stressV3`):
 
-What went wrong:
-- **Missed:** *"Ya empecé a regalar mis cosas. No me veo aquí por mucho tiempo, y la verdad tampoco quiero."* ("I've started giving my things away. I don't see myself here much longer, and honestly I don't want to be.") It got `dropout` (amber) instead of `distress` (red). "Aquí" can be read as the program, but the line also says the speaker doesn't want to be here. A person should see it today, so it counts as a miss.
-- **Wrong kind:** "haven't kept any food or water down for three days" got `social` (red, wrong owner) instead of `medical`.
-- **False alarm:** a fever from last month that cleared with antibiotics (Spanish) got `medical`.
+| | Medical | Social | Distress |
+|---|---|---|---|
+| English | 18/18 | 18/18 | 9/18 |
+| Spanish | 17/18 | 18/18 | 11/18 |
+| Haitian Creole | 17/18 | 15/18 | 8/18 |
+
+**What this says.**
+- The model flag is reliable for medical and social emergencies in all three languages.
+- It is not reliable for suicide risk unless the person says it outright. Its definition of distress (`src/payload.json`) covers hopelessness and not wanting to live, but none of the indirect warning signs.
+- Several warning-sign lines get the amber `dropout` flag: "I'm so done… not tryna be here for the next scan", "if you don't hear from me, tell the team thanks". The coach does see a banner then, but it is the wrong colour and owner.
+- The independent sets' hard negatives are much harder than real calls: resolved ER visits, someone else's fever, "this kale smoothie is killing me". About 30–40% of them raise a flag. On the 25,785 real validation lines the false-alarm rate is 0.03%.
+
+**Model-free red-flag screen** (`src/redflags.json`, same patterns in `scripts/redflags.py`):
+- What it is: patterns for explicit ideation, suicide warning signs, breathing or chest pain and bleeding, in English, Spanish and Haitian Creole. They run over lowercased, accent-stripped text before the model's answer is used.
+- What it does: a hit sets that red flag and adds `rule` to the response. It never clears a flag.
+- How it was built: tuned on dev and on v1 only. The warning-sign rules were added after v2's run, so v2 is not held out for them (distress 31/54 → 42/54 offline). v3 was written after them, and on v3 the rules caught 15 lines, 6 of them hard negatives.
+- Real calls: on validation the rules add **no** false alarms (still 9/25,785) and catch nothing the model missed.
+
+**Next fix (not done):** move the warning signs into the flag question's distress definition, so the model learns them rather than the patterns. Changing it re-opens the validation numbers above, so it needs a full validation re-run (about 26,000 Clef calls on a separate Worker) and a fresh independent set.
+
+### Coaching cues
+
+Cues are written by GLM only at trigger moments that the page computes from the tags (`scripts/triggers.py`, the page's `checkTriggers` line for line).
+
+**On the 1,085 held-out calls** (offline, from the committed tags and flags; `cues` in `runs/metrics.json`):
+- **Rate:** 4.7 cues per call (median 5, 90th percentile 6), or one per 6 coach lines.
+- **Trigger precision vs the human labels: 94.0% (93.3–94.6%).** Of the coaching moments where the app asks for a cue, 94% also meet the trigger under the human tags at that line. Recall is 98.6%.
+- **By kind:** 79% are "change talk not reflected or affirmed" (precision 93.0%). Confront is the weakest at 87.7%.
+- **Not a quality score.** The number of coaching cues per call correlates **+0.31** (Spearman, 95% CI 0.225–0.388) with the supervisors' mean score, so better-rated calls get *more* cues. The likely reason is that the dominant trigger fires on change talk, which better calls draw out more often. The trigger mix has not been validated by an MI supervisor.
+
+**Live, 30 trigger moments** (6 per kind, seed 7; `scripts/cue_eval.py`, `runs/cue-eval-20261017T173558Z.json`):
+- 30/30 answered, with no rate limits. GLM time in the Worker: **p50 2.4 s, p95 5.9 s** (round trip 3.0 s and 6.5 s).
+- 30/30 `say` lines in the call's language, 30/30 with no dosing or medication instruction, and 30/30 cues of at most 45 words.
+- Cues are asynchronous, so the tag and the banner never wait for them. Repeats are served from the KV cache.
+
+**Behaviour change is not measured.** That needs coaches using it. The proposed pilot alternates cue-on and cue-off calls per coach, and the outcome is the reflection-to-question ratio and the reflection of change talk in the next 3 coach lines, as rated by supervisors.
 
 ### Second layer (GLM-5.3-flash)
 
@@ -211,7 +240,7 @@ Cues are where GLM earns its place. Review stays an optional background second o
 | client talk (212) | 75.0% | 80.2% |
 | **all 428** | **75.0%** | **83.9%** |
 
-Where all 10 experts agreed, Clef gets 91.1% (counsellor, 112 lines) and 93.1% (client, 58). Where experts split (≤ 70% agreement), Clef gets 50–58%. Most misses are client change or sustain talk read as neutral (37 lines). Subtypes, scored where the coarse label matched: open/closed 73.2% (56; lines Clef tagged *ask permission* have no subtype and are left out), simple/complex 39.1% (23). The payload was tuned on synthetic cancer-coaching calls, not on AnnoMI.
+Where all 10 experts agreed, Clef gets 91.1% (counsellor, 112 lines) and 93.1% (client, 58). Where experts split (≤ 70% agreement), Clef gets 50–58%. Most misses are client change or sustain talk read as neutral (37 lines). Cohen's kappa: counsellor **0.656**, client **0.439**. Client sustain talk is almost never recognised (recall 2 of 31). Reflections are under-called (recall 51.1%), and information or advice is under-called too (52.4%). Confusion matrices: `annomi.labels` in `runs/metrics.json`. Subtypes, scored where the coarse label matched: open/closed 73.2% (56; lines Clef tagged *ask permission* have no subtype and are left out), simple/complex 39.1% (23). The payload was tuned on synthetic cancer-coaching calls, not on AnnoMI.
 
 ## Run
 
@@ -226,7 +255,7 @@ uv run python -I scripts/e2e_live.py                  # live checks + drift chec
 
 The `/judge` endpoint is a raw Clef proxy for batch scripts (`Authorization: Bearer $CLEF_API_KEY` from `.env`).
 
-**Rate limits.** Workers AI caps requests per minute per model (error 3021). The tag path (`/api/turn`) does not retry a rate-limited call. The async GLM layer backs off (about 2 s, then about 5 s, jittered) and retries twice. Then it answers `429` with `retry-after: 20`. Review and cue answers are cached in KV for 7 days, keyed by model and prompt, so replaying a call costs no quota (`cached: true` in the response). `GET /api/c5/demo` serves a pre-played safety call with its cues and makes no model calls. The UI keeps Clef's tag when a review gets no label. Batch scripts against the live Worker share this quota with live calls and with Patient 360, so do not run them during a demo.
+**Rate limits.** Workers AI caps requests per minute per model (error 3021). The tag path (`/api/turn`) waits about 0.5 s, then about 1.5 s (jittered), before answering `429`, so a live tag is late rather than lost in a short burst. The async GLM layer backs off (about 2 s, then about 5 s, jittered) and retries twice. Then it answers `429` with `retry-after: 20`. Review and cue answers are cached in KV for 7 days, keyed by model and prompt, so replaying a call costs no quota (`cached: true` in the response). `GET /api/c5/demo` serves a pre-played safety call with its cues and makes no model calls. The UI keeps Clef's tag when a review gets no label. Batch scripts against the live Worker share this quota with live calls and with Patient 360, so do not run them during a demo.
 
 ## Patient 360 endpoints
 

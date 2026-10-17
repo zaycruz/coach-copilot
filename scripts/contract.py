@@ -73,7 +73,7 @@ The console (Patient 360) is the user-facing app. This Worker is the engine: Cle
 |---|---|---|
 | 400 | `{json.dumps(bad, ensure_ascii=False)}` | bad `line` (speaker must be `coach` or `participant`; text 1–1,000 chars) |
 | 404 | `{json.dumps(missing, ensure_ascii=False)}` | unknown `callId` / `survivorId` |
-| 429 | `{{"error":"rate_limited"}}`, header `retry-after: 20` | Workers AI per-minute quota spent (error 3021). `/api/turn` is not retried. `/api/review` and `/api/cue` back off and retry twice (~2 s, then ~5 s) first. Keep the Clef tag and skip the review or cue. |
+| 429 | `{{"error":"rate_limited"}}`, header `retry-after: 20` | Workers AI per-minute quota spent (error 3021). `/api/turn` waits ~0.5 s, then ~1.5 s, before answering 429. `/api/review` and `/api/cue` back off and retry twice (~2 s, then ~5 s) first. Keep the Clef tag and skip the review or cue. |
 | 502 | `{{"error":"…"}}` | upstream model error after one retry |
 
 Workers AI quotas are per account and model, shared by every caller of this Worker (coach.raava.dev, Patient 360, batch scripts).
@@ -84,7 +84,7 @@ Body: `line` = `{{speaker, text}}`, `previous` = up to the 2 lines before it. Pa
 
 - `tag`: coach lines, one of `open question`, `closed question`, `simple reflection`, `complex reflection`, `affirm`, `seek collaboration`, `emphasize autonomy`, `ask permission`, `give information`, `persuade`, `confront`, `other`. Participant lines: `change`, `sustain`, `neutral`.
 - `confidence`: Clef's confidence. Below 0.3 (about 25% of lines, 76% accurate), send the line to `/api/review`. At 0.3 or above, it is 98% accurate on dev.
-- `flag`: participant lines get `none | medical | distress | social | dropout`. This is judged on the line alone, so earlier lines cannot leak in. Coach lines get `none | missed_concern | medical_advice`.
+- `flag`: participant lines get `none | medical | distress | social | dropout`. This is judged on the line alone, so earlier lines cannot leak in. A model-free red-flag screen (`src/redflags.json`: explicit suicidal ideation, suicide warning signs, breathing or chest pain, bleeding; English, Spanish, Haitian Creole) runs first. On a hit, the response also carries `rule` (the rule id) and `modelFlag` (what the model said), and `flag` is that rule's red kind. Coach lines get `none | missed_concern | medical_advice`.
   - Red, act today: `medical`, `distress`, `social`.
   - Amber: `dropout`, `missed_concern` (the coach did not acknowledge or route a red flag), `medical_advice`.
 
@@ -167,6 +167,9 @@ From `scripts/agreement.py`, on the supervisor-rated validation calls.
 - `likeForLike`: r(app, A) − r(B, A) and r(app, B) − r(A, B), with paired-bootstrap CIs. Each supervisor is compared with the other supervisor, not with the smoother mean.
 - `crossFittedIcc`: ICC(2,1) of the app score, mapped to 1–5 by a line fitted on the other folds, against A and against B, next to A vs B.
 - `byLanguage`: the same correlations for English and Spanish calls.
+- `tagAgreement`: accuracy and Cohen's kappa for coach move and participant talk, overall and by language; `annomiKappa` on the expert-labelled AnnoMI lines.
+- `safetyStress`: the independent stress sets v3 and v2 (EN/ES/Haitian Creole): urgent lines caught, by language and by kind, and hard negatives flagged, each `{{k, n, rate, ci95}}`.
+- `cues`: cue rate per call, trigger precision and recall against the human labels, and the cue count's Spearman correlation with the supervisors' mean score.
 - `mae`: the app score mapped to 1–5, then the mean absolute difference from each supervisor.
 - `flags`: recall, false alarms per line and per call, and coach-conduct agreement, each `{{k, n, rate, ci95}}` (Wilson), plus `byLanguage`.
 - `perCall[]`: one row per call, `{{callId, appScore, labelScore, supervisorA, supervisorB}}`.

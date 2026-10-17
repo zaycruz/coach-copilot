@@ -89,6 +89,10 @@ if status == 200:
     check("drift: flag numbers equal", live["flags"]["recall"] == f["validation"]["caught"] and live["flags"]["falseAlarmsPerLine"] == f["validation"]["falseAlarmLines"]
           and live["flags"]["callsWithFalseAlarm"] == f["validation"]["falseAlarmCalls"] and live["flags"]["coachConductAgreement"] == f["coachConduct"],
           live["flags"])
+    check("drift: cues and safety stress equal runs/metrics.json", live.get("cues") == repo["cues"]
+          and live.get("safetyStress", {}).get("v3", {}).get("urgentCaught") == repo["stressV3"]["urgent"]["caught"]
+          and live.get("tagAgreement", {}).get("move", {}).get("kappa") == repo["tags"]["validation"]["move"]["labels"]["kappa"],
+          {"cues": (live.get("cues") or {}).get("precision"), "v3": live.get("safetyStress", {}).get("v3", {}).get("urgentCaught")})
     per_call = json.load(open(os.path.join(ROOT, "runs", "agreement-per-call.json")))["perCall"]
     check("drift: per-call table equal", live["perCall"] == per_call, {"liveRows": len(live["perCall"]), "repoRows": len(per_call)})
 

@@ -365,6 +365,278 @@
   },
   "source": "validation split participant lines; coach conduct = calls supervisors rated for safety_issue_handled"
  },
+ "tagAgreement": {
+  "move": {
+   "accuracy": 0.9308,
+   "kappa": 0.9208,
+   "kappaByLanguage": {
+    "English": 0.93,
+    "Spanish": 0.904
+   },
+   "accuracyByLanguage": {
+    "English": 0.9389,
+    "Spanish": 0.916
+   }
+  },
+  "talk": {
+   "accuracy": 0.9089,
+   "kappa": 0.8484,
+   "kappaByLanguage": {
+    "English": 0.8536,
+    "Spanish": 0.8385
+   },
+   "accuracyByLanguage": {
+    "English": 0.9117,
+    "Spanish": 0.9038
+   }
+  },
+  "annomiKappa": {
+   "client": 0.4392,
+   "counsellor": 0.6557
+  }
+ },
+ "safetyStress": {
+  "v3": {
+   "urgentCaught": {
+    "k": 131,
+    "n": 162,
+    "rate": 0.8086,
+    "ci95": [
+     0.7412,
+     0.8618
+    ]
+   },
+   "byLanguage": {
+    "English": {
+     "k": 45,
+     "n": 54,
+     "rate": 0.8333,
+     "ci95": [
+      0.7126,
+      0.9098
+     ]
+    },
+    "Haitian Creole": {
+     "k": 40,
+     "n": 54,
+     "rate": 0.7407,
+     "ci95": [
+      0.6107,
+      0.8388
+     ]
+    },
+    "Spanish": {
+     "k": 46,
+     "n": 54,
+     "rate": 0.8519,
+     "ci95": [
+      0.734,
+      0.923
+     ]
+    }
+   },
+   "byKind": {
+    "distress": {
+     "k": 28,
+     "n": 54,
+     "rate": 0.5185,
+     "ci95": [
+      0.3885,
+      0.6461
+     ]
+    },
+    "medical": {
+     "k": 52,
+     "n": 54,
+     "rate": 0.963,
+     "ci95": [
+      0.8746,
+      0.9898
+     ]
+    },
+    "social": {
+     "k": 51,
+     "n": 54,
+     "rate": 0.9444,
+     "ci95": [
+      0.8489,
+      0.9809
+     ]
+    }
+   },
+   "hardNegativesFlagged": {
+    "k": 21,
+    "n": 72,
+    "rate": 0.2917,
+    "ci95": [
+     0.1994,
+     0.4051
+    ]
+   }
+  },
+  "v2": {
+   "urgentCaught": {
+    "k": 132,
+    "n": 162,
+    "rate": 0.8148,
+    "ci95": [
+     0.748,
+     0.8671
+    ]
+   },
+   "byLanguage": {
+    "English": {
+     "k": 45,
+     "n": 54,
+     "rate": 0.8333,
+     "ci95": [
+      0.7126,
+      0.9098
+     ]
+    },
+    "Haitian Creole": {
+     "k": 41,
+     "n": 54,
+     "rate": 0.7593,
+     "ci95": [
+      0.6305,
+      0.8536
+     ]
+    },
+    "Spanish": {
+     "k": 46,
+     "n": 54,
+     "rate": 0.8519,
+     "ci95": [
+      0.734,
+      0.923
+     ]
+    }
+   },
+   "byKind": {
+    "distress": {
+     "k": 31,
+     "n": 54,
+     "rate": 0.5741,
+     "ci95": [
+      0.4416,
+      0.6967
+     ]
+    },
+    "medical": {
+     "k": 49,
+     "n": 54,
+     "rate": 0.9074,
+     "ci95": [
+      0.8009,
+      0.9598
+     ]
+    },
+    "social": {
+     "k": 52,
+     "n": 54,
+     "rate": 0.963,
+     "ci95": [
+      0.8746,
+      0.9898
+     ]
+    }
+   },
+   "hardNegativesFlagged": {
+    "k": 31,
+    "n": 72,
+    "rate": 0.4306,
+    "ci95": [
+     0.3226,
+     0.5456
+    ]
+   }
+  },
+  "note": "Independent hard urgent lines (EN/ES/Haitian Creole), each set written by a separate agent and committed before its run. Haitian Creole is tested on the safety flag only."
+ },
+ "cues": {
+  "calls": 1085,
+  "cuesPerCall": {
+   "mean": 4.6857,
+   "median": 5.0,
+   "p90": 6.0,
+   "coachingMean": 4.6654,
+   "perCoachLine": 0.1681
+  },
+  "precision": {
+   "k": 4758,
+   "n": 5062,
+   "rate": 0.9399,
+   "ci95": [
+    0.9331,
+    0.9462
+   ]
+  },
+  "recall": {
+   "k": 4839,
+   "n": 4907,
+   "rate": 0.9861,
+   "ci95": [
+    0.9825,
+    0.9891
+   ]
+  },
+  "precisionByKind": {
+   "confront": {
+    "k": 143,
+    "n": 163,
+    "rate": 0.8773,
+    "ci95": [
+     0.8181,
+     0.9192
+    ]
+   },
+   "persuade": {
+    "k": 828,
+    "n": 831,
+    "rate": 0.9964,
+    "ci95": [
+     0.9894,
+     0.9988
+    ]
+   },
+   "unreflected_change": {
+    "k": 3699,
+    "n": 3976,
+    "rate": 0.9303,
+    "ci95": [
+     0.922,
+     0.9378
+    ]
+   },
+   "four_questions": {
+    "k": 61,
+    "n": 63,
+    "rate": 0.9683,
+    "ci95": [
+     0.8914,
+     0.9913
+    ]
+   },
+   "three_closed": {
+    "k": 27,
+    "n": 29,
+    "rate": 0.931,
+    "ci95": [
+     0.7804,
+     0.9809
+    ]
+   }
+  },
+  "vsSupervisor": {
+   "calls": 477,
+   "spearmanCoachingCuesVsMeanScore": 0.3112,
+   "ci95": [
+    0.225,
+    0.388
+   ]
+  }
+ },
  "perCall": [
   {
    "callId": "CALL00018",

@@ -12,7 +12,7 @@ The console (Patient 360) is the user-facing app. This Worker is the engine: Cle
 |---|---|---|
 | 400 | `{"error": "line must be {speaker: coach|participant, text}"}` | bad `line` (speaker must be `coach` or `participant`; text 1–1,000 chars) |
 | 404 | `{"error": "call not found", "callId": "CALL99999"}` | unknown `callId` / `survivorId` |
-| 429 | `{"error":"rate_limited"}`, header `retry-after: 20` | Workers AI per-minute quota spent (error 3021). `/api/turn` is not retried. `/api/review` and `/api/cue` back off and retry twice (~2 s, then ~5 s) first. Keep the Clef tag and skip the review or cue. |
+| 429 | `{"error":"rate_limited"}`, header `retry-after: 20` | Workers AI per-minute quota spent (error 3021). `/api/turn` waits ~0.5 s, then ~1.5 s, before answering 429. `/api/review` and `/api/cue` back off and retry twice (~2 s, then ~5 s) first. Keep the Clef tag and skip the review or cue. |
 | 502 | `{"error":"…"}` | upstream model error after one retry |
 
 Workers AI quotas are per account and model, shared by every caller of this Worker (coach.raava.dev, Patient 360, batch scripts).
@@ -23,7 +23,7 @@ Body: `line` = `{speaker, text}`, `previous` = up to the 2 lines before it. Pass
 
 - `tag`: coach lines, one of `open question`, `closed question`, `simple reflection`, `complex reflection`, `affirm`, `seek collaboration`, `emphasize autonomy`, `ask permission`, `give information`, `persuade`, `confront`, `other`. Participant lines: `change`, `sustain`, `neutral`.
 - `confidence`: Clef's confidence. Below 0.3 (about 25% of lines, 76% accurate), send the line to `/api/review`. At 0.3 or above, it is 98% accurate on dev.
-- `flag`: participant lines get `none | medical | distress | social | dropout`. This is judged on the line alone, so earlier lines cannot leak in. Coach lines get `none | missed_concern | medical_advice`.
+- `flag`: participant lines get `none | medical | distress | social | dropout`. This is judged on the line alone, so earlier lines cannot leak in. A model-free red-flag screen (`src/redflags.json`: explicit suicidal ideation, suicide warning signs, breathing or chest pain, bleeding; English, Spanish, Haitian Creole) runs first. On a hit, the response also carries `rule` (the rule id) and `modelFlag` (what the model said), and `flag` is that rule's red kind. Coach lines get `none | missed_concern | medical_advice`.
   - Red, act today: `medical`, `distress`, `social`.
   - Amber: `dropout`, `missed_concern` (the coach did not acknowledge or route a red flag), `medical_advice`.
 
@@ -123,7 +123,7 @@ Body: `line`, `previous` and `probabilities` from `/api/turn`. GLM picks among C
   "ms": "…",
   "label": "affirm",
   "reason": "The coach praises the participant's effort and persistence ('kept going even with sore knees'), which is direct praise of an achievement, not merely a paraphrase of what the participant said.",
-  "cached": false
+  "cached": true
 }
 ```
 
@@ -159,7 +159,7 @@ Body: `trigger` (why, max 300 chars) and `recent` (up to 8 lines, with `tag`/`fl
   "ms": "…",
   "cue": "Shift out of the coaching flow: acknowledge the fever, and without diagnosing, encourage them to contact their oncology care team now — this is a safety priority over the walking topic. Then invite them to decide next step.",
   "say": "Thanks for telling me — a fever during chemo is something your care team will want to hear about right away. What's the quickest way you can reach them today?",
-  "cached": false
+  "cached": true
 }
 ```
 
@@ -561,6 +561,9 @@ From `scripts/agreement.py`, on the supervisor-rated validation calls.
 - `likeForLike`: r(app, A) − r(B, A) and r(app, B) − r(A, B), with paired-bootstrap CIs. Each supervisor is compared with the other supervisor, not with the smoother mean.
 - `crossFittedIcc`: ICC(2,1) of the app score, mapped to 1–5 by a line fitted on the other folds, against A and against B, next to A vs B.
 - `byLanguage`: the same correlations for English and Spanish calls.
+- `tagAgreement`: accuracy and Cohen's kappa for coach move and participant talk, overall and by language; `annomiKappa` on the expert-labelled AnnoMI lines.
+- `safetyStress`: the independent stress sets v3 and v2 (EN/ES/Haitian Creole): urgent lines caught, by language and by kind, and hard negatives flagged, each `{k, n, rate, ci95}`.
+- `cues`: cue rate per call, trigger precision and recall against the human labels, and the cue count's Spearman correlation with the supervisors' mean score.
 - `mae`: the app score mapped to 1–5, then the mean absolute difference from each supervisor.
 - `flags`: recall, false alarms per line and per call, and coach-conduct agreement, each `{k, n, rate, ci95}` (Wilson), plus `byLanguage`.
 - `perCall[]`: one row per call, `{callId, appScore, labelScore, supervisorA, supervisorB}`.
@@ -891,6 +894,278 @@ From `scripts/agreement.py`, on the supervisor-rated validation calls.
       }
     },
     "source": "validation split participant lines; coach conduct = calls supervisors rated for safety_issue_handled"
+  },
+  "tagAgreement": {
+    "move": {
+      "accuracy": 0.9308,
+      "kappa": 0.9208,
+      "kappaByLanguage": {
+        "English": 0.93,
+        "Spanish": 0.904
+      },
+      "accuracyByLanguage": {
+        "English": 0.9389,
+        "Spanish": 0.916
+      }
+    },
+    "talk": {
+      "accuracy": 0.9089,
+      "kappa": 0.8484,
+      "kappaByLanguage": {
+        "English": 0.8536,
+        "Spanish": 0.8385
+      },
+      "accuracyByLanguage": {
+        "English": 0.9117,
+        "Spanish": 0.9038
+      }
+    },
+    "annomiKappa": {
+      "client": 0.4392,
+      "counsellor": 0.6557
+    }
+  },
+  "safetyStress": {
+    "v3": {
+      "urgentCaught": {
+        "k": 131,
+        "n": 162,
+        "rate": 0.8086,
+        "ci95": [
+          0.7412,
+          0.8618
+        ]
+      },
+      "byLanguage": {
+        "English": {
+          "k": 45,
+          "n": 54,
+          "rate": 0.8333,
+          "ci95": [
+            0.7126,
+            0.9098
+          ]
+        },
+        "Haitian Creole": {
+          "k": 40,
+          "n": 54,
+          "rate": 0.7407,
+          "ci95": [
+            0.6107,
+            0.8388
+          ]
+        },
+        "Spanish": {
+          "k": 46,
+          "n": 54,
+          "rate": 0.8519,
+          "ci95": [
+            0.734,
+            0.923
+          ]
+        }
+      },
+      "byKind": {
+        "distress": {
+          "k": 28,
+          "n": 54,
+          "rate": 0.5185,
+          "ci95": [
+            0.3885,
+            0.6461
+          ]
+        },
+        "medical": {
+          "k": 52,
+          "n": 54,
+          "rate": 0.963,
+          "ci95": [
+            0.8746,
+            0.9898
+          ]
+        },
+        "social": {
+          "k": 51,
+          "n": 54,
+          "rate": 0.9444,
+          "ci95": [
+            0.8489,
+            0.9809
+          ]
+        }
+      },
+      "hardNegativesFlagged": {
+        "k": 21,
+        "n": 72,
+        "rate": 0.2917,
+        "ci95": [
+          0.1994,
+          0.4051
+        ]
+      }
+    },
+    "v2": {
+      "urgentCaught": {
+        "k": 132,
+        "n": 162,
+        "rate": 0.8148,
+        "ci95": [
+          0.748,
+          0.8671
+        ]
+      },
+      "byLanguage": {
+        "English": {
+          "k": 45,
+          "n": 54,
+          "rate": 0.8333,
+          "ci95": [
+            0.7126,
+            0.9098
+          ]
+        },
+        "Haitian Creole": {
+          "k": 41,
+          "n": 54,
+          "rate": 0.7593,
+          "ci95": [
+            0.6305,
+            0.8536
+          ]
+        },
+        "Spanish": {
+          "k": 46,
+          "n": 54,
+          "rate": 0.8519,
+          "ci95": [
+            0.734,
+            0.923
+          ]
+        }
+      },
+      "byKind": {
+        "distress": {
+          "k": 31,
+          "n": 54,
+          "rate": 0.5741,
+          "ci95": [
+            0.4416,
+            0.6967
+          ]
+        },
+        "medical": {
+          "k": 49,
+          "n": 54,
+          "rate": 0.9074,
+          "ci95": [
+            0.8009,
+            0.9598
+          ]
+        },
+        "social": {
+          "k": 52,
+          "n": 54,
+          "rate": 0.963,
+          "ci95": [
+            0.8746,
+            0.9898
+          ]
+        }
+      },
+      "hardNegativesFlagged": {
+        "k": 31,
+        "n": 72,
+        "rate": 0.4306,
+        "ci95": [
+          0.3226,
+          0.5456
+        ]
+      }
+    },
+    "note": "Independent hard urgent lines (EN/ES/Haitian Creole), each set written by a separate agent and committed before its run. Haitian Creole is tested on the safety flag only."
+  },
+  "cues": {
+    "calls": 1085,
+    "cuesPerCall": {
+      "mean": 4.6857,
+      "median": 5,
+      "p90": 6,
+      "coachingMean": 4.6654,
+      "perCoachLine": 0.1681
+    },
+    "precision": {
+      "k": 4758,
+      "n": 5062,
+      "rate": 0.9399,
+      "ci95": [
+        0.9331,
+        0.9462
+      ]
+    },
+    "recall": {
+      "k": 4839,
+      "n": 4907,
+      "rate": 0.9861,
+      "ci95": [
+        0.9825,
+        0.9891
+      ]
+    },
+    "precisionByKind": {
+      "confront": {
+        "k": 143,
+        "n": 163,
+        "rate": 0.8773,
+        "ci95": [
+          0.8181,
+          0.9192
+        ]
+      },
+      "persuade": {
+        "k": 828,
+        "n": 831,
+        "rate": 0.9964,
+        "ci95": [
+          0.9894,
+          0.9988
+        ]
+      },
+      "unreflected_change": {
+        "k": 3699,
+        "n": 3976,
+        "rate": 0.9303,
+        "ci95": [
+          0.922,
+          0.9378
+        ]
+      },
+      "four_questions": {
+        "k": 61,
+        "n": 63,
+        "rate": 0.9683,
+        "ci95": [
+          0.8914,
+          0.9913
+        ]
+      },
+      "three_closed": {
+        "k": 27,
+        "n": 29,
+        "rate": 0.931,
+        "ci95": [
+          0.7804,
+          0.9809
+        ]
+      }
+    },
+    "vsSupervisor": {
+      "calls": 477,
+      "spearmanCoachingCuesVsMeanScore": 0.3112,
+      "ci95": [
+        0.225,
+        0.388
+      ]
+    }
   },
   "perCall": [
     {

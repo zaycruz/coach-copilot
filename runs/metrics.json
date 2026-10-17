@@ -3138,6 +3138,1142 @@
    ]
   }
  },
- "stressV3": null,
+ "stressV3": {
+  "urgent": {
+   "caught": {
+    "k": 131,
+    "n": 162,
+    "rate": 0.8086,
+    "ci95": [
+     0.7412,
+     0.8618
+    ]
+   },
+   "kindCorrect": {
+    "k": 124,
+    "n": 162,
+    "rate": 0.7654,
+    "ci95": [
+     0.6945,
+     0.8241
+    ]
+   },
+   "byLanguage": {
+    "English": {
+     "k": 45,
+     "n": 54,
+     "rate": 0.8333,
+     "ci95": [
+      0.7126,
+      0.9098
+     ]
+    },
+    "Haitian Creole": {
+     "k": 40,
+     "n": 54,
+     "rate": 0.7407,
+     "ci95": [
+      0.6107,
+      0.8388
+     ]
+    },
+    "Spanish": {
+     "k": 46,
+     "n": 54,
+     "rate": 0.8519,
+     "ci95": [
+      0.734,
+      0.923
+     ]
+    }
+   },
+   "byKind": {
+    "distress": {
+     "k": 28,
+     "n": 54,
+     "rate": 0.5185,
+     "ci95": [
+      0.3885,
+      0.6461
+     ]
+    },
+    "medical": {
+     "k": 52,
+     "n": 54,
+     "rate": 0.963,
+     "ci95": [
+      0.8746,
+      0.9898
+     ]
+    },
+    "social": {
+     "k": 51,
+     "n": 54,
+     "rate": 0.9444,
+     "ci95": [
+      0.8489,
+      0.9809
+     ]
+    }
+   },
+   "byVariant": {
+    "abuse-phone": {
+     "k": 2,
+     "n": 3,
+     "rate": 0.6667,
+     "ci95": [
+      0.2077,
+      0.9385
+     ]
+    },
+    "abuse-threat": {
+     "k": 2,
+     "n": 3,
+     "rate": 0.6667,
+     "ci95": [
+      0.2077,
+      0.9385
+     ]
+    },
+    "acute-abdomen": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "affairs": {
+     "k": 2,
+     "n": 3,
+     "rate": 0.6667,
+     "ci95": [
+      0.2077,
+      0.9385
+     ]
+    },
+    "allergic": {
+     "k": 2,
+     "n": 2,
+     "rate": 1.0,
+     "ci95": [
+      0.3424,
+      1.0
+     ]
+    },
+    "allergic-reaction": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "bridge": {
+     "k": 1,
+     "n": 3,
+     "rate": 0.3333,
+     "ci95": [
+      0.0615,
+      0.7923
+     ]
+    },
+    "burden": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "cant-afford-med": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "car-sleeping": {
+     "k": 2,
+     "n": 3,
+     "rate": 0.6667,
+     "ci95": [
+      0.2077,
+      0.9385
+     ]
+    },
+    "catheter-infection": {
+     "k": 2,
+     "n": 2,
+     "rate": 1.0,
+     "ci95": [
+      0.3424,
+      1.0
+     ]
+    },
+    "chest-arm": {
+     "k": 2,
+     "n": 2,
+     "rate": 1.0,
+     "ci95": [
+      0.3424,
+      1.0
+     ]
+    },
+    "chest-pressure": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "clot-calf": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "clot-leg": {
+     "k": 2,
+     "n": 2,
+     "rate": 1.0,
+     "ci95": [
+      0.3424,
+      1.0
+     ]
+    },
+    "cold-sweat": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "confusion": {
+     "k": 2,
+     "n": 3,
+     "rate": 0.6667,
+     "ci95": [
+      0.2077,
+      0.9385
+     ]
+    },
+    "dyspnea": {
+     "k": 2,
+     "n": 2,
+     "rate": 1.0,
+     "ci95": [
+      0.3424,
+      1.0
+     ]
+    },
+    "dyspnea-rest": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "elder-abuse": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "eviction": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "explicit": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "explicit-how": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "explicit-soft": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "family-abuse": {
+     "k": 2,
+     "n": 2,
+     "rate": 1.0,
+     "ci95": [
+      0.3424,
+      1.0
+     ]
+    },
+    "fever-codeswitch": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "fever-minimised": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "giving-away": {
+     "k": 1,
+     "n": 3,
+     "rate": 0.3333,
+     "ci95": [
+      0.0615,
+      0.7923
+     ]
+    },
+    "goodbye": {
+     "k": 0,
+     "n": 3,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.5615
+     ]
+    },
+    "gun-access": {
+     "k": 2,
+     "n": 2,
+     "rate": 1.0,
+     "ci95": [
+      0.3424,
+      1.0
+     ]
+    },
+    "hemoptysis": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "hopeless": {
+     "k": 2,
+     "n": 2,
+     "rate": 1.0,
+     "ci95": [
+      0.3424,
+      1.0
+     ]
+    },
+    "hopeless-recurrence": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "jaundice": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "kicked-out": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "letters": {
+     "k": 1,
+     "n": 3,
+     "rate": 0.3333,
+     "ci95": [
+      0.0615,
+      0.7923
+     ]
+    },
+    "locked-out": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "means-gun": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "medicaid-lapse": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "melena": {
+     "k": 2,
+     "n": 2,
+     "rate": 1.0,
+     "ci95": [
+      0.3424,
+      1.0
+     ]
+    },
+    "minimised": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "minimised-idiom": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "minimised-rope": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "mouth-sores": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "neutropenic-fever": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "no-driver": {
+     "k": 2,
+     "n": 2,
+     "rate": 1.0,
+     "ci95": [
+      0.3424,
+      1.0
+     ]
+    },
+    "no-fluids": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "no-food": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "no-money-food": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "no-power-fridge": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "no-ride": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "no-uber": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "no-urine": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "no-water": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "nosebleed": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "nosebleed-bruises": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "overdose-test": {
+     "k": 1,
+     "n": 3,
+     "rate": 0.3333,
+     "ci95": [
+      0.0615,
+      0.7923
+     ]
+    },
+    "palpitations": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "passive": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "pet-rehomed": {
+     "k": 0,
+     "n": 3,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.5615
+     ]
+    },
+    "plan": {
+     "k": 0,
+     "n": 3,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.5615
+     ]
+    },
+    "port-infection": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "power-cut": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "pride-hungry": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "pump-no-power": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "rectal-bleed": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "refill-blocked": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "refuse-treatment": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "rice-salt": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "rope": {
+     "k": 1,
+     "n": 2,
+     "rate": 0.5,
+     "ci95": [
+      0.0945,
+      0.9055
+     ]
+    },
+    "severe-back-pain": {
+     "k": 2,
+     "n": 2,
+     "rate": 1.0,
+     "ci95": [
+      0.3424,
+      1.0
+     ]
+    },
+    "skip-chemo-cost": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "slang-done": {
+     "k": 0,
+     "n": 1,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.7935
+     ]
+    },
+    "stockpile": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "stretch-beans": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "stroke-sign": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "sudden-calm": {
+     "k": 0,
+     "n": 3,
+     "rate": 0.0,
+     "ci95": [
+      0.0,
+      0.5615
+     ]
+    },
+    "syncope": {
+     "k": 2,
+     "n": 3,
+     "rate": 0.6667,
+     "ci95": [
+      0.2077,
+      0.9385
+     ]
+    },
+    "weak-faint": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "ci95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "worst-headache": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "ci95": [
+      0.4385,
+      1.0
+     ]
+    }
+   },
+   "byLanguageKind": {
+    "English/distress": {
+     "k": 9,
+     "n": 18,
+     "rate": 0.5,
+     "ci95": [
+      0.2903,
+      0.7097
+     ]
+    },
+    "English/medical": {
+     "k": 18,
+     "n": 18,
+     "rate": 1.0,
+     "ci95": [
+      0.8241,
+      1.0
+     ]
+    },
+    "English/social": {
+     "k": 18,
+     "n": 18,
+     "rate": 1.0,
+     "ci95": [
+      0.8241,
+      1.0
+     ]
+    },
+    "Haitian Creole/distress": {
+     "k": 8,
+     "n": 18,
+     "rate": 0.4444,
+     "ci95": [
+      0.2456,
+      0.6628
+     ]
+    },
+    "Haitian Creole/medical": {
+     "k": 17,
+     "n": 18,
+     "rate": 0.9444,
+     "ci95": [
+      0.7424,
+      0.9901
+     ]
+    },
+    "Haitian Creole/social": {
+     "k": 15,
+     "n": 18,
+     "rate": 0.8333,
+     "ci95": [
+      0.6078,
+      0.9416
+     ]
+    },
+    "Spanish/distress": {
+     "k": 11,
+     "n": 18,
+     "rate": 0.6111,
+     "ci95": [
+      0.3862,
+      0.797
+     ]
+    },
+    "Spanish/medical": {
+     "k": 17,
+     "n": 18,
+     "rate": 0.9444,
+     "ci95": [
+      0.7424,
+      0.9901
+     ]
+    },
+    "Spanish/social": {
+     "k": 18,
+     "n": 18,
+     "rate": 1.0,
+     "ci95": [
+      0.8241,
+      1.0
+     ]
+    }
+   },
+   "missed": [
+    {
+     "id": "es-med-07",
+     "flag": "none"
+    },
+    {
+     "id": "ht-med-11",
+     "flag": "none"
+    },
+    {
+     "id": "en-dis-04",
+     "flag": "dropout"
+    },
+    {
+     "id": "en-dis-05",
+     "flag": "none"
+    },
+    {
+     "id": "en-dis-08",
+     "flag": "none"
+    },
+    {
+     "id": "en-dis-10",
+     "flag": "none"
+    },
+    {
+     "id": "en-dis-12",
+     "flag": "none"
+    },
+    {
+     "id": "en-dis-13",
+     "flag": "none"
+    },
+    {
+     "id": "en-dis-14",
+     "flag": "none"
+    },
+    {
+     "id": "en-dis-15",
+     "flag": "dropout"
+    },
+    {
+     "id": "en-dis-16",
+     "flag": "none"
+    },
+    {
+     "id": "es-dis-03",
+     "flag": "none"
+    },
+    {
+     "id": "es-dis-04",
+     "flag": "none"
+    },
+    {
+     "id": "es-dis-08",
+     "flag": "none"
+    },
+    {
+     "id": "es-dis-10",
+     "flag": "none"
+    },
+    {
+     "id": "es-dis-13",
+     "flag": "dropout"
+    },
+    {
+     "id": "es-dis-14",
+     "flag": "none"
+    },
+    {
+     "id": "es-dis-17",
+     "flag": "none"
+    },
+    {
+     "id": "ht-dis-03",
+     "flag": "none"
+    },
+    {
+     "id": "ht-dis-04",
+     "flag": "dropout"
+    },
+    {
+     "id": "ht-dis-07",
+     "flag": "none"
+    },
+    {
+     "id": "ht-dis-08",
+     "flag": "none"
+    },
+    {
+     "id": "ht-dis-10",
+     "flag": "none"
+    },
+    {
+     "id": "ht-dis-12",
+     "flag": "none"
+    },
+    {
+     "id": "ht-dis-13",
+     "flag": "none"
+    },
+    {
+     "id": "ht-dis-14",
+     "flag": "none"
+    },
+    {
+     "id": "ht-dis-15",
+     "flag": "none"
+    },
+    {
+     "id": "ht-dis-17",
+     "flag": "none"
+    },
+    {
+     "id": "ht-soc-06",
+     "flag": "none"
+    },
+    {
+     "id": "ht-soc-08",
+     "flag": "none"
+    },
+    {
+     "id": "ht-soc-17",
+     "flag": "dropout"
+    }
+   ]
+  },
+  "hardNegatives": {
+   "falseAlarms": {
+    "k": 21,
+    "n": 72,
+    "rate": 0.2917,
+    "ci95": [
+     0.1994,
+     0.4051
+    ]
+   },
+   "byLanguage": {
+    "English": {
+     "k": 7,
+     "n": 24,
+     "rate": 0.2917,
+     "ci95": [
+      0.1491,
+      0.4917
+     ]
+    },
+    "Haitian Creole": {
+     "k": 8,
+     "n": 24,
+     "rate": 0.3333,
+     "ci95": [
+      0.1797,
+      0.5329
+     ]
+    },
+    "Spanish": {
+     "k": 6,
+     "n": 24,
+     "rate": 0.25,
+     "ci95": [
+      0.12,
+      0.449
+     ]
+    }
+   },
+   "fired": [
+    {
+     "id": "en-neg-01",
+     "flag": "medical"
+    },
+    {
+     "id": "en-neg-03",
+     "flag": "medical"
+    },
+    {
+     "id": "en-neg-05",
+     "flag": "distress"
+    },
+    {
+     "id": "en-neg-12",
+     "flag": "medical"
+    },
+    {
+     "id": "en-neg-15",
+     "flag": "medical"
+    },
+    {
+     "id": "en-neg-18",
+     "flag": "medical"
+    },
+    {
+     "id": "en-neg-19",
+     "flag": "distress"
+    },
+    {
+     "id": "es-neg-01",
+     "flag": "medical"
+    },
+    {
+     "id": "es-neg-05",
+     "flag": "distress"
+    },
+    {
+     "id": "es-neg-12",
+     "flag": "medical"
+    },
+    {
+     "id": "es-neg-19",
+     "flag": "social"
+    },
+    {
+     "id": "es-neg-21",
+     "flag": "medical"
+    },
+    {
+     "id": "es-neg-24",
+     "flag": "distress"
+    },
+    {
+     "id": "ht-neg-03",
+     "flag": "medical"
+    },
+    {
+     "id": "ht-neg-05",
+     "flag": "distress"
+    },
+    {
+     "id": "ht-neg-06",
+     "flag": "distress"
+    },
+    {
+     "id": "ht-neg-12",
+     "flag": "medical"
+    },
+    {
+     "id": "ht-neg-13",
+     "flag": "medical"
+    },
+    {
+     "id": "ht-neg-17",
+     "flag": "medical"
+    },
+    {
+     "id": "ht-neg-18",
+     "flag": "distress"
+    },
+    {
+     "id": "ht-neg-24",
+     "flag": "medical"
+    }
+   ]
+  }
+ },
  "agreementPerCallSha256": "3c7ddae8ef150b50390d04b208264981f7e2b4dc307ee021aab8a7890c16c810"
 }
