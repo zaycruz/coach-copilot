@@ -19,7 +19,7 @@ scripts/reproduce.sh
 `reproduce.sh` runs three steps:
 1. It checks the four data files against `data/SHA256SUMS` and stops on any mismatch.
 2. It runs `scripts/metrics.py`, which joins `runs/predictions/*.jsonl` (ids and model answers only, no text) with the sponsor labels and writes `runs/metrics.json` and `runs/agreement-per-call.json`.
-3. It runs `scripts/check_metrics.py`, which compares 118 values with `scripts/expected.json`, rounded as the README shows them, and exits 1 on any mismatch.
+3. It runs `scripts/check_metrics.py`, which compares 178 values with `scripts/expected.json`, rounded as the README shows them, and exits 1 on any mismatch.
 
 **Runtime:** about 2 s for the metrics on an M-series laptop, plus the one-time `uv sync`.
 
@@ -27,7 +27,7 @@ scripts/reproduce.sh
 
 ### README number → `runs/metrics.json` key
 
-The full list (118 keys) is `scripts/expected.json`. The headline numbers:
+The full list (178 keys) is `scripts/expected.json`. The headline numbers:
 
 | README number | Key | Expected |
 |---|---|---|
@@ -39,6 +39,10 @@ The full list (118 keys) is `scripts/expected.json`. The headline numbers:
 | Lines without an answer; accuracy with them counted wrong | `tags.validation.noAnswer`; `tags.validation.{move,talk}.accuracyCountingNoAnswerWrong` | 37; 0.930, 0.908 |
 | Calibration: share of lines at confidence ≥ 0.3, accuracy there, accuracy below (dev) | `tags.dev.calibration.*` | 0.77, 0.983, 0.76 |
 | App score vs mean of supervisors: Pearson (CI), Spearman | `agreement.correlations.2.pearson` (`.pearsonCi95`), `.spearman` | 0.789 (0.754–0.820), 0.797 |
+| Like-for-like: r(app, A) − r(B, A); r(app, B) − r(A, B) | `agreement.likeForLike.*.diff` (`.ci95`) | +0.059 (0.013–0.106); +0.009 (−0.032 to 0.056) |
+| Cross-fitted ICC(2,1): app vs A, app vs B | `agreement.crossFittedIcc.{appVsA,appVsB}.icc21` | 0.705, 0.656 |
+| By language: app vs mean, English and Spanish | `agreement.byLanguage.{English,Spanish}.appVsMean.pearson` | 0.771, 0.818 |
+| Flags by language: caught, English and Spanish | `flags.validation.byLanguage.{English,Spanish}.caught` | 6/6, 7/7 |
 | App vs supervisor A, app vs B, A vs B | `agreement.correlations.{0,1,3}.pearson` | 0.751, 0.701, 0.692 |
 | Human-label score vs mean; app vs human-label score | `agreement.correlations.{4,5}.pearson` | 0.816, 0.955 |
 | Supervisor A vs B, ICC(2,1) (CI) | `agreement.supervisorIcc.icc21` (`.ci95`) | 0.666 (0.613–0.712) |

@@ -78,6 +78,9 @@ check("c5/agreement: 200", status == 200, {"status": status})
 if status == 200:
     check("drift: correlations equal runs/metrics.json", live["correlations"] == repo["agreement"]["correlations"],
           {"live": [c["pearson"] for c in live["correlations"]], "repo": [c["pearson"] for c in repo["agreement"]["correlations"]]})
+    check("drift: like-for-like, cross-fitted ICC and language split equal",
+          all(live.get(k) == repo["agreement"][k] for k in ("likeForLike", "crossFittedIcc", "byLanguage")),
+          {k: live.get(k) for k in ("likeForLike", "crossFittedIcc")})
     check("drift: supervisor ICC and MAE equal", live["supervisorIcc"] == repo["agreement"]["supervisorIcc"] and live["mae"] == repo["agreement"]["mae"],
           {"live": [live["supervisorIcc"], live["mae"]]})
     f = repo["flags"]

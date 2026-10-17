@@ -4,6 +4,8 @@ Calls: the supervisor-rated calls in the validation split (held out; never used 
 MITI-style score (scripts/score.py) over Clef's tags (runs/predictions/tags-validation.jsonl), no GLM review.
 For reference, the same score over the human line labels shows what the score formula itself can reach.
 Correlations get a percentile bootstrap 95% CI over calls (2,000 resamples, seed 7); A vs B also gets ICC(2,1).
+Like-for-like: each supervisor is compared with the app and with the other supervisor (paired bootstrap of the
+difference in r), and the app score, mapped to 1-5 with cross-fitting, gets ICC(2,1) against each supervisor.
 
 Usage: agreement.py <data_dir>   -> writes src/agreement.json (served at GET /api/c5/agreement) and prints a summary.
 """
@@ -19,7 +21,7 @@ f = flags(lines, "validation")
 out = {"about": "Coach score vs two supervisors on held-out (validation) rated calls. Synthetic data, Crane Lab.",
        "method": __doc__.split("Usage:")[0].strip(), **agree,
        "flags": {"recall": f["caught"], "falseAlarmsPerLine": f["falseAlarmLines"], "callsWithFalseAlarm": f["falseAlarmCalls"],
-                 "coachConductAgreement": conduct(data),
+                 "coachConductAgreement": conduct(data), "byLanguage": f["byLanguage"],
                  "source": "validation split participant lines; coach conduct = calls supervisors rated for safety_issue_handled"},
        "perCall": per_call}
 json.dump(out, open(os.path.join(ROOT, "src", "agreement.json"), "w"), ensure_ascii=False, indent=1)

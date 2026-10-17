@@ -73,7 +73,7 @@ The console (Patient 360) is the user-facing app. This Worker is the engine: Cle
 |---|---|---|
 | 400 | `{json.dumps(bad, ensure_ascii=False)}` | bad `line` (speaker must be `coach` or `participant`; text 1–1,000 chars) |
 | 404 | `{json.dumps(missing, ensure_ascii=False)}` | unknown `callId` / `survivorId` |
-| 429 | `{{"error":"rate_limited"}}`, header `retry-after: 20` | Workers AI per-minute quota spent (error 3021). Not retried by the Worker. Keep the Clef tag and skip the review or cue. |
+| 429 | `{{"error":"rate_limited"}}`, header `retry-after: 20` | Workers AI per-minute quota spent (error 3021). `/api/turn` is not retried. `/api/review` and `/api/cue` back off and retry twice (~2 s, then ~5 s) first. Keep the Clef tag and skip the review or cue. |
 | 502 | `{{"error":"…"}}` | upstream model error after one retry |
 
 Workers AI quotas are per account and model, shared by every caller of this Worker (coach.raava.dev, Patient 360, batch scripts).
@@ -106,11 +106,15 @@ Coach line after that flag, not routed:
 
 ## `POST /api/review`: second opinion on an unsure tag (async, ~2–4 s)
 
+Answers are cached for 7 days by model and prompt. A repeat returns at once with `"cached": true` and `"ms": 0`.
+
 Body: `line`, `previous` and `probabilities` from `/api/turn`. GLM picks among Clef's top 4 coach labels (all 3 participant labels). `label` is `null` when it gives no valid answer; keep Clef's tag then. On 600 validation lines below 0.3 confidence the review moves accuracy by under one point (see README), so it is optional.
 
 {block(ms(review), 20)}
 
 ## `POST /api/cue`: one coaching cue (async, ~2–5 s)
+
+Cached like `/api/review`: the same trigger and lines return the stored cue with `"cached": true`.
 
 Body: `trigger` (why, max 300 chars) and `recent` (up to 8 lines, with `tag`/`flag` when known). `cue` is English; `say` is in the call's language, detected from the participant's words. Either may be `null` on a model miss.
 
@@ -160,8 +164,11 @@ A held-out safety call, already run through the live engine by `scripts/preplay.
 From `scripts/agreement.py`, on the supervisor-rated validation calls.
 - `correlations[]`: Pearson and Spearman with bootstrap 95% CIs, for each pair: app vs supervisor A, app vs B, app vs the mean, A vs B, human-label score vs the mean.
 - `supervisorIcc`: ICC(2,1) for A vs B.
+- `likeForLike`: r(app, A) − r(B, A) and r(app, B) − r(A, B), with paired-bootstrap CIs. Each supervisor is compared with the other supervisor, not with the smoother mean.
+- `crossFittedIcc`: ICC(2,1) of the app score, mapped to 1–5 by a line fitted on the other folds, against A and against B, next to A vs B.
+- `byLanguage`: the same correlations for English and Spanish calls.
 - `mae`: the app score mapped to 1–5, then the mean absolute difference from each supervisor.
-- `flags`: recall, false alarms per line and per call, and coach-conduct agreement, each `{{k, n, rate, ci95}}` (Wilson).
+- `flags`: recall, false alarms per line and per call, and coach-conduct agreement, each `{{k, n, rate, ci95}}` (Wilson), plus `byLanguage`.
 - `perCall[]`: one row per call, `{{callId, appScore, labelScore, supervisorA, supervisorB}}`.
 
 {block(agreement, 3)}

@@ -96,10 +96,14 @@ def tags(lines, split):
 
 
 def flags(lines, split):
-    f = preds(f"flags-{split}.jsonl").merge(lines[["call_id", "line_number", "text", "needs_human"]], on=["call_id", "line_number"])
+    f = preds(f"flags-{split}.jsonl").merge(lines[["call_id", "line_number", "text", "needs_human", "language"]], on=["call_id", "line_number"])
     fired, urgent = f.flag.fillna("none") != "none", f.needs_human == "yes"
     fa = f[fired & ~urgent]
-    return {"caught": wilson((fired & urgent).sum(), urgent.sum()),
+    by_lang = {lg: {"caught": wilson((fired[g.index] & urgent[g.index]).sum(), urgent[g.index].sum()) if urgent[g.index].any() else None,
+                    "falseAlarmLines": wilson((fired[g.index] & ~urgent[g.index]).sum(), (~urgent[g.index]).sum()),
+                    "falseAlarmCalls": wilson(g[fired[g.index] & ~urgent[g.index]].call_id.nunique(), g.call_id.nunique())}
+               for lg, g in f.groupby("language")}
+    return {"byLanguage": by_lang, "caught": wilson((fired & urgent).sum(), urgent.sum()),
             "caughtKinds": {k: int(v) for k, v in f[urgent].flag.value_counts().items()},
             "falseAlarmLines": wilson(len(fa), (~urgent).sum()), "precision": wilson((fired & urgent).sum(), fired.sum()),
             "urgentPrevalence": wilson(urgent.sum(), len(f)), "falseAlarmTexts": int(fa.text.nunique()),
@@ -115,6 +119,7 @@ def conduct(data):
 
 
 def agreement(data, tag_rows):
+    calls = pd.read_csv(f"{data}/synthetic_data/synthetic_calls.csv")
     sup = pd.read_csv(f"{data}/synthetic_data/synthetic_supervisor_ratings.csv")
     coach = tag_rows[tag_rows.speaker == "coach"].sort_values(["call_id", "line_number"])
     app = coach.groupby("call_id").pred.apply(lambda s: score([m for m in s if isinstance(m, str)]))
@@ -132,9 +137,37 @@ def agreement(data, tag_rows):
     mae = {"note": "app score mapped to 1-5 by least squares on these calls (slope, intercept below), then compared with each supervisor",
            "slope": round(float(cal[0]), 4), "intercept": round(float(cal[1]), 3),
            "maeVsA": round(float(np.abs(fit - t.a).mean()), 3), "maeVsB": round(float(np.abs(fit - t.b).mean()), 3), "maeAvsB": icc["mae"]}
+    # Like-for-like: does the app agree with supervisor A as well as supervisor B does (and vice versa)?
+    # Paired bootstrap over calls of r(app, A) - r(B, A), and r(app, B) - r(A, B).
+    rng, x = np.random.default_rng(7), t[["app", "a", "b"]].to_numpy(float)
+    diffs = {"vsA": [], "vsB": []}
+    for _ in range(2000):
+        m = x[rng.integers(0, len(x), len(x))]
+        diffs["vsA"].append(pearson(m[:, 0], m[:, 1]) - pearson(m[:, 2], m[:, 1]))
+        diffs["vsB"].append(pearson(m[:, 0], m[:, 2]) - pearson(m[:, 1], m[:, 2]))
+    like = {"note": "r(app, A) - r(B, A) and r(app, B) - r(A, B); 95% CI from a paired bootstrap over calls (2,000 resamples, seed 7)",
+            "appVsA_minus_BvsA": {"diff": round(pearson(t.app, t.a) - pearson(t.b, t.a), 3), "ci95": [round(float(np.percentile(diffs["vsA"], q)), 3) for q in (2.5, 97.5)]},
+            "appVsB_minus_AvsB": {"diff": round(pearson(t.app, t.b) - pearson(t.a, t.b), 3), "ci95": [round(float(np.percentile(diffs["vsB"], q)), 3) for q in (2.5, 97.5)]}}
+    # Cross-fitted ICC: map the app score to 1-5 with a line fitted on the other 4 of 5 folds, so no call's own
+    # ratings shape its mapped score, then ICC(2,1) of the mapped score against each supervisor.
+    fold = np.random.default_rng(7).permutation(len(t)) % 5
+    mapped = np.empty(len(t))
+    for k in range(5):
+        cf = np.polyfit(t.app.to_numpy()[fold != k], t["mean"].to_numpy()[fold != k], 1)
+        mapped[fold == k] = np.clip(np.polyval(cf, t.app.to_numpy()[fold == k]), 1, 5)
+    cross = {"note": "app score mapped to 1-5 by least squares fitted on the other folds (5-fold, seed 7); ICC(2,1) with bootstrap CI",
+             "appVsA": {"icc21": round(icc21(mapped, t.a), 3), "ci95": boot(mapped, t.a, icc21)},
+             "appVsB": {"icc21": round(icc21(mapped, t.b), 3), "ci95": boot(mapped, t.b, icc21)},
+             "AvsB": {"icc21": icc["icc21"], "ci95": icc["ci95"]}}
+    lang = calls.set_index("call_id").language
+    by_lang = {}
+    for lg, g in t.join(lang).groupby("language"):
+        by_lang[lg] = {"calls": len(g), "appVsMean": pair("app vs mean", g.app, g["mean"]), "appVsA": pair("app vs A", g.app, g.a),
+                       "appVsB": pair("app vs B", g.app, g.b), "AvsB": pair("A vs B", g.a, g.b)}
     per_call = [{"callId": cid, "appScore": int(r.app), "labelScore": None if pd.isna(r.labels) else int(r.labels),
                  "supervisorA": int(r.a), "supervisorB": int(r.b)} for cid, r in t.sort_index().iterrows()]
-    return {"calls": len(t), "correlations": pairs, "supervisorIcc": icc, "mae": mae}, per_call
+    return {"calls": len(t), "correlations": pairs, "supervisorIcc": icc, "mae": mae, "likeForLike": like, "crossFittedIcc": cross,
+            "byLanguage": by_lang}, per_call
 
 
 def annomi(data):
@@ -160,6 +193,27 @@ def annomi(data):
     return out
 
 
+def stress():
+    """The hand-written stress set (scripts/stress-set.json): paraphrased, hedged, buried, ASR-style and Spanish urgent
+    lines plus hard negatives. Ours, not sponsor data; never used to tune the payload."""
+    path = os.path.join(PRED, "stress-flags.jsonl")
+    if not os.path.exists(path):
+        return None
+    s = pd.DataFrame(json.load(open(os.path.join(ROOT, "scripts", "stress-set.json")))["lines"]).merge(preds("stress-flags.jsonl"), on="id")
+    s["flag"] = s.flag.fillna("none")
+    urgent, neg = s[s.expect != "none"], s[s.expect == "none"]
+    caught = urgent.flag.isin(RED)
+    out = {"urgent": {"caught": wilson(caught.sum(), len(urgent)), "kindCorrect": wilson((urgent.flag == urgent.expect).sum(), len(urgent)),
+                      "byLanguage": {lg: wilson(caught[g.index].sum(), len(g)) for lg, g in urgent.groupby("lang")},
+                      "byKind": {k: wilson(caught[g.index].sum(), len(g)) for k, g in urgent.groupby("expect")},
+                      "byVariant": {v: wilson(caught[g.index].sum(), len(g)) for v, g in urgent.groupby("variant")},
+                      "missed": urgent[~caught][["id", "flag"]].to_dict("records")},
+           "hardNegatives": {"falseAlarms": wilson((neg.flag != "none").sum(), len(neg)),
+                             "byLanguage": {lg: wilson((g.flag != "none").sum(), len(g)) for lg, g in neg.groupby("lang")},
+                             "fired": neg[neg.flag != "none"][["id", "flag"]].to_dict("records")}}
+    return out
+
+
 def review(tag_rows):
     v = preds("review-validation.jsonl").merge(tag_rows, on=["call_id", "line_number"])
     final = v.review.where(v.review.notna(), v.pred)
@@ -178,7 +232,8 @@ def main():
     agree, per_call = agreement(data, val_rows)
     m = {"tags": {"validation": val, "dev": dev},
          "flags": {"validation": flags(lines, "validation"), "dev": flags(lines, "dev"), "coachConduct": conduct(data)},
-         "agreement": agree, "annomi": annomi(data), "review": review(val_rows)}
+         "agreement": agree, "annomi": annomi(data), "review": review(val_rows),
+         "stress": stress()}
     m["agreementPerCallSha256"] = hashlib.sha256(json.dumps(per_call).encode()).hexdigest()
     json.dump(m, open(out_path, "w"), indent=1, ensure_ascii=False)
     json.dump({"perCall": per_call}, open(os.path.join(os.path.dirname(out_path), "agreement-per-call.json"), "w"), indent=1)

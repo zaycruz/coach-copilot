@@ -1,6 +1,6 @@
 {
  "about": "Coach score vs two supervisors on held-out (validation) rated calls. Synthetic data, Crane Lab.",
- "method": "How well does the app's coach score track the two supervisors? And flag recall / false alarms with Wilson CIs.\n\nCalls: the supervisor-rated calls in the validation split (held out; never used for tuning). The app score is the\nMITI-style score (scripts/score.py) over Clef's tags (runs/predictions/tags-validation.jsonl), no GLM review.\nFor reference, the same score over the human line labels shows what the score formula itself can reach.\nCorrelations get a percentile bootstrap 95% CI over calls (2,000 resamples, seed 7); A vs B also gets ICC(2,1).",
+ "method": "How well does the app's coach score track the two supervisors? And flag recall / false alarms with Wilson CIs.\n\nCalls: the supervisor-rated calls in the validation split (held out; never used for tuning). The app score is the\nMITI-style score (scripts/score.py) over Clef's tags (runs/predictions/tags-validation.jsonl), no GLM review.\nFor reference, the same score over the human line labels shows what the score formula itself can reach.\nCorrelations get a percentile bootstrap 95% CI over calls (2,000 resamples, seed 7); A vs B also gets ICC(2,1).\nLike-for-like: each supervisor is compared with the app and with the other supervisor (paired bootstrap of the\ndifference in r), and the app score, mapped to 1-5 with cross-fitting, gets ICC(2,1) against each supervisor.",
  "calls": 477,
  "correlations": [
   {
@@ -105,6 +105,167 @@
   "maeVsB": 0.597,
   "maeAvsB": 0.61
  },
+ "likeForLike": {
+  "note": "r(app, A) - r(B, A) and r(app, B) - r(A, B); 95% CI from a paired bootstrap over calls (2,000 resamples, seed 7)",
+  "appVsA_minus_BvsA": {
+   "diff": 0.059,
+   "ci95": [
+    0.013,
+    0.106
+   ]
+  },
+  "appVsB_minus_AvsB": {
+   "diff": 0.009,
+   "ci95": [
+    -0.032,
+    0.056
+   ]
+  }
+ },
+ "crossFittedIcc": {
+  "note": "app score mapped to 1-5 by least squares fitted on the other folds (5-fold, seed 7); ICC(2,1) with bootstrap CI",
+  "appVsA": {
+   "icc21": 0.705,
+   "ci95": [
+    0.658,
+    0.743
+   ]
+  },
+  "appVsB": {
+   "icc21": 0.656,
+   "ci95": [
+    0.608,
+    0.7
+   ]
+  },
+  "AvsB": {
+   "icc21": 0.666,
+   "ci95": [
+    0.613,
+    0.712
+   ]
+  }
+ },
+ "byLanguage": {
+  "English": {
+   "calls": 312,
+   "appVsMean": {
+    "pair": "app vs mean",
+    "n": 312,
+    "pearson": 0.771,
+    "pearsonCi95": [
+     0.723,
+     0.815
+    ],
+    "spearman": 0.77,
+    "spearmanCi95": [
+     0.71,
+     0.818
+    ]
+   },
+   "appVsA": {
+    "pair": "app vs A",
+    "n": 312,
+    "pearson": 0.724,
+    "pearsonCi95": [
+     0.67,
+     0.775
+    ],
+    "spearman": 0.71,
+    "spearmanCi95": [
+     0.644,
+     0.766
+    ]
+   },
+   "appVsB": {
+    "pair": "app vs B",
+    "n": 312,
+    "pearson": 0.68,
+    "pearsonCi95": [
+     0.62,
+     0.735
+    ],
+    "spearman": 0.68,
+    "spearmanCi95": [
+     0.613,
+     0.738
+    ]
+   },
+   "AvsB": {
+    "pair": "A vs B",
+    "n": 312,
+    "pearson": 0.657,
+    "pearsonCi95": [
+     0.581,
+     0.72
+    ],
+    "spearman": 0.618,
+    "spearmanCi95": [
+     0.537,
+     0.691
+    ]
+   }
+  },
+  "Spanish": {
+   "calls": 165,
+   "appVsMean": {
+    "pair": "app vs mean",
+    "n": 165,
+    "pearson": 0.818,
+    "pearsonCi95": [
+     0.772,
+     0.858
+    ],
+    "spearman": 0.826,
+    "spearmanCi95": [
+     0.776,
+     0.865
+    ]
+   },
+   "appVsA": {
+    "pair": "app vs A",
+    "n": 165,
+    "pearson": 0.797,
+    "pearsonCi95": [
+     0.743,
+     0.846
+    ],
+    "spearman": 0.821,
+    "spearmanCi95": [
+     0.77,
+     0.861
+    ]
+   },
+   "appVsB": {
+    "pair": "app vs B",
+    "n": 165,
+    "pearson": 0.733,
+    "pearsonCi95": [
+     0.673,
+     0.785
+    ],
+    "spearman": 0.739,
+    "spearmanCi95": [
+     0.665,
+     0.797
+    ]
+   },
+   "AvsB": {
+    "pair": "A vs B",
+    "n": 165,
+    "pearson": 0.746,
+    "pearsonCi95": [
+     0.679,
+     0.806
+    ],
+    "spearman": 0.751,
+    "spearmanCi95": [
+     0.675,
+     0.813
+    ]
+   }
+  }
+ },
  "flags": {
   "recall": {
    "k": 13,
@@ -141,6 +302,66 @@
     0.6756,
     1.0
    ]
+  },
+  "byLanguage": {
+   "English": {
+    "caught": {
+     "k": 6,
+     "n": 6,
+     "rate": 1.0,
+     "ci95": [
+      0.6097,
+      1.0
+     ]
+    },
+    "falseAlarmLines": {
+     "k": 7,
+     "n": 16696,
+     "rate": 0.0004,
+     "ci95": [
+      0.0002,
+      0.0009
+     ]
+    },
+    "falseAlarmCalls": {
+     "k": 7,
+     "n": 704,
+     "rate": 0.0099,
+     "ci95": [
+      0.0048,
+      0.0204
+     ]
+    }
+   },
+   "Spanish": {
+    "caught": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "ci95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "falseAlarmLines": {
+     "k": 2,
+     "n": 9089,
+     "rate": 0.0002,
+     "ci95": [
+      0.0001,
+      0.0008
+     ]
+    },
+    "falseAlarmCalls": {
+     "k": 2,
+     "n": 381,
+     "rate": 0.0052,
+     "ci95": [
+      0.0014,
+      0.0189
+     ]
+    }
+   }
   },
   "source": "validation split participant lines; coach conduct = calls supervisors rated for safety_issue_handled"
  },

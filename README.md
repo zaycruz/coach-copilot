@@ -2,23 +2,23 @@
 
 Emerge Hackathon · Sylvester healthcare track · Challenge 5. The engine and API behind the coaching view in Patient 360.
 
-**The app's coach score agrees with the supervisors more closely than the two supervisors agree with each other: r = 0.79 against 0.69.**
+**The app's coach score agrees with each supervisor about as well as the two supervisors agree with each other: r = 0.75 with supervisor A and 0.70 with supervisor B, against 0.69 between A and B.**
 For the care team, every coaching call can be scored and screened for urgent concerns as it happens, so supervisors no longer hand-review a sample.
 
 | Result (held-out validation split) | Baseline | 95% CI |
 |---|---|---|
-| Coach score vs mean of two supervisors: **r = 0.789** (477 calls) | Supervisor A vs supervisor B: r = 0.692 | 0.754–0.820 |
+| Coach score vs each supervisor: **r = 0.751** (A), **0.701** (B), 477 calls | Supervisor B vs A: r = 0.692 | 0.708–0.788 (A), 0.657–0.739 (B) |
 | Coach move tags: **93.1%** correct (12 labels, 1,085 calls) | Always the most common label: 20.3% | 92.8–93.4% |
 | Urgent lines caught: **13 / 13**, with 9 false alarms in 25,785 lines | Base rate: 0.05% of lines are urgent | 77.2–100% |
 
-The calls are synthetic (Crane Lab). On real, expert-labelled counselling sessions (AnnoMI), Clef tags 75.0% of lines like the experts' majority (68.2–79.6%), where the experts themselves agree 83.9% of the time. There are only 13 urgent lines, which is why the CI is wide.
+English and Spanish are measured separately, and Spanish holds up. The score-vs-supervisors r is 0.818 in Spanish and 0.771 in English. Urgent lines caught: 7/7 in Spanish and 6/6 in English ([Evaluation](#evaluation)). **Haitian Creole is not supported.** The data has no Creole calls, and the engine has not been tested on Creole. The calls are synthetic (Crane Lab). On real, expert-labelled counselling sessions (AnnoMI), Clef tags 75.0% of lines like the experts' majority (68.2–79.6%), where the experts themselves agree 83.9% of the time. There are only 13 urgent lines, which is why the CI is wide.
 
 ### Reproduce in 3 commands
 
 ```sh
 git clone https://github.com/zaycruz/coach-copilot && cd coach-copilot
 unzip /path/to/Challenge5_Coaches_Copilot.zip -d data/   # sponsor data, not in the repo (data/README.md)
-scripts/reproduce.sh                                     # recomputes and checks 118 numbers, ~2 s, needs uv
+scripts/reproduce.sh                                     # recomputes and checks 178 numbers, ~2 s, needs uv
 ```
 
 The script rebuilds each number from committed model outputs, with no keys or network. Only latency and the GLM bake-off are live-only. [REPRODUCE.md](REPRODUCE.md) maps each number to its file and key, and shows how to re-query the models. Live engine: https://coach.raava.dev · API: [CONTRACT.md](CONTRACT.md)
@@ -134,7 +134,18 @@ There are 477 validation calls that both supervisors rated `overall_1_to_5`. The
 | Supervisor A vs supervisor B | 0.692 (0.640–0.736) | 0.673 (0.614–0.724) |
 | Score from human line labels vs mean of A and B | 0.816 (0.783–0.843) | 0.821 (0.786–0.850) |
 
-The app tracks each supervisor at least as closely as the two supervisors track each other. Supervisor A vs B: ICC(2,1) 0.666 (0.613–0.712), mean absolute difference 0.61 points on the 1–5 scale. Mapped to 1–5 by a least-squares line, the app score is off by 0.55 points on average from supervisor A and 0.60 from B. The score formula itself, run on perfect human labels, reaches r = 0.816, and the app's score correlates r = 0.955 with that. The endpoint returns the per-call table.
+**Like-for-like.** The mean of A and B (0.789) is smoother than any single rater, so it is not compared with A vs B. Instead, each supervisor is compared with the other supervisor:
+- With supervisor A, the app agrees more closely than supervisor B does: r(app, A) − r(B, A) = +0.059 (paired bootstrap 95% CI 0.013–0.106).
+- With supervisor B, the two are level: r(app, B) − r(A, B) = +0.009 (−0.032 to 0.056).
+
+Cross-fitted ICC(2,1) gives the same picture. The app score is mapped to 1–5 by a line fitted on the other 4 of 5 folds, so no call's own ratings shape its mapped score. The ICC is 0.705 (0.658–0.743) with A and 0.656 (0.608–0.700) with B, against 0.666 (0.613–0.712) between A and B.
+
+| By call language | Calls | App vs mean of A and B | App vs A | App vs B | A vs B |
+|---|---|---|---|---|---|
+| English | 312 | 0.771 (0.723–0.815) | 0.724 (0.670–0.775) | 0.680 (0.620–0.735) | 0.657 (0.581–0.720) |
+| Spanish | 165 | 0.818 (0.772–0.858) | 0.797 (0.743–0.846) | 0.733 (0.673–0.785) | 0.746 (0.679–0.806) |
+
+Supervisor A vs B: ICC(2,1) 0.666 (0.613–0.712), mean absolute difference 0.61 points on the 1–5 scale. Mapped to 1–5 by a least-squares line, the app score is off by 0.55 points on average from supervisor A and 0.60 from B. The score formula itself, run on perfect human labels, reaches r = 0.816, and the app's score correlates r = 0.955 with that. The endpoint returns the per-call table.
 
 ### Flags (`evaluate.py --flags-only`, `scripts/flag_eval.py`)
 
@@ -146,6 +157,8 @@ The participant flag is judged in its own line-only request. Its `none` examples
 | False alarms, lines | **9 / 25,785** (5 distinct texts, 0 dropout) | 0.02–0.07% |
 | False alarms, calls | 9 / 1,085 | 0.4–1.6% |
 | Coach conduct vs supervisor `safety_issue_handled` | 8/8 calls | 67.6–100% |
+| English: caught / false-alarm lines / calls | 6/6 · 7 / 16,696 · 7 / 704 | 61.0–100% · 0.02–0.09% · 0.5–2.0% |
+| Spanish: caught / false-alarm lines / calls | 7/7 · 2 / 9,089 · 2 / 381 | 64.6–100% · 0.01–0.08% · 0.1–1.9% |
 | dev: caught / false alarms | 7/7, 1 / 6,854 lines | |
 
 ### Second layer (GLM-5.3-flash)
@@ -190,7 +203,7 @@ uv run python -I scripts/e2e_live.py                  # live checks + drift chec
 
 The `/judge` endpoint is a raw Clef proxy for batch scripts (`Authorization: Bearer $CLEF_API_KEY` from `.env`).
 
-**Rate limits.** Workers AI caps requests per minute per model (error 3021). The Worker does not retry a rate-limited call, and it answers `429` with `retry-after: 20`. The UI keeps Clef's tag when a review gets no label. Batch scripts against the live Worker share this quota with live calls and with Patient 360, so do not run them during a demo.
+**Rate limits.** Workers AI caps requests per minute per model (error 3021). The tag path (`/api/turn`) does not retry a rate-limited call. The async GLM layer backs off (about 2 s, then about 5 s, jittered) and retries twice. Then it answers `429` with `retry-after: 20`. Review and cue answers are cached in KV for 7 days, keyed by model and prompt, so replaying a call costs no quota (`cached: true` in the response). `GET /api/c5/demo` serves a pre-played safety call with its cues and makes no model calls. The UI keeps Clef's tag when a review gets no label. Batch scripts against the live Worker share this quota with live calls and with Patient 360, so do not run them during a demo.
 
 ## Patient 360 endpoints
 

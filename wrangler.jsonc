@@ -5,6 +5,7 @@
   "workers_dev": true,
   "observability": { "enabled": true },
   "ai": { "binding": "AI" },
+  "kv_namespaces": [{ "binding": "GLM_CACHE", "id": "2e1dc6f85c7f4e58889c418b1acfe385" }],
   "vars": { "AI_GATEWAY_ID": "coach-copilot" },
   "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*", "/judge"] },
   "routes": [{ "pattern": "coach.raava.dev", "custom_domain": true }]
