@@ -105,4 +105,12 @@ The artifact is `runs/e2e-live-<UTC stamp>.json`, and the script exits 1 on any 
 
 ## Proof runs
 
-`runs/reproduce-<UTC stamp>.md` records a fresh-clone run of Tier A: where it ran, the commands, the tool versions, the check table and the result.
+`runs/reproduce-<UTC stamp>.md` records a fresh-clone run of Tier A: where it ran, the commands, the tool versions, the check table and the result. The 2026-10-17 run used Cloudflare Containers, via the throwaway Worker in `scripts/cloudflare-repro/`:
+
+```sh
+cd scripts/cloudflare-repro && npm install && npx wrangler deploy
+openssl rand -hex 24 > .secret && npx wrangler secret put RUN_SECRET < .secret
+curl -X POST -H "authorization: Bearer $(cat .secret)" --data-binary @Challenge5_Coaches_Copilot.zip \
+  "https://c5-repro-proof.<account>.workers.dev/run?commit=<sha>&e2e=https://coach.raava.dev"
+npx wrangler delete
+```

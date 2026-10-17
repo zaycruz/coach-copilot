@@ -1,0 +1,448 @@
+{
+ "ranAt": "20261017T170443Z",
+ "base": "https://coach.raava.dev",
+ "ranFrom": "cloudflare-containers-sandbox",
+ "passed": 21,
+ "total": 21,
+ "latency": {
+  "coach": {
+   "lines": 6,
+   "workerMsP50": 277.5,
+   "roundTripMsP50": 310.5
+  },
+  "participant": {
+   "lines": 4,
+   "workerMsP50": 687.5,
+   "roundTripMsP50": 797.5
+  }
+ },
+ "timings": [
+  {
+   "line": "EN fever on chemo",
+   "speaker": "participant",
+   "workerMs": 712,
+   "roundTripMs": 893
+  },
+  {
+   "line": "ES fever on chemo",
+   "speaker": "participant",
+   "workerMs": 663,
+   "roundTripMs": 702
+  },
+  {
+   "line": "everyday ache",
+   "speaker": "participant",
+   "workerMs": 585,
+   "roundTripMs": 623
+  },
+  {
+   "line": "dislikes the goal",
+   "speaker": "participant",
+   "workerMs": 1020,
+   "roundTripMs": 1063
+  },
+  {
+   "line": "coach moves on after the flag",
+   "speaker": "coach",
+   "workerMs": 180,
+   "roundTripMs": 199
+  },
+  {
+   "line": "coach line, no flag before",
+   "speaker": "coach",
+   "workerMs": 250,
+   "roundTripMs": 273
+  },
+  {
+   "line": "latency sample 1",
+   "speaker": "coach",
+   "workerMs": 695,
+   "roundTripMs": 740
+  },
+  {
+   "line": "latency sample 2",
+   "speaker": "coach",
+   "workerMs": 263,
+   "roundTripMs": 309
+  },
+  {
+   "line": "latency sample 3",
+   "speaker": "coach",
+   "workerMs": 515,
+   "roundTripMs": 549
+  },
+  {
+   "line": "latency sample 4",
+   "speaker": "coach",
+   "workerMs": 292,
+   "roundTripMs": 312
+  }
+ ],
+ "checks": [
+  {
+   "check": "health",
+   "ok": true,
+   "got": {
+    "ok": true
+   }
+  },
+  {
+   "check": "turn: EN fever on chemo -> flag medical",
+   "ok": true,
+   "got": {
+    "status": 200,
+    "ms": 712,
+    "tag": "sustain",
+    "confidence": 0.0135,
+    "probabilities": {
+     "change": 0.2791,
+     "sustain": 0.4084,
+     "neutral": 0.3125
+    },
+    "flag": "medical"
+   }
+  },
+  {
+   "check": "turn: ES fever on chemo -> flag medical",
+   "ok": true,
+   "got": {
+    "status": 200,
+    "ms": 663,
+    "tag": "sustain",
+    "confidence": 0.0177,
+    "probabilities": {
+     "change": 0.2633,
+     "sustain": 0.4155,
+     "neutral": 0.3212
+    },
+    "flag": "medical"
+   }
+  },
+  {
+   "check": "turn: everyday ache -> flag none",
+   "ok": true,
+   "got": {
+    "status": 200,
+    "ms": 585,
+    "tag": "change",
+    "confidence": 0.3528,
+    "probabilities": {
+     "change": 0.7287,
+     "sustain": 0.1175,
+     "neutral": 0.1538
+    },
+    "flag": "none"
+   }
+  },
+  {
+   "check": "turn: dislikes the goal -> flag none",
+   "ok": true,
+   "got": {
+    "status": 200,
+    "ms": 1020,
+    "tag": "neutral",
+    "confidence": 0.0574,
+    "probabilities": {
+     "change": 0.1755,
+     "sustain": 0.3909,
+     "neutral": 0.4336
+    },
+    "flag": "none"
+   }
+  },
+  {
+   "check": "turn: coach moves on after the flag -> flag missed_concern",
+   "ok": true,
+   "got": {
+    "status": 200,
+    "ms": 180,
+    "tag": "seek collaboration",
+    "confidence": 0.0907,
+    "probabilities": {
+     "open question": 0.2462,
+     "closed question": 0.0908,
+     "simple reflection": 0.1109,
+     "complex reflection": 0.0327,
+     "affirm": 0.025,
+     "seek collaboration": 0.2585,
+     "emphasize autonomy": 0.0098,
+     "ask permission": 0.0346,
+     "give information": 0.06,
+     "persuade": 0.0151,
+     "confront": 0.0089,
+     "other": 0.1075
+    },
+    "flag": "missed_concern"
+   }
+  },
+  {
+   "check": "turn: coach line, no flag before -> flag none",
+   "ok": true,
+   "got": {
+    "status": 200,
+    "ms": 250,
+    "tag": "affirm",
+    "confidence": 0.3648,
+    "probabilities": {
+     "open question": 0.0269,
+     "closed question": 0.0119,
+     "simple reflection": 0.2015,
+     "complex reflection": 0.0771,
+     "affirm": 0.6076,
+     "seek collaboration": 0.0079,
+     "emphasize autonomy": 0.0057,
+     "ask permission": 0.0086,
+     "give information": 0.0148,
+     "persuade": 0.0057,
+     "confront": 0.0067,
+     "other": 0.0256
+    },
+    "flag": "none"
+   }
+  },
+  {
+   "check": "turn: latency sample 1 -> flag none",
+   "ok": true,
+   "got": {
+    "status": 200,
+    "ms": 695,
+    "tag": "open question",
+    "confidence": 0.6182,
+    "probabilities": {
+     "open question": 0.8005,
+     "closed question": 0.0164,
+     "simple reflection": 0.0315,
+     "complex reflection": 0.0208,
+     "affirm": 0.0077,
+     "seek collaboration": 0.0852,
+     "emphasize autonomy": 0.0061,
+     "ask permission": 0.0099,
+     "give information": 0.0082,
+     "persuade": 0.0037,
+     "confront": 0.0036,
+     "other": 0.0064
+    },
+    "flag": "none"
+   }
+  },
+  {
+   "check": "turn: latency sample 2 -> flag none",
+   "ok": true,
+   "got": {
+    "status": 200,
+    "ms": 263,
+    "tag": "open question",
+    "confidence": 0.6182,
+    "probabilities": {
+     "open question": 0.8005,
+     "closed question": 0.0164,
+     "simple reflection": 0.0315,
+     "complex reflection": 0.0208,
+     "affirm": 0.0077,
+     "seek collaboration": 0.0852,
+     "emphasize autonomy": 0.0061,
+     "ask permission": 0.0099,
+     "give information": 0.0082,
+     "persuade": 0.0037,
+     "confront": 0.0036,
+     "other": 0.0064
+    },
+    "flag": "none"
+   }
+  },
+  {
+   "check": "turn: latency sample 3 -> flag none",
+   "ok": true,
+   "got": {
+    "status": 200,
+    "ms": 515,
+    "tag": "open question",
+    "confidence": 0.6182,
+    "probabilities": {
+     "open question": 0.8005,
+     "closed question": 0.0164,
+     "simple reflection": 0.0315,
+     "complex reflection": 0.0208,
+     "affirm": 0.0077,
+     "seek collaboration": 0.0852,
+     "emphasize autonomy": 0.0061,
+     "ask permission": 0.0099,
+     "give information": 0.0082,
+     "persuade": 0.0037,
+     "confront": 0.0036,
+     "other": 0.0064
+    },
+    "flag": "none"
+   }
+  },
+  {
+   "check": "turn: latency sample 4 -> flag none",
+   "ok": true,
+   "got": {
+    "status": 200,
+    "ms": 292,
+    "tag": "open question",
+    "confidence": 0.6182,
+    "probabilities": {
+     "open question": 0.8005,
+     "closed question": 0.0164,
+     "simple reflection": 0.0315,
+     "complex reflection": 0.0208,
+     "affirm": 0.0077,
+     "seek collaboration": 0.0852,
+     "emphasize autonomy": 0.0061,
+     "ask permission": 0.0099,
+     "give information": 0.0082,
+     "persuade": 0.0037,
+     "confront": 0.0036,
+     "other": 0.0064
+    },
+    "flag": "none"
+   }
+  },
+  {
+   "check": "turn: bad speaker -> 400",
+   "ok": true,
+   "got": {
+    "error": "line must be {speaker: coach|participant, text}"
+   }
+  },
+  {
+   "check": "c5/calls: 27 calls with score, status, flags",
+   "ok": true,
+   "got": {
+    "status": 200,
+    "n": 27
+   }
+  },
+  {
+   "check": "c5/survivors: rows with survivorId and status",
+   "ok": true,
+   "got": {
+    "status": 200,
+    "n": 26
+   }
+  },
+  {
+   "check": "c5/calls/unknown -> 404",
+   "ok": true,
+   "got": {
+    "error": "call not found",
+    "callId": "CALL99999"
+   }
+  },
+  {
+   "check": "c5/demo: pre-played safety call with a red banner and cues",
+   "ok": true,
+   "got": {
+    "status": 200,
+    "callId": "CALL05423"
+   }
+  },
+  {
+   "check": "c5/agreement: 200",
+   "ok": true,
+   "got": {
+    "status": 200
+   }
+  },
+  {
+   "check": "drift: correlations equal runs/metrics.json",
+   "ok": true,
+   "got": {
+    "live": [
+     0.751,
+     0.701,
+     0.789,
+     0.692,
+     0.816,
+     0.955
+    ],
+    "repo": [
+     0.751,
+     0.701,
+     0.789,
+     0.692,
+     0.816,
+     0.955
+    ]
+   }
+  },
+  {
+   "check": "drift: supervisor ICC and MAE equal",
+   "ok": true,
+   "got": {
+    "live": [
+     {
+      "pair": "supervisor A vs supervisor B (overall 1-5)",
+      "icc21": 0.666,
+      "ci95": [
+       0.613,
+       0.712
+      ],
+      "mae": 0.61
+     },
+     {
+      "note": "app score mapped to 1-5 by least squares on these calls (slope, intercept below), then compared with each supervisor",
+      "slope": 0.0498,
+      "intercept": -0.077,
+      "maeVsA": 0.553,
+      "maeVsB": 0.597,
+      "maeAvsB": 0.61
+     }
+    ]
+   }
+  },
+  {
+   "check": "drift: flag numbers equal",
+   "ok": true,
+   "got": {
+    "recall": {
+     "k": 13,
+     "n": 13,
+     "rate": 1,
+     "ci95": [
+      0.7719,
+      1
+     ]
+    },
+    "falseAlarmsPerLine": {
+     "k": 9,
+     "n": 25785,
+     "rate": 0.0003,
+     "ci95": [
+      0.0002,
+      0.0007
+     ]
+    },
+    "callsWithFalseAlarm": {
+     "k": 9,
+     "n": 1085,
+     "rate": 0.0083,
+     "ci95": [
+      0.0044,
+      0.0157
+     ]
+    },
+    "coachConductAgreement": {
+     "k": 8,
+     "n": 8,
+     "rate": 1,
+     "ci95": [
+      0.6756,
+      1
+     ]
+    },
+    "source": "validation split participant lines; coach conduct = calls supervisors rated for safety_issue_handled"
+   }
+  },
+  {
+   "check": "drift: per-call table equal",
+   "ok": true,
+   "got": {
+    "liveRows": 477,
+    "repoRows": 477
+   }
+  }
+ ]
+}

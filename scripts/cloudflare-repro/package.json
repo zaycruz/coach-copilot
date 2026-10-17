@@ -1,0 +1,6 @@
+{
+  "name": "c5-repro-proof",
+  "private": true,
+  "dependencies": { "@cloudflare/sandbox": "0.12.10" },
+  "devDependencies": { "wrangler": "4.135.0", "@cloudflare/workers-types": "5.20261016.1", "typescript": "5.9.3" }
+}
