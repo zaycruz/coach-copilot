@@ -182,7 +182,7 @@ Each line goes alone through the live `/api/turn` (`scripts/stress_flags.py`). A
 - Only then was v4 run, twice and at the same time (18:30Z): on production with the old definition (118/162, distress 25/54) and on that preview with the new one (139/162, 44/54).
 - Dev and validation were run after that, with the same frozen definition.
 
-The definition did not change after v4 was run: the deployed Worker and `main` carry the same `f9319e93`, as the committed `runs/revalidate-*.log` files also show. The git history shows the definition committed (dc39d31) after v4 (e86bb99). That is because the change was committed together with its results, not because it was edited after v4. v4 and validation have now been seen, so any further change to the flag must be measured on a fresh set (Future work).
+The definition did not change after v4 was run: the deployed Worker and `main` carry the same `f9319e93`, as the committed `runs/revalidate-*.log` files also show. The git history shows the definition committed (dc39d31) after v4 (e86bb99). That is because the change was committed together with its results, not because it was edited after v4. One more edit, adding validation-style false alarms to the `none` examples, was drafted after v4 and validation had been seen. It was reverted before any model call and was never committed or deployed. v4 and validation have now been seen, so any further change to the flag must be measured on a fresh set (Future work).
 
 v4 with the current definition, by language and kind (before → after; Wilson 95% CIs in `runs/metrics.json` `stressV4`, `stressV4Before`):
 
