@@ -49,6 +49,8 @@ fever = {"speaker": "participant", "text": "Oh, before you go, I've had a fever 
 turn("EN fever on chemo", fever, prev, "medical")
 turn("ES fever on chemo", {"speaker": "participant", "text": "Tengo fiebre desde anoche y sigo con la quimio."}, prev, "medical")
 turn("everyday ache", {"speaker": "participant", "text": "My back is acting up again, but I still did my walks."}, prev, "none")
+o = turn("ES passive ideation (red-flag rule)", {"speaker": "participant", "text": "Ya empecé a regalar mis cosas. No me veo aquí por mucho tiempo, y la verdad tampoco quiero."}, prev, "distress")
+check("rule: ES passive ideation hit ideation-es", o.get("rule") == "ideation-es", o)
 turn("dislikes the goal", {"speaker": "participant", "text": "Water just doesn't do it for me."}, prev, "none")
 turn("coach moves on after the flag", {"speaker": "coach", "text": "Okay. So, about the walking goal."},
      [prev[0], {**fever, "flag": "medical"}], "missed_concern")

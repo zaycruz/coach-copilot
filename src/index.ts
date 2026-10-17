@@ -7,10 +7,17 @@
  *   GET  /api/c5/calls[/:id], /api/c5/survivors[/:id]   Patient 360 suite endpoints (src/c5.ts).
  * Review and cue answers are cached in KV for a week (a replayed call costs no quota), and a GLM call that hits
  * the per-minute quota backs off and retries twice before the Worker answers 429.
+ * Participant lines also pass a model-free red-flag screen (src/redflags.json) that can only raise a red flag, never clear one.
  * Both models run on Workers AI through the AI Gateway named by AI_GATEWAY_ID.
  */
 import P from "./payload.json";
 import { c5 } from "./c5";
+import RF from "./redflags.json";
+
+/** Model-free red flags: plain patterns over lowercased, accent-stripped text, so they hold when the model misses. */
+const RED_RULES = RF.rules.map((r) => ({ id: r.id, kind: r.kind, re: new RegExp(r.pattern) }));
+const fold = (text: string) => text.toLowerCase().normalize("NFD").replace(/\p{M}/gu, "");
+const redRule = (text: string) => RED_RULES.find((r) => r.re.test(fold(text))) ?? null;
 
 const CLEF = "@cf/cloudflare/clef";
 const CLEF_SELECTOR: Record<string, string> = {
@@ -91,14 +98,15 @@ const retryOnce = <T>(call: () => Promise<T>) => call().catch((err) => (rateLimi
 
 /** One Clef judgment; a failed call is retried once, since an occasional upstream error should not drop a live tag. */
 async function clef(env: Env, model: string, state: unknown, questions: unknown) {
-  return retryOnce(() => env.AI.run(model, { model: CLEF_SELECTOR[model], state, questions }, gateway(env)));
+  // Live tags cannot wait long: on a rate limit, ~0.5 s then ~1.5 s, then the caller gets 429.
+  return backoff(() => retryOnce(() => env.AI.run(model, { model: CLEF_SELECTOR[model], state, questions }, gateway(env))), [500, 1_500]);
 }
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-/** For the async GLM layer only: on a rate limit wait ~2 s, then ~5 s (jittered so callers spread out), then give up. */
-async function backoff<T>(call: () => Promise<T>) {
-  for (const wait of [2_000, 5_000]) {
+/** On a rate limit wait (jittered so callers spread out), then try again; after the last wait, one final try. */
+async function backoff<T>(call: () => Promise<T>, waits = [2_000, 5_000]) {
+  for (const wait of waits) {
     try {
       return await call();
     } catch (err) {
@@ -174,7 +182,9 @@ async function turn(env: Env, body: Record<string, unknown>) {
   const answers = answersOf(main);
   const tag = answers[line.speaker === "coach" ? "move" : "talk"];
   let flag: string | null;
-  if (line.speaker === "participant") flag = choiceOf(answersOf(flagged).flag);
+  const rule = line.speaker === "participant" ? redRule(line.text) : null;
+  if (rule) flag = rule.kind;
+  else if (line.speaker === "participant") flag = choiceOf(answersOf(flagged).flag);
   else if (choiceOf(answers.routed) === "not_routed") flag = "missed_concern";
   else if (choiceOf(answers.scope) === "medical_advice") flag = "medical_advice";
   else flag = "none";
@@ -184,6 +194,7 @@ async function turn(env: Env, body: Record<string, unknown>) {
     confidence: isRecord(tag) ? tag.confidence : null,
     probabilities: isRecord(tag) ? tag.probabilities : null,
     flag,
+    ...(rule ? { rule: rule.id, modelFlag: choiceOf(answersOf(flagged).flag) } : {}),
   });
 }
 

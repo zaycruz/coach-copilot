@@ -1,0 +1,30 @@
+{
+ "about": "Model-free red-flag screen, run on every participant line before the Clef flag is used. Patterns match lowercased text with accents removed (NFD, combining marks stripped), so they are plain ASCII. A hit sets the red flag of that kind whatever the model says. Written from clinical screening wording (C-SSRS style ideation, emergency warning signs) in English, Spanish and Haitian Creole; tuned only on the dev split and the first stress set, never on validation or stress-set-v2.",
+ "rules": [
+  {
+   "id": "ideation-en",
+   "kind": "distress",
+   "pattern": "\\b(kill(ing)? myself|end (it all|my life|things for good)|suicid\\w*|take my (own )?life|(?<!don't )(?<!do not )(?<!never )want(ed)? to die|wish(ed)? i (was|were) (dead|gone)|better off (dead|without me)|(rather|prefer to|hop(e|ing) i( just)?|pray(ing)? (i|to)( just)?) (not|don't|never) wake up|(don't|do not|wouldn't) (want|care) to (wake up|be here anymore|be alive|live anymore|go on)|no (reason|point) (to|in) (live|living|going on)|can'?t (go on|do this anymore) (living|like this)|hurt(ing)? myself|cut(ting)? myself|overdose|take all (of )?my (pills|meds)|giv(e|ing) (all )?(my )?(things|stuff|belongings) away|saying (my )?goodbyes?|won'?t be (here|around) (much longer|to see|for long))"
+  },
+  {
+   "id": "ideation-es",
+   "kind": "distress",
+   "pattern": "(matarme|(estaria|estarian|estan) mejor sin mi|(pidiendo|rezando|esperando|deseando) no (despertar|amanecer)|suicid\\w*|quitarme la vida|acabar con (todo|mi vida)|(?<!no )quiero morir(me)?|quisiera (estar )?muert[oa]|mejor (estar )?muert[oa]|ojala (no )?(me muera|no despertar|no amanecer)|no (quiero|quisiera) (despertar|amanecer|seguir (viviendo|aqui)|vivir|estar aqui)|tampoco quiero (estar|seguir|vivir)|no vale la pena (vivir|seguir)|hacerme dano|cortarme|tomarme todas las pastillas|regal(ar|ando|e) (todas )?mis cosas|despedirme de (todos|ustedes)|no voy a estar (aqui|mucho tiempo)|no me veo aqui)"
+  },
+  {
+   "id": "ideation-ht",
+   "kind": "distress",
+   "pattern": "(yo ta pi byen san mwen|(priye|espere) pou m pa reveye|touye tet (mwen|m)|(m|mwen) (vle|ta renmen|ta pito) mouri|pa vle viv anko|fini ak lavi|(pa|p) vle reveye|ta pito pa reveye|bay tout (bagay|afe) (mwen|m)|(m|mwen) pap la (lontan|pou lontan)|fe tet (mwen|m) mal|pran tout grenn (mwen|m))"
+  },
+  {
+   "id": "breathing-chest",
+   "kind": "medical",
+   "pattern": "(?<!no )(?<!ni )(?<!sin )(?<!pa gen )(can'?t (catch my )?breathe?|cannot breathe|struggling to breathe|chest pain|pain in my chest|crushing (pain|pressure)|no puedo respirar|me falta el aire|dolor (en el|de) pecho|m pa ka respire|doule nan (pwatrin|lestomak) (mwen|m))"
+  },
+  {
+   "id": "bleeding",
+   "kind": "medical",
+   "pattern": "((coughing|throwing|vomiting) up blood|blood (in|when i) (my )?(vomit|cough)|bleeding (that )?won'?t stop|(tosiendo|vomitando|escupiendo) sangre|sangrado que no para|vomi san|touse san)"
+  }
+ ]
+}

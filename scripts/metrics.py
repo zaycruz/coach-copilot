@@ -11,6 +11,7 @@ import numpy as np
 import pandas as pd
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from score import score
+from redflags import red_rule
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 PRED = os.path.join(ROOT, "runs", "predictions")
@@ -95,8 +96,16 @@ def tags(lines, split):
     return out, t
 
 
-def flags(lines, split):
+def with_rules(f, text="text"):
+    """Apply the model-free red-flag screen (src/redflags.json) the way the Worker does: a hit sets that red kind."""
+    hit = f[text].map(red_rule)
+    return f.assign(flag=[h[1] if h else fl for h, fl in zip(hit, f.flag)], rule=[h[0] if h else None for h in hit])
+
+
+def flags(lines, split, rules=False):
     f = preds(f"flags-{split}.jsonl").merge(lines[["call_id", "line_number", "text", "needs_human", "language"]], on=["call_id", "line_number"])
+    if rules:
+        f = with_rules(f)
     fired, urgent = f.flag.fillna("none") != "none", f.needs_human == "yes"
     fa = f[fired & ~urgent]
     by_lang = {lg: {"caught": wilson((fired[g.index] & urgent[g.index]).sum(), urgent[g.index].sum()) if urgent[g.index].any() else None,
@@ -193,20 +202,24 @@ def annomi(data):
     return out
 
 
-def stress():
-    """The hand-written stress set (scripts/stress-set.json): paraphrased, hedged, buried, ASR-style and Spanish urgent
-    lines plus hard negatives. Ours, not sponsor data; never used to tune the payload."""
-    path = os.path.join(PRED, "stress-flags.jsonl")
+def stress(set_file="stress-set.json", pred_file="stress-flags.jsonl", rules=False):
+    """A stress set of urgent lines plus hard negatives, scored on the flags in pred_file. stress-set.json is ours and was run
+    model-only; the red-flag rules were later tuned on it, so `rules=True` on it is not independent. stress-set-v2.json was
+    written by a separate agent from a brief and run once on the live endpoint, rules included."""
+    path = os.path.join(PRED, pred_file)
     if not os.path.exists(path):
         return None
-    s = pd.DataFrame(json.load(open(os.path.join(ROOT, "scripts", "stress-set.json")))["lines"]).merge(preds("stress-flags.jsonl"), on="id")
+    s = pd.DataFrame(json.load(open(os.path.join(ROOT, "scripts", set_file)))["lines"]).merge(preds(pred_file), on="id")
     s["flag"] = s.flag.fillna("none")
+    if rules:
+        s = with_rules(s)
     urgent, neg = s[s.expect != "none"], s[s.expect == "none"]
     caught = urgent.flag.isin(RED)
     out = {"urgent": {"caught": wilson(caught.sum(), len(urgent)), "kindCorrect": wilson((urgent.flag == urgent.expect).sum(), len(urgent)),
                       "byLanguage": {lg: wilson(caught[g.index].sum(), len(g)) for lg, g in urgent.groupby("lang")},
                       "byKind": {k: wilson(caught[g.index].sum(), len(g)) for k, g in urgent.groupby("expect")},
                       "byVariant": {v: wilson(caught[g.index].sum(), len(g)) for v, g in urgent.groupby("variant")},
+                      "byLanguageKind": {f"{lg}/{k}": wilson(caught[g.index].sum(), len(g)) for (lg, k), g in urgent.groupby(["lang", "expect"])},
                       "missed": urgent[~caught][["id", "flag"]].to_dict("records")},
            "hardNegatives": {"falseAlarms": wilson((neg.flag != "none").sum(), len(neg)),
                              "byLanguage": {lg: wilson((g.flag != "none").sum(), len(g)) for lg, g in neg.groupby("lang")},
@@ -231,9 +244,11 @@ def main():
     dev, _ = tags(lines, "dev")
     agree, per_call = agreement(data, val_rows)
     m = {"tags": {"validation": val, "dev": dev},
-         "flags": {"validation": flags(lines, "validation"), "dev": flags(lines, "dev"), "coachConduct": conduct(data)},
+         "flags": {"validation": flags(lines, "validation"), "dev": flags(lines, "dev"), "coachConduct": conduct(data),
+                   "validationWithRules": flags(lines, "validation", rules=True), "devWithRules": flags(lines, "dev", rules=True)},
          "agreement": agree, "annomi": annomi(data), "review": review(val_rows),
-         "stress": stress()}
+         "stress": stress(), "stressWithRules": stress(rules=True),
+         "stressV2": stress("stress-set-v2.json", "stress-v2-flags.jsonl")}
     m["agreementPerCallSha256"] = hashlib.sha256(json.dumps(per_call).encode()).hexdigest()
     json.dump(m, open(out_path, "w"), indent=1, ensure_ascii=False)
     json.dump({"perCall": per_call}, open(os.path.join(os.path.dirname(out_path), "agreement-per-call.json"), "w"), indent=1)
