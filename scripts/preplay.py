@@ -8,7 +8,7 @@ import json, os, sys, time, urllib.error, urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from score import score
 
-BASE, HERE = "https://coach.raava.dev", os.path.dirname(os.path.abspath(__file__))
+BASE, HERE = os.environ.get("COACH_COPILOT_URL", "https://coach.raava.dev").rstrip("/"), os.path.dirname(os.path.abspath(__file__))
 CALL = sys.argv[1] if len(sys.argv) > 1 else "CALL05423"
 FAMILY = {"open question": "q", "closed question": "q", "simple reflection": "r", "complex reflection": "r"}
 BANNER = {"medical": ("red", "Medical concern: tell the care team today"),

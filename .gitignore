@@ -7,3 +7,8 @@ __pycache__
 runs/*.jsonl
 !runs/annomi-10expert.jsonl
 !runs/review-validation.jsonl
+
+# sponsor data stays local (data/README.md)
+data/*
+!data/README.md
+!data/SHA256SUMS

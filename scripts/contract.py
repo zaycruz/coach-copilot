@@ -78,7 +78,7 @@ The console (Patient 360) is the user-facing app. This Worker is the engine: Cle
 
 Workers AI quotas are per account and model, shared by every caller of this Worker (coach.raava.dev, Patient 360, batch scripts).
 
-## `POST /api/turn`: tag one line (every line, ~0.3–0.5 s p50)
+## `POST /api/turn`: tag one line (every line; Clef call ~0.3–0.5 s p50, round trip longer: see `scripts/e2e_live.py`)
 
 Body: `line` = `{{speaker, text}}`, `previous` = up to the 2 lines before it. Pass each previous line's `flag` as returned; a coach line right after a red flag (`medical`, `distress`, `social`) is then also judged for routing.
 

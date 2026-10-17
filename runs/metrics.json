@@ -1,0 +1,385 @@
+{
+ "tags": {
+  "validation": {
+   "calls": 1085,
+   "lines": 56038,
+   "noAnswer": 37,
+   "move": {
+    "answered": 30220,
+    "accuracy": 0.9308,
+    "accuracyCi95": [
+     0.9279,
+     0.9336
+    ],
+    "accuracyCountingNoAnswerWrong": 0.9302,
+    "majorityBaseline": {
+     "label": "open question",
+     "accuracy": 0.2035
+    },
+    "byLanguage": {
+     "English": 0.9389,
+     "Spanish": 0.916
+    }
+   },
+   "talk": {
+    "answered": 25781,
+    "accuracy": 0.9089,
+    "accuracyCi95": [
+     0.9052,
+     0.9129
+    ],
+    "accuracyCountingNoAnswerWrong": 0.9083,
+    "majorityBaseline": {
+     "label": "neutral",
+     "accuracy": 0.4734
+    },
+    "byLanguage": {
+     "English": 0.9117,
+     "Spanish": 0.9038
+    }
+   },
+   "calibration": {
+    "shareAtLeast0.3": 0.7541,
+    "accuracyAtLeast0.3": 0.9802,
+    "accuracyBelow0.3": 0.7385
+   }
+  },
+  "dev": {
+   "calls": 120,
+   "lines": 6411,
+   "noAnswer": 0,
+   "move": {
+    "answered": 3463,
+    "accuracy": 0.9342,
+    "accuracyCi95": [
+     0.9248,
+     0.9429
+    ],
+    "accuracyCountingNoAnswerWrong": 0.9342,
+    "majorityBaseline": {
+     "label": "open question",
+     "accuracy": 0.2042
+    },
+    "byLanguage": {
+     "English": 0.9397,
+     "Spanish": 0.9192
+    }
+   },
+   "talk": {
+    "answered": 2948,
+    "accuracy": 0.9264,
+    "accuracyCi95": [
+     0.9171,
+     0.9353
+    ],
+    "accuracyCountingNoAnswerWrong": 0.9264,
+    "majorityBaseline": {
+     "label": "neutral",
+     "accuracy": 0.479
+    },
+    "byLanguage": {
+     "English": 0.9235,
+     "Spanish": 0.9341
+    }
+   },
+   "calibration": {
+    "shareAtLeast0.3": 0.7698,
+    "accuracyAtLeast0.3": 0.9826,
+    "accuracyBelow0.3": 0.7568
+   }
+  }
+ },
+ "flags": {
+  "validation": {
+   "caught": {
+    "k": 13,
+    "n": 13,
+    "rate": 1.0,
+    "ci95": [
+     0.7719,
+     1.0
+    ]
+   },
+   "caughtKinds": {
+    "medical": 10,
+    "social": 2,
+    "distress": 1
+   },
+   "falseAlarmLines": {
+    "k": 9,
+    "n": 25785,
+    "rate": 0.0003,
+    "ci95": [
+     0.0002,
+     0.0007
+    ]
+   },
+   "precision": {
+    "k": 13,
+    "n": 22,
+    "rate": 0.5909,
+    "ci95": [
+     0.3873,
+     0.7674
+    ]
+   },
+   "urgentPrevalence": {
+    "k": 13,
+    "n": 25798,
+    "rate": 0.0005,
+    "ci95": [
+     0.0003,
+     0.0009
+    ]
+   },
+   "falseAlarmTexts": 5,
+   "falseAlarmCalls": {
+    "k": 9,
+    "n": 1085,
+    "rate": 0.0083,
+    "ci95": [
+     0.0044,
+     0.0157
+    ]
+   },
+   "falseAlarmDropout": 0,
+   "falseAlarmRed": 9
+  },
+  "dev": {
+   "caught": {
+    "k": 7,
+    "n": 7,
+    "rate": 1.0,
+    "ci95": [
+     0.6457,
+     1.0
+    ]
+   },
+   "caughtKinds": {
+    "medical": 6,
+    "distress": 1
+   },
+   "falseAlarmLines": {
+    "k": 1,
+    "n": 6854,
+    "rate": 0.0001,
+    "ci95": [
+     0.0,
+     0.0008
+    ]
+   },
+   "precision": {
+    "k": 7,
+    "n": 8,
+    "rate": 0.875,
+    "ci95": [
+     0.5291,
+     0.9776
+    ]
+   },
+   "urgentPrevalence": {
+    "k": 7,
+    "n": 6861,
+    "rate": 0.001,
+    "ci95": [
+     0.0005,
+     0.0021
+    ]
+   },
+   "falseAlarmTexts": 1,
+   "falseAlarmCalls": {
+    "k": 1,
+    "n": 278,
+    "rate": 0.0036,
+    "ci95": [
+     0.0006,
+     0.0201
+    ]
+   },
+   "falseAlarmDropout": 0,
+   "falseAlarmRed": 1
+  },
+  "coachConduct": {
+   "k": 8,
+   "n": 8,
+   "rate": 1.0,
+   "ci95": [
+    0.6756,
+    1.0
+   ]
+  }
+ },
+ "agreement": {
+  "calls": 477,
+  "correlations": [
+   {
+    "pair": "app score vs supervisor A",
+    "n": 477,
+    "pearson": 0.751,
+    "pearsonCi95": [
+     0.708,
+     0.788
+    ],
+    "spearman": 0.757,
+    "spearmanCi95": [
+     0.711,
+     0.794
+    ]
+   },
+   {
+    "pair": "app score vs supervisor B",
+    "n": 477,
+    "pearson": 0.701,
+    "pearsonCi95": [
+     0.657,
+     0.739
+    ],
+    "spearman": 0.706,
+    "spearmanCi95": [
+     0.655,
+     0.748
+    ]
+   },
+   {
+    "pair": "app score vs mean of A and B",
+    "n": 477,
+    "pearson": 0.789,
+    "pearsonCi95": [
+     0.754,
+     0.82
+    ],
+    "spearman": 0.797,
+    "spearmanCi95": [
+     0.758,
+     0.83
+    ]
+   },
+   {
+    "pair": "supervisor A vs supervisor B",
+    "n": 477,
+    "pearson": 0.692,
+    "pearsonCi95": [
+     0.64,
+     0.736
+    ],
+    "spearman": 0.673,
+    "spearmanCi95": [
+     0.614,
+     0.724
+    ]
+   },
+   {
+    "pair": "human-label score vs mean of A and B",
+    "n": 477,
+    "pearson": 0.816,
+    "pearsonCi95": [
+     0.783,
+     0.843
+    ],
+    "spearman": 0.821,
+    "spearmanCi95": [
+     0.786,
+     0.85
+    ]
+   },
+   {
+    "pair": "app score vs human-label score",
+    "n": 477,
+    "pearson": 0.955,
+    "pearsonCi95": [
+     0.941,
+     0.967
+    ],
+    "spearman": 0.96,
+    "spearmanCi95": [
+     0.949,
+     0.969
+    ]
+   }
+  ],
+  "supervisorIcc": {
+   "pair": "supervisor A vs supervisor B (overall 1-5)",
+   "icc21": 0.666,
+   "ci95": [
+    0.613,
+    0.712
+   ],
+   "mae": 0.61
+  },
+  "mae": {
+   "note": "app score mapped to 1-5 by least squares on these calls (slope, intercept below), then compared with each supervisor",
+   "slope": 0.0498,
+   "intercept": -0.077,
+   "maeVsA": 0.553,
+   "maeVsB": 0.597,
+   "maeAvsB": 0.61
+  }
+ },
+ "annomi": {
+  "lines": 428,
+  "accuracy": 0.75,
+  "accuracyCi95": [
+   0.6825,
+   0.796
+  ],
+  "expertAgreementPct": 83.9,
+  "client": {
+   "lines": 212,
+   "accuracy": 0.75,
+   "expertAgreementPct": 80.2,
+   "byAgreement": {
+    "<=70": {
+     "lines": 81,
+     "accuracy": 0.5802
+    },
+    "80-90": {
+     "lines": 73,
+     "accuracy": 0.7945
+    },
+    "100": {
+     "lines": 58,
+     "accuracy": 0.931
+    }
+   }
+  },
+  "counsellor": {
+   "lines": 216,
+   "accuracy": 0.75,
+   "expertAgreementPct": 87.5,
+   "byAgreement": {
+    "<=70": {
+     "lines": 50,
+     "accuracy": 0.5
+    },
+    "80-90": {
+     "lines": 54,
+     "accuracy": 0.6481
+    },
+    "100": {
+     "lines": 112,
+     "accuracy": 0.9107
+    }
+   }
+  },
+  "clientChangeOrSustainReadAsNeutral": 37,
+  "questionSubtype": {
+   "lines": 56,
+   "accuracy": 0.7321
+  },
+  "reflectionSubtype": {
+   "lines": 23,
+   "accuracy": 0.3913
+  }
+ },
+ "review": {
+  "lines": 600,
+  "answered": 65,
+  "clefAlone": 0.76,
+  "clefPlusReview": 0.7667,
+  "fixed": 8,
+  "broke": 4,
+  "answeredClef": 0.8308,
+  "answeredReview": 0.8923
+ },
+ "agreementPerCallSha256": "3c7ddae8ef150b50390d04b208264981f7e2b4dc307ee021aab8a7890c16c810"
+}

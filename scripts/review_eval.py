@@ -28,7 +28,7 @@ print(f"validation: {len(low)}/{len(rows)} lines below 0.3 ({len(low) / len(rows
 
 
 def post(path, body):
-    req = urllib.request.Request("https://coach.raava.dev" + path, json.dumps(body).encode(),
+    req = urllib.request.Request(os.environ.get("COACH_COPILOT_URL", "https://coach.raava.dev").rstrip("/") + path, json.dumps(body).encode(),
                                  {"content-type": "application/json", "user-agent": "coach-copilot/0.1"})
     for _ in range(6):
         t = time.time()

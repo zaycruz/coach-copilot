@@ -1,17 +1,40 @@
 # Coach's Co-pilot
 
-Emerge Hackathon · Sylvester healthcare track · Challenge 5 ("Follow and score a health-coaching conversation").
+Emerge Hackathon · Sylvester healthcare track · Challenge 5. The engine and API behind the coaching view in Patient 360.
 
-Follows a coaching call live or recorded, spoken or typed. Tags every line with a motivational-interviewing (MI) code, scores the coach, raises a red banner for anything a person must act on today, and gives the coach a cue only when one is needed.
+**The app's coach score agrees with the supervisors more closely than the two supervisors agree with each other: r = 0.79 against 0.69.**
+For the care team, every coaching call can be scored and screened for urgent concerns as it happens, so supervisors no longer hand-review a sample.
 
-Live: https://coach.raava.dev
+| Result (held-out validation split) | Baseline | 95% CI |
+|---|---|---|
+| Coach score vs mean of two supervisors: **r = 0.789** (477 calls) | Supervisor A vs supervisor B: r = 0.692 | 0.754–0.820 |
+| Coach move tags: **93.1%** correct (12 labels, 1,085 calls) | Always the most common label: 20.3% | 92.8–93.4% |
+| Urgent lines caught: **13 / 13**, with 9 false alarms in 25,785 lines | Base rate: 0.05% of lines are urgent | 77.2–100% |
+
+The calls are synthetic (Crane Lab). On real, expert-labelled counselling sessions (AnnoMI), Clef tags 75.0% of lines like the experts' majority (68.2–79.6%), where the experts themselves agree 83.9% of the time. There are only 13 urgent lines, which is why the CI is wide.
+
+### Reproduce in 3 commands
+
+```sh
+git clone https://github.com/zaycruz/coach-copilot && cd coach-copilot
+unzip /path/to/Challenge5_Coaches_Copilot.zip -d data/   # sponsor data, not in the repo (data/README.md)
+scripts/reproduce.sh                                     # recomputes and checks 118 numbers, ~2 s, needs uv
+```
+
+The script rebuilds each number from committed model outputs, with no keys or network. Only latency and the GLM bake-off are live-only. [REPRODUCE.md](REPRODUCE.md) maps each number to its file and key, and shows how to re-query the models. Live engine: https://coach.raava.dev · API: [CONTRACT.md](CONTRACT.md)
+
+---
+
+**Below:** [Architecture](#architecture) · [Clef payload](#clef-payload) · [Evaluation](#evaluation) · [Run](#run) · [Patient 360 endpoints](#patient-360-endpoints)
+
+The engine follows a coaching call live or recorded, spoken or typed. It tags every line with a motivational-interviewing (MI) code and scores the coach. It raises a red banner for anything a person must act on today, and it gives the coach a cue only when one is needed.
 
 ## Architecture
 
 ```
 speech (Safari = Apple speech engine) ─┐
 recorded / typed lines ────────────────┼─> Worker (coach.raava.dev) ──> AI Gateway "coach-copilot" ──> Workers AI
-                                       │     /api/turn   every line        Clef      (~0.3–0.5 s)
+                                       │     /api/turn   every line        Clef      (~0.3–0.5 s Clef call)
                                        │     /api/review conf < 0.3 only    GLM-5.3-flash (async, ~2–4 s)
                                        │     /api/cue    triggers only      GLM-5.3-flash (async, ~2–5 s)
 browser: score, banner, cues <─────────┘
@@ -92,16 +115,16 @@ Labelled synthetic calls are split by `participant_id` hash: **dev 20%** (tuning
 
 ### Tags (`scripts/evaluate.py`)
 
-| Validation, 1,085 calls, 56,038 lines | Accuracy |
+| Validation, 1,085 calls, 56,001 answered lines | Accuracy |
 |---|---|
 | Coach move (12-way) | **93.1%** (EN 93.9%, ES 91.6%) |
 | Participant talk (3-way) | **90.9%** (EN 91.2%, ES 90.4%) |
 
-Clef latency per line: p50 ~0.3–0.5 s, p95 ~1.05 s. These numbers come from the move and talk questions as they ship. They were not rerun after `scope` joined the coach request, because `scope` is a separate question in the same call.
+95% CIs, bootstrapped over calls: move 92.8–93.4%, talk 90.5–91.3%. Always answering the most common label would score 20.3% (move) and 47.3% (talk). 37 of 56,038 lines got no answer (upstream errors during the batch run) and are left out. Counted as wrong, they give 93.0% and 90.8%. Clef call time per line in the batch run (`evaluate.py` on `/judge`): p50 ~0.3–0.5 s, p95 ~1.05 s. A `/api/turn` round trip from a browser takes longer, because it adds the network and, on participant lines, waits for the parallel flag call; `scripts/e2e_live.py` measures both. These numbers come from the move and talk questions as they ship. They were not rerun after `scope` joined the coach request, because `scope` is a separate question in the same call.
 
 ### Coach score vs supervisors (`scripts/agreement.py`, `GET /api/c5/agreement`)
 
-There are 477 validation calls that both supervisors rated `overall_1_to_5`. The app score is the live screen's arithmetic over Clef's tags. CIs are a bootstrap over calls (2,000 resamples).
+There are 477 validation calls that both supervisors rated `overall_1_to_5`. The app score is the MITI-style score (`scripts/score.py`, each part rounded, then summed) over Clef's tags. The demo page rounds the sum instead, so it can differ by up to 2 points. CIs are a bootstrap over calls (2,000 resamples).
 
 | Pair | Pearson r (95% CI) | Spearman ρ (95% CI) |
 |---|---|---|
@@ -136,9 +159,9 @@ The participant flag is judged in its own line-only request. Its `none` examples
 | GLM-4.7-flash | 81–86% | 47–51 / 60 | 16–18 s | 7–22 s |
 
 `scripts/review_eval.py` then ran 600 random validation lines with confidence < 0.3 through the live `/api/review`:
-- Clef alone: 76.0%. Clef + review: 76.8%.
-- The review was right on 91.5% of the lines it answered, against Clef's 80.9% on those same lines.
-- It answered only 47 of 600. The other 553 hit the Workers AI per-minute limit (error 3021).
+- Clef alone: 76.0%. Clef + review: 76.7% (fixed 8, broke 4).
+- The review was right on 89.2% of the lines it answered, against Clef's 83.1% on those same lines.
+- It answered only 65 of 600. The rest hit the Workers AI per-minute limit (error 3021).
 
 Cues are where GLM earns its place. Review stays an optional background second opinion. Cue language is set by the Worker (`Call language: English|Spanish` from the participant's words); left to infer it, the models sometimes answered in Spanish or French.
 
@@ -152,17 +175,18 @@ Cues are where GLM earns its place. Review stays an optional background second o
 | client talk (212) | 75.0% | 80.2% |
 | **all 428** | **75.0%** | **83.9%** |
 
-Where all 10 experts agreed, Clef gets 91.1% (counsellor, 112 lines) and 93.1% (client, 58). Where experts split (≤ 70% agreement), Clef gets 50–58%. Most misses are client change or sustain talk read as neutral (37 lines). Subtypes, scored where the coarse label matched: open/closed 73.2% (56), simple/complex 39.1% (23). The payload was tuned on synthetic cancer-coaching calls, not on AnnoMI.
+Where all 10 experts agreed, Clef gets 91.1% (counsellor, 112 lines) and 93.1% (client, 58). Where experts split (≤ 70% agreement), Clef gets 50–58%. Most misses are client change or sustain talk read as neutral (37 lines). Subtypes, scored where the coarse label matched: open/closed 73.2% (56; lines Clef tagged *ask permission* have no subtype and are left out), simple/complex 39.1% (23). The payload was tuned on synthetic cancer-coaching calls, not on AnnoMI.
 
 ## Run
 
 ```sh
 npm install
 npx wrangler deploy                                   # coach.raava.dev + workers.dev
-uv run --with pandas python -I scripts/evaluate.py <data_dir> dev 120
-uv run --with pandas python -I scripts/evaluate.py <data_dir> validation 0 @cf/cloudflare/clef 2 --flags-only
-uv run --with pandas python -I scripts/annomi_bench.py <data_dir>
+scripts/reproduce.sh                                  # every number above, offline, checked (REPRODUCE.md)
+uv run python -I scripts/e2e_live.py                  # live checks + drift check against runs/metrics.json
 ```
+
+[REPRODUCE.md](REPRODUCE.md) has the data step, the table from README numbers to `runs/metrics.json` keys, and the commands that re-query the models.
 
 The `/judge` endpoint is a raw Clef proxy for batch scripts (`Authorization: Bearer $CLEF_API_KEY` from `.env`).
 
@@ -172,7 +196,7 @@ The `/judge` endpoint is a raw Clef proxy for batch scripts (`Authorization: Bea
 
 `src/c5.ts` serves the suite endpoints that Patient 360 (coach-console) asks for in its `INTEGRATION.md`. They use the same shape as the console's adapter, so the console switched over with no change (`x-c5-source: native`):
 
-- `GET /api/c5/calls[/:callId]`: the 27 supervisor-labelled demo calls, scored with the live screen's arithmetic.
+- `GET /api/c5/calls[/:callId]`: the 27 supervisor-labelled demo calls, scored like `scripts/score.py`.
 - `GET /api/c5/survivors[/:survivorId]`: one row per participant (`c5-P0540`), with status from their worst call.
 - `GET /api/c5/demo`: held-out safety call CALL05423, pre-played through the live engine (`scripts/preplay.py`). It has every line's Clef tag and flag, the red medical banner at 05:12, 4 GLM cues, and score 74 (82 on the supervisor labels). 90.6% of its tags match the human labels. A console can open on it with no model calls.
 - `GET /api/c5/agreement`: the supervisor-agreement figures above, with the per-call table (app score, human-label score, supervisor A, supervisor B) and the flag Wilson CIs.

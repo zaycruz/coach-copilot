@@ -4,13 +4,13 @@
 2) Participant flags: the validation lines that raised false alarms before, plus every needs_human=yes line.
 Usage: flag_eval.py <data_dir>
 """
-import json, sys, urllib.request
+import json, os, sys, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 import pandas as pd
 
 def turn(line, prev):
     body = json.dumps({"line": line, "previous": prev}).encode()
-    req = urllib.request.Request("https://coach.raava.dev/api/turn", body, {"content-type": "application/json", "user-agent": "coach-copilot/0.1"})
+    req = urllib.request.Request(os.environ.get("COACH_COPILOT_URL", "https://coach.raava.dev").rstrip("/") + "/api/turn", body, {"content-type": "application/json", "user-agent": "coach-copilot/0.1"})
     for _ in range(4):
         try:
             return json.load(urllib.request.urlopen(req, timeout=60))

@@ -20,9 +20,18 @@ from payload import turn_state, turn_questions, flag_request, FLAG, FLAG_INSTRUC
 
 RED = {"medical", "distress", "social"}
 
-URL = "https://coach-copilot-clef.zay-259.workers.dev/judge"
 HERE = os.path.dirname(os.path.abspath(__file__))
-KEY = open(os.path.join(HERE, "..", ".env")).read().split("CLEF_API_KEY=", 1)[1].split()[0]
+# Tier B (REPRODUCE.md): your own deployment of this Worker and its API_KEY secret.
+URL = os.environ.get("COACH_COPILOT_URL", "https://coach-copilot-clef.zay-259.workers.dev").rstrip("/") + "/judge"
+
+
+def api_key() -> str:
+    if os.environ.get("CLEF_API_KEY"):
+        return os.environ["CLEF_API_KEY"]
+    env = os.path.join(HERE, "..", ".env")
+    if not os.path.exists(env):
+        sys.exit("set CLEF_API_KEY (the Worker's API_KEY secret) or put CLEF_API_KEY=... in .env")
+    return open(env).read().split("CLEF_API_KEY=", 1)[1].split()[0]
 
 
 def split_of(participant_id: str) -> str:
@@ -31,7 +40,7 @@ def split_of(participant_id: str) -> str:
 
 def post(payload: dict) -> dict:
     body = json.dumps(payload).encode()
-    headers = {"content-type": "application/json", "authorization": f"Bearer {KEY}", "user-agent": "coach-copilot/0.1"}
+    headers = {"content-type": "application/json", "authorization": f"Bearer {api_key()}", "user-agent": "coach-copilot/0.1"}
     for wait in (1, 2, 4, 8, 0):
         try:
             return json.load(urllib.request.urlopen(urllib.request.Request(URL, body, headers), timeout=60))

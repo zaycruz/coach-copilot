@@ -1,6 +1,6 @@
 /**
  * Patient 360 suite endpoints (coach-console INTEGRATION.md, "C5 Coaching calls"):
- *   GET /api/c5/calls[/:id]       supervisor-labelled demo calls, scored like the live screen
+ *   GET /api/c5/calls[/:id]       supervisor-labelled demo calls, scored with MITI-style targets
  *   GET /api/c5/survivors[/:id]   one row per participant, status from their worst call
  *   GET /api/c5/demo              a safety call pre-played through the live engine (scripts/preplay.py)
  *   GET /api/c5/agreement         app score vs two supervisors, flag recall and false alarms (scripts/agreement.py)
@@ -26,7 +26,8 @@ const coaches = PEOPLE.coaches as Record<string, Record<string, string>>;
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { "content-type": "application/json", "cache-control": "public, max-age=60" } });
 
-// Same arithmetic as the live screen (public/index.html updateScore).
+// MITI-style targets, as on the demo page (public/index.html updateScore), but each part is rounded before
+// summing (the page rounds the sum), so scores can differ from the page by up to 2 points. Same as scripts/score.py.
 const SUPPORT = new Set(["affirm", "seek collaboration", "emphasize autonomy", "ask permission"]);
 function scoreMoves(moves: string[]) {
   const n = (t: string) => moves.filter((m) => m === t).length;

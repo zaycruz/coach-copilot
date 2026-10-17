@@ -1,4 +1,5 @@
-"""The coach score: the live screen's MITI-style arithmetic (public/index.html updateScore, src/c5.ts scoreMoves)."""
+"""The coach score, MITI-style targets, as src/c5.ts scoreMoves computes it: each part is rounded, then summed.
+The demo page (public/index.html updateScore) sums first and rounds once, so it can differ by up to 2 points."""
 
 SUPPORT = {"affirm", "seek collaboration", "emphasize autonomy", "ask permission"}
 

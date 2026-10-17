@@ -7,8 +7,8 @@
   app score vs human-label score           r=0.955 [0.941, 0.967]  rho=0.960 [0.949, 0.969]
   ICC(2,1) A vs B {'pair': 'supervisor A vs supervisor B (overall 1-5)', 'icc21': 0.666, 'ci95': [0.613, 0.712], 'mae': 0.61} 
   MAE {'note': 'app score mapped to 1-5 by least squares on these calls (slope, intercept below), then compared with each supervisor', 'slope': 0.0498, 'intercept': -0.077, 'maeVsA': 0.553, 'maeVsB': 0.597, 'maeAvsB': 0.61}
-  recall: {'k': 13, 'n': 13, 'rate': np.float64(1.0), 'ci95': [np.float64(0.7719), 1]}
-  falseAlarmsPerLine: {'k': 9, 'n': 25785, 'rate': np.float64(0.0003), 'ci95': [np.float64(0.0002), np.float64(0.0007)]}
+  recall: {'k': 13, 'n': 13, 'rate': 1.0, 'ci95': [0.7719, 1.0]}
+  falseAlarmsPerLine: {'k': 9, 'n': 25785, 'rate': 0.0003, 'ci95': [0.0002, 0.0007]}
   callsWithFalseAlarm: {'k': 9, 'n': 1085, 'rate': 0.0083, 'ci95': [0.0044, 0.0157]}
-  coachConductAgreement: {'k': 8, 'n': 8, 'rate': 1.0, 'ci95': [0.6756, 1]}
-  source: validation split participant lines; coach conduct = 8 calls supervisors rated for safety_issue_handled (runs/flag-eval-v2.log)
+  coachConductAgreement: {'k': 8, 'n': 8, 'rate': 1.0, 'ci95': [0.6756, 1.0]}
+  source: validation split participant lines; coach conduct = calls supervisors rated for safety_issue_handled

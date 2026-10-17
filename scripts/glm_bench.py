@@ -8,7 +8,7 @@ import json, os, random, sys, time, urllib.request
 from concurrent.futures import ThreadPoolExecutor
 import pandas as pd
 
-BASE = "https://coach.raava.dev"
+BASE = os.environ.get("COACH_COPILOT_URL", "https://coach.raava.dev").rstrip("/")
 HERE = os.path.dirname(os.path.abspath(__file__))
 MODELS = ["@cf/zai-org/glm-5.3", "@cf/zai-org/glm-5.3-flash", "@cf/zai-org/glm-4.7-flash"]
 

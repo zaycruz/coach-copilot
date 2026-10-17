@@ -1,6 +1,6 @@
 {
  "about": "Coach score vs two supervisors on held-out (validation) rated calls. Synthetic data, Crane Lab.",
- "method": "How well does the app's coach score track the two supervisors? And flag recall / false alarms with Wilson CIs.\n\nCalls: the supervisor-rated calls in the validation split (held out; never used for tuning). The app score is the\nlive screen's MITI-style arithmetic over Clef's tags (runs/validation-clef-ctx2.jsonl), no GLM review.\nFor reference, the same arithmetic over the human line labels shows what the score formula itself can reach.\nCorrelations get a percentile bootstrap 95% CI over calls (2,000 resamples, seed 7); A vs B also gets ICC(2,1).",
+ "method": "How well does the app's coach score track the two supervisors? And flag recall / false alarms with Wilson CIs.\n\nCalls: the supervisor-rated calls in the validation split (held out; never used for tuning). The app score is the\nMITI-style score (scripts/score.py) over Clef's tags (runs/predictions/tags-validation.jsonl), no GLM review.\nFor reference, the same score over the human line labels shows what the score formula itself can reach.\nCorrelations get a percentile bootstrap 95% CI over calls (2,000 resamples, seed 7); A vs B also gets ICC(2,1).",
  "calls": 477,
  "correlations": [
   {
@@ -112,7 +112,7 @@
    "rate": 1.0,
    "ci95": [
     0.7719,
-    1
+    1.0
    ]
   },
   "falseAlarmsPerLine": {
@@ -139,10 +139,10 @@
    "rate": 1.0,
    "ci95": [
     0.6756,
-    1
+    1.0
    ]
   },
-  "source": "validation split participant lines; coach conduct = 8 calls supervisors rated for safety_issue_handled (runs/flag-eval-v2.log)"
+  "source": "validation split participant lines; coach conduct = calls supervisors rated for safety_issue_handled"
  },
  "perCall": [
   {
